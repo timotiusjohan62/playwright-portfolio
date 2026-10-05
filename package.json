@@ -9,7 +9,15 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.44.1",
-    "@types/node": "^26.6.4"
+    "@playwright/test": "^1.63.0",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.6.4",
+    "@types/sql.js": "^1.4.11"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^18.0.5",
+    "sql.js": "^1.14.2",
+    "zod": "^4.6.5"
   }
 }
