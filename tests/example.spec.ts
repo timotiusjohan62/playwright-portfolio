@@ -116,7 +116,10 @@ test.describe('Database-Driven API Workflows', () => {
         const response = await request.fetch(dynamicEndpoint, {
           method: step.TYPE,
           data: requestData,
-          headers: headers
+          headers: {
+            ...headers,
+            'X-Btn-Key': process.env.API_KEY || '', // Ensure API key is included in headers
+          }
         });
 
         console.log(`Step: ${step.TITLE} | response: ${await response.text()} \n\n`);
