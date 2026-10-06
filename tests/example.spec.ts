@@ -18,8 +18,15 @@ import { generateDynamicSchema } from '../utils/schemaInferrer';
  * @param path - The dot-notation path (e.g., 'data.user.id')
  * @returns The value at the specified path, or undefined if the path doesn't exist
  */
-const getNestedValue = (obj: any, path: string) => {
-  return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+const getNestedValue = (obj: any, path: any) => {
+  // 1. Safeguard: If path is missing or null, return undefined safely
+  if (!path) return undefined;
+
+  // 2. Coerce path to a string just in case SQLite returned a number or object
+  const stringPath = typeof path === 'string' ? path : String(path);
+
+  // 3. Now .split() is guaranteed to work safely
+  return stringPath.split('.').reduce((acc, part) => acc && acc[part], obj);
 };
 
 // ==========================================
@@ -106,6 +113,8 @@ test.describe('Database-Driven API Workflows', () => {
           data: requestData
         });
 
+        console.log(`Step: ${step.TITLE} | response: ${await response.text()} \n\n`);
+
 
 
         // Base Assertion: Verify the HTTP status code matches the expected outcome from the DB
@@ -121,7 +130,7 @@ test.describe('Database-Driven API Workflows', () => {
         const InferredSchema = generateDynamicSchema(JSON.parse(step.EXPECTED_SCHEMA));
 
         // Parse response body if request succeeded, otherwise validate an empty object
-        const validationResult = InferredSchema.safeParse(response.ok() ? await response.json() : {});
+        const validationResult = InferredSchema.safeParse(await response.json());
 
         // Assert schema validity. If it fails, Playwright will log validationResult.error?.message
         expect(validationResult.success, validationResult.error?.message).toBe(true);
