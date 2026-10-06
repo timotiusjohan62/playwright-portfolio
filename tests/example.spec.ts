@@ -11,6 +11,7 @@ import { test, expect } from '@playwright/test';
 import Database from 'better-sqlite3';
 import { generateDynamicSchema } from '../utils/schemaInferrer';
 import { buildHeaders } from '../utils/headerHelper';
+import { getSignedHeaders } from '../utils/signatureGenerator';
 
 /**
  * Utility to extract deeply nested values from a JSON object using a dot-notation string path.
@@ -87,9 +88,7 @@ test.describe('Database-Driven API Workflows', () => {
       for (const step of steps) {
 
         // --- Phase 0: Header Construction ---
-        const headers = buildHeaders({
-          customHeaders: step.EXTRACT_KEY ? JSON.stringify(testState) : undefined
-        });
+        const headers = getSignedHeaders(step.TYPE, step.PATH, step.PAYLOAD);
 
         // --- Phase 1: Variable Hydration ---
 
