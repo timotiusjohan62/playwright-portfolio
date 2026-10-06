@@ -10,6 +10,7 @@
 import { test, expect } from '@playwright/test';
 import Database from 'better-sqlite3';
 import { generateDynamicSchema } from '../utils/schemaInferrer';
+import { buildHeaders } from '../utils/headerHelper';
 
 /**
  * Utility to extract deeply nested values from a JSON object using a dot-notation string path.
@@ -85,6 +86,11 @@ test.describe('Database-Driven API Workflows', () => {
 
       for (const step of steps) {
 
+        // --- Phase 0: Header Construction ---
+        const headers = buildHeaders({
+          customHeaders: step.EXTRACT_KEY ? JSON.stringify(testState) : undefined
+        });
+
         // --- Phase 1: Variable Hydration ---
 
         let dynamicEndpoint = step.PATH;
@@ -110,7 +116,8 @@ test.describe('Database-Driven API Workflows', () => {
         // Execute the HTTP call using Playwright's API request context
         const response = await request.fetch(dynamicEndpoint, {
           method: step.TYPE,
-          data: requestData
+          data: requestData,
+          headers: headers
         });
 
         console.log(`Step: ${step.TITLE} | response: ${await response.text()} \n\n`);
