@@ -10,7 +10,6 @@
 import { test, expect } from '@playwright/test';
 import Database from 'better-sqlite3';
 import { generateDynamicSchema } from '../utils/schemaInferrer';
-import { buildHeaders } from '../utils/headerHelper';
 import { getSignedHeaders } from '../utils/signatureGenerator';
 
 /**
@@ -29,6 +28,63 @@ const getNestedValue = (obj: any, path: any) => {
 
   // 3. Now .split() is guaranteed to work safely
   return stringPath.split('.').reduce((acc, part) => acc && acc[part], obj);
+};
+
+/**
+ * Strips port numbers/prefixes from path strings specifically for HMAC signatures.
+ * Example: ":7095/bp/bpjs" -> "/bp/bpjs"
+ * Example: "/:7095/bp/bpjs" -> "/bp/bpjs"
+ */
+const cleanPathForSignature = (rawPath: string): string => {
+  let path = rawPath.trim();
+  path = path.replace(/^https?:\/\/[^\/]+/, '');
+  path = path.replace(/^(\/?:\d+|\d+)\//, '/');
+  if (!path.startsWith('/')) path = `/${path}`;
+  return path;
+};
+
+/**
+ * Resolves DB endpoints containing port prefixes (e.g., ":7095/bp/bpjs") into a fully qualified
+ * request URL using Playwright's config `baseURL` host while preserving the specified port.
+ * Example: ":7095/bp/bpjs" + baseURL ("http://172.18.30.26:7084") -> "http://172.18.30.26:7095/bp/bpjs"
+ */
+const resolveFetchEndpoint = (rawPath: string, configBaseUrl?: string): string => {
+  let path = rawPath.trim();
+
+  // 1. If path is already a complete HTTP/HTTPS URL, return as-is
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    return path;
+  }
+
+  // 2. Extract port prefix from paths like ":7095/bp/bpjs" or "/:7095/bp/bpjs"
+  const portMatch = path.match(/^\/?:(\d+)/);
+  const explicitPort = portMatch ? portMatch[1] : null;
+
+  // 3. Clean path to standard relative format (e.g. "/bp/bpjs")
+  const cleanPath = cleanPathForSignature(path);
+
+  // 4. Resolve base host (e.g. "http://172.18.30.26")
+  const defaultBase = configBaseUrl || process.env.BASE_URL || 'http://172.18.30.26';
+  const urlObj = new URL(defaultBase);
+
+  // If DB endpoint defines a port (e.g., 7095), override the host's default port
+  if (explicitPort) {
+    urlObj.port = explicitPort;
+  }
+
+  return new URL(cleanPath, urlObj.origin).toString();
+};
+
+/**
+ * Generates signed headers using a clean, port-free path string.
+ */
+const getSignedHeadersForStep = (
+  type: string,
+  path: string,
+  payload: string | null
+): Record<string, string> => {
+  const cleanSignaturePath = cleanPathForSignature(path);
+  return getSignedHeaders(type, cleanSignaturePath, payload);
 };
 
 // ==========================================
@@ -74,7 +130,7 @@ test.describe('Database-Driven API Workflows', () => {
   // Dynamically generate a Playwright test for each distinct TEST_CASE_NAME found in the DB
   for (const workflow of workflows) {
 
-    test(`Executes scenario: ${workflow.TEST_CASE_NAME}`, async ({ request }) => {
+    test(`Executes scenario: ${workflow.TEST_CASE_NAME}`, async ({ request, baseURL }) => {
 
       // Fetch all steps for this specific test case, ordered chronologically
       const steps = db.prepare(
@@ -86,10 +142,6 @@ test.describe('Database-Driven API Workflows', () => {
       const testState: Record<string, string> = {};
 
       for (const step of steps) {
-
-        // --- Phase 0: Header Construction ---
-        const headers = getSignedHeaders(step.TYPE, step.PATH, step.PAYLOAD);
-
         // --- Phase 1: Variable Hydration ---
 
         let dynamicEndpoint = step.PATH;
@@ -107,24 +159,32 @@ test.describe('Database-Driven API Workflows', () => {
           }
         }
 
+        // Header Construction ---
+        const headers = getSignedHeadersForStep(step.TYPE, dynamicEndpoint, dynamicPayload);
+
+        // Fix potential port/host syntax malformations (e.g., http://172.18.30.26/:7084/...)
+        const finalUrl = resolveFetchEndpoint(dynamicEndpoint, baseURL);
+
         // --- Phase 2: Request Execution ---
 
         // Safely parse the hydrated payload back to a JSON object for the Playwright request
         const requestData = dynamicPayload ? JSON.parse(dynamicPayload) : undefined;
 
         // Execute the HTTP call using Playwright's API request context
-        const response = await request.fetch(dynamicEndpoint, {
+        const response = await request.fetch(finalUrl, {
           method: step.TYPE,
           data: requestData,
           headers: {
             ...headers,
             'X-Btn-Key': process.env.API_KEY || '', // Ensure API key is included in headers
+            'Btn-Reference-Number': 'B02506510001',
+            'Btn-User-Id': 'BTN0010042',
+            'Btn-Terminal-Id': 'PCDIMAS',
+            'Btn-Terminal-Ip': '10.99.17.134'
           }
         });
 
-        console.log(`Step: ${step.TITLE} | response: ${await response.text()} \n\n`);
-
-
+        console.log(`Step: ${step.TITLE } | Endpoint: ${finalUrl} | Status: ${response.status()} | Request Body: ${dynamicPayload || 'N/A'} | Response Body: ${await response.text()}`);
 
         // Base Assertion: Verify the HTTP status code matches the expected outcome from the DB
         expect(response.status()).toBe(step.EXPECTED_STATUS);

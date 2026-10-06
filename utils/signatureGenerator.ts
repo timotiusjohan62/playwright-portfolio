@@ -47,7 +47,6 @@ export function getSignedHeaders(method: string, urlPath: string, requestBody?: 
 
     return {
         'x-timestamp': timestamp,
-        'x-signature': signature,
-        'apiKey': apiKey
+        'x-signature': signature
     };
 }
