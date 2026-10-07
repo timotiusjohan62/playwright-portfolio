@@ -11,6 +11,7 @@ import { test, expect } from '@playwright/test';
 import Database from 'better-sqlite3';
 import { generateDynamicSchema } from '../utils/schemaInferrer';
 import { getSignedHeaders } from '../utils/signatureGenerator';
+import { string } from 'zod';
 
 /**
  * Utility to extract deeply nested values from a JSON object using a dot-notation string path.
@@ -115,7 +116,7 @@ interface StepRow {
 // ==========================================
 
 // Open a read-only connection to the test data database
-const db = new Database('db/TESTDATA.db', { readonly: true });
+const db = new Database('db/TESTDATA.db', { readonly: false });
 
 // Fetch all distinct test cases. Each row represents a full end-to-end scenario.
 // Cast to IterableIterator to allow looping directly in Playwright's describe block.
@@ -153,6 +154,11 @@ test.describe('Database-Driven API Workflows', () => {
           dynamicEndpoint = dynamicEndpoint.replace(regex, value);
 
           if (dynamicPayload) {
+            if (dynamicPayload.includes('{{sequence}}')) {
+              const uniqueSequence = db.prepare('SELECT SEQUENCE FROM UTILS').get() as {SEQUENCE?: string };
+              dynamicPayload = dynamicPayload.replace(/{{sequence}}/g, uniqueSequence.SEQUENCE || '');
+              db.prepare('UPDATE UTILS SET SEQUENCE = SEQUENCE + 1').run(); // Increment sequence for next use
+            }
             // Replaces instances of {{variable}} in the stringified JSON payload
             // Note: Ensures value is cast to a string to prevent regex type errors
             dynamicPayload = dynamicPayload.replace(regex, String(value));
