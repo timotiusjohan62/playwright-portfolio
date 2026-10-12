@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import os from 'node:os';
 
 /**
  * Read environment variables from file.
@@ -24,7 +25,43 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+    ['line'],
+    [
+      'allure-playwright',
+      {
+        outputFolder: 'allure-results',
+        
+        // Adds global labels to every test run (e.g., environment, team)
+        globalLabels: {
+          layer: 'api-and-ui',
+          team: 'core-automation',
+        },
+
+        // Injects environment metadata into the report summary panel
+        environmentInfo: {
+          os_platform: os.platform(),
+          os_release: os.release(),
+          node_version: process.version,
+          target_env: process.env.NODE_ENV || 'staging',
+        },
+
+        // Custom Categories to group errors intelligently
+        categories: [
+          {
+            name: 'Infrastructure / Network Timeouts',
+            messageRegex: /timeout|ECONNREFUSED|ETIMEDOUT/i,
+            matchedStatuses: ['broken', 'failed'],
+          },
+          {
+            name: 'Assertion Failures (Product Bugs)',
+            messageRegex: /Expected|Received/i,
+            matchedStatuses: ['failed'],
+          },
+        ],
+      },
+    ],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */

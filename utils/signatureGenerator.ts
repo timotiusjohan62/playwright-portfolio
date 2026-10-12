@@ -39,7 +39,7 @@ export function getSignedHeaders(method: string, urlPath: string, requestBody?: 
 
     // 3. Concatenate request data (matches Postman: Method:Endpoint:Body:Timestamp)
     const text_str = `${method}:${urlPath}:${minifiedBody}:${timestamp}`;
-    console.log('String to sign:', text_str);
+    //console.log('String to sign:', text_str);
 
     // 4. Generate HMAC SHA256 signature
     const hash = CryptoJS.HmacSHA256(text_str, signatureKey);
