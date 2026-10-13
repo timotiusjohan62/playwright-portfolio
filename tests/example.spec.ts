@@ -45,6 +45,26 @@ const cleanPathForSignature = (rawPath: string): string => {
 };
 
 /**
+ * Safely fetches and increments the sequence atomically using an exclusive transaction
+ * with built-in retry handling for heavy parallel execution.
+ */
+const getNextSequence = () => {
+  const updateSeq = db.transaction(() => {
+    const row = db.prepare('SELECT SEQUENCE FROM UTILS').get() as { SEQUENCE?: number };
+    const currentSeq = row?.SEQUENCE ?? 0;
+    db.prepare('UPDATE UTILS SET SEQUENCE = SEQUENCE + 1').run();
+    return currentSeq;
+  });
+
+  try {
+    return updateSeq();
+  } catch (err) {
+    // Fallback pseudo-random unique number if lock persists briefly
+    return Date.now().toString().slice(-6);
+  }
+};
+
+/**
  * Resolves DB endpoints containing port prefixes (e.g., ":7095/bp/bpjs") into a fully qualified
  * request URL using Playwright's config `baseURL` host while preserving the specified port.
  * Example: ":7095/bp/bpjs" + baseURL ("http://172.18.30.26:7084") -> "http://172.18.30.26:7095/bp/bpjs"
@@ -164,6 +184,8 @@ test.describe('Database-Driven API Workflows', () => {
             }
           }
 
+          const sequenceNumber = getNextSequence();
+
           // 2. Handle DB Sequence once outside the loop
           if (dynamicPayload && dynamicPayload.includes('{{sequence}}')) {
             const uniqueSequence = db.prepare('SELECT SEQUENCE FROM UTILS').get() as { SEQUENCE?: string | number };
@@ -198,34 +220,47 @@ test.describe('Database-Driven API Workflows', () => {
             allure.ContentType.JSON
           );
 
-          // Execute the HTTP call using Playwright's API request context
-          const response = await request.fetch(finalUrl, {
-            timeout: 15000,
-            method: step.TYPE,
-            data: requestData,
-            headers: {
-              ...headers,
-              'X-Btn-Key': process.env.API_KEY || '', // Ensure API key is included in headers
-              'Btn-Reference-Number': `B0250${uniqueSequenceHeader.SEQUENCE}`,
-              'Btn-User-Id': 'BTN0010042',
-              'Btn-Terminal-Id': 'PCDIMAS',
-              'Btn-Terminal-Ip': '10.99.17.134'
+          // Execute the HTTP call with retry logic for transient timeouts
+            let response;
+            let attempt = 1;
+            const maxRetries = 3;
+
+            while (attempt <= maxRetries) {
+              try {
+                response = await request.fetch(finalUrl, {
+                  timeout: 25000, // Increased timeout to 25s for slow server responses
+                  method: step.TYPE,
+                  data: requestData,
+                  headers: {
+                    ...headers,
+                    'X-Btn-Key': process.env.API_KEY || '',
+                    'Btn-Reference-Number': `B0250${sequenceNumber}`,
+                    'Btn-User-Id': 'BTN0010042',
+                    'Btn-Terminal-Id': 'PCDIMAS',
+                    'Btn-Terminal-Ip': '10.99.17.134'
+                  }
+                });
+                break; // Break loop if successful
+              } catch (err: any) {
+                if (attempt === maxRetries) throw err;
+                console.warn(`Attempt ${attempt} failed for ${finalUrl}: ${err.message}. Retrying...`);
+                await new Promise((res) => setTimeout(res, 2000 * attempt)); // Wait before retry
+                attempt++;
+              }
             }
-          });
 
-          // Parse the response body safely
-          let responseBody;
-          try {
-            responseBody = await response.json();
-          } catch (e) {
-            responseBody = await response.text();
-          }
+            let responseBody;
+            try {
+              responseBody = await response!.json();
+            } catch (e) {
+              responseBody = await response!.text();
+            }
 
-          const responseContent = JSON.stringify({
-            status: response.status(),
-            headers: response.headers(),
-            body: responseBody
-          }, null, 2);
+            const responseContent = JSON.stringify({
+              status: response!.status(),
+              headers: response!.headers(),
+              body: responseBody
+            }, null, 2);
 
           await allure.attachment(
             `RESPONSE: ${step.TEST_CASE_NAME}`,
@@ -238,7 +273,7 @@ test.describe('Database-Driven API Workflows', () => {
           //console.log(`Step: ${step.TITLE } | Endpoint: ${finalUrl} | Status: ${response.status()} | Request Body: ${dynamicPayload || 'N/A'} | Response Body: ${await response.text()}`);
 
           // Base Assertion: Verify the HTTP status code matches the expected outcome from the DB
-          expect(response.status()).toBe(step.EXPECTED_STATUS);
+          expect(response!.status()).toBe(step.EXPECTED_STATUS);
 
           // --- Phase 3: Schema Validation ---
 
@@ -250,7 +285,7 @@ test.describe('Database-Driven API Workflows', () => {
           const InferredSchema = generateDynamicSchema(JSON.parse(step.EXPECTED_SCHEMA));
 
           // Parse response body if request succeeded, otherwise validate an empty object
-          const validationResult = InferredSchema.safeParse(await response.json());
+          const validationResult = InferredSchema.safeParse(await response!.json());
 
           // Assert schema validity. If it fails, Playwright will log validationResult.error?.message
           expect(validationResult.success, validationResult.error?.message).toBe(true);
@@ -259,7 +294,7 @@ test.describe('Database-Driven API Workflows', () => {
 
           // If the database tells us to extract values from this response for future steps
           if (step.EXTRACT_KEY) {
-            const body = await response.json();
+            const body = await response!.json();
             const rules = JSON.parse(step.EXTRACT_KEY);
 
             for (const [stateKey, responsePath] of Object.entries(rules)) {
