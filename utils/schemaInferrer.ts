@@ -26,7 +26,6 @@ export function generateDynamicSchema(
     for (const [key, value] of Object.entries(data as Record<string, unknown>)) {
       let fieldSchema = generateDynamicSchema(value, options);
 
-      // Make fields optional/nullable if enabled
       if (options.makeFieldsOptional) {
         fieldSchema = fieldSchema.optional().nullable();
       }
@@ -34,7 +33,8 @@ export function generateDynamicSchema(
       shape[key] = fieldSchema;
     }
 
-    return z.object(shape);
+    // Change z.object(shape) to .strict() if you want to reject unexpected fields!
+    return z.object(shape).strict(); 
   }
 
   return z.unknown();
