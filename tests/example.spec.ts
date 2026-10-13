@@ -16,13 +16,18 @@ import * as allure from 'allure-js-commons';
 /**
  * Utility to extract deeply nested values from a JSON object using a dot-notation string path.
  * 
- * @param obj The JSON object to search (usually the API response body)
- * @param path The dot-notation path (e.g., 'data.user.id')
+ * @param obj - The JSON object to search (usually the API response body)
+ * @param path - The dot-notation path (e.g., 'data.user.id')
  * @returns The value at the specified path, or undefined if the path doesn't exist
  */
 const getNestedValue = (obj: any, path: any) => {
+  // 1. Safeguard: If path is missing or null, return undefined safely
   if (!path) return undefined;
+
+  // 2. Coerce path to a string just in case SQLite returned a number or object
   const stringPath = typeof path === 'string' ? path : String(path);
+
+  // 3. Now .split() is guaranteed to work safely
   return stringPath.split('.').reduce((acc, part) => acc && acc[part], obj);
 };
 
@@ -42,18 +47,28 @@ const cleanPathForSignature = (rawPath: string): string => {
 /**
  * Resolves DB endpoints containing port prefixes (e.g., ":7095/bp/bpjs") into a fully qualified
  * request URL using Playwright's config `baseURL` host while preserving the specified port.
+ * Example: ":7095/bp/bpjs" + baseURL ("http://172.18.30.26:7084") -> "http://172.18.30.26:7095/bp/bpjs"
  */
 const resolveFetchEndpoint = (rawPath: string, configBaseUrl?: string): string => {
   let path = rawPath.trim();
+
+  // 1. If path is already a complete HTTP/HTTPS URL, return as-is
   if (path.startsWith('http://') || path.startsWith('https://')) {
     return path;
   }
+
+  // 2. Extract port prefix from paths like ":7095/bp/bpjs" or "/:7095/bp/bpjs"
   const portMatch = path.match(/^\/?:(\d+)/);
   const explicitPort = portMatch ? portMatch[1] : null;
+
+  // 3. Clean path to standard relative format (e.g. "/bp/bpjs")
   const cleanPath = cleanPathForSignature(path);
+
+  // 4. Resolve base host (e.g. "http://172.18.30.26")
   const defaultBase = configBaseUrl || process.env.BASE_URL || 'http://172.18.30.26';
   const urlObj = new URL(defaultBase);
 
+  // If DB endpoint defines a port (e.g., 7095), override the host's default port
   if (explicitPort) {
     urlObj.port = explicitPort;
   }
@@ -73,76 +88,39 @@ const getSignedHeadersForStep = (
   return getSignedHeaders(type, cleanSignaturePath, payload);
 };
 
-/**
- * Utility to split an array of workflows into controlled chunks (batches)
- * to prevent server-side rate-limiting and timeouts under high concurrency.
- */
-const chunkArray = <T>(array: T[], size: number): T[][] => {
-  const result: T[][] = [];
-  for (let i = 0; i < array.length; i += size) {
-    result.push(array.slice(i, i + size));
-  }
-  return result;
-};
-
 // ==========================================
 // 1. Database Typings
 // ==========================================
 
+// Represents a unique workflow (test case) grouping multiple API steps
 interface WorkflowRow {
   TEST_CASE_NAME: string;
 }
 
+// Represents a single API execution step within a workflow
 interface StepRow {
   ID: number;
   TEST_CASE_NAME: string;
   TITLE: string;
-  STEP_ORDER: number;
-  TYPE: string;
-  PATH: string;
-  PAYLOAD: string | null;
-  EXTRACT_KEY: string | null;
-  EXPECTED_SCHEMA: string | null;
-  EXPECTED_STATUS: number;
+  STEP_ORDER: number;     // Determines execution sequence within a workflow
+  TYPE: string;           // HTTP Method (e.g., 'GET', 'POST', 'PUT', 'DELETE')
+  PATH: string;           // The API endpoint URL (can contain {{variables}})
+  PAYLOAD: string | null; // The JSON request body stringified (can contain {{variables}})
+  EXTRACT_KEY: string | null;     // JSON map of { "stateKey": "json.path.to.extract" }
+  EXPECTED_SCHEMA: string | null; // JSON representation of the expected response schema 
+  EXPECTED_STATUS: number;        // Expected HTTP status code (e.g., 200, 404)
 }
 
 // ==========================================
-// 2. Database Initialization & Concurrency Safety
+// 2. Database Initialization
 // ==========================================
 
+// Open a read-only connection to the test data database
 const db = new Database('db/TESTDATA.db', { readonly: false });
 
-// Enable WAL mode and a 5-second busy timeout so workers wait instead of crashing with 'database is locked'
-db.pragma('journal_mode = WAL');
-db.pragma('synchronous = NORMAL');
-db.pragma('busy_timeout = 5000');
-
-/**
- * Safely fetches and increments the sequence atomically using an exclusive transaction
- * with built-in retry handling for heavy parallel execution.
- */
-const getNextSequence = () => {
-  const updateSeq = db.transaction(() => {
-    const row = db.prepare('SELECT SEQUENCE FROM UTILS').get() as { SEQUENCE?: number };
-    const currentSeq = row?.SEQUENCE ?? 0;
-    db.prepare('UPDATE UTILS SET SEQUENCE = SEQUENCE + 1').run();
-    return currentSeq;
-  });
-
-  try {
-    return updateSeq();
-  } catch (err) {
-    // Fallback pseudo-random unique number if lock persists briefly
-    return Date.now().toString().slice(-6);
-  }
-};
-
-// Fetch all distinct test cases as an array so we can chunk them
-const workflows = db.prepare(`SELECT DISTINCT TEST_CASE_NAME FROM DATA WHERE IS_EXECUTED = '1'`).all() as WorkflowRow[];
-
-// Define chunk size (reduced to 5 to protect server from timeouts under heavy load)
-const WORKFLOW_BATCH_SIZE = 5;
-const workflowBatches = chunkArray(workflows, WORKFLOW_BATCH_SIZE);
+// Fetch all distinct test cases. Each row represents a full end-to-end scenario.
+// Cast to IterableIterator to allow looping directly in Playwright's describe block.
+const workflows = db.prepare(`SELECT DISTINCT TEST_CASE_NAME FROM DATA WHERE IS_EXECUTED = '1'`).iterate() as IterableIterator<WorkflowRow>;
 
 // ==========================================
 // 3. Playwright Test Suite
@@ -150,141 +128,158 @@ const workflowBatches = chunkArray(workflows, WORKFLOW_BATCH_SIZE);
 
 test.describe('Database-Driven API Workflows', () => {
 
-  for (const [batchIndex, batchWorkflows] of workflowBatches.entries()) {
+  // Dynamically generate a Playwright test for each distinct TEST_CASE_NAME found in the DB
+  for (const workflow of workflows) {
 
-    for (const workflow of batchWorkflows) {
+    test(`Executes scenario: ${workflow.TEST_CASE_NAME}`, async ({ request, baseURL }) => {
+      test.setTimeout(90000);
 
-      test(`Executes scenario: ${workflow.TEST_CASE_NAME} [Batch ${batchIndex + 1}]`, async ({ request, baseURL }) => {
-        test.setTimeout(90000);
+      // Fetch all steps for this specific test case, ordered chronologically
+      const steps = db.prepare(
+        'SELECT * FROM DATA WHERE TEST_CASE_NAME = ? ORDER BY STEP_ORDER ASC'
+      ).all(workflow.TEST_CASE_NAME) as StepRow[];
 
-        const steps = db.prepare(
-          'SELECT * FROM DATA WHERE TEST_CASE_NAME = ? ORDER BY STEP_ORDER ASC'
-        ).all(workflow.TEST_CASE_NAME) as StepRow[];
+      // In-memory state store for this specific scenario.
+      // Used to pass data (like auth tokens or generated IDs) from one step to the next.
+      const testState: Record<string, string> = {};
 
-        const testState: Record<string, string> = {};
+      await allure.step(`Executes scenario: ${workflow.TEST_CASE_NAME}`, async () => {
+        for (const step of steps) {
+          await allure.epic(`${step.TEST_CASE_NAME}`);
+          await allure.feature(`${step.TEST_CASE_NAME}`);
+          await allure.story(`${step.TITLE}`);
+          // --- Phase 1: Variable Hydration ---
 
-        await allure.step(`Executes scenario: ${workflow.TEST_CASE_NAME}`, async () => {
-          for (const step of steps) {
-            await allure.epic(`${step.TEST_CASE_NAME}`);
-            await allure.feature(`${step.TEST_CASE_NAME}`);
-            await allure.story(`${step.TITLE}`);
-            
-            let dynamicEndpoint = step.PATH;
-            let dynamicPayload = step.PAYLOAD;
+          let dynamicEndpoint = step.PATH;
+          let dynamicPayload = step.PAYLOAD;
 
-            for (const [key, value] of Object.entries(testState)) {
-              const regex = new RegExp(`{{${key}}}`, 'g');
-              dynamicEndpoint = dynamicEndpoint.replace(regex, value);
+          // Iterate over current state to replace any {{variableName}} templates in the path or payload
+          // 1. Process testState variables across endpoint and payload
+          for (const [key, value] of Object.entries(testState)) {
+            const regex = new RegExp(`{{${key}}}`, 'g');
+            dynamicEndpoint = dynamicEndpoint.replace(regex, value);
 
-              if (dynamicPayload) {
-                dynamicPayload = dynamicPayload.replace(regex, String(value));
-              }
-            }
-
-            const sequenceNumber = getNextSequence();
-
-            if (dynamicPayload && dynamicPayload.includes('{{sequence}}')) {
-              dynamicPayload = dynamicPayload.replace(/{{sequence}}/g, String(sequenceNumber));
-            }
-
-            const headers = getSignedHeadersForStep(step.TYPE, dynamicEndpoint, dynamicPayload);
-            const finalUrl = resolveFetchEndpoint(dynamicEndpoint, baseURL);
-
-            const requestData = dynamicPayload ? JSON.parse(dynamicPayload) : undefined;
-
-            const requestPayload = {
-              type: step.TYPE,
-              data: requestData,
-              sequence: sequenceNumber
-            };
-
-            await allure.attachment(
-              `REQUEST: ${step.TEST_CASE_NAME}`,
-              JSON.stringify(requestPayload, null, 2),
-              allure.ContentType.JSON
-            );
-
-            // Execute the HTTP call with retry logic for transient timeouts
-            let response;
-            let attempt = 1;
-            const maxRetries = 3;
-
-            while (attempt <= maxRetries) {
-              try {
-                response = await request.fetch(finalUrl, {
-                  timeout: 25000, // Increased timeout to 25s for slow server responses
-                  method: step.TYPE,
-                  data: requestData,
-                  headers: {
-                    ...headers,
-                    'X-Btn-Key': process.env.API_KEY || '',
-                    'Btn-Reference-Number': `B0250${sequenceNumber}`,
-                    'Btn-User-Id': 'BTN0010042',
-                    'Btn-Terminal-Id': 'PCDIMAS',
-                    'Btn-Terminal-Ip': '10.99.17.134'
-                  }
-                });
-                break; // Break loop if successful
-              } catch (err: any) {
-                if (attempt === maxRetries) throw err;
-                console.warn(`Attempt ${attempt} failed for ${finalUrl}: ${err.message}. Retrying...`);
-                await new Promise((res) => setTimeout(res, 2000 * attempt)); // Wait before retry
-                attempt++;
-              }
-            }
-
-            let responseBody;
-            try {
-              responseBody = await response!.json();
-            } catch (e) {
-              responseBody = await response!.text();
-            }
-
-            const responseContent = JSON.stringify({
-              status: response!.status(),
-              headers: response!.headers(),
-              body: responseBody
-            }, null, 2);
-
-            await allure.attachment(
-              `RESPONSE: ${step.TEST_CASE_NAME}`,
-              responseContent,
-              allure.ContentType.JSON
-            );
-
-            expect(response!.status()).toBe(step.EXPECTED_STATUS);
-
-            if (!step.EXPECTED_SCHEMA) {
-              continue;
-            }
-
-            const InferredSchema = generateDynamicSchema(JSON.parse(step.EXPECTED_SCHEMA));
-            const validationResult = InferredSchema.safeParse(responseBody);
-
-            expect(validationResult.success, validationResult.error?.message).toBe(true);
-
-            if (step.EXTRACT_KEY) {
-              const body = responseBody;
-              const rules = JSON.parse(step.EXTRACT_KEY);
-
-              for (const [stateKey, responsePath] of Object.entries(rules)) {
-                let sourceData = body;
-                let path = responsePath as string;
-
-                if (path.startsWith('req.') || path.startsWith('request.')) {
-                  sourceData = requestData;
-                  path = path.replace(/^(req|request)\./, '');
-                } else if (path.startsWith('res.') || path.startsWith('response.')) {
-                  path = path.replace(/^(res|response)\./, '');
-                }
-
-                const extractedValue = getNestedValue(sourceData, path);
-                testState[stateKey] = extractedValue;
-              }
+            if (dynamicPayload) {
+              dynamicPayload = dynamicPayload.replace(regex, String(value));
             }
           }
-        });
+
+          // 2. Handle DB Sequence once outside the loop
+          if (dynamicPayload && dynamicPayload.includes('{{sequence}}')) {
+            const uniqueSequence = db.prepare('SELECT SEQUENCE FROM UTILS').get() as { SEQUENCE?: string | number };
+            const seqValue = uniqueSequence?.SEQUENCE ?? 0;
+
+            dynamicPayload = dynamicPayload.replace(/{{sequence}}/g, String(seqValue));
+            db.prepare('UPDATE UTILS SET SEQUENCE = SEQUENCE + 1').run();
+          }
+
+          // Header Construction
+          const headers = getSignedHeadersForStep(step.TYPE, dynamicEndpoint, dynamicPayload);
+
+          // Fix potential port/host syntax malformations
+          const finalUrl = resolveFetchEndpoint(dynamicEndpoint, baseURL);
+
+          // --- Phase 2: Request Execution ---
+
+          // Safely parse payload back to JSON object
+          const requestData = dynamicPayload ? JSON.parse(dynamicPayload) : undefined;
+          const uniqueSequenceHeader = db.prepare('SELECT SEQUENCE FROM UTILS').get() as { SEQUENCE?: string };
+
+          // 2. Format request payload with JSON stringified data, or switch to ContentType.TEXT
+          const requestPayload = {
+            type: step.TYPE,
+            data: requestData,
+            sequence: uniqueSequenceHeader.SEQUENCE
+          };
+
+          await allure.attachment(
+            `REQUEST: ${step.TEST_CASE_NAME}`,
+            JSON.stringify(requestPayload, null, 2),
+            allure.ContentType.JSON
+          );
+
+          // Execute the HTTP call using Playwright's API request context
+          const response = await request.fetch(finalUrl, {
+            timeout: 15000,
+            method: step.TYPE,
+            data: requestData,
+            headers: {
+              ...headers,
+              'X-Btn-Key': process.env.API_KEY || '', // Ensure API key is included in headers
+              'Btn-Reference-Number': `B0250${uniqueSequenceHeader.SEQUENCE}`,
+              'Btn-User-Id': 'BTN0010042',
+              'Btn-Terminal-Id': 'PCDIMAS',
+              'Btn-Terminal-Ip': '10.99.17.134'
+            }
+          });
+
+          // Parse the response body safely
+          let responseBody;
+          try {
+            responseBody = await response.json();
+          } catch (e) {
+            responseBody = await response.text();
+          }
+
+          const responseContent = JSON.stringify({
+            status: response.status(),
+            headers: response.headers(),
+            body: responseBody
+          }, null, 2);
+
+          await allure.attachment(
+            `RESPONSE: ${step.TEST_CASE_NAME}`,
+            responseContent,
+            allure.ContentType.JSON
+          );
+
+          db.prepare('UPDATE UTILS SET SEQUENCE = SEQUENCE + 1').run(); // Increment sequence for next use
+
+          //console.log(`Step: ${step.TITLE } | Endpoint: ${finalUrl} | Status: ${response.status()} | Request Body: ${dynamicPayload || 'N/A'} | Response Body: ${await response.text()}`);
+
+          // Base Assertion: Verify the HTTP status code matches the expected outcome from the DB
+          expect(response.status()).toBe(step.EXPECTED_STATUS);
+
+          // --- Phase 3: Schema Validation ---
+
+          if (!step.EXPECTED_SCHEMA) {
+            continue; // Skip validation if no schema is provided
+          }
+
+          // Convert the stringified expected schema from the DB into an active validation schema (e.g., Zod)
+          const InferredSchema = generateDynamicSchema(JSON.parse(step.EXPECTED_SCHEMA));
+
+          // Parse response body if request succeeded, otherwise validate an empty object
+          const validationResult = InferredSchema.safeParse(await response.json());
+
+          // Assert schema validity. If it fails, Playwright will log validationResult.error?.message
+          expect(validationResult.success, validationResult.error?.message).toBe(true);
+
+          // --- Phase 4: State Extraction ---
+
+          // If the database tells us to extract values from this response for future steps
+          if (step.EXTRACT_KEY) {
+            const body = await response.json();
+            const rules = JSON.parse(step.EXTRACT_KEY);
+
+            for (const [stateKey, responsePath] of Object.entries(rules)) {
+              let sourceData = body;
+              let path = responsePath as string;
+
+              // Direct extraction from request payload
+              if (path.startsWith('req.') || path.startsWith('request.')) {
+                sourceData = requestData; // Pass the request body object here
+                path = path.replace(/^(req|request)\./, '');
+              } else if (path.startsWith('res.') || path.startsWith('response.')) {
+                path = path.replace(/^(res|response)\./, '');
+              }
+
+              const extractedValue = getNestedValue(sourceData, path);
+              testState[stateKey] = extractedValue;
+            }
+          }
+        }
       });
-    }
+    });
   }
 });
