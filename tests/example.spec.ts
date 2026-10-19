@@ -6,11 +6,10 @@
  * validates HTTP status codes, verifies response payloads against dynamically generated Zod schemas,
  * and extracts data from responses to be used in subsequent requests.
  */
-
-import { test, expect } from '@playwright/test';
 import Database from 'better-sqlite3';
-import { generateDynamicSchema } from '../utils/schemaInferrer';
+import { assertSchema, generateDynamicSchema } from '../utils/schemaInferrer';
 import { buildHeaders } from '../utils/headerHelper';
+import { test, expect, allure } from '../fixtures/base';
 
 /**
  * Utility to extract deeply nested values from a JSON object using a dot-notation string path.
@@ -74,6 +73,14 @@ test.describe('Database-Driven API Workflows', () => {
   for (const workflow of workflows) {
 
     test(`Executes scenario: ${workflow.TEST_CASE_NAME}`, async ({ request }) => {
+      await allure.epic('Database-Driven API Testing');
+      await allure.feature('Dynamic Workflow Execution');
+      await allure.story(`Scenario: ${workflow.TEST_CASE_NAME}`);
+      await allure.severity('all');
+      await allure.owner('QA Team');
+      await allure.description(`This test executes the API workflow defined in the database for the scenario: ${workflow.TEST_CASE_NAME}.
+      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.`);
+      await allure.link('https://api.escuelajs.co', 'Site under test');
 
       // Fetch all steps for this specific test case, ordered chronologically
       const steps = db.prepare(
@@ -84,7 +91,8 @@ test.describe('Database-Driven API Workflows', () => {
       // Used to pass data (like auth tokens or generated IDs) from one step to the next.
       const testState: Record<string, string> = {};
 
-      for (const step of steps) {
+      await allure.step('Execute API Steps', async () => {
+         for (const step of steps) {
 
         // --- Phase 0: Header Construction ---
         const headers = buildHeaders({
@@ -120,7 +128,7 @@ test.describe('Database-Driven API Workflows', () => {
           headers: headers
         });
 
-        console.log(`Step: ${step.TITLE} | response: ${await response.text()} \n\n`);
+        // console.log(`Step: ${step.TITLE} | response: ${await response.text()} \n\n`);
 
 
 
@@ -136,11 +144,8 @@ test.describe('Database-Driven API Workflows', () => {
         // Convert the stringified expected schema from the DB into an active validation schema (e.g., Zod)
         const InferredSchema = generateDynamicSchema(JSON.parse(step.EXPECTED_SCHEMA));
 
-        // Parse response body if request succeeded, otherwise validate an empty object
-        const validationResult = InferredSchema.safeParse(await response.json());
-
         // Assert schema validity. If it fails, Playwright will log validationResult.error?.message
-        expect(validationResult.success, validationResult.error?.message).toBe(true);
+        assertSchema(InferredSchema, await response.json(), `Schema validation failed for step: ${step.TITLE}`);
 
         // --- Phase 4: State Extraction ---
 
@@ -161,7 +166,8 @@ test.describe('Database-Driven API Workflows', () => {
             testState[stateKey] = extractedValue;
           }
         }
-      }
+      } 
+      });
     });
   }
 });
