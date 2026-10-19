@@ -9,7 +9,7 @@
 import Database from 'better-sqlite3';
 import { assertSchema, generateDynamicSchema } from '../utils/schemaInferrer';
 import { buildHeaders } from '../utils/headerHelper';
-import { test, expect, allure } from '../fixtures/base';
+import { test, expect, allure, expectStatus } from '../fixtures/base';
 
 /**
  * Utility to extract deeply nested values from a JSON object using a dot-notation string path.
@@ -18,6 +18,19 @@ import { test, expect, allure } from '../fixtures/base';
  * @param path - The dot-notation path (e.g., 'data.user.id')
  * @returns The value at the specified path, or undefined if the path doesn't exist
  */
+
+/** Replace {{vars}} using state; fail loudly if any placeholder is left unresolved. */
+function hydrate(text: string, state: Record<string, string>, stepTitle: string): string {
+  let out = text;
+  for (const [k, v] of Object.entries(state)) out = out.split(`{{${k}}}`).join(v);
+  const missing = out.match(/{{\s*[\w.-]+\s*}}/g);
+  if (missing) {
+    throw new Error(`Unresolved variable(s) ${[...new Set(missing)].join(', ')} in step "${stepTitle}"`);
+  }
+  return out;
+}
+
+
 const getNestedValue = (obj: any, path: any) => {
   // 1. Safeguard: If path is missing or null, return undefined safely
   if (!path) return undefined;
@@ -72,7 +85,7 @@ test.describe('Database-Driven API Workflows', () => {
   // Dynamically generate a Playwright test for each distinct TEST_CASE_NAME found in the DB
   for (const workflow of workflows) {
 
-    test(`Executes scenario: ${workflow.TEST_CASE_NAME}`, async ({ request }) => {
+    test(`Executes scenario: ${workflow.TEST_CASE_NAME}`, async ({ api }) => {
       await allure.epic('Database-Driven API Testing');
       await allure.feature('Dynamic Workflow Execution');
       await allure.story(`Scenario: ${workflow.TEST_CASE_NAME}`);
@@ -91,83 +104,54 @@ test.describe('Database-Driven API Workflows', () => {
       // Used to pass data (like auth tokens or generated IDs) from one step to the next.
       const testState: Record<string, string> = {};
 
-      await allure.step('Execute API Steps', async () => {
-         for (const step of steps) {
+      for (const step of steps) {
+        await allure.step(`Step ${step.STEP_ORDER}: ${step.TITLE}`, async (ctx) => {
+          await ctx.parameter('Expected status', String(step.EXPECTED_STATUS));
 
-        // --- Phase 0: Header Construction ---
-        const headers = buildHeaders({
-          customHeaders: step.EXTRACT_KEY ? JSON.stringify(testState) : undefined
-        });
 
-        // --- Phase 1: Variable Hydration ---
+          // --- Phase 0: Header Construction ---
+          const headers = buildHeaders({
+            customHeaders: step.EXTRACT_KEY ? JSON.stringify(testState) : undefined
+          });
 
-        let dynamicEndpoint = step.PATH;
-        let dynamicPayload = step.PAYLOAD;
+          // --- Phase 1: Variable Hydration ---
 
-        // Iterate over current state to replace any {{variableName}} templates in the path or payload
-        for (const [key, value] of Object.entries(testState)) {
-          const regex = new RegExp(`{{${key}}}`, 'g');
-          dynamicEndpoint = dynamicEndpoint.replace(regex, value);
+          const endpoint = hydrate(step.PATH, testState, step.TITLE);
+          const payload = step.PAYLOAD ? hydrate(step.PAYLOAD, testState, step.TITLE) : undefined;
 
-          if (dynamicPayload) {
-            // Replaces instances of {{variable}} in the stringified JSON payload
-            // Note: Ensures value is cast to a string to prevent regex type errors
-            dynamicPayload = dynamicPayload.replace(regex, String(value));
+          // --- Phase 2: Request Execution ---
+
+          // Safely parse the hydrated payload back to a JSON object for the Playwright request
+          // Logged with full request/response detail
+          const response = await api.call(step.TYPE, endpoint, {
+            data: payload ? JSON.parse(payload) : undefined,
+            headers,
+          });
+
+          // Base Assertion: Verify the HTTP status code matches the expected outcome from the DB
+          expectStatus(response, step.EXPECTED_STATUS);
+
+          // --- Phase 3: Schema Validation ---
+
+          const body = step.EXPECTED_SCHEMA || step.EXTRACT_KEY ? await response.json() : undefined;
+
+          if (step.EXPECTED_SCHEMA) {
+            const schema = generateDynamicSchema(JSON.parse(step.EXPECTED_SCHEMA));
+            assertSchema(schema, body, `Schema validation failed for step: ${step.TITLE}`);
           }
-        }
 
-        // --- Phase 2: Request Execution ---
-
-        // Safely parse the hydrated payload back to a JSON object for the Playwright request
-        const requestData = dynamicPayload ? JSON.parse(dynamicPayload) : undefined;
-
-        // Execute the HTTP call using Playwright's API request context
-        const response = await request.fetch(dynamicEndpoint, {
-          method: step.TYPE,
-          data: requestData,
-          headers: headers
-        });
-
-        // console.log(`Step: ${step.TITLE} | response: ${await response.text()} \n\n`);
-
-
-
-        // Base Assertion: Verify the HTTP status code matches the expected outcome from the DB
-        expect(response.status()).toBe(step.EXPECTED_STATUS);
-
-        // --- Phase 3: Schema Validation ---
-
-        if (!step.EXPECTED_SCHEMA) {
-          continue; // Skip validation if no schema is provided
-        }
-
-        // Convert the stringified expected schema from the DB into an active validation schema (e.g., Zod)
-        const InferredSchema = generateDynamicSchema(JSON.parse(step.EXPECTED_SCHEMA));
-
-        // Assert schema validity. If it fails, Playwright will log validationResult.error?.message
-        assertSchema(InferredSchema, await response.json(), `Schema validation failed for step: ${step.TITLE}`);
-
-        // --- Phase 4: State Extraction ---
-
-        // If the database tells us to extract values from this response for future steps
-        if (step.EXTRACT_KEY) {
-          const body = await response.json();
-
-          // Parse the extraction mapping (e.g., {"userToken": "auth.token", "newUserId": "data.id"})
-          const rules = JSON.parse(step.EXTRACT_KEY);
-
-          // Loop through the extraction rules
-          for (const [stateKey, responsePath] of Object.entries(rules)) {
-
-            // Extract the data using dot-notation string
-            const extractedValue = getNestedValue(body, responsePath as string);
-
-            // Store it in the testState object so subsequent iterations of the loop can access it via {{stateKey}}
-            testState[stateKey] = extractedValue;
+          if (step.EXTRACT_KEY) {
+            const rules = JSON.parse(step.EXTRACT_KEY);
+            for (const [stateKey, responsePath] of Object.entries(rules)) {
+              const value = getNestedValue(body, responsePath as string);
+              if (value === undefined) {
+                throw new Error(`Extract failed: "${responsePath}" not found in response of "${step.TITLE}"`);
+              }
+              testState[stateKey] = String(value);
+            }
           }
-        }
-      } 
-      });
+        });
+      }
     });
   }
 });
