@@ -13,19 +13,20 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Download the uploaded zip artifact
-      - name: Download Local Results Artifact
-        uses: actions/download-artifact@v4
+      # Set up Java & Allure CLI directly (Avoids Docker build failures)
+      - name: Setup Java
+        uses: actions/setup-java@v4
         with:
-          name: local-allure-results
-          path: allure-results-temp
+          distribution: 'temurin'
+          java-version: '17'
 
-      - name: Unpack Allure Results
+      # Ensure output directories exist so steps do not throw ENOENT
+      - name: Prepare Report Directories
         run: |
           mkdir -p allure-results
-          unzip -o allure-results-temp/*.zip -d allure-results
-          rm -rf allure-results-temp
+          mkdir -p allure-history
 
+      # Checkout existing gh-pages branch to maintain report trend history
       - name: Get Allure History
         uses: actions/checkout@v4
         if: always()
@@ -34,14 +35,20 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
+      # Generate Allure Report
       - name: Generate Allure Report
-        uses: simple-elf/allure-report-action@v1.10
+        uses: simple-elf/allure-report-action@v1.9
         if: always()
         with:
           allure_results: allure-results
           allure_history: allure-history
           keep_reports: 20
 
+      # Create .nojekyll to prevent GitHub Pages from blocking underscore folders
+      - name: Add .nojekyll file
+        run: touch allure-history/.nojekyll
+
+      # Deploy to GitHub Pages (creates gh-pages branch automatically on first run)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: always()
