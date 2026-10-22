@@ -2,11 +2,6 @@ name: Deploy Local Allure Report via API
 
 on:
   workflow_dispatch:
-    inputs:
-      results_base64:
-        description: 'Base64 encoded allure-results zip'
-        required: true
-        type: string
 
 permissions:
   contents: write
@@ -18,11 +13,18 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      # Download the uploaded zip artifact
+      - name: Download Local Results Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: local-allure-results
+          path: allure-results-temp
+
       - name: Unpack Allure Results
         run: |
           mkdir -p allure-results
-          echo "${{ github.event.inputs.results_base64 }}" | base64 -d > results.zip
-          unzip -o results.zip -d allure-results
+          unzip -o allure-results-temp/*.zip -d allure-results
+          rm -rf allure-results-temp
 
       - name: Get Allure History
         uses: actions/checkout@v4
