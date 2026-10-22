@@ -13,3 +13,4 @@ node_modules/
 .env.sit
 .env.uat
 upload-report.sh
+gh
