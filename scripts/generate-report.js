@@ -8,6 +8,9 @@ fs.mkdirSync(RESULTS, { recursive: true });
 
 // 0. Scrub secrets from every result file (headers in Playwright error logs, etc.)
 execSync('node scripts/scrub-results.js', { stdio: 'inherit' });
+if (process.env.CI || process.env.STRIP_TRACES === '1') {
+  execSync('node scripts/strip-traces.js', { stdio: 'inherit' });
+}
 
 // 1. Carry history over from the previous report (trends, flaky tracking)
 const oldHistory = path.join(REPORT, 'history');
