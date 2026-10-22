@@ -13,20 +13,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Set up Java & Allure CLI directly (Avoids Docker build failures)
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      # Ensure output directories exist so steps do not throw ENOENT
+      # Prepare output directories so steps do not fail on missing folders
       - name: Prepare Report Directories
         run: |
           mkdir -p allure-results
           mkdir -p allure-history
 
-      # Checkout existing gh-pages branch to maintain report trend history
+      # Retrieve existing gh-pages branch to maintain report trend history
       - name: Get Allure History
         uses: actions/checkout@v4
         if: always()
@@ -35,20 +28,20 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      # Generate Allure Report
+      # Generate Allure Report using v1.10 (fixes openjdk Docker deprecation)
       - name: Generate Allure Report
-        uses: simple-elf/allure-report-action@v1.9
+        uses: simple-elf/allure-report-action@v1.10
         if: always()
         with:
           allure_results: allure-results
           allure_history: allure-history
           keep_reports: 20
 
-      # Create .nojekyll to prevent GitHub Pages from blocking underscore folders
+      # Prevent GitHub Pages Jekyll processing from ignoring underscore folders
       - name: Add .nojekyll file
         run: touch allure-history/.nojekyll
 
-      # Deploy to GitHub Pages (creates gh-pages branch automatically on first run)
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: always()
