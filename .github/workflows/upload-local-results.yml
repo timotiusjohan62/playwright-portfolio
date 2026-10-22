@@ -1,0 +1,48 @@
+name: Deploy Local Allure Report via API
+
+on:
+  workflow_dispatch:
+    inputs:
+      results_base64:
+        description: 'Base64 encoded allure-results zip'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  deploy-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Unpack Allure Results
+        run: |
+          mkdir -p allure-results
+          echo "${{ github.event.inputs.results_base64 }}" | base64 -d > results.zip
+          unzip -o results.zip -d allure-results
+
+      - name: Get Allure History
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@v1.10
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-history
