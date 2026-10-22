@@ -6,6 +6,7 @@ on:
       results_base64:
         description: 'Base64 encoded allure-results zip'
         required: true
+        type: string
 
 permissions:
   contents: write
