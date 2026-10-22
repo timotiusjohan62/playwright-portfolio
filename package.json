@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:clean": "rimraf allure-results",
+    "report": "node scripts/generate-report.js",
+    "report:open": "npx serve allure-report",
+    "test:report": "playwright test; npm run report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

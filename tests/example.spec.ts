@@ -6,12 +6,10 @@
  * validates HTTP status codes, verifies response payloads against dynamically generated Zod schemas,
  * and extracts data from responses to be used in subsequent requests.
  */
-
-import { test, expect } from '@playwright/test';
 import Database from 'better-sqlite3';
-import { generateDynamicSchema } from '../utils/schemaInferrer';
+import { assertSchema, generateDynamicSchema } from '../utils/schemaInferrer';
 import { getSignedHeaders } from '../utils/signatureGenerator';
-import * as allure from 'allure-js-commons';
+import { test, expect, allure, expectStatus } from '../fixtures/base';
 
 /**
  * Utility to extract deeply nested values from a JSON object using a dot-notation string path.
@@ -84,8 +82,8 @@ const resolveFetchEndpoint = (rawPath: string, configBaseUrl?: string): string =
   // 3. Clean path to standard relative format (e.g. "/bp/bpjs")
   const cleanPath = cleanPathForSignature(path);
 
-  // 4. Resolve base host (e.g. "http://172.18.30.26")
-  const defaultBase = configBaseUrl || process.env.BASE_URL || 'http://172.18.30.26';
+  // 4. Resolve base host ()
+  const defaultBase = configBaseUrl || process.env.BASE_URL || 'http://localhost:3000';
   const urlObj = new URL(defaultBase);
 
   // If DB endpoint defines a port (e.g., 7095), override the host's default port
@@ -151,7 +149,16 @@ test.describe('Database-Driven API Workflows', () => {
   // Dynamically generate a Playwright test for each distinct TEST_CASE_NAME found in the DB
   for (const workflow of workflows) {
 
-    test(`Executes scenario: ${workflow.TEST_CASE_NAME}`, async ({ request, baseURL }) => {
+    test(`Executes scenario: ${workflow.TEST_CASE_NAME}`, async ({ api, baseURL }) => {
+      await allure.epic('Database-Driven API Testing');
+      await allure.feature('Dynamic Workflow Execution');
+      await allure.story(`Scenario: ${workflow.TEST_CASE_NAME}`);
+      await allure.severity('all');
+      await allure.owner('QA Team');
+      await allure.description(`This test executes the API workflow defined in the database for the scenario: ${workflow.TEST_CASE_NAME}.
+      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.`);
+      await allure.link(`${process.env}`, 'Site under test');
+
       test.setTimeout(90000);
 
       // Fetch all steps for this specific test case, ordered chronologically
@@ -163,11 +170,9 @@ test.describe('Database-Driven API Workflows', () => {
       // Used to pass data (like auth tokens or generated IDs) from one step to the next.
       const testState: Record<string, string> = {};
 
-      await allure.step(`Executes scenario: ${workflow.TEST_CASE_NAME}`, async () => {
-        for (const step of steps) {
-          await allure.epic(`${step.TEST_CASE_NAME}`);
-          await allure.feature(`${step.TEST_CASE_NAME}`);
-          await allure.story(`${step.TITLE}`);
+      for (const step of steps) {
+        await allure.step(`Step ${step.STEP_ORDER}: ${step.TITLE}`, async (ctx) => {
+          await ctx.parameter('Expected status', String(step.EXPECTED_STATUS));
           // --- Phase 1: Variable Hydration ---
 
           let dynamicEndpoint = step.PATH;
@@ -214,59 +219,47 @@ test.describe('Database-Driven API Workflows', () => {
             sequence: uniqueSequenceHeader.SEQUENCE
           };
 
-          await allure.attachment(
-            `REQUEST: ${step.TEST_CASE_NAME}`,
-            JSON.stringify(requestPayload, null, 2),
-            allure.ContentType.JSON
-          );
-
           // Execute the HTTP call with retry logic for transient timeouts
-            let response;
-            let attempt = 1;
-            const maxRetries = 3;
+          let response;
+          let attempt = 1;
+          const maxRetries = 3;
 
-            while (attempt <= maxRetries) {
-              try {
-                response = await request.fetch(finalUrl, {
-                  timeout: 25000, // Increased timeout to 25s for slow server responses
-                  method: step.TYPE,
-                  data: requestData,
-                  headers: {
-                    ...headers,
-                    'X-Btn-Key': process.env.API_KEY || '',
-                    'Btn-Reference-Number': `B0250${sequenceNumber}`,
-                    'Btn-User-Id': 'BTN0010042',
-                    'Btn-Terminal-Id': 'PCDIMAS',
-                    'Btn-Terminal-Ip': '10.99.17.134'
-                  }
-                });
-                break; // Break loop if successful
-              } catch (err: any) {
-                if (attempt === maxRetries) throw err;
-                console.warn(`Attempt ${attempt} failed for ${finalUrl}: ${err.message}. Retrying...`);
-                await new Promise((res) => setTimeout(res, 2000 * attempt)); // Wait before retry
-                attempt++;
-              }
-            }
-
-            let responseBody;
+          while (attempt <= maxRetries) {
             try {
-              responseBody = await response!.json();
-            } catch (e) {
-              responseBody = await response!.text();
+              response = await api.call(step.TYPE, finalUrl, {
+                timeout: 25000, // Increased timeout to 25s for slow server responses
+                data: requestData,
+                headers: {
+                  ...headers,
+                  'X-Btn-Key': process.env.API_KEY || '',
+                  'Btn-Reference-Number': `B0250${sequenceNumber}`,
+                  'Btn-User-Id': 'BTN0010042',
+                  'Btn-Terminal-Id': 'PCDIMAS',
+                  'Btn-Terminal-Ip': '10.99.17.134'
+                }
+              });
+              break; // Break loop if successful
+            } catch (err: any) {
+              if (attempt === maxRetries) throw err;
+              console.warn(`Attempt ${attempt} failed for ${finalUrl}: ${err.message}. Retrying...`);
+              await new Promise((res) => setTimeout(res, 2000 * attempt)); // Wait before retry
+              attempt++;
             }
+          }
 
-            const responseContent = JSON.stringify({
-              status: response!.status(),
-              headers: response!.headers(),
-              body: responseBody
-            }, null, 2);
+          let responseBody;
+          try {
+            responseBody = await response!.json();
+          } catch (e) {
+            responseBody = await response!.text();
+          }
 
-          await allure.attachment(
-            `RESPONSE: ${step.TEST_CASE_NAME}`,
-            responseContent,
-            allure.ContentType.JSON
-          );
+          const responseContent = JSON.stringify({
+            status: response!.status(),
+            headers: response!.headers(),
+            body: responseBody
+          }, null, 2);
+
 
           db.prepare('UPDATE UTILS SET SEQUENCE = SEQUENCE + 1').run(); // Increment sequence for next use
 
@@ -277,19 +270,16 @@ test.describe('Database-Driven API Workflows', () => {
 
           // --- Phase 3: Schema Validation ---
 
-          if (!step.EXPECTED_SCHEMA) {
-            continue; // Skip validation if no schema is provided
+          if (step.EXPECTED_SCHEMA) {
+            // Convert the stringified expected schema from the DB into an active validation schema (e.g., Zod)
+            const InferredSchema = generateDynamicSchema(JSON.parse(step.EXPECTED_SCHEMA));
+
+            // Parse response body if request succeeded, otherwise validate an empty object
+            const validationResult = InferredSchema.safeParse(await response!.json());
+
+            // Assert schema validity. If it fails, Playwright will log validationResult.error?.message
+            expect(validationResult.success, validationResult.error?.message).toBe(true);
           }
-
-          // Convert the stringified expected schema from the DB into an active validation schema (e.g., Zod)
-          const InferredSchema = generateDynamicSchema(JSON.parse(step.EXPECTED_SCHEMA));
-
-          // Parse response body if request succeeded, otherwise validate an empty object
-          const validationResult = InferredSchema.safeParse(await response!.json());
-
-          // Assert schema validity. If it fails, Playwright will log validationResult.error?.message
-          expect(validationResult.success, validationResult.error?.message).toBe(true);
-
           // --- Phase 4: State Extraction ---
 
           // If the database tells us to extract values from this response for future steps
@@ -313,8 +303,8 @@ test.describe('Database-Driven API Workflows', () => {
               testState[stateKey] = extractedValue;
             }
           }
-        }
-      });
+        });
+      }
     });
   }
 });

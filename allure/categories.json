@@ -1,0 +1,9 @@
+[
+  { "name": "Assertion failures (product defects)", "matchedStatuses": ["failed"], "messageRegex": ".*expect\\(.*" },
+  { "name": "Timeouts", "matchedStatuses": ["failed", "broken"], "messageRegex": ".*Timeout.*" },
+  { "name": "Locator / selector problems", "matchedStatuses": ["failed", "broken"], "messageRegex": ".*(strict mode violation|resolved to 0 elements|waiting for locator).*" },
+  { "name": "Network / environment issues", "matchedStatuses": ["failed", "broken"], "messageRegex": ".*(net::ERR|ECONNREFUSED|ENOTFOUND|ERR_CONNECTION).*" },
+  { "name": "Test defects (broken tests)", "matchedStatuses": ["broken"] },
+  { "name": "Flaky tests (passed on retry)", "matchedStatuses": ["passed"], "flaky": true },
+  { "name": "Skipped tests", "matchedStatuses": ["skipped"] }
+]
