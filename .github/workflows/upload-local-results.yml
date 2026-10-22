@@ -13,19 +13,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Download the uploaded zip artifact
-      - name: Download Local Results Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: local-allure-results
-          path: allure-results-temp
-
-      - name: Unpack Allure Results
+      # Prepare output directories so steps do not fail on missing folders
+      - name: Prepare Report Directories
         run: |
           mkdir -p allure-results
-          unzip -o allure-results-temp/*.zip -d allure-results
-          rm -rf allure-results-temp
+          mkdir -p allure-history
 
+      # Retrieve existing gh-pages branch to maintain report trend history
       - name: Get Allure History
         uses: actions/checkout@v4
         if: always()
@@ -34,6 +28,7 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
+      # Generate Allure Report using v1.10 (fixes openjdk Docker deprecation)
       - name: Generate Allure Report
         uses: simple-elf/allure-report-action@v1.10
         if: always()
@@ -42,6 +37,11 @@ jobs:
           allure_history: allure-history
           keep_reports: 20
 
+      # Prevent GitHub Pages Jekyll processing from ignoring underscore folders
+      - name: Add .nojekyll file
+        run: touch allure-history/.nojekyll
+
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: always()
