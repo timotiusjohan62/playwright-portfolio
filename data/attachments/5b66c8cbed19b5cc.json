@@ -1,0 +1,18 @@
+{
+  "responseCode": "000",
+  "responseDescription": "success",
+  "virtualAccountNumber": "8888890000381393",
+  "controlUnitBranch": "I99",
+  "totalMonthsToPay": "3",
+  "participantType": "IND",
+  "participantName": "1-H A AZIZ MACHMUD FA",
+  "participantBranchOffice": "PANGKAL PINANG",
+  "adminFee": 2500,
+  "tranCode": "88888900011002990099991558002520260421",
+  "billReference1": "2026-04-21 11:13:10",
+  "billReference2": "",
+  "accountGiroAdmin": "111310000000",
+  "accountGiro": "101300000386",
+  "totalAmount": 152500,
+  "paymentType": "F"
+}

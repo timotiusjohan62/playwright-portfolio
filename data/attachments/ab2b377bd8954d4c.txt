@@ -1,0 +1,1 @@
+GET http://172.18.30.27:7095/bp/pln/prepaid/meterNumber/03106343300/buyingOption/0/inquiry

@@ -1,0 +1,84 @@
+{
+  "subResponses": [
+    {
+      "code": "F9",
+      "messageHeader": "9",
+      "lineCount": 2,
+      "lines": [
+        {
+          "withdrawalAmount": 50000000,
+          "depositAmount": 0,
+          "interestAmount": 0,
+          "balanceAmount": 280820197,
+          "tellerId": 99991,
+          "transactionDate": 170124,
+          "tellerMnemonic": "UPY",
+          "lineNumber": 2,
+          "sourceBrCode": "0014"
+        },
+        {
+          "withdrawalAmount": 50000000,
+          "depositAmount": 0,
+          "interestAmount": 0,
+          "balanceAmount": 230820197,
+          "tellerId": 99991,
+          "transactionDate": 170124,
+          "tellerMnemonic": "UPY",
+          "lineNumber": 3,
+          "sourceBrCode": "0014"
+        }
+      ]
+    },
+    {
+      "code": "E0",
+      "mnemonicCode": "UPY",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "longName1": "NASABAH AF61460",
+      "longName2": "NASABAH AF61460",
+      "longName3": "NASABAH A015851",
+      "longName4": "NASABAH A015851",
+      "longName5": "NASABAH D745685",
+      "accountNumber1": 1401500648434,
+      "accountNumber2": 101300007451,
+      "accountNumber3": 0,
+      "accountNumber4": 0,
+      "accountNumber5": 0
+    },
+    {
+      "code": "F4",
+      "mnemonicCode": "UPY",
+      "shortName": "",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 101300007451,
+      "passbookSerial": 0,
+      "currentBalance": 50000000,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 5514308,
+  "responseDescription": "Transaction Success",
+  "listResponses": "F9 E0 F4",
+  "responseBiller": {
+    "reference": "",
+    "uuid": "5fcc7969-449b-4bde-8dec-502d974eebd7",
+    "billCode": "01",
+    "longDescription": "Biaya UTBK 2026",
+    "shortDescription": "Biaya UTBK",
+    "billAmount": 500000,
+    "billNumber": "88902346",
+    "nisn": "0086660418",
+    "studentName": "ANDINI AZALIA SYAKIRA",
+    "dateOfBirth": "2008-02-29",
+    "adminFee": 0,
+    "trxCode": "SNPMB 2026",
+    "transactionName": "SNPMB 88902346",
+    "adminAccount": 0,
+    "creditAccount": 0
+  }
+}

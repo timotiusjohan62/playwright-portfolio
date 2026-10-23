@@ -1,0 +1,1 @@
+GET http://172.18.30.27:7095/bp/bpjs/tkIndv/nik/3385000007790003/monthPay/1/inquiry?controlUnitBranch=I99&tellerId=99991
