@@ -1,0 +1,29 @@
+{
+  "index": 2,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/bpjs/tkIndv/nik/3385000007790003/monthPay/1/payment",
+  "path": "/bp/bpjs/tkIndv/nik/3385000007790003/monthPay/1/payment",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-23T10:44:55.737+07:00",
+    "x-signature": "FUveEwNXv60GUHyu7K2LXlF1+noAUGdd20ADBmhNHRs=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505513842",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"referenceNumber\": \"B01605513843\",\n  \"tellerOverride\": \"Y\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": \"\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 5513843,\n  \"transactionCode\": 9126,\n  \"field1\": 189952000000,\n  \"field2\": 2650500,\n  \"field4\": 0,\n  \"field5\": 0,\n  \"field6\": 0,\n  \"field7\": 0,\n  \"field8\": 0,\n  \"field9\": 467943491320,\n  \"field10\": 500000,\n  \"field12\": 0,\n  \"field13\": 0,\n  \"field14\": 0,\n  \"field15\": 3701390012867,\n  \"field16\": 2650500,\n  \"field17\": 3701390012867,\n  \"field18\": 0,\n  \"field19\": 2650500,\n  \"field20\": 0,\n  \"alternateCurrency\": \"IDR\",\n  \"alternateCurrency1\": \"\",\n  \"alternateCurrency2\": \"\",\n  \"thirdPartyName\": \"\",\n  \"remark1\": \"\",\n  \"remark2\": \"\",\n  \"controlUnitBranch\": \"I99\",\n  \"billReference1\": \"00136900000087\",\n  \"monthPay\": \"1\",\n  \"billJht\": \"0\",\n  \"billJkk\": \"10000\",\n  \"billJkm\": \"6800\",\n  \"billJpn\": \"20000\",\n  \"acc_bpjstkindv_jht\": \"101300000946\",\n  \"acc_bpjstkindv_jkk\": \"101300000970\",\n  \"acc_bpjstkindv_jkm\": \"101300001099\",\n  \"acc_bpjstkindv_jpn\": \"101300001146\",\n  \"isFirstBill\": \"N\",\n  \"memberBranch\": \"T00#JKK,JKM,JHT\",\n  \"nik\": \"3385000007790003\",\n  \"transactionId\": \"3385000007790003#TLR260120000150\",\n  \"billReference2\": \"\",\n  \"memberName\": \"MARLON PORSISA\",\n  \"referenceId\": \"\",\n  \"memberProgram\": \"T00#JKK,JKM,JHT\",\n  \"effectiveDate\": \"26-08-2020\",\n  \"expiredDate\": \"02-01-2026\",\n  \"transactionDate\": \"20260120133155\",\n  \"billAmount\": \"36800\",\n  \"transactionFee\": \"2000\",\n  \"registrationFee\": \"3000\",\n  \"accountGl\": \"111310000000\",\n  \"totalAmount\": \"41800\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 03:44:56 GMT",
+    "content-length": "150"
+  },
+  "durationMs": 371,
+  "sizeBytes": 150,
+  "responseBody": "{\n  \"subResponses\": [],\n  \"responseCode\": \"096\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 5513843,\n  \"responseDescription\": \"Sedang EOD Core Banking\",\n  \"listResponses\": \"\"\n}"
+}

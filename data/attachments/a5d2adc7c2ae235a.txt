@@ -1,0 +1,2 @@
+#1 GET /bp/utbk/billNumber/88902347/nisn/12345678/inquiry -> 200 (198 ms)
+#2 POST /bp/utbk/billNumber/88902347/nisn/12345678/payment -> 200 (927 ms)

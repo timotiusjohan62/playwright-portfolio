@@ -1,0 +1,39 @@
+{
+  "subResponses": [
+    {
+      "code": "F4",
+      "mnemonicCode": "KAS",
+      "shortName": "NASABAH D745685",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 101300002045,
+      "passbookSerial": 0,
+      "currentBalance": 125522269132,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 5513954,
+  "responseDescription": "success",
+  "listResponses": "F4",
+  "responseBiller": {
+    "billNumber": "423199061011",
+    "reprint": "Y",
+    "companyName": "UIN SYARIF HIDAYATULLAH JAKARTA - PKWT",
+    "divisionCode": "000",
+    "npp": "23199061",
+    "billDate": "122026",
+    "billJht": "850620",
+    "billJkk": "35815",
+    "billJkm": "44771",
+    "billJpk": "20000",
+    "billJpn": "10000",
+    "totalAmount": "983206",
+    "adminFee": 2000,
+    "transactionId": "   CMS11756120496159990751756",
+    "billReference1": "JHT0751756#JKK0751756#JKM0751756",
+    "billReference2": ""
+  }
+}

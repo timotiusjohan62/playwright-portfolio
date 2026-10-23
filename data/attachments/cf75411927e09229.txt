@@ -1,0 +1,2 @@
+#1 GET /bp/bpjs/kesehatan/virtualAccountNumber/8888890000381395/totalMonthsToPay/01/participantType/IDN/inquiry -> ERROR (25029 ms)
+#2 GET /bp/bpjs/kesehatan/virtualAccountNumber/8888890000381395/totalMonthsToPay/01/participantType/IDN/inquiry -> ERROR (25008 ms)

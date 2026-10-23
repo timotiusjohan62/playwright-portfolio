@@ -1,0 +1,37 @@
+{
+  "subResponses": [
+    {
+      "code": "F4",
+      "mnemonicCode": "BPG",
+      "shortName": "NASABAH A015851",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 189952000000,
+      "passbookSerial": 0,
+      "currentBalance": 387149009611,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 5513933,
+  "responseDescription": "success",
+  "listResponses": "F4",
+  "responseBiller": {
+    "virtualAccountNumber": "8888890000381395",
+    "totalMonthsToPay": "1",
+    "participantType": "IND",
+    "participantName": "1-H A AZIZ MACHMUD FA",
+    "membershipBranchOffice": "",
+    "totalAmount": 150000,
+    "adminFee": 2500,
+    "tranCode": "",
+    "billReference1": "2026-04-21 11:13:10",
+    "billReference2": "",
+    "controlUnitBranch": "I99",
+    "accountGiroAdmin": "111310000000",
+    "accountGiro": "101300000386",
+    "paymentType": "F"
+  }
+}

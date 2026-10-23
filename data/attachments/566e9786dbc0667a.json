@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.27:7095/bp/pln/prepaid/meterNumber/03106343300/buyingOption/0/inquiry",
+  "path": "/bp/pln/prepaid/meterNumber/03106343300/buyingOption/0/inquiry",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-10-23T10:46:23.309+07:00",
+    "x-signature": "vG26i5y91LwXxuZPF/+gt+KtETwYQxx2yNmyUt7kq3w=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514020",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

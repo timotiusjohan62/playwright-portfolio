@@ -1,0 +1,29 @@
+{
+  "index": 2,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/utbk/billNumber/88802337/nisn/12345678/payment",
+  "path": "/bp/utbk/billNumber/88802337/nisn/12345678/payment",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-23T10:45:03.580+07:00",
+    "x-signature": "c5aIkL4mlXKwizLOvDkCKGErgQ6QLhXNdfGS2NAFqhs=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505513886",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"referance\": \"68\",\n  \"uuid\": \"5fcc7969-449b-4bde-8dec-502d974eebd7\",\n  \"billCode\": \"01\",\n  \"longDescription\": \"Biaya UTBK 2026\",\n  \"shortDescription\": \"Biaya UTBK\",\n  \"billAmount\": 200000,\n  \"billNumber\": \"88802337\",\n  \"nisn\": \"0086660417\",\n  \"studentName\": \"ANDINI AZALIA SYAKIRA\",\n  \"dateOfBirth\": \"2008-02-29\",\n  \"creditAccount\": \"101300007451\",\n  \"adminAccount\": \"0\",\n  \"adminFee\": 0,\n  \"trxCode\": \"SNPMB 2026\",\n  \"transactionName\": \"SNPMB 88802337\",\n  \"referenceNumber\": \"B04125513887\",\n  \"tellerOverride\": \"Y\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": null,\n  \"transactionCode\": 9141,\n  \"tellerId\": 99991,\n  \"journalSequence\": 5513887,\n  \"field1\": 56301300000023,\n  \"field2\": 50000000,\n  \"field3\": 0,\n  \"field4\": 0,\n  \"field5\": 10000000,\n  \"field6\": 10000000,\n  \"field7\": 10000000,\n  \"field8\": 10000000,\n  \"field9\": 0,\n  \"field10\": 0,\n  \"field11\": 0,\n  \"field12\": 0,\n  \"field13\": 0,\n  \"field14\": 0,\n  \"field15\": 101300007451,\n  \"field16\": 50000000,\n  \"field17\": 0,\n  \"field18\": 0,\n  \"field19\": 0,\n  \"field20\": 0,\n  \"thirdPartyName\": \"88902338 0086660418\",\n  \"partyName\": \"\",\n  \"remark1\": \"15231804120000200000152115000879190412\",\n  \"remark2\": \"SNPMB-conn\",\n  \"customerCheck\": \"ConClient\",\n  \"userInformation\": \"\",\n  \"applicantId\": \"B041250008790270001300027\",\n  \"applicantName\": \"ANDINI AZALIA SYAKIRA\",\n  \"applicantAddress1\": \"88902338 0086660418\",\n  \"applicantAddress2\": \"88902338\",\n  \"applicantAddress3\": \"2019041250008792700013\",\n  \"applicantPostcode\": \"20190412\",\n  \"applicantContact\": \"101300007451\",\n  \"payeeName\": \"HANA SHINTYA DEWI\",\n  \"payeeId\": \"1807024610960005\",\n  \"payeeAddress1\": \"\",\n  \"payeeAddress2\": \"\",\n  \"payeeAddress3\": \"\",\n  \"payeePostcode\": \"\",\n  \"payeeContact\": \"\",\n  \"shareIssueHouse\": \"\",\n  \"shareCounter\": \"\",\n  \"alternateCurrency1\": \"IDR\",\n  \"alternateCurrency2\": \"IDR\",\n  \"alternateCurrency3\": \"IDR\",\n  \"alphaFieldFiller\": \"02700013 B04125000879 00027BATAM\",\n  \"release\": \"\",\n  \"transactionDateTime\": \"20261009152318\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 03:45:05 GMT",
+    "content-length": "150"
+  },
+  "durationMs": 1470,
+  "sizeBytes": 150,
+  "responseBody": "{\n  \"subResponses\": [],\n  \"responseCode\": \"096\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 5513887,\n  \"responseDescription\": \"Sedang EOD Core Banking\",\n  \"listResponses\": \"\"\n}"
+}

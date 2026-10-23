@@ -1,0 +1,2 @@
+#1 GET /bp/bpjs/tk/billNumber/423199061011/reprint/N/transactionAmount/931206/inquiry -> 200 (218 ms)
+#2 POST /bp/bpjs/tk/billNumber/423199061011/reprint/N/transactionAmount/931206/payment -> 200 (615 ms)

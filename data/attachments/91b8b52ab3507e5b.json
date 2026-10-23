@@ -1,0 +1,16 @@
+{
+  "responseCode": "201",
+  "tellerId": 99991,
+  "journalSequence": 5514029,
+  "responseDescription": "Tagihan Sudah Terbayar",
+  "listResponses": "F2",
+  "subResponses": [
+    {
+      "code": "F2",
+      "mnemonicCode": "",
+      "rejectedReason": "Tagihan Sudah Terbayar",
+      "errorCode": 0,
+      "availableBalance": 0
+    }
+  ]
+}

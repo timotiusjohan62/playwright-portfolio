@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 1155,
+  "sizeBytes": 150,
+  "url": "http://172.18.30.26:7095/bp/utbk/billNumber/88802336/nisn/12345678/payment",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 03:44:59 GMT",
+    "content-length": "150"
+  }
+}

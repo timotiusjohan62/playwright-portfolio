@@ -1,0 +1,2 @@
+#1 GET /bp/bpjs/tkIndv/nik/3385000007790004/monthPay/1/inquiry -> 200 (264 ms)
+#2 POST /bp/bpjs/tkIndv/nik/3385000007790004/monthPay/1/payment -> 200 (647 ms)

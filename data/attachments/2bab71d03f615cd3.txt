@@ -1,0 +1,1 @@
+GET http://172.18.30.27:7095/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381393/totalMonthsToPay/01/participantType/IDN/inquiry?controlUnitBranch=I99&tellerId=0099991

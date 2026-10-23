@@ -1,0 +1,29 @@
+{
+  "index": 2,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/bpjs/tk/billNumber/423199061011/reprint/N/transactionAmount/931206/payment",
+  "path": "/bp/bpjs/tk/billNumber/423199061011/reprint/N/transactionAmount/931206/payment",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-23T10:44:44.140+07:00",
+    "x-signature": "6nZCc25i3aF5x1c+hngW21omn/NJJAapjj6W7rMLhko=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505513758",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"billNumber\": \"423199061011\",\n  \"reprint\": \"Y\",\n  \"companyName\": \"UIN SYARIF HIDAYATULLAH JAKARTA - PKWT\",\n  \"divisionCode\": \"000\",\n  \"npp\": \"23199061\",\n  \"billDate\": \"122026\",\n  \"billJht\": \"850620\",\n  \"billJkk\": \"35815\",\n  \"billJkm\": \"44771\",\n  \"billJpk\": \"20000\",\n  \"billJpn\": \"10000\",\n  \"acc_bpjstk_jht\": \"101300000124\",\n  \"acc_bpjstk_jkk\": \"101300000255\",\n  \"acc_bpjstk_jkm\": \"101300000328\",\n  \"acc_bpjstk_jpk\": \"101300000899\",\n  \"acc_bpjstk_jpn\": \"101300000938\",\n  \"totalAmount\": \"983706\",\n  \"totalBpjsk\": \"0\",\n  \"totalBpjstk\": \"981206\",\n  \"reffNo\": \"756\",\n  \"adminFee\": \"2500\",\n  \"accountGl\": \"111310000000\",\n  \"transactionId\": \"   CMS11756120496159990751756\",\n  \"billReference1\": \"JHT0751756#JKK0751756#JKM0751756\",\n  \"billReference2\": \"\",\n  \"userInformation\": \"756\",\n  \"referenceNumber\": \"B01095513759\",\n  \"tellerOverride\": \"Y\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": null,\n  \"transactionCode\": 9115,\n  \"tellerId\": 99991,\n  \"journalSequence\": 5513759,\n  \"field1\": 0,\n  \"field2\": 93320600,\n  \"field3\": 85062000,\n  \"field4\": 0,\n  \"field5\": 101300000849,\n  \"field6\": 3581500,\n  \"field7\": 101300002320,\n  \"field8\": 0,\n  \"field9\": 467811491360,\n  \"field10\": 200000,\n  \"field11\": 101300002045,\n  \"field12\": 0,\n  \"field13\": 0,\n  \"field14\": 0,\n  \"field15\": 101300000394,\n  \"field16\": 93120600,\n  \"field17\": 4477100,\n  \"field18\": 101300002223,\n  \"field19\": 0,\n  \"field20\": 0,\n  \"thirdPartyName\": \"423199061005#TLR1400097\",\n  \"partyName\": \"\",\n  \"remark1\": \"15594001110000200000152115002415240111\",\n  \"remark2\": \"JHT0751756#JKK0751756#JKM0751756\",\n  \"customerCheck\": \"WIC\",\n  \"applicantId\": \"B011150024150140009700014\",\n  \"applicantName\": \"UIN SYARIF HIDAYATULLAH JAKARTA - PKWT\",\n  \"applicantAddress1\": \"423199061005\",\n  \"applicantAddress2\": \"N\",\n  \"applicantAddress3\": \"000\",\n  \"applicantPostcode\": \"122026\",\n  \"applicantContact\": \"101300000394\",\n  \"payeeName\": \"000000000000000000000000\",\n  \"payeeId\": \"3521171209990001\",\n  \"payeeAddress1\": \"12/2026\",\n  \"payeeAddress2\": \"23199061\",\n  \"payeeAddress3\": \"   CMS11756120496159990751756\",\n  \"payeePostcode\": \"\",\n  \"payeeContact\": \"\",\n  \"shareIssueHouse\": \"\",\n  \"shareCounter\": \"\",\n  \"alternateCurrency1\": \"IDR\",\n  \"alternateCurrency2\": \"\",\n  \"alternateCurrency3\": \"\",\n  \"alphaFieldFiller\": \"ANGGA PRATAMA\",\n  \"release\": \"\",\n  \"transactionDateTime\": \"20261009155936\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 03:44:45 GMT",
+    "content-length": "150"
+  },
+  "durationMs": 1550,
+  "sizeBytes": 150,
+  "responseBody": "{\n  \"subResponses\": [],\n  \"responseCode\": \"096\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 5513759,\n  \"responseDescription\": \"Sedang EOD Core Banking\",\n  \"listResponses\": \"\"\n}"
+}

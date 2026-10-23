@@ -1,0 +1,29 @@
+{
+  "index": 2,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381392/totalMonthsToPay/01/participantType/IDN/payment",
+  "path": "/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381392/totalMonthsToPay/01/participantType/IDN/payment",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-23T10:44:29.814+07:00",
+    "x-signature": "ciNQm+hEcjJO1A233irMbgDq31IyoRIIpbuU+md+1Kc=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505513713",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"controlUnitBranch\": \"I99\",\n  \"virtualAccountNumber\": \"8888890000381392\",\n  \"accountGiro\": \"101300000019\",\n  \"totalMonthsToPay\": \"1\",\n  \"participantType\": \"IND\",\n  \"participantName\": \"1-H A AZIZ MACHMUD FA\",\n  \"participantBranchOffice\": \"PANGKAL PINANG\",\n  \"totalAmount\": 150000,\n  \"adminFee\": 0,\n  \"tranCode\": \"88888900011002990099991558002520260421\",\n  \"billReference1\": \"2026-04-21 11:13:10\",\n  \"billReference2\": \"\",\n  \"paymentType\": \"F\",\n  \"accountGiroAdmin\": \"0\",\n  \"referenceNumber\": \"B01095513714\",\n  \"tellerOverride\": \"Y\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": \"\",\n  \"transactionCode\": 9119,\n  \"tellerId\": 99991,\n  \"journalSequence\": 5513714,\n  \"field1\": 0,\n  \"field2\": 42250000,\n  \"field3\": 0,\n  \"field4\": 0,\n  \"field5\": 10000000,\n  \"field6\": 10000000,\n  \"field7\": 10000000,\n  \"field8\": 10000000,\n  \"field9\": 111310000000,\n  \"field10\": 250000,\n  \"field11\": 0,\n  \"field12\": 0,\n  \"field13\": 0,\n  \"field14\": 0,\n  \"field15\": 101300000386,\n  \"field16\": 42000000,\n  \"field17\": 0,\n  \"field18\": 0,\n  \"field19\": 0,\n  \"field20\": 0,\n  \"thirdPartyName\": \"88888900003814240017472000006620260811\",\n  \"partyName\": \"\",\n  \"remark1\": \"19393601090000200000152115000467240109\",\n  \"remark2\": \"\",\n  \"customerCheck\": \"WIC\",\n  \"userInformation\": \"\",\n  \"applicantId\": \"B010950004670016000200002\",\n  \"applicantName\": \"1-REYHAN APRILIANDI\",\n  \"applicantAddress1\": \"8888890000381424\",\n  \"applicantAddress2\": \"IND\",\n  \"applicantAddress3\": \"1\",\n  \"applicantPostcode\": \"20240109\",\n  \"applicantContact\": \"101300000386\",\n  \"payeeName\": \"FITRI ANANDA\",\n  \"payeeId\": \"1234567890123456\",\n  \"payeeAddress1\": \"PADANG\",\n  \"payeeAddress2\": \"\",\n  \"payeeAddress3\": \"\",\n  \"payeePostcode\": \"\",\n  \"payeeContact\": \"\",\n  \"shareIssueHouse\": \"\",\n  \"shareCounter\": \"\",\n  \"alternateCurrency1\": \"IDR\",\n  \"alternateCurrency2\": \"\",\n  \"alternateCurrency3\": \"\",\n  \"alphaFieldFiller\": \"00160002 B01095000467 00002SURABAYA\",\n  \"release\": \"\",\n  \"transactionDateTime\": \"20261002193831\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 03:44:30 GMT",
+    "content-length": "150"
+  },
+  "durationMs": 1092,
+  "sizeBytes": 150,
+  "responseBody": "{\n  \"subResponses\": [],\n  \"responseCode\": \"096\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 5513714,\n  \"responseDescription\": \"Sedang EOD Core Banking\",\n  \"listResponses\": \"\"\n}"
+}

@@ -1,0 +1,28 @@
+Attempt 1 failed for http://172.18.30.26:7095/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381394/totalMonthsToPay/01/participantType/IDN/inquiry?controlUnitBranch=I99&tellerId=0099991: apiRequestContext.fetch: Timeout 25000ms exceeded.
+Call log:
+  - → GET http://172.18.30.26:7095/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381394/totalMonthsToPay/01/participantType/IDN/inquiry?controlUnitBranch=I99&tellerId=0099991
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+    - x-timestamp: 2026-10-23T10:42:00.496+07:00
+    - x-signature: iVT020/Q7bFdM76Cj3PFnbvbj5uGLn3GEcrxHHH5EhA=
+    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250
+    - Btn-Reference-Number: B02505513701
+    - Btn-User-Id: BTN0010042
+    - Btn-Terminal-Id: PCDIMAS
+    - Btn-Terminal-Ip: 10.99.17.134
+. Retrying...
+Attempt 2 failed for http://172.18.30.26:7095/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381394/totalMonthsToPay/01/participantType/IDN/inquiry?controlUnitBranch=I99&tellerId=0099991: apiRequestContext.fetch: Timeout 25000ms exceeded.
+Call log:
+  - → GET http://172.18.30.26:7095/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381394/totalMonthsToPay/01/participantType/IDN/inquiry?controlUnitBranch=I99&tellerId=0099991
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+    - x-timestamp: 2026-10-23T10:42:00.496+07:00
+    - x-signature: iVT020/Q7bFdM76Cj3PFnbvbj5uGLn3GEcrxHHH5EhA=
+    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250
+    - Btn-Reference-Number: B02505513701
+    - Btn-User-Id: BTN0010042
+    - Btn-Terminal-Id: PCDIMAS
+    - Btn-Terminal-Ip: 10.99.17.134
+. Retrying...
