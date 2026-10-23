@@ -1,0 +1,2 @@
+curl -X GET 'https://api.escuelajs.co/api/v1/products?limit=10&offset=1' \
+  -H 'Accept: application/json'

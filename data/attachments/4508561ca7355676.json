@@ -1,0 +1,11 @@
+{
+  "method": "POST",
+  "url": "https://api.escuelajs.co/api/v1/products",
+  "path": "/api/v1/products",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "Accept": "application/json"
+  },
+  "hasBody": true
+}

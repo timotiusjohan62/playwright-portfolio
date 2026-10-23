@@ -1,0 +1,13 @@
+{
+  "method": "GET",
+  "url": "https://api.escuelajs.co/api/v1/products?limit=10&offset=1",
+  "path": "/api/v1/products",
+  "query": {
+    "limit": "10",
+    "offset": "1"
+  },
+  "headers": {
+    "Accept": "application/json"
+  },
+  "hasBody": false
+}

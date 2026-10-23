@@ -1,0 +1,10 @@
+{
+  "method": "DELETE",
+  "url": "https://api.escuelajs.co/api/v1/products/119",
+  "path": "/api/v1/products/119",
+  "query": {},
+  "headers": {
+    "Accept": "application/json"
+  },
+  "hasBody": false
+}

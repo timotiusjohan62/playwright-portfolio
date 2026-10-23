@@ -1,0 +1,4 @@
+curl -X POST 'https://api.escuelajs.co/api/v1/auth/login' \
+  -H 'content-type: application/json' \
+  -H 'Accept: application/json' \
+  --data-raw '{"username":"test@qa.com"}'
