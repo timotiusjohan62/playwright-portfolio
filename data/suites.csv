@@ -1,19 +1,19 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"This test executes the API workflow defined in the database for the scenario: GET PRODUCT BY SLUG RELATED.
-      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","999","Executes scenario: GET PRODUCT BY SLUG RELATED","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
-"This test executes the API workflow defined in the database for the scenario: USER LIFECYCLE.
-      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","1890","Executes scenario: USER LIFECYCLE","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
-"This test executes the API workflow defined in the database for the scenario: GET PRODUCT BY SLUG.
-      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","763","Executes scenario: GET PRODUCT BY SLUG","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
-"This test executes the API workflow defined in the database for the scenario: FAILED CREATE USER.
-      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","847","Executes scenario: FAILED CREATE USER","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
-"This test executes the API workflow defined in the database for the scenario: GET ALL USER.
-      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","764","Executes scenario: GET ALL USER","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
-"This test executes the API workflow defined in the database for the scenario: Get Product Related.
-      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","1190","Executes scenario: Get Product Related","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
-"This test executes the API workflow defined in the database for the scenario: Get Product List.
-      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","946","Executes scenario: Get Product List","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
-"This test executes the API workflow defined in the database for the scenario: Product Lifecycle.
-      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","2198","Executes scenario: Product Lifecycle","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
 "This test executes the API workflow defined in the database for the scenario: Invalid Login.
-      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","927","Executes scenario: Invalid Login","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
+      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","1196","Executes scenario: Invalid Login","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
+"This test executes the API workflow defined in the database for the scenario: Get Product List.
+      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","1206","Executes scenario: Get Product List","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
+"This test executes the API workflow defined in the database for the scenario: GET ALL USER.
+      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","730","Executes scenario: GET ALL USER","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
+"This test executes the API workflow defined in the database for the scenario: FAILED CREATE USER.
+      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","1361","Executes scenario: FAILED CREATE USER","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
+"This test executes the API workflow defined in the database for the scenario: Get Product Related.
+      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","1437","Executes scenario: Get Product Related","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
+"This test executes the API workflow defined in the database for the scenario: USER LIFECYCLE.
+      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","2229","Executes scenario: USER LIFECYCLE","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
+"This test executes the API workflow defined in the database for the scenario: GET PRODUCT BY SLUG.
+      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","765","Executes scenario: GET PRODUCT BY SLUG","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
+"This test executes the API workflow defined in the database for the scenario: GET PRODUCT BY SLUG RELATED.
+      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","975","Executes scenario: GET PRODUCT BY SLUG RELATED","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""
+"This test executes the API workflow defined in the database for the scenario: Product Lifecycle.
+      It dynamically constructs requests, validates responses, and extracts state for subsequent steps.","3041","Executes scenario: Product Lifecycle","Google Chrome","2026-10-23","passed","2026-10-23","Database-Driven API Workflows","example.spec.ts","",""

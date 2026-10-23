@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "url": "https://api.escuelajs.co/api/v1/users/51",
+  "path": "/api/v1/users/51",
+  "query": {},
+  "headers": {
+    "Accept": "application/json"
+  },
+  "hasBody": false
+}
