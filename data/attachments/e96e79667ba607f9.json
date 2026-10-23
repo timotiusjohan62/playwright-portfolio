@@ -1,0 +1,15 @@
+{
+  "branchOfficer": 16,
+  "date": 0,
+  "totalData": 0,
+  "method": "1",
+  "endDate": 0,
+  "officer": "",
+  "responseCode": "096",
+  "responseDescription": "Sedang EOD Core Banking",
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "segmentasiException": "",
+  "list": []
+}

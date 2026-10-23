@@ -1,0 +1,21 @@
+{
+  "departmentName": "",
+  "cif": "F288644",
+  "code": "",
+  "channel": "NEWBDS",
+  "lastChangeDate": 0,
+  "terminalId": "PCDIMAS",
+  "isequence": 2,
+  "responseCode": "096",
+  "sequence": 0,
+  "jobDesignationCode": "",
+  "electronicAddress": "",
+  "referenceNumber": "B02505513522",
+  "reviewDate": 0,
+  "lastChangeUser": "",
+  "responseDescription": "Sedang EOD Core Banking",
+  "name": "",
+  "btnUserId": "BTN0010042",
+  "informationDate": 0,
+  "terminalIp": "10.99.17.134"
+}

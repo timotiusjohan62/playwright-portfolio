@@ -1,0 +1,15 @@
+{
+  "totalTransaction": 0,
+  "toDate": 200518,
+  "flagPage": "Y",
+  "branch": 999,
+  "totalAmountTransaction": 0,
+  "responseCode": "096",
+  "fromDate": 200218,
+  "responseDescription": "Sedang EOD Core Banking",
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "status": "",
+  "list": []
+}

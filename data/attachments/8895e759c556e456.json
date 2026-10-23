@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7084/dd/header-message/exclude/account/4801500000283/type/S",
+  "path": "/dd/header-message/exclude/account/4801500000283/type/S",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-10-23T10:36:40.412+07:00",
+    "x-signature": "5zDOsv30v5RavfhZ6hlatHI8NZOMX2tU6RdmddPCZJc=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505513692",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

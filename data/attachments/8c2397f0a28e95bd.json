@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 1592,
+  "sizeBytes": 169,
+  "url": "http://172.18.30.26:7083/cf/cif/AA24670/message/list",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 03:36:25 GMT",
+    "content-length": "169"
+  }
+}

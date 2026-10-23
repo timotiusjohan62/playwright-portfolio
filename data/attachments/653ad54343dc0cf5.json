@@ -1,0 +1,54 @@
+{
+  "method": "C",
+  "totalData": 2,
+  "partners": [
+    {
+      "mitraAccount": 4801500004596,
+      "mitraCode": "001010015",
+      "taggingType": "K",
+      "mitraName": "MITRA BARU PUNYA SAYA INI UPDATE DATA",
+      "branch": 101,
+      "totalData": 3,
+      "products": [
+        {
+          "productType": "T4",
+          "productCurrency": "IDR"
+        },
+        {
+          "productType": "T1",
+          "productCurrency": "IDR"
+        },
+        {
+          "productType": "T3",
+          "productCurrency": "IDR"
+        }
+      ]
+    },
+    {
+      "mitraAccount": 4801500004596,
+      "mitraCode": "000480001",
+      "taggingType": "K",
+      "mitraName": "MITRA BARU PUNYA 000480001 YANG ABIS UPDATE DATA",
+      "branch": 0,
+      "totalData": 4,
+      "products": [
+        {
+          "productType": "T4",
+          "productCurrency": "IDR"
+        },
+        {
+          "productType": "J4",
+          "productCurrency": "IDR"
+        },
+        {
+          "productType": "J5",
+          "productCurrency": "IDR"
+        },
+        {
+          "productType": "KG",
+          "productCurrency": "USD"
+        }
+      ]
+    }
+  ]
+}

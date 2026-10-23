@@ -1,0 +1,9 @@
+{
+  "branch": 4,
+  "status": "OPEN",
+  "fromRemitance": 1,
+  "endRemitance": 100000000000000000,
+  "date": 180918,
+  "page": 1,
+  "limit": 10
+}

@@ -1,0 +1,11 @@
+{
+  "totalData": 0,
+  "destinationBank": "",
+  "responseCode": "096",
+  "branchCode": 27,
+  "responseDescription": "Sedang EOD Core Banking",
+  "limit": 1,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "list": []
+}

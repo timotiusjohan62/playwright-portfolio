@@ -1,0 +1,11 @@
+{
+  "totalData": 0,
+  "dateFrom": 1012024,
+  "responseCode": "096",
+  "responseDescription": "Sedang EOD Core Banking",
+  "dateTo": 1012024,
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "institutions": []
+}

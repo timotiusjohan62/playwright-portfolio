@@ -1,0 +1,1 @@
+POST http://172.18.30.26:7088/rm/credit-notes/data/maintenance

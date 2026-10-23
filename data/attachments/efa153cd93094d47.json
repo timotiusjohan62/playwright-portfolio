@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7088/rm/credit-notes/number/160001650/type/CN",
+  "path": "/rm/credit-notes/number/160001650/type/CN",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-10-23T10:36:26.231+07:00",
+    "x-signature": "zhL+ruK/WLsP6tAiX5H3++RAC4Pjq5d3TEUcQKi9sFo=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505513578",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

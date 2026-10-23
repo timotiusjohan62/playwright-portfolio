@@ -1,0 +1,21 @@
+{
+  "cif": "E568397",
+  "totalAum": 0,
+  "totalNbk": 0,
+  "exceptionStartDate": 0,
+  "documentNumber": "",
+  "exceptionStartTime": 0,
+  "idemnityDate": 0,
+  "segemntationFlag": "",
+  "totalDpk": 0,
+  "responseCode": "096",
+  "responseDescription": "Sedang EOD Core Banking",
+  "officerCode": "",
+  "flagStatus": "",
+  "segmentationType": "",
+  "exceptionFlag": "",
+  "segmentation": "",
+  "btnUserId": "BTN0010042",
+  "outletCode": 0,
+  "customers": []
+}

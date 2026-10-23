@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7083/cf/cif/F288644/bicode",
+  "path": "/cf/cif/F288644/bicode",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-10-23T10:36:19.926+07:00",
+    "x-signature": "xuwGqQiGspdwWR8Xet38Yt8ZzDM0Q9P5/ENHstZLm0M=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B0250579926",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

@@ -1,0 +1,11 @@
+{
+  "status": "OPEN",
+  "remitanceProduct": 5,
+  "fromAmount": 0,
+  "toAmount": 0,
+  "remitanceNumber": 401865005670,
+  "dateIssued": 180419,
+  "issuingBranch": 12,
+  "page": 1,
+  "limit": 10
+}
