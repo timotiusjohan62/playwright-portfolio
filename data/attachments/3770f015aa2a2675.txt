@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7088/rm/rtgs/bic/maintenance' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:55.458+07:00' \
+  -H 'x-signature: pl+thaYgVhxm/WhsRnSLhIVPYBEpi3yWQ5sqrViGCTs=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513487' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"bankCode":"YUDBIDJ2","bankName":"PT. BANK YUDHA BHAKTI1","rtgsMember":"YUDBIDJ2","rtgsCode":"YUDC","rtgsGiro":999000000,"sknCode":"4900013","onlineCode":"491","method":"C"}'

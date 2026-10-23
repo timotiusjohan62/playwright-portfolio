@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7088/rm/rtgs/transaction/report' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:51.076+07:00' \
+  -H 'x-signature: gVs5rrFkQssM521Mqjd1EBCgSv5LHRbOp65HhisI8KM=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513449' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"branch":999,"fromDate":200218,"toDate":200518,"status":"","flagPage":"Y"}'

@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7084/tag/dd/parameter/grouping/list' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:51.734+07:00' \
+  -H 'x-signature: RH89hA32ovABAbk/4NWe8yaOqiIWwNMj2b7y6l3Beuo=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513455' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"method":"1","productType":"TB","groupProductId":"A0099","groupProduct":"TEST A0099","groupProductName":"TEST A0099"}'

@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7081/api/monetary' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:47.996+07:00' \
+  -H 'x-signature: I0QBUJrFbMDdNcF/uVzzr7/lp868MLjsCl5BMyhnBbM=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513413' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"referenceNumber":"B01095513414","tellerOverride":"N","supervisorOverride":"N","supervisorOverrideId":"","transactionCode":4600,"tellerId":99991,"journalSequence":5513414,"field1":1401880007594,"field2":2000290000,"field3":0,"field4":0,"field5":10000000,"field6":10000000,"field7":10000000,"field8":10000000,"field9":290000,"field10":10000000,"field11":0,"field12":0,"field13":0,"field14":0,"field15":1211815513414,"field16":2000000000,"field17":0,"field18":0,"field19":0,"field20":0,"currency":"IDR","alternateCurrency1":"IDR","alternateCurrency2":"IDR","alternateCurrency3":"IDR","thirdPartyName":"Catatan","partyName":"","remark1":"SKN KE BNINIDJA ARIP","remark2":"BDS 00012","customerCheck":"Nasabah","userInformation":"0","applicantId":"","applicantName":"","applicantAddress1":"","applicantAddress2":"","applicantAddress3":"","applicantPostcode":"","applicantContact":"","payeeName":"","payeeId":"","payeeAddress1":"","payeeAddress2":"","payeeAddress3":"A Investasi","payeePostcode":"","payeeContact":"","shareIssueHouse":"0","shareCounter":"","alphaFieldFiller":"","release":"","endOfMessage":"","productCode":"","additionalRemark":""}'

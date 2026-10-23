@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7088/rm/credit-notes/data/1201814353731",
+  "path": "/rm/credit-notes/data/1201814353731",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-10-23T10:29:43.767+07:00",
+    "x-signature": "EugUbzttMow/hf9N18E9sFVaT3PRvs/BYvyKvdkJAzM=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505513371",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

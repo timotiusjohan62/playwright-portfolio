@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7082/cd/doc/inquiry' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:58.986+07:00' \
+  -H 'x-signature: o5K9/H0SWD48tNEJWUDh6gnLppTvfJts1J35+DVZUQQ=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513518' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"accountNumber":501400084294,"flagPrint":"DOCEML","email":"PRATAMANGGA78@OUTLOOK.COM"}'

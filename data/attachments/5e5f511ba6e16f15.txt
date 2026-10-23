@@ -1,0 +1,8 @@
+curl -X GET 'http://172.18.30.26:7084/dd/header-message/include/account/4801500000283/type/S' \
+  -H 'x-timestamp: 2026-10-23T10:29:53.738+07:00' \
+  -H 'x-signature: zUYHr4URQ7EzKh/mR8jfK+KVyixniHdLDpAxIdCnOlQ=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513475' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134'

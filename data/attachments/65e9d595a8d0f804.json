@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 511,
+  "sizeBytes": 1894,
+  "url": "http://172.18.30.26:7088/rm/account/17301800000045",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 03:29:47 GMT",
+    "content-length": "1894"
+  }
+}

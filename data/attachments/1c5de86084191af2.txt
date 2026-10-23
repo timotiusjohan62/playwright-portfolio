@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7084/dd/passbook/18801500050733/maintenance' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:48.222+07:00' \
+  -H 'x-signature: RQSPeMP+OGh8beZWXAKPnhvcI37G5E8d0ToNsCx6RaU=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513417' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"recordId":"U","accountType":"S","date":6092007,"sequence":54}'

@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7083/cf/cif/F288644/additional/id/maintenance' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:41.342+07:00' \
+  -H 'x-signature: cQWHOdz1Ir5Bl0NVtU9xk0kL3z3NkktDW0RUuQcgg4s=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513354' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"method":"A","idNumber":"320201210301006","idCode":"NP","expiryDate":311299,"expiryDateJul":31299,"idIssuePlace":"JAKARTA","idStatus":"4"}'

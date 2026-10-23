@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7088/rm/credit-notes/reprinting/search' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:47.463+07:00' \
+  -H 'x-signature: Wa7MA2B0J73HQnGFIdQvMqvGbN9tdG/AHqMsiKtxlQ0=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513407' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"beneficiaryName":"","beneficiaryId":"","sourceBranchCode":379,"dateApprove":0,"timeApprove":0,"cnPrintingDate":0,"cnNumber":0,"fromCnNumber":3790008902,"toCnNumber":3790008931,"cnType":"CN","cnStatus":""}'

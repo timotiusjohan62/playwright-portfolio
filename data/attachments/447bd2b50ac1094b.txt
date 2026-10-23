@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7083/cf/cif/F288644/address/maintenance' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:43.156+07:00' \
+  -H 'x-signature: hUhy5pwbfuYaXfgFfS02wlFdePAj1qm5RWpj0oeCzUY=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513366' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"method":"C","sequence":2,"addressLine1":"SWADAYA KOST, (NOMOR 6, LANTAI 1), JALAN","addressLine2":"RT 001/003 GROGOL","addressLine3":"GROGOL PETAMBURAN","addressLine4":"KOTA ADM. JAKARTA BARAT","postalCode":114500000,"foreignAddress":"N","addressDescription":"DKI JAKARTA","isUsed":"Y","invalidAddressCode":"","useMail":"Y","periodThere":1,"periodThereCode":"Y","addressType":"KITAP","rt":"003"}'

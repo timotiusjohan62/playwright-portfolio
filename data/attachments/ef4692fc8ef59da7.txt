@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7088/rm/rtgs/outward/approval' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:44.035+07:00' \
+  -H 'x-signature: i7q6NOtCPtnCeJs2fSkOQYOdxsttLgt5CNwtMdOMGIc=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513374' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"remitanceProduct":7,"issuingBranch":27,"inwardItem":"N","status":"OPEN","date":170419,"fromAmountRtgs":0,"toAmountRtgs":0,"remitanceNumber":2701750103315,"transactionType":"","loginType":"BRN","targetBranch":0,"page":1,"limit":10}'

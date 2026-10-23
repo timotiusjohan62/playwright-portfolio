@@ -1,2 +1,0 @@
-curl -X GET 'https://api.escuelajs.co/api/v1/products/slug/classic-heather-gray-hoodie' \
-  -H 'Accept: application/json'

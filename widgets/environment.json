@@ -1,1 +1,1 @@
-[{"values":["local"],"name":"ENV"},{"values":["https://playwright.dev"],"name":"BASE_URL"},{"values":["darwin 21.6.0"],"name":"OS"},{"values":["v22.17.1"],"name":"NODE"},{"values":["false"],"name":"CI"},{"values":["local"],"name":"BRANCH"},{"values":["n/a"],"name":"COMMIT"}]
+[{"values":["local"],"name":"ENV"},{"values":["https://playwright.dev"],"name":"BASE_URL"},{"values":["linux 6.6.87.2-microsoft-standard-WSL2"],"name":"OS"},{"values":["v26.12.1"],"name":"NODE"},{"values":["false"],"name":"CI"},{"values":["local"],"name":"BRANCH"},{"values":["n/a"],"name":"COMMIT"}]

@@ -1,0 +1,20 @@
+{
+  "remitanceProduct": 7,
+  "dateIssued": 0,
+  "totalData": 0,
+  "loginType": "BRN",
+  "toAmountRtgs": 0,
+  "inwardItem": "N",
+  "responseCode": "096",
+  "transactionType": "",
+  "fromAmountRtgs": 0,
+  "targetBranch": 0,
+  "responseDescription": "Sedang EOD Core Banking",
+  "issuingBranch": 27,
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "remitanceNumber": 2701750103315,
+  "status": "OPEN",
+  "list": []
+}

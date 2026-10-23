@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7084/dd/account' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:57.846+07:00' \
+  -H 'x-signature: 8toBPA58dEub09jla/EfA8SW90sjd7AyEAR6GXOU4X4=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513506' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"journalSequence":5003503,"terminalId":"onboarding","cifNumber":"W049180","accountType":"S","branchCode":48,"productCode":"SW","currencyCode":"IDR","combineState":"N","holdMailCode":"A","statementPassbook":"B","additionalName":"","rateVariance":0,"rateVarCode":"+","customerCategory":"","customerPosition":"","primeCustomer":"","educationLevel":"","mobilePhoneType":"","uic6":"","uic7":"","unitCode":"","remark":"","mitraCodeComunity":"000480004","mitraNameComunity":"PERUSAHAAN SIAPA INI   ","taggingTypeComunity":"K","mitraCodePayroll":"","mitraNamePayroll":"","taggingTypePayroll":""}'

@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7083/tag/cf/individual/sementation' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:56.063+07:00' \
+  -H 'x-signature: o1yPB79Z8jbcoKJZ1mE1liT+gEtB5cXyKfpO+vo19/0=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513492' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"totalData":2,"individual":[{"cif":"W307317","documentNumber":"000065","pbOutlet":16,"pbOfficer":"FD0","ntbStatus":"U","flaggingDate":12042019,"idemnityDate":12042019,"activeStatus":"A","segmentationId":"PRIORITAS","segmentationType":"PRIORITAS","flagException":"N","startDate":12042020,"endDate":12042020,"gas":150000000,"salesCode":"A99","method":"A"},{"cif":"AE30668","documentNumber":"000065","pbOutlet":16,"pbOfficer":"FD0","ntbStatus":"U","flaggingDate":12042019,"idemnityDate":12042019,"activeStatus":"A","segmentationId":"PRIORITAS","segmentationType":"PRIORITAS","flagException":"N","startDate":12042020,"endDate":12042020,"gas":150000000,"salesCode":"A99","method":"A"}]}'

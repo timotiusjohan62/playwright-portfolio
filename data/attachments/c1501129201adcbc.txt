@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7083/tag/cf/customer/exception' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:55.878+07:00' \
+  -H 'x-signature: bcFaOyhEq0yhEI68tXOB/e+9cDK8WFKaDDd8llxpW7o=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513490' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"customers":[{"cif":"AE38894","customerName":"PATAR","branchOfficer":16,"startDate":1012024,"endDate":1012030,"segmentationException":"PRIORITAS","officer":"FD0","documentNumber":"FDAS02","description":"TEST CHANGE","method":"C"}],"totalData":1}'

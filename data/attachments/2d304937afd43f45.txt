@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7088/rm/credit-notes/printing/cancel/maintenance' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:50.852+07:00' \
+  -H 'x-signature: OOxnOerm1xWvFo2+Rqxp7nI3mMmxzPz2Tm7LRKyxtLA=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513446' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"method":"*ADD","applicationAcctNumber":1601800140007,"cnStatus":"Y"}'

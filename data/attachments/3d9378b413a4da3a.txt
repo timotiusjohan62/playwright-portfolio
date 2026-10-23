@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7088/rm/list/group/detail/number/120016606' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:49.960+07:00' \
+  -H 'x-signature: 3lQ90Nx7PGPL9GaGv5fH0PMwkvY3ArKN3bZJbBvuUWk=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513436' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"applicationAcctType":"T","relationshipCode":41,"sequence":1,"cnNumber":120016606,"applicationAcctNumber":1201400052515}'

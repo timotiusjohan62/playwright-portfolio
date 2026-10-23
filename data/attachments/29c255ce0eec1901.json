@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": 404,
+    "status": "Not Found",
+    "detail": "BIP6311E: REST API 'BDS_CFTAG_RA' does not support method 'GET' for URL 'http://172.18.30.26:7083/tag/cf/institution/segmentation/cif/P303384/detail'. "
+  }
+}

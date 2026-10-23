@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7088/rm/credit-notes/branch/12/maintenance' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:46.191+07:00' \
+  -H 'x-signature: ycl6FZ+oNaoJOPiK8U1Rb3zrKT1hrns9w6uw2OkFfqA=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513394' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"method":"C","creditNotesDamage":3,"creditNotesOperator":"+"}'

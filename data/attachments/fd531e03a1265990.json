@@ -1,0 +1,16 @@
+{
+  "remitanceProduct": 5,
+  "dateIssued": 180419,
+  "toAmount": 0,
+  "totalRecord": 0,
+  "responseCode": "096",
+  "startAmount": 0,
+  "responseDescription": "Sedang EOD Core Banking",
+  "issuingBranch": 12,
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "remitanceNumber": 401865005670,
+  "status": "OPEN",
+  "list": []
+}

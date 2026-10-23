@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 364,
+  "sizeBytes": 478,
+  "url": "http://172.18.30.26:7088/rm/rtgs/bic/maintenance",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 03:29:55 GMT",
+    "content-length": "478"
+  }
+}

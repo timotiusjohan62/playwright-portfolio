@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7083/tag/cf/company/parameter/one' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:51.950+07:00' \
+  -H 'x-signature: Gix1a7NhcoL90zoIDG+VHHWDB6GbwmwhmpywiOPzZBc=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513457' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"totalData":1,"method":"A","company":[{"companyName":"PUNYA PERUSAHAAN AKU 3","companyId":"","formOfEntity":"KP","companyOwnership":"BN","flagListed":"Y","totalData":2,"products":[{"productType":"T4","productCurrency":"IDR"},{"productType":"P1","productCurrency":"IDR"}]}]}'

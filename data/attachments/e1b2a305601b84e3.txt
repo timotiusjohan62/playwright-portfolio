@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7083/tag/cf/parameter/institution/list' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:57.935+07:00' \
+  -H 'x-signature: Oe3iSCp0sFxnz0BDvgn2C6Mo/gd8i8GQk4/DOeXTdpA=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513507' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"page":1,"limit":10}'

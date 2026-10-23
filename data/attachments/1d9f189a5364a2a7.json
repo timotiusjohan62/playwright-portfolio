@@ -1,0 +1,15 @@
+{
+  "remitanceProduct": 7,
+  "issuingBranch": 27,
+  "inwardItem": "N",
+  "status": "OPEN",
+  "date": 170419,
+  "fromAmountRtgs": 0,
+  "toAmountRtgs": 0,
+  "remitanceNumber": 2701750103315,
+  "transactionType": "",
+  "loginType": "BRN",
+  "targetBranch": 0,
+  "page": 1,
+  "limit": 10
+}

@@ -1,0 +1,20 @@
+{
+  "beneficiaryBank": "",
+  "amount": 0,
+  "istatus": "OPEN",
+  "idateIssued": 150319,
+  "responseCode": "096",
+  "istartGroup": 0,
+  "moreData": "",
+  "iendGroup": 0,
+  "responseDescription": "Sedang EOD Core Banking",
+  "iissuingBranch": 12,
+  "actualRecordFound": 0,
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "currency": "",
+  "page": 1,
+  "status": "",
+  "group": 0,
+  "list": []
+}

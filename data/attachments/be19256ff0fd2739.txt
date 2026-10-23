@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7084/dd/passbook/201501218100/list' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:46.579+07:00' \
+  -H 'x-signature: MC1VBi+CVSrCUCTnK0EaRzB+VZ2qK1U7iHL9rWRff48=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513397' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"flag":"P","type":"S","limit":10,"page":1}'

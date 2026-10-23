@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7083/tag/cf/company/relationship' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:52.333+07:00' \
+  -H 'x-signature: LOz7lGjcDmwM2ar/iYdomj08qeKwGC1xMKlxQoxeQ+U=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513462' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"totalData":1,"institution":[{"companyId1":"PPA400001","relationCode":"TD","companyId2":"PPA200001","method":"A"}]}'

@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7082/cd/account' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:55.529+07:00' \
+  -H 'x-signature: ziqTvWU/z1AhcXI57xmmOeFpCl2FZvSLS51/1W1qNLo=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513488' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"journalSequence":6000125,"cifNumber":"F288644","branchCode":15,"productCode":"A7","depositTerm":24,"issueDate":210419,"rateVariance":0,"rateVarianceCode":"","automaticRollOver":"N","additionalName":"","officerCode":"104","numberOfAccount":1,"combinedStatement":"N","holdMail":"A","printReminder":"Y","purpose":"A","principalAccount":1501610012828,"remark1PrincipalAccount":"remark 1 pokok 1","remark2PrincipalAccount":"remark 2 pokok 1","relationshipCode1":40,"interestAccount1":1208310000016,"percentageInterestAccount1":1000000,"remark1InterestAccount1":"remark 1 bunga 1","remark2InterestAccount1":"remark 2 bunga 1","relationshipCode2":0,"interestAccount2":0,"percentageInterestAccount2":0,"remark1InterestAccount2":"remark 1 bunga 2","remark2InterestAccount2":"remark 2 bunga 2","relationshipCode3":0,"interestAccount3":0,"percentageInterestAccount3":0,"remark1InterestAccount3":"remark 1 bunga 3","remark2InterestAccount3":"remark 2 bunga 3","relationshipCode4":0,"interestAccount4":0,"percentageInterestAccount4":0,"remark1InterestAccount4":"remark 1 bunga 4","remark2InterestAccount4":"remark 2 bunga 4","flaggingTDBilyet":"Y"}'

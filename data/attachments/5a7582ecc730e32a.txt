@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7083/cf/cif/add/family' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:54.557+07:00' \
+  -H 'x-signature: oHfviuTCicOpM2SYYCOUcPu/iJ/A/jr+e1Pr9gjad1Q=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513479' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"cif":"H098842","parentCif":"E568397","relationCode":"AK","method":"D"}'

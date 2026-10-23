@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7083/cf/cif/F288644/bicode/maintenance' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:42.013+07:00' \
+  -H 'x-signature: Ou8uUqDOFQEQfg/06u2rb+GtkczMFvrMg0TBWJSVycc=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513357' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"method":"C","memberOfCorp":0,"previousName":"TI","prefixName":0,"jobDesignationCode":2,"debitur":886,"familyRelation":0,"relationWithBank":2,"location":9999}'

@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7083/cf/cif/F288644/electronic-address/maintenance' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:40.038+07:00' \
+  -H 'x-signature: FiE3wzWvyVpt+nDSLs1yaK10dG5UtV/JtcvcykSnixA=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513346' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"method":"C","departmentName":"TEST MAINT","code":"HP","lastChangeDate":201118,"electronicAddress":"081226541727","sequence":1,"jobDesignationCode":"","name":"YBS","informationDate":0}'

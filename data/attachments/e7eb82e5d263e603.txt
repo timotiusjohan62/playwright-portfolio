@@ -1,0 +1,10 @@
+curl -X POST 'http://172.18.30.26:7088/rm/credit-notes/data/approval' \
+  -H 'content-type: application/json' \
+  -H 'x-timestamp: 2026-10-23T10:29:43.257+07:00' \
+  -H 'x-signature: Z/fD8N4zJlu6GEJJejGmVW6yiCVu65NyIKeVg2uyC7g=' \
+  -H 'X-Btn-Key: c1500286-de11-4286-ba7e-090250090250' \
+  -H 'Btn-Reference-Number: B02505513367' \
+  -H 'Btn-User-Id: BTN0010042' \
+  -H 'Btn-Terminal-Id: PCDIMAS' \
+  -H 'Btn-Terminal-Ip: 10.99.17.134' \
+  --data-raw '{"status":"OPEN","startGroup":0,"endGroup":0,"dateIssued":250319,"issuingBranch":12,"page":1,"limit":100}'
