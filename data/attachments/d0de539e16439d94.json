@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "email": "john@mail.com",
+    "password": "***",
+    "name": "Jhon",
+    "role": "customer",
+    "avatar": "https://i.imgur.com/LDOO4Qs.jpg",
+    "creationAt": "2026-10-22T16:04:44.000Z",
+    "updatedAt": "2026-10-22T16:04:44.000Z"
+  }
+]

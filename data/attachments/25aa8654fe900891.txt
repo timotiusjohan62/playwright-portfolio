@@ -1,0 +1,2 @@
+curl -X DELETE 'https://api.escuelajs.co/api/v1/users/50' \
+  -H 'Accept: application/json'

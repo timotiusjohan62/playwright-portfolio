@@ -1,0 +1,4 @@
+curl -X POST 'https://api.escuelajs.co/api/v1/users' \
+  -H 'content-type: application/json' \
+  -H 'Accept: application/json' \
+  --data-raw '{"email":"test@gmail.com","name":"name","password":"***","role":"admin","avatar":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"}'

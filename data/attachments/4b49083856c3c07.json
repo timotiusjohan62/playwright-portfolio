@@ -1,0 +1,20 @@
+{
+  "id": 120,
+  "title": "JOHAN TEST LAGI 99",
+  "slug": "johan-test-lagi-99",
+  "price": 10,
+  "description": "string",
+  "category": {
+    "id": 1,
+    "name": "Updated Category Name",
+    "slug": "updated-category-name",
+    "image": "https://placeimg.com/640/480/any",
+    "creationAt": "2026-10-22T16:04:44.000Z",
+    "updatedAt": "2026-10-22T18:00:05.000Z"
+  },
+  "images": [
+    "https://i.imgur.com/QkIa5tT.jpeg"
+  ],
+  "creationAt": "2026-10-23T03:03:45.000Z",
+  "updatedAt": "2026-10-23T03:03:45.000Z"
+}
