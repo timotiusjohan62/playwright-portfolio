@@ -1,0 +1,16 @@
+{
+  "totalData": 0,
+  "flag": "P",
+  "type": "S",
+  "creaditTotalAmount": 0,
+  "debitTransactionTotal": 0,
+  "responseCode": "096",
+  "responseDescription": "Sedang EOD Core Banking",
+  "creditTransactionTotal": 0,
+  "debitTotalAmount": 0,
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "account": 201501218100,
+  "list": []
+}

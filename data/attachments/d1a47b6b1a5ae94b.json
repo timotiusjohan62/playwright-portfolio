@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7088/rm/account/17301800000045",
+  "path": "/rm/account/17301800000045",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-10-23T10:57:35.783+07:00",
+    "x-signature": "zVtrv3dcqOHCm8DUHDUz3RiBmY8kAgyl2o4FTjZsQEA=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514090",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

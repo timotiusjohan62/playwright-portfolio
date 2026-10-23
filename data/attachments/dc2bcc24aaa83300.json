@@ -1,0 +1,14 @@
+{
+  "totalData": 0,
+  "method": "1",
+  "groupProductId": "A0099",
+  "groupProduct": "TEST A0099",
+  "responseCode": "096",
+  "groupProductName": "TEST A0099",
+  "responseDescription": "Sedang EOD Core Banking",
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "productType": "TB",
+  "list": []
+}

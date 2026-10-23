@@ -1,0 +1,9 @@
+{
+  "method": "*ADD",
+  "responseDescription": "Sedang EOD Core Banking",
+  "applicationAcctNumber": 101300006918,
+  "cnStatus": "R",
+  "btnUserId": "BTN0010042",
+  "cnNumber": 400009905,
+  "responseCode": "096"
+}

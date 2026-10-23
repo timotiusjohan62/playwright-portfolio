@@ -1,0 +1,18 @@
+{
+  "isequence": 1,
+  "relationshipCode": 0,
+  "cnNumber": 0,
+  "icnNumber": 120016606,
+  "responseCode": "096",
+  "branchCode": 0,
+  "sequence": 0,
+  "brnCode": "",
+  "irelationshipCode": 41,
+  "responseDescription": "Sedang EOD Core Banking",
+  "iapplicationAcctType": "T",
+  "iapplicationAcctNumber": 1201400052515,
+  "applicationAcctNumber": 0,
+  "btnUserId": "BTN0010042",
+  "applicationAcctType": "",
+  "remark1": ""
+}

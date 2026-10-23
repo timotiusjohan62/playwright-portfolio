@@ -1,0 +1,15 @@
+{
+  "cif": "AA24670",
+  "messageText": "CALL SDR YBS FIRDAUS AJA",
+  "method": "C",
+  "accountType": "C",
+  "isequence": 3,
+  "userIdCode": "",
+  "infoDate": 180826,
+  "responseCode": "096",
+  "expiryDate": 0,
+  "sequence": 0,
+  "reviewDate": 180826,
+  "responseDescription": "Sedang EOD Core Banking",
+  "btnUserId": "BTN0010042"
+}
