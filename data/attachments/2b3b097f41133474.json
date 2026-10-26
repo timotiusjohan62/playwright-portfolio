@@ -1,0 +1,220 @@
+{
+  "channel": "NEWBDS",
+  "remark": "",
+  "terminalId": "PCDIMAS",
+  "type": "D",
+  "endingChequePrefix": "1262325",
+  "responseCode": "000",
+  "chequeBookFee": "25000.00",
+  "chequePrefix": "TI",
+  "issuanceDate": "40419",
+  "vendor": "",
+  "seq": 1,
+  "printFee": ".00",
+  "miscCharge3": "35000.00",
+  "miscCharge2": "55000.00",
+  "miscCharge1": "45000.00",
+  "clearingCharge": ".00",
+  "beginChequePrefix": "1262301",
+  "chequeType": "Check",
+  "responseDescription": "Transaksi Sukses",
+  "account": 2501300001601,
+  "terminalIp": "10.99.17.134",
+  "status": "A",
+  "accounts": [
+    {
+      "lowCheckNumber": 1262301,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262302,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262303,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262304,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262305,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262306,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262307,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262308,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262309,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262310,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262311,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262312,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262313,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262314,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262315,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262316,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262317,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262318,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262319,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262320,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262321,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262322,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262323,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262324,
+      "checkBookStatus": "N"
+    }
+  ],
+  "list": [
+    {
+      "lowCheckNumber": 1262301,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262302,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262303,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262304,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262305,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262306,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262307,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262308,
+      "checkBookStatus": "Y"
+    },
+    {
+      "lowCheckNumber": 1262309,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262310,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262311,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262312,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262313,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262314,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262315,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262316,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262317,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262318,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262319,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262320,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262321,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262322,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262323,
+      "checkBookStatus": "N"
+    },
+    {
+      "lowCheckNumber": 1262324,
+      "checkBookStatus": "N"
+    }
+  ]
+}
