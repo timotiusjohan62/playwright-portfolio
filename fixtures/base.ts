@@ -35,7 +35,6 @@ export interface CallRecord {
   responseBody?: string;
   durationMs: number;
   sizeBytes: number;
-  curl: string;
   error?: string;
 }
 
@@ -144,14 +143,6 @@ function resolveUrl(url: string, baseURL: string | undefined, params: FetchOpts[
   }
 }
 
-function toCurl(method: string, url: string, headers: Record<string, string>, body?: ReqBody) {
-  const q = (s: string) => `'${s.replace(/'/g, `'\\''`)}'`;
-  const parts = [`curl -X ${method} ${q(url)}`];
-  for (const [k, v] of Object.entries(headers)) parts.push(`-H ${q(`${k}: ${v}`)}`);
-  if (body?.compact !== undefined) parts.push(`--data-raw ${q(body.compact)}`);
-  return parts.join(' \\\n  ');
-}
-
 const asJson = (o: unknown) => JSON.stringify(o, null, 2);
 
 /**
@@ -184,8 +175,8 @@ export function expectStatus(res: APIResponse, expected: number | number[]): voi
   const preview = (c?.responseBody ?? '').slice(0, 1000);
   throw new Error(
     `Expected status ${allowed.join(' or ')} but got ${res.status()}\n` +
-      `Request:  ${describeCall(res)}\n` +
-      `Response body: ${preview || '(empty)'}`,
+    `Request:  ${describeCall(res)}\n` +
+    `Response body: ${preview || '(empty)'}`,
   );
 }
 
@@ -225,18 +216,18 @@ export const test = base.extend<{ api: ApiClient }>({
         await ctx.parameter('path', prePath);
 
         // ---- Request details (attached BEFORE sending, so they exist even if the call throws)
+        // ---- Request details (attached BEFORE sending, so they exist even if the call throws)
+        await attach('Endpoint', `${method} ${preUrl}`, 'text/plain');
         await attach('Request', asJson({
           method, url: preUrl, path: prePath, query: preQuery, headers: maskedReqHeaders,
           hasBody: !!reqBody,
         }), 'application/json');
         if (reqBody) await attach('Request body', truncate(reqBody.pretty), reqBody.type);
-        const curl = toCurl(method, preUrl, maskedReqHeaders, reqBody);
-        await attach('cURL (secrets masked)', curl, 'text/plain');
 
         const record: CallRecord = {
           index: calls.length + 1, method, url: preUrl, path: prePath, query: preQuery,
           requestHeaders: maskedReqHeaders, requestBody: reqBody ? truncate(reqBody.pretty) : undefined,
-          status: 0, statusText: '', responseHeaders: {}, durationMs: 0, sizeBytes: 0, curl,
+          status: 0, statusText: '', responseHeaders: {}, durationMs: 0, sizeBytes: 0,
         };
 
         const started = Date.now();

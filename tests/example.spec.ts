@@ -29,6 +29,12 @@ const getNestedValue = (obj: any, path: any) => {
   return stringPath.split('.').reduce((acc, part) => acc && acc[part], obj);
 };
 
+// Integer-only: drops decimals, non-digits and leading zeros
+const toJsonInteger = (value: unknown): string => {
+  const digits = String(value ?? '').trim().split('.')[0].replace(/\D/g, '');
+  return digits.replace(/^0+(?=\d)/, '') || '0';
+};
+
 /**
  * Strips port numbers/prefixes from path strings specifically for HMAC signatures.
  * Example: ":7095/bp/bpjs" -> "/bp/bpjs"
@@ -168,7 +174,7 @@ test.describe('Database-Driven API Workflows', () => {
 
       // In-memory state store for this specific scenario.
       // Used to pass data (like auth tokens or generated IDs) from one step to the next.
-      const testState: Record<string, string> = {};
+      const testState: Record<string, any> = {};
 
       for (const step of steps) {
         await allure.step(`Step ${step.STEP_ORDER}: ${step.TITLE}`, async (ctx) => {
@@ -180,12 +186,29 @@ test.describe('Database-Driven API Workflows', () => {
 
           // Iterate over current state to replace any {{variableName}} templates in the path or payload
           // 1. Process testState variables across endpoint and payload
-          for (const [key, value] of Object.entries(testState)) {
-            const regex = new RegExp(`{{${key}}}`, 'g');
-            dynamicEndpoint = dynamicEndpoint.replace(regex, value);
+          for (const [key, value] of Object.entries(testState) as [string, any][]) {
+            const k = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+            dynamicEndpoint = dynamicEndpoint.replace(
+              new RegExp(`\\{\\{${k}\\}\\}`, 'g'),
+              () => String(value ?? '')
+            );
 
             if (dynamicPayload) {
-              dynamicPayload = dynamicPayload.replace(regex, String(value));
+              // a) bare placeholder (": {{key}}") -> integer, or raw JSON for arrays/objects
+              dynamicPayload = dynamicPayload.replace(
+                new RegExp(`(:\\s*)\\{\\{${k}\\}\\}`, 'g'),
+                (_m, prefix) =>
+                  prefix + (value !== null && typeof value === 'object'
+                    ? JSON.stringify(value)
+                    : toJsonInteger(value))
+              );
+
+              // b) quoted / embedded placeholder ("{{key}}") -> escaped string, zeros kept
+              dynamicPayload = dynamicPayload.replace(
+                new RegExp(`\\{\\{${k}\\}\\}`, 'g'),
+                () => JSON.stringify(String(value ?? '')).slice(1, -1)
+              );
             }
           }
 
@@ -209,7 +232,12 @@ test.describe('Database-Driven API Workflows', () => {
           // --- Phase 2: Request Execution ---
 
           // Safely parse payload back to JSON object
-          const requestData = dynamicPayload ? JSON.parse(dynamicPayload) : undefined;
+          let requestData;
+          try {
+            requestData = dynamicPayload ? JSON.parse(dynamicPayload) : undefined;
+          } catch (e: any) {
+            throw new Error(`Invalid JSON payload for "${step.TITLE}": ${e.message}\n${dynamicPayload}`);
+          }
           const uniqueSequenceHeader = db.prepare('SELECT SEQUENCE FROM UTILS').get() as { SEQUENCE?: string };
 
           // 2. Format request payload with JSON stringified data, or switch to ContentType.TEXT
