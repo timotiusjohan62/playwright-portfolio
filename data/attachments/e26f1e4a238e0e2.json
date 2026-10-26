@@ -1,0 +1,19 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7095/bp/bpjs/tk/billNumber/423199061012/reprint/N/transactionAmount/931206/inquiry?controlUnitBranch=I99&tellerId=0099991",
+  "path": "/bp/bpjs/tk/billNumber/423199061012/reprint/N/transactionAmount/931206/inquiry",
+  "query": {
+    "controlUnitBranch": "I99",
+    "tellerId": "0099991"
+  },
+  "headers": {
+    "x-timestamp": "2026-10-23T16:37:00.485+07:00",
+    "x-signature": "Pjy93ntbQGA7lDtxgadtc1jdGR5+4FzI6VTkm0lwdh0=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514780",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

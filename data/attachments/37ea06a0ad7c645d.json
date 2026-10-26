@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381392/totalMonthsToPay/01/participantType/IDN/payment",
+  "path": "/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381392/totalMonthsToPay/01/participantType/IDN/payment",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-23T16:36:47.920+07:00",
+    "x-signature": "8vWNY36LYxDZoO1yhCXEv8fEaoOLvtlZK2IqMwJiN2c=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514759",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": true
+}

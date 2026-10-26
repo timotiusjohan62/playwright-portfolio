@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 334,
+  "sizeBytes": 920,
+  "url": "http://172.18.30.26:7095/bp/asabriApsan/paymentCode/BE141852THT49/inquiry",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 09:31:17 GMT",
+    "content-length": "920"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/bpjs/tk/billNumber/423199061014/reprint/N/transactionAmount/931206/payment",
+  "path": "/bp/bpjs/tk/billNumber/423199061014/reprint/N/transactionAmount/931206/payment",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-23T16:37:01.074+07:00",
+    "x-signature": "U3ggJUun6vjqFv6kZWoGt0vDYGpohm8QdRiFLG0O3Cs=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514789",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": true
+}

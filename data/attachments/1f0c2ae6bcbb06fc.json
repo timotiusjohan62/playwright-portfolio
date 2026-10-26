@@ -1,0 +1,38 @@
+{
+  "branchOfficer": 16,
+  "date": 0,
+  "totalData": 2,
+  "method": "1",
+  "endDate": 0,
+  "officer": "",
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "segmentasiException": "",
+  "list": [
+    {
+      "cif": "C007865",
+      "name": "TEST",
+      "branch": 16,
+      "officer": "FD0",
+      "officerName": "FIDO PUNYA",
+      "documentNumber": "FDAS02",
+      "startDate": 1012024,
+      "endDate": 1012030,
+      "segmentationException": "PRIORITAS"
+    },
+    {
+      "cif": "F288644",
+      "name": "FIRDAUS ALDIANSAH SA",
+      "branch": 16,
+      "officer": "FD0",
+      "officerName": "FIDO PUNYA",
+      "documentNumber": "FDAS01",
+      "startDate": 1012024,
+      "endDate": 1012030,
+      "segmentationException": "PRIORITAS"
+    }
+  ]
+}

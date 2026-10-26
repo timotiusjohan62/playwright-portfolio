@@ -1,0 +1,21 @@
+{
+  "departmentName": "",
+  "cif": "F288644",
+  "code": "TK",
+  "channel": "NEWBDS",
+  "lastChangeDate": 201118,
+  "terminalId": "PCDIMAS",
+  "isequence": 2,
+  "responseCode": "000",
+  "sequence": 2,
+  "jobDesignationCode": "",
+  "electronicAddress": "0285123123124",
+  "referenceNumber": "B02505515194",
+  "reviewDate": 201119,
+  "lastChangeUser": "BTN8880888",
+  "responseDescription": "Transaksi Sukses",
+  "name": "",
+  "btnUserId": "BTN0010042",
+  "informationDate": 201118,
+  "terminalIp": "10.99.17.134"
+}

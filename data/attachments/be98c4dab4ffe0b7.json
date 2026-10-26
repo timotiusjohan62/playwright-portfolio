@@ -1,0 +1,29 @@
+{
+  "date": 180918,
+  "totalData": 2,
+  "endRemitance": 100000000000000000,
+  "branch": 4,
+  "fromRemitance": 1,
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "status": "OPEN",
+  "list": [
+    {
+      "status": "OPEN",
+      "remitance": 401860194538,
+      "beneficiaryBank": "",
+      "amount": 10100000000,
+      "bopCode": 0
+    },
+    {
+      "status": "OPEN",
+      "remitance": 401860194546,
+      "beneficiaryBank": "BMRIIDJA-PT. BANK MANDIRI (PERSERO) TBK",
+      "amount": 100000000200,
+      "bopCode": 600
+    }
+  ]
+}

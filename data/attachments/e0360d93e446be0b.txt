@@ -1,0 +1,1 @@
+#1 GET /bp/bpjs/kesehatan/virtualAccountNumber/8888890000381395/totalMonthsToPay/01/participantType/IDN/inquiry -> 200 (331 ms)

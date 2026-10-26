@@ -1,0 +1,1 @@
+GET http://172.18.30.26:7088/rm/rtgs/outward/remitance/401860194538/status/OPEN

@@ -1,0 +1,94 @@
+{
+  "toCnNumber": 999999999999,
+  "fromCnNumber": 1,
+  "totalRecord": 10,
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "applicationAcctNumber": 1601300000444,
+  "limit": 10,
+  "isMore": "Y",
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "list": [
+    {
+      "applicationAcctNumber": 1601300000444,
+      "cnNumber": 160000044,
+      "cnStatus": "Y",
+      "transferAmount": 99600000,
+      "destinationBankCode": "BKS",
+      "cnDate": 150612
+    },
+    {
+      "applicationAcctNumber": 1601300000444,
+      "cnNumber": 160000046,
+      "cnStatus": "Y",
+      "transferAmount": 0,
+      "destinationBankCode": "BKS",
+      "cnDate": 81111
+    },
+    {
+      "applicationAcctNumber": 1601300000444,
+      "cnNumber": 160000049,
+      "cnStatus": "Y",
+      "transferAmount": 99600000,
+      "destinationBankCode": "BKS",
+      "cnDate": 71111
+    },
+    {
+      "applicationAcctNumber": 1601300000444,
+      "cnNumber": 160000049,
+      "cnStatus": "Y",
+      "transferAmount": 99600000,
+      "destinationBankCode": "BKS",
+      "cnDate": 210612
+    },
+    {
+      "applicationAcctNumber": 1601300000444,
+      "cnNumber": 160000050,
+      "cnStatus": "Y",
+      "transferAmount": 99600000,
+      "destinationBankCode": "BKS",
+      "cnDate": 160612
+    },
+    {
+      "applicationAcctNumber": 1601300000444,
+      "cnNumber": 160000058,
+      "cnStatus": "Y",
+      "transferAmount": 99600000,
+      "destinationBankCode": "BKS",
+      "cnDate": 170612
+    },
+    {
+      "applicationAcctNumber": 1601300000444,
+      "cnNumber": 160000062,
+      "cnStatus": "Y",
+      "transferAmount": 99600000,
+      "destinationBankCode": "BKS",
+      "cnDate": 180612
+    },
+    {
+      "applicationAcctNumber": 1601300000444,
+      "cnNumber": 160000067,
+      "cnStatus": "Y",
+      "transferAmount": 99600000,
+      "destinationBankCode": "BKS",
+      "cnDate": 190612
+    },
+    {
+      "applicationAcctNumber": 1601300000444,
+      "cnNumber": 160000075,
+      "cnStatus": "Y",
+      "transferAmount": 99600000,
+      "destinationBankCode": "BKS",
+      "cnDate": 200612
+    },
+    {
+      "applicationAcctNumber": 1601300000444,
+      "cnNumber": 160000386,
+      "cnStatus": "Y",
+      "transferAmount": 99600000,
+      "destinationBankCode": "BKS",
+      "cnDate": 300412
+    }
+  ]
+}

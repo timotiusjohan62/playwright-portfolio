@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 315,
+  "sizeBytes": 137,
+  "url": "http://172.18.30.26:7095/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381393/totalMonthsToPay/01/participantType/IDN/inquiry?controlUnitBranch=I99&tellerId=0099991",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 09:30:13 GMT",
+    "content-length": "137"
+  }
+}

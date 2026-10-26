@@ -1,0 +1,29 @@
+{
+  "index": 2,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/asabriApsan/paymentCode/BE141852THT41/payment",
+  "path": "/bp/asabriApsan/paymentCode/BE141852THT41/payment",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-23T16:37:13.857+07:00",
+    "x-signature": "HFtq0T7wWQRcMhGTvxKc2LvQoEI6YNYXVAD2mY93wPs=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514879",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"referenceNumber\": \"B04125514880\",\n  \"tellerOverride\": \"Y\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": \"\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 5514880,\n  \"transactionCode\": 9167,\n  \"field1\": 24101300015224,\n  \"field2\": 4000000,\n  \"field3\": 0,\n  \"field4\": 0,\n  \"field5\": 10000000,\n  \"field6\": 10000000,\n  \"field7\": 10000000,\n  \"field8\": 10000000,\n  \"field9\": 0,\n  \"field10\": 0,\n  \"field11\": 0,\n  \"field12\": 0,\n  \"field13\": 0,\n  \"field14\": 0,\n  \"field15\": 11901500032314,\n  \"field16\": 4000000,\n  \"field20\": 0,\n  \"currency\": \"IDR\",\n  \"alternateCurrency1\": \"IDR\",\n  \"alternateCurrency2\": \"IDR\",\n  \"alternateCurrency3\": \"IDR\",\n  \"thirdPartyName\": \"99991   149109\",\n  \"partyName\": \"000000\",\n  \"remark1\": \"56223262879\",\n  \"remark2\": \"56223262879 TESTING MID       301422\",\n  \"customerCheck\": \"PLN MKM\",\n  \"userInformation\": \"20000015211        \",\n  \"applicantName\": \"PT.GRAHA DUTA PUTRA JAYA\",\n  \"applicantAddress1\": \"545301379058\",\n  \"applicantAddress2\": \"PCDIMAS\",\n  \"applicantAddress3\": \"08072026\",\n  \"applicantPostcode\": \"20260708\",\n  \"applicantContact\": \"149109\",\n  \"payeeName\": \"2.0250810234421e+31\",\n  \"payeeAddress1\": \"0\",\n  \"payeeAddress2\": \"56223262879\",\n  \"payeePostcode\": \"PREPAID\",\n  \"shareIssueHouse\": \"0708\",\n  \"alphaFieldFiller\": \"PCDIMAS         149109G56\",\n  \"additionalRemark\": \"152514\",\n  \"programCode\": \"1\",\n  \"flagCode\": \"1\",\n  \"mutationCode\": \"70\",\n  \"ktpaNumber\": \"BE141852\",\n  \"claimCode\": \"2\",\n  \"spNumber\": \"B/002759-AS/THT/I/2026\",\n  \"branchOfficeCode\": \"1700\",\n  \"paymentCode\": \"BE141852THT41\",\n  \"paymentPartner\": \"AAW0414\",\n  \"memberName\": \"SUWANTAH\",\n  \"nrpnip\": \"479045\",\n  \"spSubmissionDate\": \"2026-01-08\",\n  \"levelCode\": \"1662\",\n  \"organizationCode\": \"1\",\n  \"memberBirthdate\": \"1943-03-02\",\n  \"receiverName\": \"WIKE TIN KEMASAN SARI\",\n  \"receiverIdType\": \"002\",\n  \"receiverId\": \"7309015003810002\",\n  \"accountNumber\": \"0024101300015224\",\n  \"familyCode\": \"3\",\n  \"address\": \"PERUMAHAN SOLINDO IM/5\",\n  \"rt\": \"006\",\n  \"rw\": \"003\",\n  \"village\": \"BONTOA\",\n  \"subdistrict\": \"MANDAI\",\n  \"cityCode\": \"A0398\",\n  \"provinceCode\": \"A0026\",\n  \"telephoneNumber\": \"\",\n  \"phoneNumber\": \"6282259395559\",\n  \"totalBenefit\": \"4000000\",\n  \"totalPenalty\": \"0\",\n  \"totalAmount\": \"4000000\",\n  \"giroNumber\": \"0\",\n  \"postalCode\": \"\",\n  \"benefitList\": \"[object Object]\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 09:37:15 GMT",
+    "content-length": "243"
+  },
+  "durationMs": 1568,
+  "sizeBytes": 243,
+  "responseBody": "{\n  \"responseCode\": \"003\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 5514880,\n  \"responseDescription\": \"Tidak Ada Data\",\n  \"listResponses\": \"F2\",\n  \"subResponses\": [\n    {\n      \"code\": \"F2\",\n      \"mnemonicCode\": \"\",\n      \"rejectedReason\": \"Tidak Ada Data\",\n      \"errorCode\": 0,\n      \"availableBalance\": 0\n    }\n  ]\n}"
+}

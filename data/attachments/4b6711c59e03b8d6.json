@@ -1,0 +1,19 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7095/bp/bpjs/tkIndv/nik/3385000007790001/monthPay/1/inquiry?controlUnitBranch=I99&tellerId=99991",
+  "path": "/bp/bpjs/tkIndv/nik/3385000007790001/monthPay/1/inquiry",
+  "query": {
+    "controlUnitBranch": "I99",
+    "tellerId": "99991"
+  },
+  "headers": {
+    "x-timestamp": "2026-10-26T10:16:04.799+07:00",
+    "x-signature": "F35IFPnwIJc1q/5j9GPg1w3U2AHN7nKeLNsIYD0XBpI=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505515383",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

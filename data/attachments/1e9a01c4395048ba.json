@@ -1,0 +1,16 @@
+{
+  "responseCode": "003",
+  "tellerId": 99991,
+  "journalSequence": 5515146,
+  "responseDescription": "Tidak Ada Data",
+  "listResponses": "F2",
+  "subResponses": [
+    {
+      "code": "F2",
+      "mnemonicCode": "",
+      "rejectedReason": "Tidak Ada Data",
+      "errorCode": 0,
+      "availableBalance": 0
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 248,
+  "sizeBytes": 751,
+  "url": "http://172.18.30.26:7095/bp/bpjs/tkIndv/nik/3385000007790003/monthPay/1/inquiry?controlUnitBranch=I99&tellerId=99991",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 09:50:10 GMT",
+    "content-length": "751"
+  }
+}

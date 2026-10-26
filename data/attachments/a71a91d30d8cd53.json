@@ -1,0 +1,61 @@
+{
+  "subResponses": [
+    {
+      "code": "E0",
+      "mnemonicCode": "BPY",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "longName1": "NASABAH D745685",
+      "longName2": "NASABAH D745685",
+      "longName3": "NASABAH D745685",
+      "longName4": "NASABAH D745685",
+      "longName5": "NASABAH D745685",
+      "accountNumber1": 4801500003451,
+      "accountNumber2": 467943491320,
+      "accountNumber3": 0,
+      "accountNumber4": 0,
+      "accountNumber5": 0
+    },
+    {
+      "code": "F4",
+      "mnemonicCode": "BPY",
+      "shortName": "",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 0,
+      "passbookSerial": 0,
+      "currentBalance": 2650500,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 5514538,
+  "responseDescription": "success",
+  "listResponses": "E0 F4",
+  "responseBiller": {
+    "billAmount": "36800",
+    "registrationFee": "3000",
+    "transactionFee": "2000",
+    "BillReff1": "",
+    "monthPay": "1",
+    "billJht": "0",
+    "billJkk": "10000",
+    "billJkm": "6800",
+    "billJpn": "20000",
+    "isFirstBill": "N",
+    "memberBranch": "T00#JKK,JKM,JHT",
+    "nik": "3385000007790004",
+    "transactionId": "3385000007790004#TLR260120000150",
+    "billReference2": "",
+    "memberName": "MARLON PORSISA",
+    "referenceId": "",
+    "memberProgram": "T00#JKK,JKM,JHT",
+    "effectiveDate": "26-08-2020",
+    "expiredDate": "02-01-2026",
+    "transactionDate": "20260120133155",
+    "totalAmount": "41800"
+  }
+}

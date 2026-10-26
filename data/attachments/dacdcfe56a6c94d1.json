@@ -1,0 +1,16 @@
+{
+  "cif": "AA24670",
+  "messageText": "",
+  "iaccountType": "C",
+  "icif": "AA24670",
+  "accountType": "C",
+  "isequence": 1,
+  "responseCode": "000",
+  "infoDate": 0,
+  "expiryDate": 0,
+  "sequence": 1,
+  "responseDescription": "Transaksi Sukses",
+  "reviewDate": 0,
+  "messageCode": "",
+  "btnUserId": "BTN0010042"
+}

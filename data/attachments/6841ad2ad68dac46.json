@@ -1,0 +1,22 @@
+{
+  "cif": "E568397",
+  "totalData": 1,
+  "icif": "E568397",
+  "fullName": "NASABAH E568397",
+  "type": "C",
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "limit": 10,
+  "identificationNumber": "3172064810440002",
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "shortName": "NASABAH E568397",
+  "list": [
+    {
+      "cif": "K127104",
+      "fullName": "SYIRA ASSYIFA ARYANTI",
+      "relationCode": "AK",
+      "relationDescription": "Anak Kandung"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "cif": "AA24670",
+  "totalRecord": 5,
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "limit": 10,
+  "isMore": "N",
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "list": [
+    {
+      "sequence": 1,
+      "accountType": "C",
+      "cif": "AA24670",
+      "messageText": "HUBUNGI DEBITUR YBS ERWIN SDR YBS FIRDAUS",
+      "userIdCode": "",
+      "expiryDate": 0
+    },
+    {
+      "sequence": 2,
+      "accountType": "C",
+      "cif": "AA24670",
+      "messageText": "DEBITUR ADALAH SAUDARA DI PERUM DUTA KRANJI ERWIN",
+      "userIdCode": "",
+      "expiryDate": 0
+    },
+    {
+      "sequence": 3,
+      "accountType": "C",
+      "cif": "AA24670",
+      "messageText": "CALL SDR YBS FIRDAUS AJA",
+      "userIdCode": "",
+      "expiryDate": 0
+    },
+    {
+      "sequence": 4,
+      "accountType": "C",
+      "cif": "AA24670",
+      "messageText": "CALL SDR YBS FIRDAUS AJA JOHAN",
+      "userIdCode": "",
+      "expiryDate": 0
+    },
+    {
+      "sequence": 5,
+      "accountType": "C",
+      "cif": "AA24670",
+      "messageText": "CALL SDR YBS FIRDAUS AJA",
+      "userIdCode": "",
+      "expiryDate": 0
+    }
+  ]
+}

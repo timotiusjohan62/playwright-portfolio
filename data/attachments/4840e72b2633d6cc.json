@@ -1,0 +1,22 @@
+{
+  "toCnNumber": 999999999999,
+  "fromCnNumber": 1,
+  "totalRecord": 1,
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "applicationAcctNumber": 1201814353781,
+  "limit": 10,
+  "isMore": "N",
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "list": [
+    {
+      "applicationAcctNumber": 1201814353781,
+      "cnNumber": 120017008,
+      "cnStatus": "P",
+      "transferAmount": 50000000,
+      "brnCode": "JKK",
+      "cnDate": 180319
+    }
+  ]
+}

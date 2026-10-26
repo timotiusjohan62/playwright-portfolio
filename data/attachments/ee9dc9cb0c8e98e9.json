@@ -1,0 +1,19 @@
+{
+  "responseCode": "000",
+  "responseDescription": "Transaction Success",
+  "reference": "68",
+  "uuid": "5fcc7969-449b-4bde-8dec-502d974eebd7",
+  "billCode": "01",
+  "longDescription": "Biaya UTBK 2026",
+  "shortDescription": "Biaya UTBK",
+  "billAmount": 500000,
+  "billNumber": "88902347",
+  "nisn": "0086660418",
+  "studentName": "ANDINI AZALIA SYAKIRA",
+  "dateOfBirth": "2008-02-29",
+  "creditAccount": 101300011947,
+  "adminAccount": 0,
+  "adminFee": 0,
+  "trxCode": "SNPMB 2026",
+  "transactionName": "SNPMB 88902347"
+}

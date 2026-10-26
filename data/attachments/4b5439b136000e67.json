@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7095/bp/asabriApsan/paymentCode/BE141852THT50/inquiry",
+  "path": "/bp/asabriApsan/paymentCode/BE141852THT50/inquiry",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-10-23T16:58:24.964+07:00",
+    "x-signature": "r6qlyo0PIgtMXrmhAdzkb/fdHbvoqtVPKQ9BCqZA0Vg=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505515031",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

@@ -1,0 +1,40 @@
+{
+  "remitanceProduct": 7,
+  "dateIssued": 0,
+  "totalData": 1,
+  "loginType": "BRN",
+  "toAmountRtgs": 0,
+  "inwardItem": "N",
+  "responseCode": "000",
+  "transactionType": "",
+  "fromAmountRtgs": 0,
+  "targetBranch": 0,
+  "responseDescription": "Transaksi Sukses",
+  "issuingBranch": 27,
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "remitanceNumber": 2701750103315,
+  "status": "OPEN",
+  "list": [
+    {
+      "account": 2701750103315,
+      "amount": 100000000,
+      "chequeDate": 0,
+      "beneficiaryBank": "",
+      "bicCode": "",
+      "transactionType": "",
+      "issuanceDate": 170419,
+      "tellerCreation": 2700098,
+      "issuingBranch": 27,
+      "timeLastMaint": 0,
+      "status": "OPEN",
+      "userApprove": "",
+      "timeApprove": 0,
+      "userFinalApprove": "",
+      "timeFinalApprove": 0,
+      "userReject": "",
+      "timeReject": 0
+    }
+  ]
+}

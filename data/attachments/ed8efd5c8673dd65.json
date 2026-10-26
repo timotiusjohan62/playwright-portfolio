@@ -1,0 +1,63 @@
+{
+  "beneficiaryBank": "",
+  "amount": 0,
+  "istatus": "OPEN",
+  "idateIssued": 250319,
+  "responseCode": "000",
+  "istartGroup": 0,
+  "moreData": "N",
+  "iendGroup": 0,
+  "responseDescription": "Transaksi Sukses",
+  "iissuingBranch": 12,
+  "actualRecordFound": 6,
+  "limit": 100,
+  "btnUserId": "BTN0010042",
+  "currency": "",
+  "page": 1,
+  "status": "",
+  "group": 0,
+  "list": [
+    {
+      "status": "OPEN",
+      "remitanceGroup": 1201814353927,
+      "beneficiaryBank": "",
+      "remittanceAmount": 2600000000,
+      "currency": "IDR"
+    },
+    {
+      "status": "OPEN",
+      "remitanceGroup": 1201814353928,
+      "beneficiaryBank": "",
+      "remittanceAmount": 2600000000,
+      "currency": ""
+    },
+    {
+      "status": "OPEN",
+      "remitanceGroup": 1201814353935,
+      "beneficiaryBank": "",
+      "remittanceAmount": 2700000000,
+      "currency": "IDR"
+    },
+    {
+      "status": "OPEN",
+      "remitanceGroup": 1201814353936,
+      "beneficiaryBank": "",
+      "remittanceAmount": 2700000000,
+      "currency": ""
+    },
+    {
+      "status": "OPEN",
+      "remitanceGroup": 1201814353943,
+      "beneficiaryBank": "",
+      "remittanceAmount": 2800000000,
+      "currency": "IDR"
+    },
+    {
+      "status": "OPEN",
+      "remitanceGroup": 1201814353944,
+      "beneficiaryBank": "",
+      "remittanceAmount": 2800000000,
+      "currency": ""
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 288,
+  "sizeBytes": 406,
+  "url": "http://172.18.30.26:7088/rm/list/group/detail/number/120016606",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Mon, 26 Oct 2026 03:15:43 GMT",
+    "content-length": "406"
+  }
+}

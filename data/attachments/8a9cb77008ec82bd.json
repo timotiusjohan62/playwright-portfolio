@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 623,
+  "sizeBytes": 2854,
+  "url": "http://172.18.30.26:7084/dd/cheque-book/account/2501300001601/type/D/seq/1",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Mon, 26 Oct 2026 03:16:18 GMT",
+    "content-length": "2854"
+  }
+}

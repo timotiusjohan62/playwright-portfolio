@@ -1,0 +1,2 @@
+#1 GET /bp/asabriApsan/paymentCode/BE141852THT41/inquiry -> 200 (217 ms)
+#2 POST /bp/asabriApsan/paymentCode/BE141852THT41/payment -> 200 (889 ms)

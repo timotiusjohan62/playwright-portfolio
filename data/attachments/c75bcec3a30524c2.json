@@ -1,0 +1,24 @@
+{
+  "subResponses": [
+    {
+      "code": "F4",
+      "mnemonicCode": "KAS",
+      "shortName": "NASABAH P499772",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 24101300015224,
+      "passbookSerial": 0,
+      "currentBalance": 1452777287300,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 5515097,
+  "responseDescription": "Transaction Success",
+  "listResponses": "F4",
+  "responseBiller": {
+    "paymentProofNumber": "BTNTHT20901202600241154800010"
+  }
+}

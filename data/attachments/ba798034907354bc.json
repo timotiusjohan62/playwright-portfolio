@@ -1,0 +1,17 @@
+{
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "customerName1": "NASABAH L002782",
+  "customerName2": "",
+  "customerName3": "",
+  "shortName": "NASABAH L002782",
+  "idNumber": ".",
+  "cif": "L002782",
+  "type": "C",
+  "headers": [
+    {
+      "seq": "001",
+      "message": "Usia Nasabah Melebihi Ketentuan Tabungan Junior"
+    }
+  ]
+}

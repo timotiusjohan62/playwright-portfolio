@@ -1,0 +1,43 @@
+{
+  "remitanceProduct": 5,
+  "dateIssued": 180419,
+  "toAmount": 0,
+  "totalRecord": 1,
+  "responseCode": "000",
+  "startAmount": 0,
+  "responseDescription": "Transaksi Sukses",
+  "issuingBranch": 12,
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "remitanceNumber": 401865005670,
+  "status": "OPEN",
+  "list": [
+    {
+      "remitanceGroup": 401865005670,
+      "agentCode": 0,
+      "agentName": "",
+      "payAtBranch": 0,
+      "cif": "",
+      "applicantName": "MALIK ABDUL AZIS",
+      "applicantId": "",
+      "applicationTic": "",
+      "beneficiaryName": "",
+      "beneficiaryId": "",
+      "inwardItem": "N",
+      "checkAmount": 2699750000,
+      "currency": "",
+      "beneficiaryBank": "",
+      "tellerCreation": 1200012,
+      "issuingBranch": 12,
+      "timeLastMaint": 0,
+      "status": "OPEN",
+      "userApprove": "",
+      "timeApprove": 0,
+      "userFinalApprove": "",
+      "timeFinalApprove": 0,
+      "userReject": "000000",
+      "timeReject": 0
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/utbk/billNumber/88902347/nisn/12345678/payment",
+  "path": "/bp/utbk/billNumber/88902347/nisn/12345678/payment",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-23T16:31:05.855+07:00",
+    "x-signature": "zkD5cZaxy2zwNRyIy3tRPTnU6Jz8cvVaIwyybK7KpTk=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514704",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": true
+}

@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 616,
+  "sizeBytes": 774,
+  "url": "http://172.18.30.27:7095/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381392/totalMonthsToPay/01/participantType/IDN/payment",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 09:26:35 GMT",
+    "content-length": "774"
+  }
+}

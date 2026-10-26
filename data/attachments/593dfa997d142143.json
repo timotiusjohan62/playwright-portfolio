@@ -1,0 +1,19 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7095/bp/utbk/billNumber/88902347/nisn/12345678/inquiry?tellerId=99991&controlUnitBranch=C27",
+  "path": "/bp/utbk/billNumber/88902347/nisn/12345678/inquiry",
+  "query": {
+    "tellerId": "99991",
+    "controlUnitBranch": "C27"
+  },
+  "headers": {
+    "x-timestamp": "2026-10-23T16:50:13.237+07:00",
+    "x-signature": "48Gsr8aH5A7wCBu8ZyLU8P/7wnxJz5b07w7FlZuHOGM=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514980",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

@@ -1,0 +1,83 @@
+{
+  "subResponses": [
+    {
+      "code": "F9",
+      "messageHeader": "9",
+      "lineCount": 2,
+      "lines": [
+        {
+          "withdrawalAmount": 42250000,
+          "depositAmount": 0,
+          "interestAmount": 0,
+          "balanceAmount": 47705443219,
+          "tellerId": 99991,
+          "transactionDate": 10519,
+          "tellerMnemonic": "BPO",
+          "lineNumber": 27,
+          "sourceBrCode": "0014"
+        },
+        {
+          "withdrawalAmount": 42250000,
+          "depositAmount": 0,
+          "interestAmount": 0,
+          "balanceAmount": 47663193219,
+          "tellerId": 99991,
+          "transactionDate": 10519,
+          "tellerMnemonic": "BPO",
+          "lineNumber": 28,
+          "sourceBrCode": "0014"
+        }
+      ]
+    },
+    {
+      "code": "E0",
+      "mnemonicCode": "BPO",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "longName1": "PRIZEGA FROMADIA G.",
+      "longName2": "NASABAH A015851",
+      "longName3": "NASABAH A015851",
+      "longName4": "PRIZEGA FROMADIA G.",
+      "longName5": "NASABAH Y008031",
+      "accountNumber1": 4801500003451,
+      "accountNumber2": 101300000386,
+      "accountNumber3": 111310000000,
+      "accountNumber4": 0,
+      "accountNumber5": 0
+    },
+    {
+      "code": "F4",
+      "mnemonicCode": "BPO",
+      "shortName": "NASABAH A015851",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 111310000000,
+      "passbookSerial": 3711,
+      "currentBalance": 630750000,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 5514915,
+  "responseDescription": "success",
+  "listResponses": "F9 E0 F4",
+  "responseBiller": {
+    "virtualAccountNumber": "8888890000381394",
+    "totalMonthsToPay": "6",
+    "participantType": "IND",
+    "participantName": "1-H A AZIZ MACHMUD FA",
+    "membershipBranchOffice": "",
+    "totalAmount": 150000,
+    "adminFee": 0,
+    "tranCode": "88888900011002990099991558002520260421",
+    "billReference1": "2026-04-21 11:13:10",
+    "billReference2": "",
+    "controlUnitBranch": "I99",
+    "accountGiroAdmin": "0",
+    "accountGiro": "101300000019",
+    "paymentType": "F"
+  }
+}

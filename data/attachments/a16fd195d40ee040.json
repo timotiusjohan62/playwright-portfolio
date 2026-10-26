@@ -1,0 +1,18 @@
+{
+  "isequence": 1,
+  "relationshipCode": 41,
+  "cnNumber": 120016606,
+  "icnNumber": 120016606,
+  "responseCode": "000",
+  "branchCode": 20705,
+  "sequence": 1,
+  "brnCode": "MLG",
+  "irelationshipCode": 41,
+  "responseDescription": "Transaksi Sukses",
+  "iapplicationAcctType": "T",
+  "iapplicationAcctNumber": 1201400052515,
+  "applicationAcctNumber": 1201400052515,
+  "btnUserId": "BTN0010042",
+  "applicationAcctType": "T",
+  "remark1": "BRI, JL.KAWI 20-22 MALANG"
+}

@@ -1,0 +1,21 @@
+{
+  "subResponses": [
+    {
+      "code": "F4",
+      "mnemonicCode": "LLG",
+      "shortName": "ARIQA AFRA",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 467111496510,
+      "passbookSerial": 16,
+      "currentBalance": 2276933171200,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 5515266,
+  "responseDescription": "Transaction Success",
+  "listResponses": "F4"
+}

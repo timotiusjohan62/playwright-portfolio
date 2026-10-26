@@ -1,0 +1,27 @@
+{
+  "index": 1,
+  "method": "GET",
+  "url": "http://172.18.30.26:7095/bp/pln/prepaid/meterNumber/03106343300/buyingOption/0/inquiry",
+  "path": "/bp/pln/prepaid/meterNumber/03106343300/buyingOption/0/inquiry",
+  "query": {},
+  "requestHeaders": {
+    "x-timestamp": "2026-10-23T16:31:08.780+07:00",
+    "x-signature": "c6fPZykEDkoWwHdvoRZCfSA+j+0LbQ+XLFt3w0LKDAM=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514712",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 09:31:09 GMT",
+    "content-length": "384"
+  },
+  "durationMs": 1053,
+  "sizeBytes": 384,
+  "responseBody": "{\n  \"responseCode\": \"000\",\n  \"responseDescription\": \"Transaksi Sukses\",\n  \"meterNumber\": 45068979800,\n  \"customerId\": 441400371479,\n  \"tarifDaya\": \"R3  /000002200\",\n  \"buyingOption\": \"0\",\n  \"customerName\": \"SUHARDI\",\n  \"adminFee\": 3500,\n  \"mlpoRef\": \"20230118144146186738850085697412\",\n  \"reference\": \"093109514712\",\n  \"date\": \"13102026\",\n  \"time\": \"143449\",\n  \"availToken1\": 0,\n  \"availToken2\": 0,\n  \"accountGl\": 279536091370,\n  \"totalAmount\": 0\n}"
+}

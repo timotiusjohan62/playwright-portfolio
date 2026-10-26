@@ -1,0 +1,18 @@
+{
+  "method": "C",
+  "sequence": 2,
+  "addressLine1": "SWADAYA KOST, (NOMOR 6, LANTAI 1), JALAN",
+  "addressLine2": "RT 001/003 GROGOL",
+  "addressLine3": "GROGOL PETAMBURAN",
+  "addressLine4": "KOTA ADM. JAKARTA BARAT",
+  "postalCode": 114500000,
+  "foreignAddress": "N",
+  "addressDescription": "DKI JAKARTA",
+  "isUsed": "Y",
+  "invalidAddressCode": "",
+  "useMail": "Y",
+  "periodThere": 1,
+  "periodThereCode": "Y",
+  "addressType": "KITAP",
+  "rt": "003"
+}

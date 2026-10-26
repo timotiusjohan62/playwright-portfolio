@@ -1,0 +1,41 @@
+{
+  "subResponses": [
+    {
+      "code": "E0",
+      "mnemonicCode": "COC",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "longName1": "",
+      "longName2": "NASABAH O002411",
+      "longName3": "NASABAH K002429",
+      "longName4": "NASABAH K002429",
+      "longName5": "NASABAH H569210",
+      "accountNumber1": 24101300015224,
+      "accountNumber2": 11901500032314,
+      "accountNumber3": 0,
+      "accountNumber4": 0,
+      "accountNumber5": 0
+    },
+    {
+      "code": "F4",
+      "mnemonicCode": "COC",
+      "shortName": "NASABAH O002411",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 11901500032314,
+      "passbookSerial": 2248,
+      "currentBalance": 4088196210,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 5515078,
+  "responseDescription": "Transaction Success",
+  "listResponses": "E0 F4",
+  "responseBiller": {
+    "paymentProofNumber": "BTNTHT20901202600241154800010"
+  }
+}

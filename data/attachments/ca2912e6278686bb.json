@@ -1,0 +1,30 @@
+{
+  "index": 1,
+  "method": "GET",
+  "url": "http://172.18.30.26:7095/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381392/totalMonthsToPay/01/participantType/IDN/inquiry?controlUnitBranch=I99&tellerId=0099991",
+  "path": "/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381392/totalMonthsToPay/01/participantType/IDN/inquiry",
+  "query": {
+    "controlUnitBranch": "I99",
+    "tellerId": "0099991"
+  },
+  "requestHeaders": {
+    "x-timestamp": "2026-10-23T16:30:13.408+07:00",
+    "x-signature": "q7x9OFtddbY2nJXrgFvvW33hVUGWQkCpviNr4wgAPxE=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514588",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 09:30:13 GMT",
+    "content-length": "137"
+  },
+  "durationMs": 489,
+  "sizeBytes": 137,
+  "responseBody": "{\n  \"responseCode\": \"088\",\n  \"responseDescription\": \"Tagihan Sudah Terbayar\",\n  \"virtualAccountNumber\": \"8888890000381392\",\n  \"controlUnitBranch\": \"I99\"\n}"
+}

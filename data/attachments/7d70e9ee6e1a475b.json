@@ -1,0 +1,24 @@
+{
+  "totalData": 20,
+  "destinationBank": "",
+  "responseCode": "000",
+  "branchCode": 27,
+  "responseDescription": "Transaksi Sukses",
+  "limit": 1,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "list": [
+    {
+      "applicationAcctNumber": 2701400021185,
+      "remark1": "bca",
+      "applicationAcctType": "T",
+      "relationshipCode": 41,
+      "sequence": 1,
+      "cnNumber": 270057774,
+      "cnType": "CN",
+      "cnPrintingBranch": 0,
+      "cnPrintingStatus": "Y",
+      "date": 20518
+    }
+  ]
+}

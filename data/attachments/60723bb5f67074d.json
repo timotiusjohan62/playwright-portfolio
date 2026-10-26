@@ -1,0 +1,36 @@
+{
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "list": [
+    {
+      "cif": "F288644",
+      "idNumber": "320201210301004",
+      "idCode": "NP",
+      "dateExpired": 311299,
+      "placeIssue": "JAKARTA",
+      "status": "4",
+      "dateInfo": 180225,
+      "dateReview": 180226
+    },
+    {
+      "cif": "F288644",
+      "idNumber": "320201210301005",
+      "idCode": "NP",
+      "dateExpired": 0,
+      "placeIssue": "",
+      "status": "",
+      "dateInfo": 170319,
+      "dateReview": 170320
+    },
+    {
+      "cif": "F288644",
+      "idNumber": "320201210301006",
+      "idCode": "NP",
+      "dateExpired": 311299,
+      "placeIssue": "JAKARTA",
+      "status": "4",
+      "dateInfo": 210419,
+      "dateReview": 210420
+    }
+  ]
+}

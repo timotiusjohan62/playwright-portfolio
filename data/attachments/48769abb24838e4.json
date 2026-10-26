@@ -1,0 +1,1636 @@
+{
+  "responseDescription": "Transaksi Sukses",
+  "btnUserId": "BTN0010042",
+  "responseCode": "000",
+  "list": [
+    {
+      "bankCode": "ABALIDBS",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH BALI",
+      "rtgsMember": "",
+      "rtgsCode": "ABALIDBS",
+      "rtgsGiro": 524129000990,
+      "sknCode": "1290013",
+      "onlineCode": "129"
+    },
+    {
+      "bankCode": "ABNAIDJA",
+      "bankName": "THE ROYAL BANK OF SCOTLAND N.V.",
+      "rtgsMember": "ABNAIDJA",
+      "rtgsCode": "ABNA",
+      "rtgsGiro": 521052000990,
+      "sknCode": "0520302",
+      "onlineCode": "052"
+    },
+    {
+      "bankCode": "AGSSIDJA",
+      "bankName": "PT. BANK IBK INDONESIA TBK",
+      "rtgsMember": "AGSSIDJA",
+      "rtgsCode": "AGSS",
+      "rtgsGiro": 522945000990,
+      "sknCode": "9450305",
+      "onlineCode": "945"
+    },
+    {
+      "bankCode": "AGTBIDJA",
+      "bankName": "PT. BANK RAKYAT INDONESIA AGRONIAGA, TBK",
+      "rtgsMember": "AGTBIDJA",
+      "rtgsCode": "AGTB",
+      "rtgsGiro": 523494000990,
+      "sknCode": "4940014",
+      "onlineCode": "494"
+    },
+    {
+      "bankCode": "ANTDIDJD",
+      "bankName": "PT. BANK ANTAR DAERAH",
+      "rtgsMember": "ANTDIDJD",
+      "rtgsCode": "ANTD",
+      "rtgsGiro": 523088000990,
+      "sknCode": "0880013",
+      "onlineCode": "088"
+    },
+    {
+      "bankCode": "ANZBIDJX",
+      "bankName": "PT. BANK ANZ INDONESIA",
+      "rtgsMember": "ANZBIDJX",
+      "rtgsCode": "ANZB",
+      "rtgsGiro": 522061000990,
+      "sknCode": "0610306",
+      "onlineCode": "061"
+    },
+    {
+      "bankCode": "ARFAIDJ1",
+      "bankName": "PT. BANK PANIN DUBAI SYARIAH",
+      "rtgsMember": "ARFAIDJ1",
+      "rtgsCode": "ARFA",
+      "rtgsGiro": 525517000990,
+      "sknCode": "5170016",
+      "onlineCode": "517"
+    },
+    {
+      "bankCode": "ARTGIDJA",
+      "bankName": "PT. BANK ARTHA GRAHA INTERNASIONAL, TBK",
+      "rtgsMember": "ARTGIDJA",
+      "rtgsCode": "ARTG",
+      "rtgsGiro": 522037000990,
+      "sknCode": "0370028",
+      "onlineCode": "037"
+    },
+    {
+      "bankCode": "ATJSIDJ2",
+      "bankName": "PT.ARTAJASA PEMBAYARAN ELEKTR.",
+      "rtgsMember": "ATJSIDJ2",
+      "rtgsCode": "ATJS",
+      "rtgsGiro": 551000001990,
+      "sknCode": "0",
+      "onlineCode": "0"
+    },
+    {
+      "bankCode": "ATOSIDJ1",
+      "bankName": "PT. BANK ARTOS INDONESIA",
+      "rtgsMember": "ATOSIDJ1",
+      "rtgsCode": "ATOS",
+      "rtgsGiro": 523542000990,
+      "sknCode": "5420012",
+      "onlineCode": "542"
+    },
+    {
+      "bankCode": "AWANIDJA",
+      "bankName": "PT. BANK QNB INDONESIA,TBK",
+      "rtgsMember": "AWANIDJA",
+      "rtgsCode": "AWAN",
+      "rtgsGiro": 523167000990,
+      "sknCode": "1670015",
+      "onlineCode": "167"
+    },
+    {
+      "bankCode": "BANKLIA1",
+      "bankName": "BANK TEST BG 1",
+      "rtgsMember": "BGNIDJA",
+      "rtgsCode": "BGN1",
+      "rtgsGiro": 523146000990,
+      "sknCode": "0330301",
+      "onlineCode": "011"
+    },
+    {
+      "bankCode": "BANKLIA10",
+      "bankName": "BANK TEST BG 10",
+      "rtgsMember": "BGNIDJA",
+      "rtgsCode": "BGN10",
+      "rtgsGiro": 523146000990,
+      "sknCode": "0330310",
+      "onlineCode": "020"
+    },
+    {
+      "bankCode": "BANKLIA2",
+      "bankName": "BANK TEST BG 2",
+      "rtgsMember": "BGNIDJA",
+      "rtgsCode": "BGN2",
+      "rtgsGiro": 523146000990,
+      "sknCode": "0330302",
+      "onlineCode": "012"
+    },
+    {
+      "bankCode": "BANKLIA3",
+      "bankName": "BANK TEST BG 3",
+      "rtgsMember": "BGNIDJA",
+      "rtgsCode": "BGN3",
+      "rtgsGiro": 523146000990,
+      "sknCode": "0330303",
+      "onlineCode": "013"
+    },
+    {
+      "bankCode": "BANKLIA4",
+      "bankName": "BANK TEST BG 4",
+      "rtgsMember": "BGNIDJA",
+      "rtgsCode": "BGN4",
+      "rtgsGiro": 523146000990,
+      "sknCode": "0330304",
+      "onlineCode": "014"
+    },
+    {
+      "bankCode": "BANKLIA5",
+      "bankName": "BANK TEST BG 5",
+      "rtgsMember": "BGNIDJA",
+      "rtgsCode": "BGN5",
+      "rtgsGiro": 523146000990,
+      "sknCode": "0330305",
+      "onlineCode": "015"
+    },
+    {
+      "bankCode": "BANKLIA6",
+      "bankName": "BANK TEST BG 6",
+      "rtgsMember": "BGNIDJA",
+      "rtgsCode": "BGN6",
+      "rtgsGiro": 523146000990,
+      "sknCode": "0330306",
+      "onlineCode": "016"
+    },
+    {
+      "bankCode": "BANKLIA7",
+      "bankName": "BANK TEST BG 7",
+      "rtgsMember": "BGNIDJA",
+      "rtgsCode": "BGN7",
+      "rtgsGiro": 523146000990,
+      "sknCode": "0330306",
+      "onlineCode": "017"
+    },
+    {
+      "bankCode": "BANKLIA8",
+      "bankName": "BANK TEST BG 8",
+      "rtgsMember": "BGNIDJA",
+      "rtgsCode": "BGN8",
+      "rtgsGiro": 523146000990,
+      "sknCode": "0330308",
+      "onlineCode": "018"
+    },
+    {
+      "bankCode": "BANKLIA9",
+      "bankName": "BANK TEST BG 9",
+      "rtgsMember": "BGNIDJA",
+      "rtgsCode": "BGN9",
+      "rtgsGiro": 523146000990,
+      "sknCode": "0330309",
+      "onlineCode": "019"
+    },
+    {
+      "bankCode": "BBAIIDJA",
+      "bankName": "PT. BANK BUMI ARTA",
+      "rtgsMember": "BBAIIDJA",
+      "rtgsCode": "BBAI",
+      "rtgsGiro": 523076000990,
+      "sknCode": "0760010",
+      "onlineCode": "076"
+    },
+    {
+      "bankCode": "BBBAIDJA",
+      "bankName": "PT. BANK PERMATA,TBK",
+      "rtgsMember": "BBBAIDJA",
+      "rtgsCode": "BBBA",
+      "rtgsGiro": 523013000990,
+      "sknCode": "0130475",
+      "onlineCode": "013"
+    },
+    {
+      "bankCode": "BBIJIDJA",
+      "bankName": "PT. BANK UOB INDONESIA",
+      "rtgsMember": "BBIJIDJA",
+      "rtgsCode": "BBIJ",
+      "rtgsGiro": 523023000990,
+      "sknCode": "0230016",
+      "onlineCode": "023"
+    },
+    {
+      "bankCode": "BBLUIDJA",
+      "bankName": "PT. BANK DIGITAL BCA",
+      "rtgsMember": "BBLUIDJA",
+      "rtgsCode": "BBLU",
+      "rtgsGiro": 523501000990,
+      "sknCode": "5010011",
+      "onlineCode": "501"
+    },
+    {
+      "bankCode": "BBUKIDJA",
+      "bankName": "PT. BANK BUKOPIN Tbk.",
+      "rtgsMember": "BBUKIDJA",
+      "rtgsCode": "BBUK",
+      "rtgsGiro": 523441000990,
+      "sknCode": "4410010",
+      "onlineCode": "441"
+    },
+    {
+      "bankCode": "BCA000AD",
+      "bankName": "PT BANK CENTRAL ASIA TBK",
+      "rtgsMember": "RTGS02AP",
+      "rtgsCode": "RTCJ",
+      "rtgsGiro": 3500000000,
+      "sknCode": "1000231",
+      "onlineCode": "343"
+    },
+    {
+      "bankCode": "BCA001",
+      "bankName": "BANK CENTRAL ASIA CABANG PUSAT",
+      "rtgsMember": "",
+      "rtgsCode": "",
+      "rtgsGiro": 3000000000,
+      "sknCode": "",
+      "onlineCode": ""
+    },
+    {
+      "bankCode": "BCIAIDJA",
+      "bankName": "PT BANK CAPITAL INDONESIA",
+      "rtgsMember": "BCIAIDJA",
+      "rtgsCode": "BCIA",
+      "rtgsGiro": 522054000990,
+      "sknCode": "0540308",
+      "onlineCode": "054"
+    },
+    {
+      "bankCode": "BDINIDJA",
+      "bankName": "PT. BANK DANAMON INDONESIA Tbk.",
+      "rtgsMember": "BDINIDJA",
+      "rtgsCode": "BDIN",
+      "rtgsGiro": 523011000990,
+      "sknCode": "0110042",
+      "onlineCode": "011"
+    },
+    {
+      "bankCode": "BDIPIDJ1",
+      "bankName": "PT. BANK SAHABAT SAMPOERNA",
+      "rtgsMember": "BDIPIDJ1",
+      "rtgsCode": "BDIP",
+      "rtgsGiro": 523523000990,
+      "sknCode": "5230011",
+      "onlineCode": "523"
+    },
+    {
+      "bankCode": "BDKIIDJ1",
+      "bankName": "PT. BANK DKI",
+      "rtgsMember": "BDKIIDJ1",
+      "rtgsCode": "BDKI",
+      "rtgsGiro": 524111000990,
+      "sknCode": "1110012",
+      "onlineCode": "111"
+    },
+    {
+      "bankCode": "BICNIDJA",
+      "bankName": "PT. BANK COMMONWEALTH",
+      "rtgsMember": "BICNIDJA",
+      "rtgsCode": "BICN",
+      "rtgsGiro": 522950000990,
+      "sknCode": "9500307",
+      "onlineCode": "950"
+    },
+    {
+      "bankCode": "BIDXIDJA",
+      "bankName": "BANK INDEX SELINDO",
+      "rtgsMember": "BIDXIDJA",
+      "rtgsCode": "BIDX",
+      "rtgsGiro": 523555000990,
+      "sknCode": "5550018",
+      "onlineCode": "555"
+    },
+    {
+      "bankCode": "BKCHIDJA",
+      "bankName": "BANK OF CHINA (HONG KONG) LIMITED",
+      "rtgsMember": "BKCHIDJA",
+      "rtgsCode": "BKCH",
+      "rtgsGiro": 521069000990,
+      "sknCode": "0690300",
+      "onlineCode": "069"
+    },
+    {
+      "bankCode": "BKKBIDJA",
+      "bankName": "BANGKOK BANK PUBLIC CO.LTD",
+      "rtgsMember": "BKKBIDJA",
+      "rtgsCode": "BKKB",
+      "rtgsGiro": 521040000990,
+      "sknCode": "0400309",
+      "onlineCode": "040"
+    },
+    {
+      "bankCode": "BMRIIDJA",
+      "bankName": "PT. BANK MANDIRI (PERSERO) TBK",
+      "rtgsMember": "BMRIIDJA",
+      "rtgsCode": "BMRI",
+      "rtgsGiro": 520008000990,
+      "sknCode": "0080017",
+      "onlineCode": "008"
+    },
+    {
+      "bankCode": "BMSEIDJA",
+      "bankName": "PT. BANK MULTI ARTA SENTOSA",
+      "rtgsMember": "BMSEIDJA",
+      "rtgsCode": "BMSE",
+      "rtgsGiro": 523548000990,
+      "sknCode": "5480010",
+      "onlineCode": "548"
+    },
+    {
+      "bankCode": "BNIAIDJA",
+      "bankName": "PT. BANK CIMB NIAGA TBK",
+      "rtgsMember": "BNIAIDJA",
+      "rtgsCode": "BNIA",
+      "rtgsGiro": 523022000990,
+      "sknCode": "0220026",
+      "onlineCode": "022"
+    },
+    {
+      "bankCode": "BNINIDJA",
+      "bankName": "PT. BANK NEGARA INDONESIA (PERSERO)",
+      "rtgsMember": "BNINIDJA",
+      "rtgsCode": "BNIN",
+      "rtgsGiro": 520009000990,
+      "sknCode": "0090010",
+      "onlineCode": "009"
+    },
+    {
+      "bankCode": "BNPAIDJA",
+      "bankName": "PT. BANK BNP PARIBAS INDONESIA",
+      "rtgsMember": "BNPAIDJA",
+      "rtgsCode": "BNPA",
+      "rtgsGiro": 522057000990,
+      "sknCode": "0570307",
+      "onlineCode": "057"
+    },
+    {
+      "bankCode": "BOFAID2X",
+      "bankName": "BANK OF AMERICA NA",
+      "rtgsMember": "BOFAID2X",
+      "rtgsCode": "BOFA",
+      "rtgsGiro": 521033000990,
+      "sknCode": "0330301",
+      "onlineCode": "033"
+    },
+    {
+      "bankCode": "BOTKIDJX",
+      "bankName": "MUFG Bank, Ltd.",
+      "rtgsMember": "BOTKIDJX",
+      "rtgsCode": "BOTK",
+      "rtgsGiro": 521042000990,
+      "sknCode": "0420305",
+      "onlineCode": "042"
+    },
+    {
+      "bankCode": "BPIAIDJA",
+      "bankName": "PT. BANK RESONA PERDANIA",
+      "rtgsMember": "BPIAIDJA",
+      "rtgsCode": "BPIA",
+      "rtgsGiro": 522047000990,
+      "sknCode": "0470300",
+      "onlineCode": "047"
+    },
+    {
+      "bankCode": "BRINIDJA",
+      "bankName": "PT. BANK RAKYAT INDONESIA (PERSERO)",
+      "rtgsMember": "BRINIDJA",
+      "rtgsCode": "BRIN",
+      "rtgsGiro": 520002000990,
+      "sknCode": "0020307",
+      "onlineCode": "002"
+    },
+    {
+      "bankCode": "BSDRIDJA",
+      "bankName": "BANK WOORI INDONESIA",
+      "rtgsMember": "BSDRIDJA",
+      "rtgsCode": "BSDR",
+      "rtgsGiro": 522068000990,
+      "sknCode": "0680307",
+      "onlineCode": "068"
+    },
+    {
+      "bankCode": "BSDRIDJA",
+      "bankName": "PT. BANK WOORI SAUDARA INDONESIA 1906,TBK",
+      "rtgsMember": "BSDRIDJA",
+      "rtgsCode": "BSDR",
+      "rtgsGiro": 523212000990,
+      "sknCode": "2120027",
+      "onlineCode": "212"
+    },
+    {
+      "bankCode": "BSMDIDJA",
+      "bankName": "PT. BANK SYARIAH MANDIRI Tbk.",
+      "rtgsMember": "BSMDIDJA",
+      "rtgsCode": "BSMD",
+      "rtgsGiro": 525451000990,
+      "sknCode": "4510017",
+      "onlineCode": "451"
+    },
+    {
+      "bankCode": "BSSPIDSP",
+      "bankName": "PT. BPD SUMSEL DAN BABEL",
+      "rtgsMember": "BSSPIDSP",
+      "rtgsCode": "BSSP",
+      "rtgsGiro": 524120000990,
+      "sknCode": "1200016",
+      "onlineCode": "120"
+    },
+    {
+      "bankCode": "BTANIDJA",
+      "bankName": "PT. BANK TABUNGAN NEGARA (PERSERO)",
+      "rtgsMember": "BTANIDJA",
+      "rtgsCode": "BTAN",
+      "rtgsGiro": 520200000990,
+      "sknCode": "2000150",
+      "onlineCode": "200"
+    },
+    {
+      "bankCode": "BTPNIDJA",
+      "bankName": "PT. Bank Tabungan Pensiunan Nasional",
+      "rtgsMember": "BTPNIDJA",
+      "rtgsCode": "BTPN",
+      "rtgsGiro": 523213000991,
+      "sknCode": "2130101",
+      "onlineCode": "213"
+    },
+    {
+      "bankCode": "BUMIIDJA",
+      "bankName": "PT. BANK MNC INTERNASIONAL, TBK",
+      "rtgsMember": "BUMIIDJA",
+      "rtgsCode": "BUMI",
+      "rtgsGiro": 523485000990,
+      "sknCode": "4850010",
+      "onlineCode": "485"
+    },
+    {
+      "bankCode": "BUSTIDJ1",
+      "bankName": "PT. BANK BISNIS INTERNASIONAL",
+      "rtgsMember": "BUSTIDJ1",
+      "rtgsCode": "BUST",
+      "rtgsGiro": 523459000990,
+      "sknCode": "4590011",
+      "onlineCode": "459"
+    },
+    {
+      "bankCode": "BUTGIDJ1",
+      "bankName": "PT. BANK MEGA SYARIAH",
+      "rtgsMember": "BUTGIDJ1",
+      "rtgsCode": "BUTG",
+      "rtgsGiro": 525506000990,
+      "sknCode": "5060016",
+      "onlineCode": "506"
+    },
+    {
+      "bankCode": "CENAIDJA",
+      "bankName": "PT. BANK CENTRAL ASIA Tbk.",
+      "rtgsMember": "CENAIDJA",
+      "rtgsCode": "CENA",
+      "rtgsGiro": 523014000990,
+      "sknCode": "0140397",
+      "onlineCode": "014"
+    },
+    {
+      "bankCode": "CHASIDJX",
+      "bankName": "KC JPMORGAN CHASE BANK, N.A",
+      "rtgsMember": "CHASIDJX",
+      "rtgsCode": "CHAS",
+      "rtgsGiro": 521032000990,
+      "sknCode": "0320308",
+      "onlineCode": "032"
+    },
+    {
+      "bankCode": "CICTIDJA",
+      "bankName": "PT. BANK JTRUST INDONESIA, TBK",
+      "rtgsMember": "CICTIDJA",
+      "rtgsCode": "CICT",
+      "rtgsGiro": 523095000990,
+      "sknCode": "0950011",
+      "onlineCode": "095"
+    },
+    {
+      "bankCode": "CITIIDJX",
+      "bankName": "CITIBANK, NA",
+      "rtgsMember": "CITIIDJX",
+      "rtgsCode": "CITI",
+      "rtgsGiro": 521031000990,
+      "sknCode": "0310305",
+      "onlineCode": "031"
+    },
+    {
+      "bankCode": "CNBAIDJ1",
+      "bankName": "PT. CENTRATAMA NASIONAL BANK",
+      "rtgsMember": "CNBAIDJ1",
+      "rtgsCode": "CNBA",
+      "rtgsGiro": 523559000990,
+      "sknCode": "5590036",
+      "onlineCode": "559"
+    },
+    {
+      "bankCode": "CTCBIDJA",
+      "bankName": "PT. BANK CTBC INDONESIA",
+      "rtgsMember": "CTCBIDJA",
+      "rtgsCode": "CTCB",
+      "rtgsGiro": 522949000990,
+      "sknCode": "9490307",
+      "onlineCode": "949"
+    },
+    {
+      "bankCode": "DBSBIDJA",
+      "bankName": "PT. BANK DBS INDONESIA",
+      "rtgsMember": "DBSBIDJA",
+      "rtgsCode": "DBSB",
+      "rtgsGiro": 522046000990,
+      "sknCode": "0460307",
+      "onlineCode": "046"
+    },
+    {
+      "bankCode": "DEUTIDJA",
+      "bankName": "DEUTSCHE BANK AG.",
+      "rtgsMember": "DEUTIDJA",
+      "rtgsCode": "DEUT",
+      "rtgsGiro": 521067000990,
+      "sknCode": "0670304",
+      "onlineCode": "067"
+    },
+    {
+      "bankCode": "DJARIDJ1",
+      "bankName": "PT. BANK SYARIAH BRI",
+      "rtgsMember": "DJARIDJ1",
+      "rtgsCode": "DJAR",
+      "rtgsGiro": 525422000990,
+      "sknCode": "4220051",
+      "onlineCode": "422"
+    },
+    {
+      "bankCode": "EKONIDJA",
+      "bankName": "BANK EKONOMI RAHARJA",
+      "rtgsMember": "EKONIDJA",
+      "rtgsCode": "EKON",
+      "rtgsGiro": 523087000990,
+      "sknCode": "870010",
+      "onlineCode": "870"
+    },
+    {
+      "bankCode": "EKONIDJA",
+      "bankName": "PT. BANK HSBC INDONESIA",
+      "rtgsMember": "EKONIDJA",
+      "rtgsCode": "EKON",
+      "rtgsGiro": 521041000990,
+      "sknCode": "0410302",
+      "onlineCode": "041"
+    },
+    {
+      "bankCode": "EKSTIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH BANTEN",
+      "rtgsMember": "EKSTIDJ1",
+      "rtgsCode": "EKST",
+      "rtgsGiro": 523558000990,
+      "sknCode": "5580017",
+      "onlineCode": "558"
+    },
+    {
+      "bankCode": "EKSTIDJ1",
+      "bankName": "BANK PUNDI INDONESIA",
+      "rtgsMember": "EKSTIDJ1",
+      "rtgsCode": "EKST",
+      "rtgsGiro": 523558000990,
+      "sknCode": "5580088",
+      "onlineCode": "558"
+    },
+    {
+      "bankCode": "FAMAIDJ1",
+      "bankName": "PT. BANK FAMA INTERNATIONAL",
+      "rtgsMember": "FAMAIDJ1",
+      "rtgsCode": "FAMA",
+      "rtgsGiro": 523562000990,
+      "sknCode": "5620016",
+      "onlineCode": "562"
+    },
+    {
+      "bankCode": "FINTIDJ1",
+      "bankName": "PT. FINNET INDONESIA",
+      "rtgsMember": "FINTIDJ1",
+      "rtgsCode": "FINT",
+      "rtgsGiro": 551000011990,
+      "sknCode": "0",
+      "onlineCode": "0"
+    },
+    {
+      "bankCode": "GNESIDJA",
+      "bankName": "PT. BANK GANESHA",
+      "rtgsMember": "GNESIDJA",
+      "rtgsCode": "GNES",
+      "rtgsGiro": 523161000990,
+      "sknCode": "1610017",
+      "onlineCode": "161"
+    },
+    {
+      "bankCode": "HNBNIDJA",
+      "bankName": "PT. BANK KEB HANA INDONESIA",
+      "rtgsMember": "HNBNIDJA",
+      "rtgsCode": "HNBN",
+      "rtgsGiro": 523484000990,
+      "sknCode": "4840017",
+      "onlineCode": "484"
+    },
+    {
+      "bankCode": "HRDAIDJ1",
+      "bankName": "PT. BANK HARDA INTERNATIONAL",
+      "rtgsMember": "HRDAIDJ1",
+      "rtgsCode": "HRDA",
+      "rtgsGiro": 523567000990,
+      "sknCode": "5670011",
+      "onlineCode": "567"
+    },
+    {
+      "bankCode": "HSBCIDJA",
+      "bankName": "PT. BANK HSBC INDONESIA",
+      "rtgsMember": "HSBCIDJA",
+      "rtgsCode": "HSBC",
+      "rtgsGiro": 523087000990,
+      "sknCode": "0870010",
+      "onlineCode": "087"
+    },
+    {
+      "bankCode": "HSHKIDJ1",
+      "bankName": "HSBC",
+      "rtgsMember": "HSHKIDJ1",
+      "rtgsCode": "HSHK",
+      "rtgsGiro": 521041000990,
+      "sknCode": "410302",
+      "onlineCode": "410"
+    },
+    {
+      "bankCode": "HVBKIDJA",
+      "bankName": "PT. BANK WOORI INDONESIA",
+      "rtgsMember": "HVBKIDJA",
+      "rtgsCode": "HVBK",
+      "rtgsGiro": 522068000,
+      "sknCode": "0680307",
+      "onlineCode": "068"
+    },
+    {
+      "bankCode": "IBBKIDJA",
+      "bankName": "PT. BANK MAYBANK INDONESIA Tbk.",
+      "rtgsMember": "IBBKIDJA",
+      "rtgsCode": "IBBK",
+      "rtgsGiro": 523016000990,
+      "sknCode": "0160131",
+      "onlineCode": "016"
+    },
+    {
+      "bankCode": "ICBKIDJA",
+      "bankName": "PT. BANK ICBC INDONESIA",
+      "rtgsMember": "ICBKIDJA",
+      "rtgsCode": "ICBK",
+      "rtgsGiro": 523164000990,
+      "sknCode": "1640016",
+      "onlineCode": "164"
+    },
+    {
+      "bankCode": "IDMOIDJ1",
+      "bankName": "PT. BANK SBI INDONESIA",
+      "rtgsMember": "IDMOIDJ1",
+      "rtgsCode": "IDMO",
+      "rtgsGiro": 523498000990,
+      "sknCode": "4980016",
+      "onlineCode": "498"
+    },
+    {
+      "bankCode": "INDOIDJA",
+      "bankName": "BANK INDONESIA",
+      "rtgsMember": "INDOIDJA",
+      "rtgsCode": "INDO",
+      "rtgsGiro": 810000980990,
+      "sknCode": "0010016",
+      "onlineCode": "001"
+    },
+    {
+      "bankCode": "INDOIDJA",
+      "bankName": "PTL XYZ INDONESIA",
+      "rtgsMember": "INDOIDJA",
+      "rtgsCode": "PTLA",
+      "rtgsGiro": 809000980,
+      "sknCode": "7771234",
+      "onlineCode": "777"
+    },
+    {
+      "bankCode": "INDOIDJA930",
+      "bankName": "BANK INDONESIA",
+      "rtgsMember": "INDOIDJA93",
+      "rtgsCode": "INDO",
+      "rtgsGiro": 502000000980,
+      "sknCode": "0010016",
+      "onlineCode": "001"
+    },
+    {
+      "bankCode": "INDOIDJA990",
+      "bankName": "BANK INDONESIA",
+      "rtgsMember": "INDOIDJA99",
+      "rtgsCode": "INDO",
+      "rtgsGiro": 502000000990,
+      "sknCode": "0010016",
+      "onlineCode": "001"
+    },
+    {
+      "bankCode": "INPBIDJ1",
+      "bankName": "PT. BANK INA PERDANA",
+      "rtgsMember": "INPBIDJ1",
+      "rtgsCode": "INPB",
+      "rtgsGiro": 523513000990,
+      "sknCode": "5130014",
+      "onlineCode": "513"
+    },
+    {
+      "bankCode": "JPNAIDJ1",
+      "bankName": "PT. Jalin Pembayaran Nusantara",
+      "rtgsMember": "JPNAIDJ1",
+      "rtgsCode": "JPNAIDJ1",
+      "rtgsGiro": 551000012990,
+      "sknCode": "",
+      "onlineCode": ""
+    },
+    {
+      "bankCode": "JSABIDJ1",
+      "bankName": "PT. BANK JASA JAKARTA",
+      "rtgsMember": "JSABIDJ1",
+      "rtgsCode": "JSAB",
+      "rtgsGiro": 523472000990,
+      "sknCode": "4720014",
+      "onlineCode": "472"
+    },
+    {
+      "bankCode": "KOEXIDJA",
+      "bankName": "BANK KEB INDONESIA",
+      "rtgsMember": "KOEXIDJA",
+      "rtgsCode": "KOEX",
+      "rtgsGiro": 522059000990,
+      "sknCode": "590303",
+      "onlineCode": "590"
+    },
+    {
+      "bankCode": "KSEBIDJ1",
+      "bankName": "PT. BANK KESEJAHTERAAN EKONOMI",
+      "rtgsMember": "KSEBIDJ1",
+      "rtgsCode": "KSEB",
+      "rtgsGiro": 523535000990,
+      "sknCode": "5350014",
+      "onlineCode": "535"
+    },
+    {
+      "bankCode": "KSEIIDJ1",
+      "bankName": "PT KUSTODIAN SENTRAL EFEK IND.",
+      "rtgsMember": "KSEIIDJ1",
+      "rtgsCode": "KSEI",
+      "rtgsGiro": 551000010990,
+      "sknCode": "0",
+      "onlineCode": "0"
+    },
+    {
+      "bankCode": "LFIBIDJ1",
+      "bankName": "PT. BANK NATIONALNOBU",
+      "rtgsMember": "LFIBIDJ1",
+      "rtgsCode": "LFIB",
+      "rtgsGiro": 523503000990,
+      "sknCode": "5030017",
+      "onlineCode": "503"
+    },
+    {
+      "bankCode": "LMANIDJ1",
+      "bankName": "PT. BANK OKE INDONESIA, TBK",
+      "rtgsMember": "LMANIDJ1",
+      "rtgsCode": "LMAN",
+      "rtgsGiro": 523526000990,
+      "sknCode": "5260010",
+      "onlineCode": "526"
+    },
+    {
+      "bankCode": "LOMAIDJ1",
+      "bankName": "PT. BANK AMAR INDONESIA",
+      "rtgsMember": "LOMAIDJ1",
+      "rtgsCode": "LOMA",
+      "rtgsGiro": 523531000990,
+      "sknCode": "5310012",
+      "onlineCode": "531"
+    },
+    {
+      "bankCode": "LPEIIDJ1",
+      "bankName": "INDONESIA EXIMBANK",
+      "rtgsMember": "LPEIIDJ1",
+      "rtgsCode": "LPEI",
+      "rtgsGiro": 519000123990,
+      "sknCode": "0",
+      "onlineCode": "0"
+    },
+    {
+      "bankCode": "MASBIDJ1",
+      "bankName": "PT. BANK MULTI ARTA SENTOSA",
+      "rtgsMember": "MASBIDJ1",
+      "rtgsCode": "MASB",
+      "rtgsGiro": 523999999990,
+      "sknCode": "5480010",
+      "onlineCode": "548"
+    },
+    {
+      "bankCode": "MASDIDJ1",
+      "bankName": "PT. BANK MASPION",
+      "rtgsMember": "MASDIDJ1",
+      "rtgsCode": "MASD",
+      "rtgsGiro": 523157000990,
+      "sknCode": "1570018",
+      "onlineCode": "157"
+    },
+    {
+      "bankCode": "MAYAIDJA",
+      "bankName": "PT. BANK MAYAPADA Tbk.",
+      "rtgsMember": "MAYAIDJA",
+      "rtgsCode": "MAYA",
+      "rtgsGiro": 523097000990,
+      "sknCode": "0970017",
+      "onlineCode": "097"
+    },
+    {
+      "bankCode": "MAYOIDJA",
+      "bankName": "PT. BANK MAYORA",
+      "rtgsMember": "MAYOIDJA",
+      "rtgsCode": "MAYO",
+      "rtgsGiro": 523553000990,
+      "sknCode": "5530012",
+      "onlineCode": "553"
+    },
+    {
+      "bankCode": "MBBEIDJA",
+      "bankName": "PT. BANK MAYBANK SYARIAH INDONESIA",
+      "rtgsMember": "MBBEIDJA",
+      "rtgsCode": "MBBE",
+      "rtgsGiro": 525947000990,
+      "sknCode": "9470302",
+      "onlineCode": "947"
+    },
+    {
+      "bankCode": "MCORIDJA",
+      "bankName": "PT. BANK CHINA CONSTRUCTION BANK INDONESIA, TBK",
+      "rtgsMember": "MCORIDJA",
+      "rtgsCode": "MCOR",
+      "rtgsGiro": 522036000990,
+      "sknCode": "0360300",
+      "onlineCode": "036"
+    },
+    {
+      "bankCode": "MEDHIDS1",
+      "bankName": "BANK MESTIKA DHARMA",
+      "rtgsMember": "MEDHIDS1",
+      "rtgsCode": "MEDH",
+      "rtgsGiro": 523151000990,
+      "sknCode": "1510049",
+      "onlineCode": "151"
+    },
+    {
+      "bankCode": "MEDHIDS1",
+      "bankName": "PT. BANK MESTIKA DHARMA",
+      "rtgsMember": "MEDHIDS1",
+      "rtgsCode": "MEDH",
+      "rtgsGiro": 523151000990,
+      "sknCode": "1510010",
+      "onlineCode": "151"
+    },
+    {
+      "bankCode": "MEEKIDJ1",
+      "bankName": "PT. BANK SHINHAN INDONESIA",
+      "rtgsMember": "MEEKIDJ1",
+      "rtgsCode": "MEEK",
+      "rtgsGiro": 523152000990,
+      "sknCode": "1520013",
+      "onlineCode": "152"
+    },
+    {
+      "bankCode": "MEGAIDJA",
+      "bankName": "PT. BANK MEGA Tbk.",
+      "rtgsMember": "MEGAIDJA",
+      "rtgsCode": "MEGA",
+      "rtgsGiro": 523426000990,
+      "sknCode": "4260121",
+      "onlineCode": "426"
+    },
+    {
+      "bankCode": "MGABIDJ1",
+      "bankName": "PT. BANK MITRANIAGA",
+      "rtgsMember": "MGABIDJ1",
+      "rtgsCode": "MGAB",
+      "rtgsGiro": 523491000990,
+      "sknCode": "4910015",
+      "onlineCode": "491"
+    },
+    {
+      "bankCode": "MHCCIDJA",
+      "bankName": "PT. BANK MIZUHO INDONESIA",
+      "rtgsMember": "MHCCIDJA",
+      "rtgsCode": "MHCC",
+      "rtgsGiro": 522048000990,
+      "sknCode": "0480303",
+      "onlineCode": "048"
+    },
+    {
+      "bankCode": "MUABIDJA",
+      "bankName": "PT. BANK MUAMALAT INDONESIA",
+      "rtgsMember": "MUABIDJA",
+      "rtgsCode": "MUAB",
+      "rtgsGiro": 525147000990,
+      "sknCode": "1470011",
+      "onlineCode": "147"
+    },
+    {
+      "bankCode": "NISPIDJA",
+      "bankName": "PT. BANK OCBC NISP, Tbk.",
+      "rtgsMember": "NISPIDJA",
+      "rtgsCode": "NISP",
+      "rtgsGiro": 523028000990,
+      "sknCode": "0280024",
+      "onlineCode": "028"
+    },
+    {
+      "bankCode": "NUPAIDJ6",
+      "bankName": "PT. BANK NUSANTARA PARAHYANGAN",
+      "rtgsMember": "NUPAIDJ6",
+      "rtgsCode": "NUPA",
+      "rtgsGiro": 523145000990,
+      "sknCode": "1450015",
+      "onlineCode": "145"
+    },
+    {
+      "bankCode": "PDACIDJ1",
+      "bankName": "PT. BANK ACEH",
+      "rtgsMember": "PDACIDJ1",
+      "rtgsCode": "PDAC",
+      "rtgsGiro": 524116000990,
+      "sknCode": "1160017",
+      "onlineCode": "116"
+    },
+    {
+      "bankCode": "PDACIDJ1",
+      "bankName": "BPD ACEH",
+      "rtgsMember": "PDACIDJ1",
+      "rtgsCode": "PDAC",
+      "rtgsGiro": 524116000990,
+      "sknCode": "1160017",
+      "onlineCode": "116"
+    },
+    {
+      "bankCode": "PDACIDJ1",
+      "bankName": "BPD ACEH",
+      "rtgsMember": "PDACIDJ1",
+      "rtgsCode": "PDAC",
+      "rtgsGiro": 524116000990,
+      "sknCode": "1160017",
+      "onlineCode": "116"
+    },
+    {
+      "bankCode": "PDBBIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH BANTEN",
+      "rtgsMember": "PDBBIDJ1",
+      "rtgsCode": "PDBB",
+      "rtgsGiro": 524137000990,
+      "sknCode": "1370014",
+      "onlineCode": "137"
+    },
+    {
+      "bankCode": "PDBKIDJ1",
+      "bankName": "PT. BPD BENGKULU",
+      "rtgsMember": "PDBKIDJ1",
+      "rtgsCode": "PDBK",
+      "rtgsGiro": 524133000990,
+      "sknCode": "1330012",
+      "onlineCode": "133"
+    },
+    {
+      "bankCode": "PDIJIDJ1",
+      "bankName": "PT.BANK PEMBANGUNAN DAERAH PAPUA",
+      "rtgsMember": "PDIJIDJ1",
+      "rtgsCode": "PDIJ",
+      "rtgsGiro": 524132000990,
+      "sknCode": "1320019",
+      "onlineCode": "132"
+    },
+    {
+      "bankCode": "PDJBIDJA",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH  JABAR DAN BANTEN",
+      "rtgsMember": "PDJBIDJA",
+      "rtgsCode": "PDJB",
+      "rtgsGiro": 524110000990,
+      "sknCode": "1100323",
+      "onlineCode": "110"
+    },
+    {
+      "bankCode": "PDJGIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH JAWA TENGAH",
+      "rtgsMember": "PDJGIDJ1",
+      "rtgsCode": "PDJG",
+      "rtgsGiro": 524113000990,
+      "sknCode": "1130348",
+      "onlineCode": "113"
+    },
+    {
+      "bankCode": "PDJMIDJ1",
+      "bankName": "PT.BANK PEMBANGUNAN DAERAH JAMBI",
+      "rtgsMember": "PDJMIDJ1",
+      "rtgsCode": "PDJM",
+      "rtgsGiro": 524115000990,
+      "sknCode": "1150014",
+      "onlineCode": "115"
+    },
+    {
+      "bankCode": "PDJTIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH  JATIM",
+      "rtgsMember": "PDJTIDJ1",
+      "rtgsCode": "PDJT",
+      "rtgsGiro": 524114000990,
+      "sknCode": "1140383",
+      "onlineCode": "114"
+    },
+    {
+      "bankCode": "PDKBIDJ1",
+      "bankName": "PT.BANK PEMBANGUNAN DAERAH KALBAR",
+      "rtgsMember": "PDKBIDJ1",
+      "rtgsCode": "PDKB",
+      "rtgsGiro": 524123000990,
+      "sknCode": "1230015",
+      "onlineCode": "123"
+    },
+    {
+      "bankCode": "PDKGIDJ1",
+      "bankName": "PT. BPD KALIMANTAN TENGAH",
+      "rtgsMember": "PDKGIDJ1",
+      "rtgsCode": "PDKG",
+      "rtgsGiro": 524125000990,
+      "sknCode": "1250011",
+      "onlineCode": "125"
+    },
+    {
+      "bankCode": "PDKSIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH KALSEL",
+      "rtgsMember": "PDKSIDJ1",
+      "rtgsCode": "PDKS",
+      "rtgsGiro": 524122000990,
+      "sknCode": "1220012",
+      "onlineCode": "122"
+    },
+    {
+      "bankCode": "PDKTIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH KALTIM DAN KALTARA",
+      "rtgsMember": "PDKTIDJ1",
+      "rtgsCode": "PDKT",
+      "rtgsGiro": 524124000990,
+      "sknCode": "1240018",
+      "onlineCode": "124"
+    },
+    {
+      "bankCode": "PDLPIDJ1",
+      "bankName": "PT.BANK PEMBANGUNAN DAERAH LAMPUNG",
+      "rtgsMember": "PDLPIDJ1",
+      "rtgsCode": "PDLP",
+      "rtgsGiro": 524121000990,
+      "sknCode": "1210051",
+      "onlineCode": "121"
+    },
+    {
+      "bankCode": "PDMLIDJ1",
+      "bankName": "PT.BANK PEMBANGUNAN DAERAH MALUKU DAN MALUKU UTARA",
+      "rtgsMember": "PDMLIDJ1",
+      "rtgsCode": "PDML",
+      "rtgsGiro": 524131000990,
+      "sknCode": "1310016",
+      "onlineCode": "131"
+    },
+    {
+      "bankCode": "PDNBIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH NUSA TENGGARAT BARAT SYARIAH",
+      "rtgsMember": "PDNBIDJ1",
+      "rtgsCode": "PDNB",
+      "rtgsGiro": 525128001990,
+      "sknCode": "1280010",
+      "onlineCode": "128"
+    },
+    {
+      "bankCode": "PDNBIDJ1",
+      "bankName": "BPD NUSA TENGGARA BARAT",
+      "rtgsMember": "PDNBIDJ1",
+      "rtgsCode": "PDNB",
+      "rtgsGiro": 524128000990,
+      "sknCode": "1280010",
+      "onlineCode": "128"
+    },
+    {
+      "bankCode": "PDNTIDJ1",
+      "bankName": "PT.BANK PEMBANGUNAN DAERAH NTT",
+      "rtgsMember": "PDNTIDJ1",
+      "rtgsCode": "PDNT",
+      "rtgsGiro": 524130000990,
+      "sknCode": "1300013",
+      "onlineCode": "130"
+    },
+    {
+      "bankCode": "PDRIIDJA",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH RIAU KEPRI",
+      "rtgsMember": "PDRIIDJA",
+      "rtgsCode": "PDRI",
+      "rtgsGiro": 524119000990,
+      "sknCode": "1190016",
+      "onlineCode": "119"
+    },
+    {
+      "bankCode": "PDSBIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH SUMATERA BARAT",
+      "rtgsMember": "PDSBIDJ1",
+      "rtgsCode": "PDSB",
+      "rtgsGiro": 524118000990,
+      "sknCode": "1180013",
+      "onlineCode": "118"
+    },
+    {
+      "bankCode": "PDSUIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH SUMUT",
+      "rtgsMember": "PDSUIDJ1",
+      "rtgsCode": "PDSU",
+      "rtgsGiro": 524117000990,
+      "sknCode": "1170010",
+      "onlineCode": "117"
+    },
+    {
+      "bankCode": "PDWGIDJ1",
+      "bankName": "PT. BPD SULAWESI TENGAH",
+      "rtgsMember": "PDWGIDJ1",
+      "rtgsCode": "PDWG",
+      "rtgsGiro": 524134000990,
+      "sknCode": "1340015",
+      "onlineCode": "134"
+    },
+    {
+      "bankCode": "PDWRIDJ1",
+      "bankName": "PT. BPD SULAWESI TENGGARA",
+      "rtgsMember": "PDWRIDJ1",
+      "rtgsCode": "PDWR",
+      "rtgsGiro": 524135000990,
+      "sknCode": "1350018",
+      "onlineCode": "135"
+    },
+    {
+      "bankCode": "PDWSIDJ1",
+      "bankName": "PT. BANK SULSELBAR",
+      "rtgsMember": "PDWSIDJ1",
+      "rtgsCode": "PDWS",
+      "rtgsGiro": 524126000990,
+      "sknCode": "1260027",
+      "onlineCode": "126"
+    },
+    {
+      "bankCode": "PDWUIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH  SULUT",
+      "rtgsMember": "PDWUIDJ1",
+      "rtgsCode": "PDWU",
+      "rtgsGiro": 524127000990,
+      "sknCode": "1270017",
+      "onlineCode": "127"
+    },
+    {
+      "bankCode": "PDYKIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH DIY",
+      "rtgsMember": "PDYKIDJ1",
+      "rtgsCode": "PDYK",
+      "rtgsGiro": 524112000990,
+      "sknCode": "1120015",
+      "onlineCode": "112"
+    },
+    {
+      "bankCode": "PINBIDJA",
+      "bankName": "PT. PANIN BANK Tbk.",
+      "rtgsMember": "PINBIDJA",
+      "rtgsCode": "PINB",
+      "rtgsGiro": 523019000990,
+      "sknCode": "0190017",
+      "onlineCode": "019"
+    },
+    {
+      "bankCode": "PMASIDJ1",
+      "bankName": "PT. PRIMA MASTER BANK",
+      "rtgsMember": "PMASIDJ1",
+      "rtgsCode": "PMAS",
+      "rtgsGiro": 523520000990,
+      "sknCode": "5200012",
+      "onlineCode": "520"
+    },
+    {
+      "bankCode": "PTDAIDJA",
+      "bankName": "PTD ABC INDONESIA",
+      "rtgsMember": "PTDAIDJA",
+      "rtgsCode": "PTDA",
+      "rtgsGiro": 523666000,
+      "sknCode": "6014444",
+      "onlineCode": "601"
+    },
+    {
+      "bankCode": "PUBAIDJ1",
+      "bankName": "PT. BANK TABUNGAN PENSIUNAN NASIONAL SYARIAH",
+      "rtgsMember": "PUBAIDJ1",
+      "rtgsCode": "PUBA",
+      "rtgsGiro": 525547000990,
+      "sknCode": "5470046",
+      "onlineCode": "547"
+    },
+    {
+      "bankCode": "PUBAIDJ1",
+      "bankName": "BANK SAHABAT PURBA DANARTA",
+      "rtgsMember": "PUBAIDJ1",
+      "rtgsCode": "PUBA",
+      "rtgsGiro": 523547000990,
+      "sknCode": "5470046",
+      "onlineCode": "547"
+    },
+    {
+      "bankCode": "RABOIDJA",
+      "bankName": "PT. BANK RABOBANK INTERNATIONAL INDONESIA",
+      "rtgsMember": "RABOIDJA",
+      "rtgsCode": "RABO",
+      "rtgsGiro": 522089000990,
+      "sknCode": "0890016",
+      "onlineCode": "089"
+    },
+    {
+      "bankCode": "RIPAIDJ1",
+      "bankName": "PT. BANK OKE INDONESIA",
+      "rtgsMember": "RIPAIDJ1",
+      "rtgsCode": "RIPA",
+      "rtgsGiro": 523466000990,
+      "sknCode": "4660019",
+      "onlineCode": "466"
+    },
+    {
+      "bankCode": "ROYBIDJ1",
+      "bankName": "PT. BANK ROYAL INDONESIA",
+      "rtgsMember": "ROYBIDJ1",
+      "rtgsCode": "ROYB",
+      "rtgsGiro": 523501000990,
+      "sknCode": "5010011",
+      "onlineCode": "501"
+    },
+    {
+      "bankCode": "SBJKIDJA",
+      "bankName": "PT. BANK SINARMAS",
+      "rtgsMember": "SBJKIDJA",
+      "rtgsCode": "SBJK",
+      "rtgsGiro": 523153000990,
+      "sknCode": "1530016",
+      "onlineCode": "153"
+    },
+    {
+      "bankCode": "SCBLIDJX",
+      "bankName": "STANDARD CHARTERED BANK",
+      "rtgsMember": "SCBLIDJX",
+      "rtgsCode": "SCBL",
+      "rtgsGiro": 521050000990,
+      "sknCode": "0500306",
+      "onlineCode": "050"
+    },
+    {
+      "bankCode": "SDOBIDJ1",
+      "bankName": "PT. BANK SYARIAH BUKOPIN",
+      "rtgsMember": "SDOBIDJ1",
+      "rtgsCode": "SDOB",
+      "rtgsGiro": 525521000990,
+      "sknCode": "5210031",
+      "onlineCode": "521"
+    },
+    {
+      "bankCode": "SIHBIDJ1",
+      "bankName": "PT. BANK MANDIRI TASPEN",
+      "rtgsMember": "SIHBIDJ1",
+      "rtgsCode": "SIHB",
+      "rtgsGiro": 523564000990,
+      "sknCode": "5640012",
+      "onlineCode": "564"
+    },
+    {
+      "bankCode": "SSPIIDJA",
+      "bankName": "PT. BANK SEABANK INDONESIA",
+      "rtgsMember": "SSPIIDJA",
+      "rtgsCode": "",
+      "rtgsGiro": 0,
+      "sknCode": "5350014",
+      "onlineCode": "535"
+    },
+    {
+      "bankCode": "SUNIIDJA",
+      "bankName": "PT. Bank BTPN, Tbk.",
+      "rtgsMember": "SUNIIDJA",
+      "rtgsCode": "SUNI",
+      "rtgsGiro": 523213000990,
+      "sknCode": "2130101",
+      "onlineCode": "213"
+    },
+    {
+      "bankCode": "SUNIIDJ1",
+      "bankName": "PT. BANK SUMITOMO MITSUI INDONESIA",
+      "rtgsMember": "SUNIIDJ1",
+      "rtgsCode": "SUNI",
+      "rtgsGiro": 522045000990,
+      "sknCode": "0450304",
+      "onlineCode": "045"
+    },
+    {
+      "bankCode": "SWAGIDJ1",
+      "bankName": "PT. BANK VICTORIA SYARIAH",
+      "rtgsMember": "SWAGIDJ1",
+      "rtgsCode": "SWAG",
+      "rtgsGiro": 525405000990,
+      "sknCode": "4050072",
+      "onlineCode": "405"
+    },
+    {
+      "bankCode": "SWBAIDJ1",
+      "bankName": "PT. BANK OF INDIA INDONESIA, TBK",
+      "rtgsMember": "SWBAIDJ1",
+      "rtgsCode": "SWBA",
+      "rtgsGiro": 523146000990,
+      "sknCode": "1460047",
+      "onlineCode": "146"
+    },
+    {
+      "bankCode": "SYACIDJ1",
+      "bankName": "PT. BANK ACEH SYARIAH",
+      "rtgsMember": "SYACIDJ1",
+      "rtgsCode": "SYAC",
+      "rtgsGiro": 525116000990,
+      "sknCode": "1169900",
+      "onlineCode": "116"
+    },
+    {
+      "bankCode": "SYBBIDJ1",
+      "bankName": "PT. BANK PERMATA,TBK UNIT USAHA SYARIAH",
+      "rtgsMember": "SYBBIDJ1",
+      "rtgsCode": "SYBB",
+      "rtgsGiro": 525013000990,
+      "sknCode": "0139926",
+      "onlineCode": "013"
+    },
+    {
+      "bankCode": "SYBDIDJ1",
+      "bankName": "PT. BANK DANAMON INDONESIA UNIT USAHA SYARIAH",
+      "rtgsMember": "SYBDIDJ1",
+      "rtgsCode": "SYBD",
+      "rtgsGiro": 525011000990,
+      "sknCode": "0119920",
+      "onlineCode": "011"
+    },
+    {
+      "bankCode": "SYBKIDJ1",
+      "bankName": "PT. BANK MAYBANK INDONESIA Tbk. UNIT USAHA SYARIAH",
+      "rtgsMember": "SYBKIDJ1",
+      "rtgsCode": "SYBK",
+      "rtgsGiro": 525016000990,
+      "sknCode": "0169925",
+      "onlineCode": "016"
+    },
+    {
+      "bankCode": "SYBTIDJ1",
+      "bankName": "PT. BANK TABUNGAN NEGARA (PERSERO) UNIT USAHA SYARIAH",
+      "rtgsMember": "SYBTIDJ1",
+      "rtgsCode": "SYBT",
+      "rtgsGiro": 525200000990,
+      "sknCode": "2009928",
+      "onlineCode": "200"
+    },
+    {
+      "bankCode": "SYCAIDJ1",
+      "bankName": "PT. BANK BCA SYARIAH",
+      "rtgsMember": "SYCAIDJ1",
+      "rtgsCode": "SYCA",
+      "rtgsGiro": 525536000990,
+      "sknCode": "5360017",
+      "onlineCode": "536"
+    },
+    {
+      "bankCode": "SYDKIDJ1",
+      "bankName": "PT. BANK DKI UNIT USAHA SYARIAH",
+      "rtgsMember": "SYDKIDJ1",
+      "rtgsCode": "SYDK",
+      "rtgsGiro": 525111000990,
+      "sknCode": "1119916",
+      "onlineCode": "111"
+    },
+    {
+      "bankCode": "SYHSIDJ1",
+      "bankName": "HSBC SYARIAH",
+      "rtgsMember": "SYHSIDJ1",
+      "rtgsCode": "SYHS",
+      "rtgsGiro": 525041000990,
+      "sknCode": "419921",
+      "onlineCode": "419"
+    },
+    {
+      "bankCode": "SYJBIDJ1",
+      "bankName": "PT. BANK JABAR BANTEN SYARIAH",
+      "rtgsMember": "SYJBIDJ1",
+      "rtgsCode": "SYJB",
+      "rtgsGiro": 525425000990,
+      "sknCode": "4250018",
+      "onlineCode": "425"
+    },
+    {
+      "bankCode": "SYJGIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH JATENG UNIT USAHA SYARIAH",
+      "rtgsMember": "SYJGIDJ1",
+      "rtgsCode": "SYJG",
+      "rtgsGiro": 525113000990,
+      "sknCode": "1139938",
+      "onlineCode": "113"
+    },
+    {
+      "bankCode": "SYJMIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH JAMBI UUS",
+      "rtgsMember": "SYJMIDJ1",
+      "rtgsCode": "SYJM",
+      "rtgsGiro": 525115000990,
+      "sknCode": "1159918",
+      "onlineCode": "115"
+    },
+    {
+      "bankCode": "SYJTIDJ1",
+      "bankName": "BANK JATIM UNIT USAHA SYARIAH",
+      "rtgsMember": "SYJTIDJ1",
+      "rtgsCode": "SYJT",
+      "rtgsGiro": 525114000990,
+      "sknCode": "1149928",
+      "onlineCode": "114"
+    },
+    {
+      "bankCode": "SYKBIDJ1",
+      "bankName": "PT.BANK PEMBANGUNAN DAERAH KALBAR UUS",
+      "rtgsMember": "SYKBIDJ1",
+      "rtgsCode": "SYKB",
+      "rtgsGiro": 525123000990,
+      "sknCode": "1239922",
+      "onlineCode": "123"
+    },
+    {
+      "bankCode": "SYKSIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH KALSEL - UNIT USAHA SYARIAH",
+      "rtgsMember": "SYKSIDJ1",
+      "rtgsCode": "SYKS",
+      "rtgsGiro": 525122000990,
+      "sknCode": "1229929",
+      "onlineCode": "122"
+    },
+    {
+      "bankCode": "SYKTIDJ1",
+      "bankName": "PT.BANK PEMBANGUNAN DAERAH KALTIM DAN KALTARA-UNIT USAHA SYARIAH",
+      "rtgsMember": "SYKTIDJ1",
+      "rtgsCode": "SYKT",
+      "rtgsGiro": 525124000990,
+      "sknCode": "1249925",
+      "onlineCode": "124"
+    },
+    {
+      "bankCode": "SYNAIDJ1",
+      "bankName": "PT. BANK CIMB NIAGA TBK - UNIT USAHA SYARIAH",
+      "rtgsMember": "SYNAIDJ1",
+      "rtgsCode": "SYNA",
+      "rtgsGiro": 525022000990,
+      "sknCode": "0229920",
+      "onlineCode": "022"
+    },
+    {
+      "bankCode": "SYNBIDJ1",
+      "bankName": "BPD NUSA TENGGARA BARAT SYARIAH",
+      "rtgsMember": "SYNBIDJ1",
+      "rtgsCode": "SYNB",
+      "rtgsGiro": 525128000990,
+      "sknCode": "0",
+      "onlineCode": "0"
+    },
+    {
+      "bankCode": "SYNIIDJ1",
+      "bankName": "PT BANK BNI SYARIAH",
+      "rtgsMember": "SYNIIDJ1",
+      "rtgsCode": "SYNI",
+      "rtgsGiro": 525427000990,
+      "sknCode": "4270027",
+      "onlineCode": "427"
+    },
+    {
+      "bankCode": "SYONIDJ1",
+      "bankName": "PT.BANK OCBC NISP TBK - UNIT USAHA SYARIAH",
+      "rtgsMember": "SYONIDJ1",
+      "rtgsCode": "SYON",
+      "rtgsGiro": 525028000990,
+      "sknCode": "0289928",
+      "onlineCode": "028"
+    },
+    {
+      "bankCode": "SYRIIDJ1",
+      "bankName": "BPD RIAU SYARIAH",
+      "rtgsMember": "SYRIIDJ1",
+      "rtgsCode": "SYRI",
+      "rtgsGiro": 525119000990,
+      "sknCode": "0",
+      "onlineCode": "0"
+    },
+    {
+      "bankCode": "SYSBIDJ1",
+      "bankName": "PT. BANK NAGARI - UNIT USAHA SYARIAH",
+      "rtgsMember": "SYSBIDJ1",
+      "rtgsCode": "SYSB",
+      "rtgsGiro": 525118000990,
+      "sknCode": "1189920",
+      "onlineCode": "118"
+    },
+    {
+      "bankCode": "SYSSIDJ1",
+      "bankName": "PT. BPD SUMSEL DAN BABEL UNIT USAHA SYARIAH",
+      "rtgsMember": "SYSSIDJ1",
+      "rtgsCode": "SYSS",
+      "rtgsGiro": 525120000990,
+      "sknCode": "1209923",
+      "onlineCode": "120"
+    },
+    {
+      "bankCode": "SYSUIDJ1",
+      "bankName": "PT. BANK PEMBANGUNAN DAERAH SUMUT UUS",
+      "rtgsMember": "SYSUIDJ1",
+      "rtgsCode": "SYSU",
+      "rtgsGiro": 525117000990,
+      "sknCode": "1179927",
+      "onlineCode": "117"
+    },
+    {
+      "bankCode": "SYTBIDJ1",
+      "bankName": "PT. BANK SINARMAS UNIT USAHA SYARIAH",
+      "rtgsMember": "SYTBIDJ1",
+      "rtgsCode": "SYTB",
+      "rtgsGiro": 525153000990,
+      "sknCode": "1539923",
+      "onlineCode": "153"
+    },
+    {
+      "bankCode": "SYWSIDJ1",
+      "bankName": "PT. BANK SULSELBAR UNIT USAHA SYARIAH",
+      "rtgsMember": "SYWSIDJ1",
+      "rtgsCode": "SYWS",
+      "rtgsGiro": 525126000990,
+      "sknCode": "1269947",
+      "onlineCode": "126"
+    },
+    {
+      "bankCode": "SYYKIDJ1",
+      "bankName": "PT.BANK PEMBANGUNAN DAERAH DIY UNIT USAHA SYARIAH",
+      "rtgsMember": "SYYKIDJ1",
+      "rtgsCode": "SYYK",
+      "rtgsGiro": 525112000990,
+      "sknCode": "1129922",
+      "onlineCode": "112"
+    },
+    {
+      "bankCode": "TAPEIDJ1",
+      "bankName": "PT. BANK BTPN",
+      "rtgsMember": "TAPEIDJ1",
+      "rtgsCode": "TAPE",
+      "rtgsGiro": 523999000990,
+      "sknCode": "2130101",
+      "onlineCode": "213"
+    },
+    {
+      "bankCode": "VICTIDJ1",
+      "bankName": "PT. BANK VICTORIA INTERNATIONAL",
+      "rtgsMember": "VICTIDJ1",
+      "rtgsCode": "VICT",
+      "rtgsGiro": 523566000990,
+      "sknCode": "5660018",
+      "onlineCode": "566"
+    },
+    {
+      "bankCode": "YUDBIDJ1",
+      "bankName": "PT. BANK YUDHA BHAKTI",
+      "rtgsMember": "YUDBIDJ1",
+      "rtgsCode": "YUDB",
+      "rtgsGiro": 523490000990,
+      "sknCode": "4900012",
+      "onlineCode": "490"
+    },
+    {
+      "bankCode": "YUDBIDJ2",
+      "bankName": "PT. BANK YUDHA BHAKTI1",
+      "rtgsMember": "YUDBIDJ2",
+      "rtgsCode": "YUDC",
+      "rtgsGiro": 999000000,
+      "sknCode": "4900013",
+      "onlineCode": "491"
+    }
+  ]
+}

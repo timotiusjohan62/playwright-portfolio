@@ -1,0 +1,27 @@
+{
+  "index": 1,
+  "method": "GET",
+  "url": "http://172.18.30.27:7095/bp/pln/prepaid/meterNumber/03106343300/buyingOption/0/inquiry",
+  "path": "/bp/pln/prepaid/meterNumber/03106343300/buyingOption/0/inquiry",
+  "query": {},
+  "requestHeaders": {
+    "x-timestamp": "2026-10-23T16:26:46.980+07:00",
+    "x-signature": "GCEF4+RYCB9G+MDJPk3p+EhHNLwC05BM+/LiyzVqY50=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514575",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 23 Oct 2026 09:26:47 GMT",
+    "content-length": "106"
+  },
+  "durationMs": 701,
+  "sizeBytes": 106,
+  "responseBody": "{\n  \"responseCode\": \"0XY\",\n  \"responseDescription\": \"NOMOR METER YANG ANDA MASUKKAN SALAH, MOHON TELITI KEMBALI.\"\n}"
+}

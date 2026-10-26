@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 375,
+  "sizeBytes": 97,
+  "url": "http://172.18.30.26:7088/rm/credit-notes/data/maintenance/approval",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Mon, 26 Oct 2026 03:15:41 GMT",
+    "content-length": "97"
+  }
+}

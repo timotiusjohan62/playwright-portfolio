@@ -1,0 +1,1 @@
+POST http://172.18.30.26:7095/bp/utbk/billNumber/88802336/nisn/12345678/payment

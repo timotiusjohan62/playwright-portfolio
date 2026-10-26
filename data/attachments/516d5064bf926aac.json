@@ -1,0 +1,29 @@
+{
+  "totalData": 2,
+  "method": "C",
+  "responseDescription": "Transaksi Sukses",
+  "btnUserId": "BTN0010042",
+  "responseCode": "000",
+  "responseList": [
+    {
+      "mitraName": "MITRA BARU PUNYA SAYA INI UPDATE DATA",
+      "mitraCode": "001010015",
+      "taggingType": "K",
+      "branch": 101,
+      "mitraAccount": 4801500004596,
+      "product": [],
+      "responseCode": "802",
+      "responseDescription": "Data Mitra tidak ditemukan"
+    },
+    {
+      "mitraName": "MITRA BARU PUNYA 000480001 YANG ABIS UPDATE DATA",
+      "mitraCode": "000480001",
+      "taggingType": "K",
+      "branch": 0,
+      "mitraAccount": 4801500004596,
+      "product": [],
+      "responseCode": "802",
+      "responseDescription": "Data Mitra tidak ditemukan"
+    }
+  ]
+}

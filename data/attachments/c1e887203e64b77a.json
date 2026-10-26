@@ -1,0 +1,38 @@
+{
+  "subResponses": [
+    {
+      "code": "F4",
+      "mnemonicCode": "KAS",
+      "shortName": "GIAN PERF empat",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 111310000000,
+      "passbookSerial": 0,
+      "currentBalance": 9385064567,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 5514830,
+  "responseDescription": "Transaction Success",
+  "listResponses": "F4",
+  "responseBiller": {
+    "reference": "",
+    "uuid": "5fcc7969-449b-4bde-8dec-502d974eebd7",
+    "billCode": "01",
+    "longDescription": "Biaya UTBK 2026",
+    "shortDescription": "Biaya UTBK",
+    "billAmount": 0,
+    "billNumber": "88802336",
+    "nisn": "0086660415",
+    "studentName": "ANDINI AZALIA SYAKIRA",
+    "dateOfBirth": "2008-02-29",
+    "adminFee": 0,
+    "trxCode": "SNPMB 2026",
+    "transactionName": "SNPMB 88802336",
+    "adminAccount": 0,
+    "creditAccount": 0
+  }
+}

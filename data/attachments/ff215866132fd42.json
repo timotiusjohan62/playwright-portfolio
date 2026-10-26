@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/cf/cif/AA24670/message/maintenance",
+  "path": "/cf/cif/AA24670/message/maintenance",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-26T10:15:37.655+07:00",
+    "x-signature": "UN8cW00WeJa38Y6FLWwbB/e3sliYL0vpS3a1DHI0v8Y=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505515242",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": true
+}

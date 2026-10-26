@@ -1,0 +1,43 @@
+{
+  "currencyType": "IDR",
+  "zipCode": 164260000,
+  "customerAdditionalName": "",
+  "channel": "NEWBDS",
+  "customerTypeCode": "A",
+  "terminalId": "PCDIMAS",
+  "type": "S",
+  "idNumber": "3222051408860002",
+  "responseCode": "000",
+  "referenceNumber": "B02505515327",
+  "addressLine1": "JALAN KARYA BAKTI RT.02/06 NO2 54",
+  "addressLine2": "TANAH ABANG",
+  "addressLine3": "BEJI",
+  "addressLine4": "DEPOK 16426",
+  "productDescription": "Tab. BTN Batara IDR",
+  "cifNumber": "AE30668",
+  "outputAccountNumber": 4801500000283,
+  "customerClassCode": "PerPdd",
+  "userId": "BTN0010042",
+  "customerName": "AULIA RAVI",
+  "branchCode": 48,
+  "productCode": "TB",
+  "responseDescription": "Transaksi Sukses",
+  "outputAccountType": "S",
+  "shortName": "AULIA RAVI",
+  "account": 4801500000283,
+  "terminalIp": "10.99.17.134",
+  "messages": [
+    {
+      "sequence": "001",
+      "message": "NASABAH BELUM MEMILIKI KARTU ATM/DEBIT,TAWARKAN."
+    },
+    {
+      "sequence": "002",
+      "message": "POINT UNDIAN HOMBASTIS Periode 2 : 5"
+    },
+    {
+      "sequence": "003",
+      "message": "POINT UNDIAN HOMBASTIS : 20"
+    }
+  ]
+}

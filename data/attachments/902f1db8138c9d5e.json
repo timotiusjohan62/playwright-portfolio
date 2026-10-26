@@ -1,0 +1,29 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/company/parameter/one",
+  "path": "/tag/cf/company/parameter/one",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-26T10:15:49.120+07:00",
+    "x-signature": "3c8cOtM0ZFZuUvvkXXDiC6/Xiy5n5Ygiil6MMS+2RqQ=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505515329",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"totalData\": 1,\n  \"method\": \"A\",\n  \"company\": [\n    {\n      \"companyName\": \"PUNYA PERUSAHAAN AKU 3\",\n      \"companyId\": \"\",\n      \"formOfEntity\": \"KP\",\n      \"companyOwnership\": \"BN\",\n      \"flagListed\": \"Y\",\n      \"totalData\": 2,\n      \"products\": [\n        {\n          \"productType\": \"T4\",\n          \"productCurrency\": \"IDR\"\n        },\n        {\n          \"productType\": \"P1\",\n          \"productCurrency\": \"IDR\"\n        }\n      ]\n    }\n  ]\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Mon, 26 Oct 2026 03:15:49 GMT",
+    "content-length": "75"
+  },
+  "durationMs": 401,
+  "sizeBytes": 75,
+  "responseBody": "{\n  \"error\": \"[Lcom.ibm.as400.access.AS400Message;@4df1a289\",\n  \"responseList\": []\n}"
+}

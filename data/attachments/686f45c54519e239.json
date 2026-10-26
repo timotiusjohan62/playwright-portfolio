@@ -1,0 +1,55 @@
+{
+  "subResponses": [
+    {
+      "code": "E0",
+      "mnemonicCode": "UPY",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "longName1": "CATEM",
+      "longName2": "GIAN PERF emapt",
+      "longName3": "NASABAH K002429",
+      "longName4": "NASABAH K002429",
+      "longName5": "NASABAH Y008031",
+      "accountNumber1": 56301300000023,
+      "accountNumber2": 101300007451,
+      "accountNumber3": 0,
+      "accountNumber4": 0,
+      "accountNumber5": 0
+    },
+    {
+      "code": "F4",
+      "mnemonicCode": "UPY",
+      "shortName": "GIAN PERF empat",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 101300007451,
+      "passbookSerial": 0,
+      "currentBalance": 9235064567,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 5514696,
+  "responseDescription": "Transaction Success",
+  "listResponses": "E0 F4",
+  "responseBiller": {
+    "reference": "",
+    "uuid": "5fcc7969-449b-4bde-8dec-502d974eebd7",
+    "billCode": "01",
+    "longDescription": "Biaya UTBK 2026",
+    "shortDescription": "Biaya UTBK",
+    "billAmount": 200000,
+    "billNumber": "88802337",
+    "nisn": "0086660417",
+    "studentName": "ANDINI AZALIA SYAKIRA",
+    "dateOfBirth": "2008-02-29",
+    "adminFee": 0,
+    "trxCode": "SNPMB 2026",
+    "transactionName": "SNPMB 88802337",
+    "adminAccount": 0,
+    "creditAccount": 0
+  }
+}

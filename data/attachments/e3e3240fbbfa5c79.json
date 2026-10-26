@@ -1,0 +1,49 @@
+{
+  "beneficiaryBank": "",
+  "amount": 0,
+  "istatus": "OPEN",
+  "idateIssued": 150319,
+  "responseCode": "000",
+  "istartGroup": 0,
+  "moreData": "N",
+  "iendGroup": 0,
+  "responseDescription": "Transaksi Sukses",
+  "iissuingBranch": 12,
+  "actualRecordFound": 4,
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "currency": "",
+  "page": 1,
+  "status": "",
+  "group": 0,
+  "list": [
+    {
+      "status": "OPEN",
+      "remitanceGroup": 1201814353587,
+      "beneficiaryBank": "",
+      "remittanceAmount": 1300000000,
+      "currency": "IDR"
+    },
+    {
+      "status": "OPEN",
+      "remitanceGroup": 1201814353595,
+      "beneficiaryBank": "",
+      "remittanceAmount": 1400000000,
+      "currency": "IDR"
+    },
+    {
+      "status": "OPEN",
+      "remitanceGroup": 1201814353618,
+      "beneficiaryBank": "",
+      "remittanceAmount": 1500000000,
+      "currency": "IDR"
+    },
+    {
+      "status": "OPEN",
+      "remitanceGroup": 1201814353723,
+      "beneficiaryBank": "BANK BNI, Jl IR H DJUANDA NO.52 BOGOR",
+      "remittanceAmount": 1600000000,
+      "currency": "IDR"
+    }
+  ]
+}

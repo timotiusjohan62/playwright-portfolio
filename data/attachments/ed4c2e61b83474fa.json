@@ -1,0 +1,49 @@
+{
+  "page": 1,
+  "limit": 10,
+  "totalData": 5,
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "list": [
+    {
+      "sequence": 1,
+      "code": "HP",
+      "electronicAddress": "081226541727",
+      "name": "YBS",
+      "departmentName": "TEST MAINT",
+      "jobDesignationCode": ""
+    },
+    {
+      "sequence": 2,
+      "code": "TK",
+      "electronicAddress": "0285123123124",
+      "name": "",
+      "departmentName": "",
+      "jobDesignationCode": ""
+    },
+    {
+      "sequence": 3,
+      "code": "KD",
+      "electronicAddress": "083871701005",
+      "name": "TEST KD",
+      "departmentName": "AK",
+      "jobDesignationCode": "AK"
+    },
+    {
+      "sequence": 5,
+      "code": "EM",
+      "electronicAddress": "TEST@MAIL.COM",
+      "name": "",
+      "departmentName": "",
+      "jobDesignationCode": ""
+    },
+    {
+      "sequence": 6,
+      "code": "HP",
+      "electronicAddress": "0812345678",
+      "name": "YBS",
+      "departmentName": "TEST MAINT Johan",
+      "jobDesignationCode": ""
+    }
+  ]
+}

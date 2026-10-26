@@ -1,0 +1,19 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7095/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381393/totalMonthsToPay/01/participantType/IDN/inquiry?controlUnitBranch=I99&tellerId=0099991",
+  "path": "/bp/bpjs/kesehatan/virtualAccountNumber/8888890000381393/totalMonthsToPay/01/participantType/IDN/inquiry",
+  "query": {
+    "controlUnitBranch": "I99",
+    "tellerId": "0099991"
+  },
+  "headers": {
+    "x-timestamp": "2026-10-23T16:36:47.195+07:00",
+    "x-signature": "V9sm43s1XvYMfj1zGcWEruNbJ/naRrf5k1tAx5hzmUc=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505514749",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

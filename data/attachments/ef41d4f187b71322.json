@@ -1,0 +1,27 @@
+{
+  "totalData": 1,
+  "method": "1",
+  "groupProductId": "A0099",
+  "groupProduct": "TEST A0099",
+  "responseCode": "000",
+  "groupProductName": "TEST A0099",
+  "responseDescription": "Transaksi Sukses",
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "productType": "TB",
+  "list": [
+    {
+      "groupProductId": "A001               ",
+      "groupProduct": "",
+      "groupProductName": "TABUNGAN BTN BATARA",
+      "groupProductDesc": "TABUNGAN",
+      "productCode": "TB",
+      "productCurrency": "TB",
+      "productDesc": "Tab. BTN Batara IDR",
+      "debitCard": "Y",
+      "taggingType": "N",
+      "agfFlag": "N"
+    }
+  ]
+}

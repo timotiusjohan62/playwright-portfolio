@@ -1,0 +1,1 @@
+GET http://172.18.30.26:7095/bp/asabriApsan/paymentCode/BE141852THT49/inquiry
