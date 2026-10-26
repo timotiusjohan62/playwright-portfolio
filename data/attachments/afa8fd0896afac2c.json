@@ -1,0 +1,16 @@
+{
+  "status": 405,
+  "statusText": "Not Allowed",
+  "ok": false,
+  "durationMs": 71,
+  "sizeBytes": 192,
+  "url": "http://172.18.30.26:7084/dd/account/1401500582840",
+  "headers": {
+    "allow": "GET, HEAD, OPTIONS",
+    "content-type": "application/json;charset=utf-8",
+    "x-original-http-status-code": "405",
+    "server": "IBM App Connect Enterprise",
+    "date": "Mon, 26 Oct 2026 03:38:42 GMT",
+    "content-length": "192"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": 405,
+    "status": "Method Not Allowed",
+    "detail": "BIP6311E: REST API 'BDS_DD_RA' does not support method 'POST' for URL 'http://172.18.30.26:7084/dd/account/1401500582840'. "
+  }
+}

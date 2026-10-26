@@ -1,0 +1,31 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.26:7084/dd/account/1401500582840",
+  "path": "/dd/account/1401500582840",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-26T10:38:42.731+07:00",
+    "x-signature": "txpPEYcsoKbRme/2XdU1tcIPFAq3FuMuitODVs/QAb4=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505515507",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"institution\": [\n    {\n      \"cif\": \"P306306\",\n      \"institutionName1\": \"PT BAHTERA A\",\n      \"institutionName2\": \"Indonesia\",\n      \"divisionIdFunding\": \"01\",\n      \"departmentIdFunding\": \"01\",\n      \"divisionIdLending\": \"02\",\n      \"departmentIdLending\": \"02\",\n      \"segmentationCode\": \"S2\",\n      \"bussinessCode\": \"01GV0001\",\n      \"grossAnualSales\": 15000000000,\n      \"salesCode\": \"AA5\",\n      \"skalaUsaha\": \"FT\",\n      \"method\": \"A\"\n    }\n  ],\n  \"totalData\": 1\n}",
+  "status": 405,
+  "statusText": "Not Allowed",
+  "responseHeaders": {
+    "allow": "GET, HEAD, OPTIONS",
+    "content-type": "application/json;charset=utf-8",
+    "x-original-http-status-code": "405",
+    "server": "IBM App Connect Enterprise",
+    "date": "Mon, 26 Oct 2026 03:38:42 GMT",
+    "content-length": "192"
+  },
+  "durationMs": 71,
+  "sizeBytes": 192,
+  "responseBody": "{\n  \"error\": {\n    \"code\": 405,\n    \"status\": \"Method Not Allowed\",\n    \"detail\": \"BIP6311E: REST API 'BDS_DD_RA' does not support method 'POST' for URL 'http://172.18.30.26:7084/dd/account/1401500582840'. \"\n  }\n}"
+}

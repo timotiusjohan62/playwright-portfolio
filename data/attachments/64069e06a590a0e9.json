@@ -1,0 +1,29 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/institution/report/inquiry",
+  "path": "/tag/cf/institution/report/inquiry",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-26T10:38:41.904+07:00",
+    "x-signature": "9kzb+RU/q5I74ubJq3N25z0Htj39Gkt9uNmdjqN1zUA=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505515499",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"dateFrom\": 29042019,\n  \"dateTo\": 29042019,\n  \"page\": 1,\n  \"limit\": 10\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Mon, 26 Oct 2026 03:38:42 GMT",
+    "content-length": "499"
+  },
+  "durationMs": 332,
+  "sizeBytes": 499,
+  "responseBody": "{\n  \"totalData\": 1,\n  \"dateFrom\": 29042019,\n  \"responseCode\": \"000\",\n  \"responseDescription\": \"Transaksi Sukses\",\n  \"dateTo\": 29042019,\n  \"limit\": 10,\n  \"btnUserId\": \"BTN0010042\",\n  \"page\": 1,\n  \"institutions\": [\n    {\n      \"cif\": \"P306306\",\n      \"institutionName1\": \"PT BAHTERA A\",\n      \"institutionName2\": \"Indonesia\",\n      \"divisionName\": \"\",\n      \"divisionIdFunding\": \"01\",\n      \"departmentIdFunding\": \"01\",\n      \"divisionIdLending\": \"02\",\n      \"departmentIdLending\": \"02\",\n      \"segmentationCode\": \"S2\",\n      \"bussinessCode\": \"01GV0001\",\n      \"grossAnualSales\": 15000000000,\n      \"salesCode\": \"AA5\",\n      \"skalaUsaha\": \"FT\"\n    }\n  ]\n}"
+}
