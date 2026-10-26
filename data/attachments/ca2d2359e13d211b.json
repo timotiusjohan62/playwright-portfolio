@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7083/tag/cf/institution/segmentation/cif/P306306/detail",
+  "path": "/tag/cf/institution/segmentation/cif/P306306/detail",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-10-26T11:31:37.868+07:00",
+    "x-signature": "z0IIgI+1KsibUl4jTjAUN/fIK9Y1+ZQZrtm+oSBaA44=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505515560",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

@@ -1,0 +1,15 @@
+{
+  "status": 404,
+  "statusText": "Not Found",
+  "ok": false,
+  "durationMs": 172,
+  "sizeBytes": 203,
+  "url": "http://172.18.30.26:7083/tag/cf/individual/segmentation/cif/E568397",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "x-original-http-status-code": "404",
+    "server": "IBM App Connect Enterprise",
+    "date": "Mon, 26 Oct 2026 04:22:44 GMT",
+    "content-length": "203"
+  }
+}
