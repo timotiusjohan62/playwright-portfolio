@@ -1,0 +1,16 @@
+{
+  "status": 405,
+  "statusText": "Not Allowed",
+  "ok": false,
+  "durationMs": 48,
+  "sizeBytes": 230,
+  "url": "http://172.18.30.26:7095/bp/pln/prepaid/meterNumber/45068979800/buyingOption/0/inquiry",
+  "headers": {
+    "allow": "GET, HEAD, OPTIONS",
+    "content-type": "application/json;charset=utf-8",
+    "x-original-http-status-code": "405",
+    "server": "IBM App Connect Enterprise",
+    "date": "Tue, 27 Oct 2026 04:31:40 GMT",
+    "content-length": "230"
+  }
+}

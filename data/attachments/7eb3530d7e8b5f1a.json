@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7083/tag/cf/customer/exception/cif/AE38894",
+  "path": "/tag/cf/customer/exception/cif/AE38894",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-10-27T13:20:10.036+07:00",
+    "x-signature": "/Mo070/yZH8gDay1rSSoTPX3UcQ139q9HZsWf0yJNiQ=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505515998",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

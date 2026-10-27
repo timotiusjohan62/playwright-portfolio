@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 2816,
+  "sizeBytes": 85,
+  "url": "http://172.18.30.26:7083/cf/cif",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Tue, 27 Oct 2026 06:34:56 GMT",
+    "content-length": "85"
+  }
+}

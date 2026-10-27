@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": 405,
+    "status": "Method Not Allowed",
+    "detail": "BIP6311E: REST API 'BDS_PLN_RA' does not support method 'POST' for URL 'http://172.18.30.26:7095/bp/pln/prepaid/meterNumber/00000000045068979800/buyingOption/0/inquiry'. "
+  }
+}

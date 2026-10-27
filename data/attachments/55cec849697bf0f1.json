@@ -1,0 +1,29 @@
+{
+  "index": 3,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/pln/prepaid/meterNumber/45068979800/buyingOption/0/payment",
+  "path": "/bp/pln/prepaid/meterNumber/45068979800/buyingOption/0/payment",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-27T11:44:58.074+07:00",
+    "x-signature": "Drv8rZtdL5ngljgxZg5neYXdgPLEdoQ50s4nQgLa4wE=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02505515906",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"referenceNumber\": \"B04125515907\",\n  \"tellerOverride\": \"Y\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": \"\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 5515907,\n  \"transactionCode\": 9131,\n  \"field1\": 4801500003451,\n  \"field2\": 350000,\n  \"field3\": 0,\n  \"field4\": 0,\n  \"field5\": 0,\n  \"field6\": 0,\n  \"field7\": 0,\n  \"field8\": 0,\n  \"field9\": 350000,\n  \"field10\": 0,\n  \"field11\": 0,\n  \"field12\": 3711,\n  \"field13\": 47173866919,\n  \"field14\": 7,\n  \"field15\": 279536091370,\n  \"field16\": 10000000,\n  \"field20\": 0,\n  \"currency\": \"IDR\",\n  \"alternateCurrency1\": \"IDR\",\n  \"alternateCurrency2\": \"IDR\",\n  \"thirdPartyName\": \"99991   149109\",\n  \"partyName\": \"000000\",\n  \"remark1\": \"56223262879\",\n  \"remark2\": \"56223262879 TESTING MID       301422\",\n  \"customerCheck\": \"PLN MKM\",\n  \"userInformation\": \"20000015211        \",\n  \"applicantName\": \"PT.GRAHA DUTA PUTRA JAYA\",\n  \"applicantAddress1\": \"545301379058\",\n  \"applicantAddress2\": \"PCDIMAS\",\n  \"applicantAddress3\": \"08072026\",\n  \"applicantPostcode\": \"20260708\",\n  \"applicantContact\": \"149109\",\n  \"payeeName\": \"2.0250810234421e+31\",\n  \"payeeAddress1\": \"0\",\n  \"payeeAddress2\": \"56223262879\",\n  \"payeePostcode\": \"PREPAID\",\n  \"shareIssueHouse\": \"0708\",\n  \"alphaFieldFiller\": \"PCDIMAS         149109G56\",\n  \"additionalRemark\": \"152514\",\n  \"meterNumber\": \"45068979800\",\n  \"customerId\": \"441400371479\",\n  \"tarifDaya\": \"R3  /000002200\",\n  \"buyingOption\": \"0\",\n  \"customerName\": \"SUHARDI\",\n  \"adminFee\": \"3500\",\n  \"mlpoRef\": \"20230118144146186738850085697412\",\n  \"reference\": \"044456515899\",\n  \"date\": \"13102026\",\n  \"time\": \"143449\",\n  \"availToken1\": \"0\",\n  \"availToken2\": \"0\",\n  \"accountGl\": \"279536091370\",\n  \"totalAmount\": \"100000\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Tue, 27 Oct 2026 04:45:06 GMT",
+    "content-length": "1620"
+  },
+  "durationMs": 12874,
+  "sizeBytes": 1620,
+  "responseBody": "{\n  \"subResponses\": [\n    {\n      \"code\": \"F9\",\n      \"messageHeader\": \"9\",\n      \"lineCount\": 1,\n      \"lines\": [\n        {\n          \"withdrawalAmount\": 10350000,\n          \"depositAmount\": 0,\n          \"interestAmount\": 0,\n          \"balanceAmount\": 47163516919,\n          \"tellerId\": 99991,\n          \"transactionDate\": 10519,\n          \"tellerMnemonic\": \"TLS\",\n          \"lineNumber\": 7,\n          \"sourceBrCode\": \"0014\"\n        }\n      ]\n    },\n    {\n      \"code\": \"F4\",\n      \"mnemonicCode\": \"TLS\",\n      \"shortName\": \"PRIZEGA FROMADIA G.\",\n      \"message1\": \"\",\n      \"message2\": \"\",\n      \"message3\": \"\",\n      \"accountNumber\": 467811491370,\n      \"passbookSerial\": 3711,\n      \"currentBalance\": 47163516919,\n      \"availableBalance\": 0\n    }\n  ],\n  \"responseCode\": \"000\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 5515907,\n  \"responseDescription\": \"Transaction Success\",\n  \"listResponses\": \"F9 F4\",\n  \"responseBiller\": {\n    \"meterNumber\": \"45068979800\",\n    \"customerId\": \"00000000045068979800\",\n    \"tarifDaya\": \"R3  /000002200\",\n    \"buyingOption\": \"0\",\n    \"customerName\": \"SUHARDI\",\n    \"adminFee\": 3500,\n    \"reference\": \"20230118144146186738850085697412\",\n    \"availToken1\": \"0\",\n    \"availToken2\": \"0\",\n    \"totalAmount\": 100000,\n    \"reff\": \"\",\n    \"receipt\": {\n      \"meterSerialNumber\": \"32115720610    \",\n      \"adminFee\": \"           3.500\",\n      \"customerName\": \"NRML~!@ $^*}?-&.SIT_NTLAG\",\n      \"materai\": \"            0,00\",\n      \"tarifDaya\": \"R1  /000002200   \",\n      \"ppn\": \"            0,00\",\n      \"refference\": \"2BBT1742510913077976            \",\n      \"ppj\": \"       18.182,00\",\n      \"installment\": \"            0,00\",\n      \"paymentRp\": \"         203.500\",\n      \"tokenRp\": \"      181.818,00\",\n      \"kwh\": \"       125,9\",\n      \"tokenNumber\": \"20905033469869694456\",\n      \"tokenPerKwhRp\": \"       1.444,146\",\n      \"rayonPhone\": \"13112          \",\n      \"reserved1\": \"                                \",\n      \"reserved2\": \"                                \",\n      \"labelRef\": \"\",\n      \"billerMessage\": \"BANK BTN\\nInformasi Hubungi Call Center 123 Atau hubungi PLN Terdekat\\nDownload PLN Mobile\"\n    }\n  }\n}"
+}

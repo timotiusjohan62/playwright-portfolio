@@ -1,0 +1,84 @@
+{
+  "subResponses": [
+    {
+      "code": "F9",
+      "messageHeader": "9",
+      "lineCount": 2,
+      "lines": [
+        {
+          "withdrawalAmount": 10350000,
+          "depositAmount": 0,
+          "interestAmount": 0,
+          "balanceAmount": 47101416919,
+          "tellerId": 99991,
+          "transactionDate": 10519,
+          "tellerMnemonic": "TLS",
+          "lineNumber": 13,
+          "sourceBrCode": "0014"
+        },
+        {
+          "withdrawalAmount": 10350000,
+          "depositAmount": 0,
+          "interestAmount": 0,
+          "balanceAmount": 47091066919,
+          "tellerId": 99991,
+          "transactionDate": 10519,
+          "tellerMnemonic": "TLS",
+          "lineNumber": 14,
+          "sourceBrCode": "0014"
+        }
+      ]
+    },
+    {
+      "code": "F4",
+      "mnemonicCode": "TLS",
+      "shortName": "PRIZEGA FROMADIA G.",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 467811491370,
+      "passbookSerial": 3711,
+      "currentBalance": 47091066919,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 5516025,
+  "responseDescription": "Transaction Success",
+  "listResponses": "F9 F4",
+  "responseBiller": {
+    "meterNumber": "45068979800",
+    "customerId": "00000000045068979800",
+    "tarifDaya": "R3  /000002200",
+    "buyingOption": "0",
+    "customerName": "SUHARDI",
+    "adminFee": 3500,
+    "reference": "20230118144146186738850085697412",
+    "availToken1": "0",
+    "availToken2": "0",
+    "totalAmount": 100000,
+    "reff": "",
+    "receipt": {
+      "meterSerialNumber": "32115720610    ",
+      "adminFee": "           3.500",
+      "customerName": "NRML~!@ $^*}?-&.SIT_NTLAG",
+      "materai": "            0,00",
+      "tarifDaya": "R1  /000002200   ",
+      "ppn": "            0,00",
+      "refference": "2BBT1742510913077976            ",
+      "ppj": "       18.182,00",
+      "installment": "            0,00",
+      "paymentRp": "         203.500",
+      "tokenRp": "      181.818,00",
+      "kwh": "       125,9",
+      "tokenNumber": "20905033469869694456",
+      "tokenPerKwhRp": "       1.444,146",
+      "rayonPhone": "13112          ",
+      "reserved1": "                                ",
+      "reserved2": "                                ",
+      "labelRef": "",
+      "billerMessage": "BANK BTN\nInformasi Hubungi Call Center 123 Atau hubungi PLN Terdekat\nDownload PLN Mobile"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "meterNumber": "45068979800",
+  "customerId": "441400371479",
+  "tarifDaya": "R3  /000002200",
+  "buyingOption": "0",
+  "customerName": "SUHARDI",
+  "adminFee": "3500",
+  "mlpoRef": "20230118144146186738850085697412",
+  "reference": "063451516086",
+  "date": "13102026",
+  "time": "143449",
+  "availToken1": "0",
+  "availToken2": "0",
+  "accountGl": "279536091370",
+  "totalAmount": "0"
+}

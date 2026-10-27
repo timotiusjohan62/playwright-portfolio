@@ -1,0 +1,55 @@
+{
+  "subResponses": [
+    {
+      "code": "F4",
+      "mnemonicCode": "TLS",
+      "shortName": "PRIZEGA FROMADIA G.",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 467811491370,
+      "passbookSerial": 3711,
+      "currentBalance": 46997916919,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 1516179,
+  "responseDescription": "Transaction Success",
+  "listResponses": "F4",
+  "responseBiller": {
+    "meterNumber": "45068979800",
+    "customerId": "00000000045068979800",
+    "tarifDaya": "R3  /000002200",
+    "buyingOption": "0",
+    "customerName": "SUHARDI",
+    "adminFee": "000000003500",
+    "reference": "20230118144146186738850085697412",
+    "availToken1": "0",
+    "availToken2": "0",
+    "totalAmount": "000000100000",
+    "reff": "",
+    "receipt": {
+      "meterSerialNumber": "32115720610    ",
+      "adminFee": "           3.500",
+      "customerName": "NRML~!@ $^*}?-&.SIT_NTLAG",
+      "materai": "            0,00",
+      "tarifDaya": "R1  /000002200   ",
+      "ppn": "            0,00",
+      "refference": "2BBT1742510913077976            ",
+      "ppj": "       18.182,00",
+      "installment": "            0,00",
+      "paymentRp": "         203.500",
+      "tokenRp": "      181.818,00",
+      "kwh": "       125,9",
+      "tokenNumber": "20905033469869694456",
+      "tokenPerKwhRp": "       1.444,146",
+      "rayonPhone": "13112          ",
+      "reserved1": "                                ",
+      "reserved2": "                                ",
+      "labelRef": "",
+      "billerMessage": "BANK BTN\nInformasi Hubungi Call Center 123 Atau hubungi PLN Terdekat\nDownload PLN Mobile"
+    }
+  }
+}
