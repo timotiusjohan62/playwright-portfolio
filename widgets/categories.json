@@ -1,1 +1,1 @@
-{"total":2,"items":[{"uid":"7e3f2e2c2d1d86c6a0926910da70f8f0","name":"Assertion failures (product defects)","statistic":{"failed":2,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":2}},{"uid":"8fb3a91ba5aaf9de24cc8a92edc82b5d","name":"Product defects","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}}]}
+{"total":1,"items":[{"uid":"7e3f2e2c2d1d86c6a0926910da70f8f0","name":"Assertion failures (product defects)","statistic":{"failed":2,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":2}}]}
