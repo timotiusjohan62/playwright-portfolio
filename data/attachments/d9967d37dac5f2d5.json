@@ -1,0 +1,17 @@
+{
+  "totalData": 2,
+  "company": [
+    {
+      "companyId": "TEAD00001",
+      "companyCif": "P306306",
+      "companyFlag": "Y",
+      "method": "A"
+    },
+    {
+      "companyId": "ABDI00001",
+      "companyCif": "P303384",
+      "companyFlag": "N",
+      "method": "A"
+    }
+  ]
+}

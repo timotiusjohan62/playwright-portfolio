@@ -1,0 +1,3 @@
+#1 POST /tag/cf/report/individu/service -> ERROR (25036 ms)
+#2 POST /tag/cf/report/individu/service -> ERROR (25009 ms)
+#3 POST /tag/cf/report/individu/service -> ERROR (25006 ms)

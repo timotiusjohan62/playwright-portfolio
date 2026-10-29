@@ -1,0 +1,24 @@
+{
+  "index": 3,
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/institution/segmentation",
+  "path": "/tag/cf/institution/segmentation",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-29T13:56:10.989+07:00",
+    "x-signature": "1QXS0VzP5zSiQhnM5sqgO/niQGtRAMPhhvZva6vPvK4=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516401",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"institution\": [\n    {\n      \"cif\": \"P306306\",\n      \"institutionName1\": \"PT BAHTERA A\",\n      \"institutionName2\": \"Indonesia\",\n      \"divisionIdFunding\": \"01\",\n      \"departmentIdFunding\": \"01\",\n      \"divisionIdLending\": \"02\",\n      \"departmentIdLending\": \"02\",\n      \"segmentationCode\": \"S2\",\n      \"bussinessCode\": \"01GV0001\",\n      \"grossAnualSales\": 15000000000,\n      \"salesCode\": \"AA5\",\n      \"skalaUsaha\": \"FT\",\n      \"method\": \"A\"\n    }\n  ],\n  \"totalData\": 1\n}",
+  "status": 0,
+  "statusText": "",
+  "responseHeaders": {},
+  "durationMs": 25004,
+  "sizeBytes": 0,
+  "error": "apiRequestContext.fetch: Timeout 25000ms exceeded.\nCall log:\n  - → POST http://172.18.30.26:7083/tag/cf/institution/segmentation\n    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n    - x-timestamp: 2026-10-29T13:56:10.989+07:00\n    - x-signature: 1QXS0VzP5zSiQhnM5sqgO/niQGtRAMPhhvZva6vPvK4=\n    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250\n    - Btn-Reference-Number: B02501516401\n    - Btn-User-Id: BTN0010042\n    - Btn-Terminal-Id: PCDIMAS\n    - Btn-Terminal-Ip: 10.99.17.134\n    - content-type: application/json\n    - content-length: 348\n"
+}

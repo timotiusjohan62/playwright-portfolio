@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/report/individu/service",
+  "path": "/tag/cf/report/individu/service",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-29T13:57:32.924+07:00",
+    "x-signature": "iEjzN7NE9fFOA+NTo5gsN0eCHUHi1dXiaLZx+Xbulkk=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516405",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": true
+}

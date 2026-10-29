@@ -1,0 +1,20 @@
+{
+  "institution": [
+    {
+      "cif": "P306306",
+      "institutionName1": "PT BAHTERA A",
+      "institutionName2": "Indonesia",
+      "divisionIdFunding": "01",
+      "departmentIdFunding": "01",
+      "divisionIdLending": "02",
+      "departmentIdLending": "02",
+      "segmentationCode": "S2",
+      "bussinessCode": "01GV0001",
+      "grossAnualSales": 15000000000,
+      "salesCode": "AA5",
+      "skalaUsaha": "FT",
+      "method": "A"
+    }
+  ],
+  "totalData": 1
+}
