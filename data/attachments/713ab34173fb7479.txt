@@ -1,0 +1,15 @@
+apiRequestContext.fetch: Timeout 25000ms exceeded.
+Call log:
+  - → POST http://172.18.30.26:7083/tag/cf/report/individu/service
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+    - x-timestamp: 2026-10-29T13:33:52.630+07:00
+    - x-signature: otffayv7/TGiQdwC17qsQhYpQBgBgVHsq+JXpI4fGws=
+    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250
+    - Btn-Reference-Number: B02501516339
+    - Btn-User-Id: BTN0010042
+    - Btn-Terminal-Id: PCDIMAS
+    - Btn-Terminal-Ip: 10.99.17.134
+    - content-type: application/json
+    - content-length: 56

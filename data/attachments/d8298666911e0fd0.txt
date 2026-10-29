@@ -1,0 +1,3 @@
+#1 GET /tag/cf/customer/exception/cif/AE38894 -> ERROR (25028 ms)
+#2 GET /tag/cf/customer/exception/cif/AE38894 -> ERROR (25010 ms)
+#3 GET /tag/cf/customer/exception/cif/AE38894 -> ERROR (25004 ms)

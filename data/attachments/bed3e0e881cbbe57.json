@@ -1,0 +1,19 @@
+{
+  "totalData": 1,
+  "method": "C",
+  "responseDescription": "Transaksi Sukses",
+  "btnUserId": "BTN0010042",
+  "responseCode": "000",
+  "responseList": [
+    {
+      "companyName": "PUNYA PERUSAHAAN AKU 3",
+      "companyId": "",
+      "formOfEntity": "KP",
+      "companyOwnership": "BN",
+      "flagListed": "Y",
+      "product": [],
+      "responseCode": "802",
+      "responseDescription": "Data Cannot be Empty/Wrong Format"
+    }
+  ]
+}

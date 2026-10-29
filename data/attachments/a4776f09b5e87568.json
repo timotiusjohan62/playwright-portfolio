@@ -1,0 +1,7 @@
+{
+  "responseDescription": "com.ibm.as400.access.ConnectionDroppedException: Connection was dropped unexpectedly.",
+  "detail": "com.ibm.as400.access.ConnectionDroppedException: Connection was dropped unexpectedly.\n\tat com.ibm.as400.access.ClientAccessDataStream.construct(ClientAccessDataStream.java:65)\n\tat com.ibm.as400.access.AS400ThreadedServer.run(AS400ThreadedServer.java:359)\n\tat java.lang.Thread.run(Thread.java:825)\n",
+  "error": "",
+  "responseCode": "G98",
+  "list": []
+}

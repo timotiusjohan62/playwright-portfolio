@@ -1,0 +1,30 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/individual/sementation",
+  "path": "/tag/cf/individual/sementation",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-29T13:32:51.552+07:00",
+    "x-signature": "ArO5Ti6SdWwEjEg7/wu3R3swBeb9gRcRYvjH53BtQm8=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516322",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"totalData\": 2,\n  \"individual\": [\n    {\n      \"cif\": \"W307317\",\n      \"documentNumber\": \"000065\",\n      \"pbOutlet\": 16,\n      \"pbOfficer\": \"FD0\",\n      \"ntbStatus\": \"U\",\n      \"flaggingDate\": 12042019,\n      \"idemnityDate\": 12042019,\n      \"activeStatus\": \"A\",\n      \"segmentationId\": \"PRIORITAS\",\n      \"segmentationType\": \"PRIORITAS\",\n      \"flagException\": \"N\",\n      \"startDate\": 12042020,\n      \"endDate\": 12042020,\n      \"gas\": 150000000,\n      \"salesCode\": \"A99\",\n      \"method\": \"A\"\n    },\n    {\n      \"cif\": \"AE30668\",\n      \"documentNumber\": \"000065\",\n      \"pbOutlet\": 16,\n      \"pbOfficer\": \"FD0\",\n      \"ntbStatus\": \"U\",\n      \"flaggingDate\": 12042019,\n      \"idemnityDate\": 12042019,\n      \"activeStatus\": \"A\",\n      \"segmentationId\": \"PRIORITAS\",\n      \"segmentationType\": \"PRIORITAS\",\n      \"flagException\": \"N\",\n      \"startDate\": 12042020,\n      \"endDate\": 12042020,\n      \"gas\": 150000000,\n      \"salesCode\": \"A99\",\n      \"method\": \"A\"\n    }\n  ]\n}",
+  "status": 404,
+  "statusText": "Not Found",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "x-original-http-status-code": "404",
+    "server": "IBM App Connect Enterprise",
+    "date": "Thu, 29 Oct 2026 06:32:50 GMT",
+    "content-length": "191"
+  },
+  "durationMs": 124,
+  "sizeBytes": 191,
+  "responseBody": "{\n  \"error\": {\n    \"code\": 404,\n    \"status\": \"Not Found\",\n    \"detail\": \"BIP6311E: REST API 'BDS_CFTAG_RA' does not support method 'POST' for URL 'http://172.18.30.26:7083/tag/cf/individual/sementation'. \"\n  }\n}"
+}

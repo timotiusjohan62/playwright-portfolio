@@ -1,0 +1,15 @@
+apiRequestContext.fetch: Timeout 25000ms exceeded.
+Call log:
+  - → POST http://172.18.30.26:7083/tag/cf/individual/sementation
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+    - x-timestamp: 2026-10-29T13:35:23.159+07:00
+    - x-signature: b6J/GIX50LKQr5w1sjdWpBD/MvOnMH3/XM4Uf9Lyuh4=
+    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250
+    - Btn-Reference-Number: B02501516356
+    - Btn-User-Id: BTN0010042
+    - Btn-Terminal-Id: PCDIMAS
+    - Btn-Terminal-Ip: 10.99.17.134
+    - content-type: application/json
+    - content-length: 682

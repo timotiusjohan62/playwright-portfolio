@@ -1,0 +1,32 @@
+{
+  "totalData": 1,
+  "method": "C",
+  "responseDescription": "Transaksi Sukses",
+  "btnUserId": "BTN0010042",
+  "responseCode": "000",
+  "responseList": [
+    {
+      "companyName": "PUNYA PERUSAHAAN AKU 5",
+      "companyId": "PPA500002",
+      "formOfEntity": "KP",
+      "companyOwnership": "BN",
+      "flagListed": "Y",
+      "product": [
+        {
+          "productType": "T4",
+          "productCurrency": "IDR",
+          "responseCode": "000",
+          "responseDescription": "Transaksi Sukses"
+        },
+        {
+          "productType": "P1",
+          "productCurrency": "IDR",
+          "responseCode": "000",
+          "responseDescription": "Transaksi Sukses"
+        }
+      ],
+      "responseCode": "000",
+      "responseDescription": "Transaksi Sukses"
+    }
+  ]
+}

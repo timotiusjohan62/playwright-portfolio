@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 390,
+  "sizeBytes": 223,
+  "url": "http://172.18.30.26:7083/tag/cf/report/exception",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Thu, 29 Oct 2026 06:35:22 GMT",
+    "content-length": "223"
+  }
+}

@@ -1,0 +1,2 @@
+#1 POST /tag/cf/individual/sementation -> ERROR (25033 ms)
+#2 POST /tag/cf/individual/sementation -> 404 (109 ms)

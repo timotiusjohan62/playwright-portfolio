@@ -1,0 +1,3 @@
+#1 GET /tag/cf/individual/segmentation/cif/E568397 -> ERROR (25008 ms)
+#2 GET /tag/cf/individual/segmentation/cif/E568397 -> ERROR (25010 ms)
+#3 GET /tag/cf/individual/segmentation/cif/E568397 -> ERROR (25003 ms)

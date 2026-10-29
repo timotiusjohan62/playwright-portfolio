@@ -1,0 +1,24 @@
+{
+  "index": 3,
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/report/exception",
+  "path": "/tag/cf/report/exception",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-27T16:50:57.527+07:00",
+    "x-signature": "/ZrWwc/rqUi2CAhsQypbuJAOyso5YmZrVlGKfuoIzHQ=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516281",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"method\": \"1\",\n  \"branchOfficer\": 16\n}",
+  "status": 0,
+  "statusText": "",
+  "responseHeaders": {},
+  "durationMs": 25003,
+  "sizeBytes": 0,
+  "error": "apiRequestContext.fetch: Timeout 25000ms exceeded.\nCall log:\n  - → POST http://172.18.30.26:7083/tag/cf/report/exception\n    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n    - x-timestamp: 2026-10-27T16:50:57.527+07:00\n    - x-signature: /ZrWwc/rqUi2CAhsQypbuJAOyso5YmZrVlGKfuoIzHQ=\n    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250\n    - Btn-Reference-Number: B02501516281\n    - Btn-User-Id: BTN0010042\n    - Btn-Terminal-Id: PCDIMAS\n    - Btn-Terminal-Ip: 10.99.17.134\n    - content-type: application/json\n    - content-length: 33\n"
+}
