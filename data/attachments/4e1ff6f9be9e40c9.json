@@ -1,0 +1,24 @@
+{
+  "index": 3,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/branchforex/monetary",
+  "path": "/bp/branchforex/monetary",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-29T15:13:17.234+07:00",
+    "x-signature": "zq+KqOxur0qoRXDxeh8AyuyxD2/3INcJo/RsS3qLs9A=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516443",
+    "Btn-User-Id": "MLPTFRDAUS",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"referenceNumber\": \"B08121516444\",\n  \"tellerOverride\": \"Y\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": \"\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 1516444,\n  \"transactionCode\": 2304,\n  \"field1\": 4801500003451,\n  \"field2\": 10591900,\n  \"field3\": 0,\n  \"field4\": 0,\n  \"field5\": 180500000000,\n  \"field6\": 1124600000,\n  \"field7\": 180500000000,\n  \"field8\": 1124600000,\n  \"field9\": 0,\n  \"field10\": 0,\n  \"field11\": 0,\n  \"field12\": 4770,\n  \"field13\": 610061,\n  \"field14\": 4,\n  \"field15\": 17804600000057,\n  \"field16\": 1700000000,\n  \"field17\": 0,\n  \"field18\": 999,\n  \"field19\": 1795000,\n  \"field20\": 0,\n  \"alternateCurrency1\": \"IDR\",\n  \"alternateCurrency2\": \"USD\",\n  \"alternateCurrency3\": \"JPY\",\n  \"thirdPartyName\": \"Test TT Issuance Cash\",\n  \"remark1\": \"TRF BTN 0017804600000057\",\n  \"customerCheck\": \"Nasabah BFX\",\n  \"applicantId\": \"0022479000069260731170123\",\n  \"userInformation\": \"\",\n  \"applicantAddress1\": \"BFAA00032833\",\n  \"applicantAddress2\": \"1.0000000\",\n  \"applicantPostcode\": \"20260731\",\n  \"applicantContact\": \"0001601506176417\",\n  \"payeeAddress1\": \"FBIBF\",\n  \"payeeAddress2\": \"01217\",\n  \"payeeAddress3\": \"1.0000000\",\n  \"payeeContact\": \"17:01:23\",\n  \"shareIssueHouse\": \"0731\"\n}",
+  "status": 0,
+  "statusText": "",
+  "responseHeaders": {},
+  "durationMs": 25008,
+  "sizeBytes": 0,
+  "error": "apiRequestContext.fetch: Timeout 25000ms exceeded.\nCall log:\n  - → POST http://172.18.30.26:7095/bp/branchforex/monetary\n    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n    - x-timestamp: 2026-10-29T15:13:17.234+07:00\n    - x-signature: zq+KqOxur0qoRXDxeh8AyuyxD2/3INcJo/RsS3qLs9A=\n    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250\n    - Btn-Reference-Number: B02501516443\n    - Btn-User-Id: MLPTFRDAUS\n    - Btn-Terminal-Id: PCDIMAS\n    - Btn-Terminal-Ip: 10.99.17.134\n    - content-type: application/json\n    - content-length: 1015\n"
+}

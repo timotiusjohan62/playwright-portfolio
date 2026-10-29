@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7083/tag/cf/individual/segmentation/cif/E568397",
+  "path": "/tag/cf/individual/segmentation/cif/E568397",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-10-29T15:11:48.894+07:00",
+    "x-signature": "58Gh2MsvauqgKqatX3dMwtZCTbYTtp/czLPIar/XtNI=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516427",
+    "Btn-User-Id": "MLPTFRDAUS",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

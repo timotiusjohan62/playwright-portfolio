@@ -1,0 +1,17 @@
+{
+  "customers": [
+    {
+      "cif": "AE38894",
+      "customerName": "PATAR",
+      "branchOfficer": 16,
+      "startDate": 1012024,
+      "endDate": 1012030,
+      "segmentationException": "PRIORITAS",
+      "officer": "FD0",
+      "documentNumber": "FDAS02",
+      "description": "TEST CHANGE",
+      "method": "C"
+    }
+  ],
+  "totalData": 1
+}

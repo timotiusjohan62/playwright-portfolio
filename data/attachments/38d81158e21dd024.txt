@@ -1,0 +1,4 @@
+#1 POST /bp/branchforex/getTradeData -> 200 (473 ms)
+#2 POST /bp/branchforex/monetary -> ERROR (25035 ms)
+#3 POST /bp/branchforex/monetary -> ERROR (25011 ms)
+#4 POST /bp/branchforex/monetary -> ERROR (25013 ms)

@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/company/relationship",
+  "path": "/tag/cf/company/relationship",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-29T15:11:47.387+07:00",
+    "x-signature": "McBPw/3Z/Z46qKJU+m3CIlYgOTZJ2A7LJt4543Yksis=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516415",
+    "Btn-User-Id": "MLPTFRDAUS",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": true
+}
