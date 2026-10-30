@@ -1,0 +1,56 @@
+{
+  "subResponses": [
+    {
+      "code": "F9",
+      "messageHeader": "9",
+      "lineCount": 1,
+      "lines": [
+        {
+          "withdrawalAmount": 10591900,
+          "depositAmount": 0,
+          "interestAmount": 0,
+          "balanceAmount": 46808230319,
+          "tellerId": 99991,
+          "transactionDate": 10519,
+          "tellerMnemonic": "PBK",
+          "lineNumber": 4,
+          "sourceBrCode": "0014"
+        }
+      ]
+    },
+    {
+      "code": "E0",
+      "mnemonicCode": "PBK",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "longName1": "PRIZEGA FROMADIA G.",
+      "longName2": "PRIZEGA FROMADIA G.",
+      "longName3": "NASABAH B102259",
+      "longName4": "NASABAH D005554",
+      "longName5": "ADANG SUPRIATNA",
+      "accountNumber1": 4801500003451,
+      "accountNumber2": 17804600000057,
+      "accountNumber3": 0,
+      "accountNumber4": 0,
+      "accountNumber5": 0
+    },
+    {
+      "code": "F4",
+      "mnemonicCode": "PBK",
+      "shortName": "",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 431911098012,
+      "passbookSerial": 0,
+      "currentBalance": 1700000000,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 1516714,
+  "responseDescription": "Transaction Success",
+  "listResponses": "F9 E0 F4"
+}

@@ -1,0 +1,26 @@
+{
+  "totalData": 2,
+  "responseDescription": "Transaksi Sukses",
+  "limit": 10,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "responseCode": "000",
+  "list": [
+    {
+      "divisionId": "AL",
+      "divisionDescription": "Arief Lembaga",
+      "userCreate": "MLPTFRDAUS",
+      "dateCreate": 280419,
+      "dateCreateJul": 2019118,
+      "timeCreate": 102028
+    },
+    {
+      "divisionId": "FL",
+      "divisionDescription": "Fadlan Lembaga",
+      "userCreate": "MLPTFRDAUS",
+      "dateCreate": 280419,
+      "dateCreateJul": 2019118,
+      "timeCreate": 141932
+    }
+  ]
+}

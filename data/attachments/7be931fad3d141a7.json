@@ -1,0 +1,24 @@
+{
+  "totalData": 1,
+  "method": "C",
+  "company": [
+    {
+      "companyName": "PUNYA J PERUSAHAAN AKU 4",
+      "companyId": "PJPA00001",
+      "formOfEntity": "KP",
+      "companyOwnership": "BN",
+      "flagListed": "Y",
+      "totalData": 2,
+      "products": [
+        {
+          "productType": "T4",
+          "productCurrency": "IDR"
+        },
+        {
+          "productType": "P1",
+          "productCurrency": "IDR"
+        }
+      ]
+    }
+  ]
+}

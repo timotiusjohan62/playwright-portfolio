@@ -1,0 +1,30 @@
+{
+  "date": 0,
+  "totalData": 1,
+  "method": "1",
+  "officer": "",
+  "branch": 16,
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "limit": 1,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "list": [
+    {
+      "documentNumber": "DOKU-F288644",
+      "flagDate": 1052020,
+      "startDate": 1052020,
+      "endDate": 1052021,
+      "customerName": "FIRDAUS ARDIANSYAH SALEHHHHHHHHHHHHHHHHH",
+      "cif": "F288644",
+      "officerBranch": 16,
+      "officerCode": "FD0",
+      "officerName": "FIDO PUNYA",
+      "totalDpk": 0,
+      "totalNbk": 0,
+      "totalAum": 0,
+      "segmentation": "PRIORITAS",
+      "segmentationType": "PRIORITAS"
+    }
+  ]
+}

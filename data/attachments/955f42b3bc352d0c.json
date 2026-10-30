@@ -1,0 +1,29 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/onboarding/rules/list",
+  "path": "/tag/cf/onboarding/rules/list",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-30T14:49:50.720+07:00",
+    "x-signature": "dedSfGnfuEOLT587RrcvdRJlgfLR9+EX/fnkU+B0hP8=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516590",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"page\": 1,\n  \"limit\": 1\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 30 Oct 2026 07:49:51 GMT",
+    "content-length": "356"
+  },
+  "durationMs": 549,
+  "sizeBytes": 356,
+  "responseBody": "{\n  \"totalData\": 2,\n  \"responseDescription\": \"Transaksi Sukses\",\n  \"limit\": 1,\n  \"btnUserId\": \"BTN0010042\",\n  \"page\": 1,\n  \"responseCode\": \"000\",\n  \"list\": [\n    {\n      \"segmentationId\": \"CO\",\n      \"minimumGas\": 2000000000,\n      \"maximumGas\": 10000000000,\n      \"businessScaleCode\": \"BE\",\n      \"toDivisionId\": \"01\",\n      \"toSegemenId\": \"CO\",\n      \"userCreate\": \"MLPTFRDAUS\",\n      \"dateCreate\": 10119,\n      \"dateCreateJul\": 2019001,\n      \"timeCreate\": 181001\n    }\n  ]\n}"
+}

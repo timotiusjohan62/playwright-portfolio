@@ -1,0 +1,24 @@
+{
+  "index": 3,
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/parameter/institution/list",
+  "path": "/tag/cf/parameter/institution/list",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-30T14:56:25.099+07:00",
+    "x-signature": "lEebYvOoEfk+gLtWLAoq+BrREG6D9gKbqMYqLuvJUHk=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516636",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"page\": 1,\n  \"limit\": 10\n}",
+  "status": 0,
+  "statusText": "",
+  "responseHeaders": {},
+  "durationMs": 25012,
+  "sizeBytes": 0,
+  "error": "apiRequestContext.fetch: Timeout 25000ms exceeded.\nCall log:\n  - → POST http://172.18.30.26:7083/tag/cf/parameter/institution/list\n    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n    - x-timestamp: 2026-10-30T14:56:25.099+07:00\n    - x-signature: lEebYvOoEfk+gLtWLAoq+BrREG6D9gKbqMYqLuvJUHk=\n    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250\n    - Btn-Reference-Number: B02501516636\n    - Btn-User-Id: BTN0010042\n    - Btn-Terminal-Id: PCDIMAS\n    - Btn-Terminal-Ip: 10.99.17.134\n    - content-type: application/json\n    - content-length: 21\n"
+}

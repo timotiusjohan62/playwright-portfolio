@@ -1,0 +1,29 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/branchforex/getTradeData",
+  "path": "/bp/branchforex/getTradeData",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-30T11:27:46.748+07:00",
+    "x-signature": "NqU+E8vRUX8ZE4BfveRbFp9wJCNMIiDBYGYVyH9Zlws=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516507",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"ticketId\": \"BFAA00032833\",\n  \"trasactionCode\": \"\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json; charset=UTF-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 30 Oct 2026 04:27:47 GMT",
+    "content-length": "147"
+  },
+  "durationMs": 268,
+  "sizeBytes": 147,
+  "responseBody": "{\n  \"bankBuyIORate\": \"114.43\",\n  \"bankBuyRawRate\": \"114.43\",\n  \"debitAmount\": \"23,000,000.00\",\n  \"responseCode\": \"000\",\n  \"responseDescription\": \"Transaction Success\"\n}"
+}

@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 766,
+  "sizeBytes": 305,
+  "url": "http://172.18.30.26:7083/tag/cf/parameter/divisi/maintenance",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 30 Oct 2026 08:13:12 GMT",
+    "content-length": "305"
+  }
+}

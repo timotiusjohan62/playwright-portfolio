@@ -1,0 +1,9 @@
+{
+  "method": "C",
+  "segmentationId": "CO",
+  "minimumGas": 2000000000,
+  "maximumGas": 10000000000,
+  "businessScaleCode": "BE",
+  "toDivisionId": "01",
+  "toSegmenId": "CO"
+}

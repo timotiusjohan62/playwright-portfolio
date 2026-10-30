@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7084/dd/cheque-book/account/2501300001601/type/D/seq/1",
+  "path": "/dd/cheque-book/account/2501300001601/type/D/seq/1",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-10-30T15:33:59.955+07:00",
+    "x-signature": "Tj3vubo1Gxi4XMob0l9mzmyUXJZ8l3CvVn8SQJSwf8g=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516846",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

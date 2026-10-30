@@ -1,0 +1,18 @@
+{
+  "responseDescription": "Transaksi Sukses",
+  "dateOfBirth": 1985060,
+  "id": "4783747238473245",
+  "responseCode": "000",
+  "list": [
+    {
+      "cif": "S862877",
+      "name": "NASABAH S862877",
+      "idNumber": "4783747238473245",
+      "dateOfBirth": 1031985,
+      "placeOfBirth": "WONOGIRI",
+      "originalDate": 21101998,
+      "titleBeforeName": "",
+      "titleAfterName": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/institution/segmentation",
+  "path": "/tag/cf/institution/segmentation",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-30T15:34:00.090+07:00",
+    "x-signature": "5DUB85DDDs5Fa0V4IgoDumV/KZyaFT+1L8jmFfnWvkQ=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516848",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": true
+}

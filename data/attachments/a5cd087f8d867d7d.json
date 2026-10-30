@@ -1,0 +1,10 @@
+{
+  "method": "C",
+  "responseDescription": "Transaksi Sukses",
+  "departmentId": "01",
+  "btnUserId": "BTN0010042",
+  "departmentDescription": "01CORE BANKING 01",
+  "divisionId": "02",
+  "divisionDescription": "",
+  "responseCode": "000"
+}

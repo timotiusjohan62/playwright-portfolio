@@ -1,0 +1,9 @@
+{
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "listAccount": [
+    {
+      "accountNumber": 1501400059323
+    }
+  ]
+}

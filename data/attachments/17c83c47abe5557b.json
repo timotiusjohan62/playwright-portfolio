@@ -1,0 +1,36 @@
+{
+  "cif": "E568397",
+  "totalAum": 81210206506,
+  "totalNbk": 0,
+  "exceptionStartDate": 0,
+  "documentNumber": "",
+  "exceptionStartTime": 0,
+  "idemnityDate": 0,
+  "segemntationFlag": "N",
+  "totalDpk": 81210206506,
+  "responseCode": "000",
+  "responseDescription": "Transaksi Sukses",
+  "officerCode": "",
+  "flagStatus": "",
+  "segmentationType": "Mass Retail",
+  "exceptionFlag": "",
+  "segmentation": "Mass Retail",
+  "btnUserId": "BTN0010042",
+  "outletCode": 0,
+  "customers": [
+    {
+      "accountNumber": 101500436565,
+      "accountType": "S",
+      "productCode": "TB",
+      "status": 1,
+      "amountAum": 31210206506
+    },
+    {
+      "accountNumber": 101400127185,
+      "accountType": "T",
+      "productCode": "A2",
+      "status": 1,
+      "amountAum": 50000000000
+    }
+  ]
+}

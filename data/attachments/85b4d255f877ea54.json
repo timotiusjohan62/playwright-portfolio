@@ -1,0 +1,29 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/branchforex/getTradeData",
+  "path": "/bp/branchforex/getTradeData",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-10-30T11:21:15.102+07:00",
+    "x-signature": "2hKqkImMSwIzwbWYEBuZEfToPzizoao8a8E5Ekf/mdE=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501516494",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"ticketId\": \"BFAA00032833\",\n  \"trasactionCode\": \"\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json; charset=UTF-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 30 Oct 2026 04:21:15 GMT",
+    "content-length": "690"
+  },
+  "durationMs": 200,
+  "sizeBytes": 690,
+  "responseBody": "{\n  \"bankBuyIORate\": \"114.43\",\n  \"bankBuyRawRate\": \"114.43\",\n  \"debitAmount\": \"23,000,000.00\",\n  \"bankSellRawRate\": \"17,650\",\n  \"creditAmount\": \"149,108.59\",\n  \"fixedRate\": \"156.31\",\n  \"IDRProfitRaw\": \"168,269.04\",\n  \"IDRProfitCore\": \"123,386.50\",\n  \"IDRProfit\": \"168,269.04\",\n  \"customerName\": \"JULI OKTARINA\",\n  \"crossCcyRate\": \"154.25\",\n  \"crossCcyIORate\": \"154.24\",\n  \"crossCcyRawRate\": \"154.24\",\n  \"ticketId\": \"BFAA00032833\",\n  \"debitBalanceAmount\": \"23,000,643.82\",\n  \"transCode\": \"2304\",\n  \"dealDate\": \"20260907\",\n  \"valueDate\": \"20260907\",\n  \"debitAccount\": \"1216046000000641\",\n  \"creditAccount\": \"121604600000064\",\n  \"debitCcy\": \"JPY\",\n  \"bankBuyRate\": \"114.42\",\n  \"creditCcy\": \"USD\",\n  \"bankSellRate\": \"17,650\",\n  \"responseCode\": \"000\",\n  \"responseDescription\": \"Transaction Success\"\n}"
+}

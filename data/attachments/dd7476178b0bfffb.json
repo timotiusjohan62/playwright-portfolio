@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 835,
+  "sizeBytes": 921,
+  "url": "http://172.18.30.26:7095/bp/branchforex/monetary",
+  "headers": {
+    "content-type": "application/json; charset=UTF-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 30 Oct 2026 04:22:45 GMT",
+    "content-length": "921"
+  }
+}

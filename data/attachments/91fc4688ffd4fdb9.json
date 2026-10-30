@@ -1,0 +1,20 @@
+{
+  "totalData": 1,
+  "responseDescription": "Transaksi Sukses",
+  "limit": 1,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "responseCode": "000",
+  "list": [
+    {
+      "divisionId": "02",
+      "divisiionDescription": "",
+      "departmentId": "01",
+      "departmentDescription": "01CORE BANKING 01",
+      "userCreate": "MLPTFRDAUS",
+      "dateCreate": 10519,
+      "dateCreateJul": 2019121,
+      "timeCreate": 140007
+    }
+  ]
+}
