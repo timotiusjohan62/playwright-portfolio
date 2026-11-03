@@ -255,13 +255,13 @@ test.describe('Database-Driven API Workflows', () => {
           while (attempt <= maxRetries) {
             try {
               response = await api.call(step.TYPE, finalUrl, {
-                timeout: 25000, // Increased timeout to 25s for slow server responses
+                timeout: 50000, // Increased timeout to 50s for slow server responses
                 data: requestData,
                 headers: {
                   ...headers,
                   'X-Btn-Key': process.env.API_KEY || '',
                   'Btn-Reference-Number': `B0250${sequenceNumber}`,
-                  'Btn-User-Id': 'BTN0010042',
+                  'Btn-User-Id': 'MLPTFRDAUS',
                   'Btn-Terminal-Id': 'PCDIMAS',
                   'Btn-Terminal-Ip': '10.99.17.134'
                 }
