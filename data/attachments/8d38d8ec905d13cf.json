@@ -1,0 +1,29 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/customer/exception",
+  "path": "/tag/cf/customer/exception",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-03T16:02:34.212+07:00",
+    "x-signature": "yO59amfjMvOmEKOQ5v0X/5MVCuoYAlXp7raJAlE+MEA=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501518865",
+    "Btn-User-Id": "MLPTFRDAUS",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"customers\": [\n    {\n      \"cif\": \"AE38894\",\n      \"customerName\": \"PATAR\",\n      \"branchOfficer\": 16,\n      \"startDate\": 1012024,\n      \"endDate\": 1012030,\n      \"segmentationException\": \"PRIORITAS\",\n      \"officer\": \"FD0\",\n      \"documentNumber\": \"FDAS02\",\n      \"description\": \"TEST CHANGE\",\n      \"method\": \"C\"\n    }\n  ],\n  \"totalData\": 1\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Tue, 03 Nov 2026 09:02:34 GMT",
+    "content-length": "367"
+  },
+  "durationMs": 296,
+  "sizeBytes": 367,
+  "responseBody": "{\n  \"totalData\": 1,\n  \"responseDescription\": \"Transaksi Sukses\",\n  \"btnUserId\": \"MLPTFRDAUS\",\n  \"responseCode\": \"000\",\n  \"responseList\": [\n    {\n      \"cif\": \"AE38894\",\n      \"customerName\": \"PATAR\",\n      \"method\": \"C\",\n      \"responseCode\": \"907\",\n      \"description\": \"TEST CHANGE\",\n      \"startDate\": 1012024,\n      \"endDate\": 1012030,\n      \"documentNumber\": \"FDAS02\",\n      \"segmentationException\": \"PRIORITAS\",\n      \"responseDescription\": \"Data tidak ditemukan\"\n    }\n  ]\n}"
+}

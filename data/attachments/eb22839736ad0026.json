@@ -1,0 +1,30 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/company/parameter/one",
+  "path": "/tag/cf/company/parameter/one",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-03T16:01:16.911+07:00",
+    "x-signature": "OWwETitGLTtx/MORY+ye9x9sLtRT+nEMRn9DjmsRSRg=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501518859",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"totalData\": 1,\n  \"method\": \"C\",\n  \"company\": [\n    {\n      \"companyName\": \"PUNYA J PERUSAHAAN AKU 4\",\n      \"companyId\": \"PJPA00001\",\n      \"formOfEntity\": \"KP\",\n      \"companyOwnership\": \"BN\",\n      \"flagListed\": \"Y\",\n      \"totalData\": 2\n    }\n  ]\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "x-original-http-status-code": "200",
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Tue, 03 Nov 2026 09:01:17 GMT",
+    "content-length": "472"
+  },
+  "durationMs": 355,
+  "sizeBytes": 472,
+  "responseBody": "{\n  \"responseDescription\": \"com.ibm.as400.access.ConnectionDroppedException: Connection was dropped unexpectedly.\",\n  \"detail\": \"com.ibm.as400.access.ConnectionDroppedException: Connection was dropped unexpectedly.\\n\\tat com.ibm.as400.access.ClientAccessDataStream.construct(ClientAccessDataStream.java:65)\\n\\tat com.ibm.as400.access.AS400ThreadedServer.run(AS400ThreadedServer.java:359)\\n\\tat java.lang.Thread.run(Thread.java:825)\\n\",\n  \"error\": \"\",\n  \"responseCode\": \"G98\",\n  \"company\": []\n}"
+}

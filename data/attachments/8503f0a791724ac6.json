@@ -1,0 +1,30 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.26:7083/tag/cf/company/parameter/one",
+  "path": "/tag/cf/company/parameter/one",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-03T15:58:18.104+07:00",
+    "x-signature": "eysVae4zbrKcf4ySLn7Mj2EUJvqurc0jkI3usq19vIA=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501518847",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"totalData\": 1,\n  \"method\": \"C\",\n  \"company\": [\n    {\n      \"companyName\": \"PUNYA J PERUSAHAAN AKU 4\",\n      \"companyId\": \"PJPA00001\",\n      \"formOfEntity\": \"KP\",\n      \"companyOwnership\": \"BN\",\n      \"flagListed\": \"Y\",\n      \"totalData\": 2\n    }\n  ]\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "x-original-http-status-code": "200",
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Tue, 03 Nov 2026 08:58:48 GMT",
+    "content-length": "89"
+  },
+  "durationMs": 30435,
+  "sizeBytes": 89,
+  "responseBody": "{\n  \"responseDescription\": \"Inquiry/Transaction Time Out\",\n  \"responseCode\": \"G68\",\n  \"company\": []\n}"
+}
