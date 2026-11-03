@@ -1,0 +1,32 @@
+{
+  "totalData": 1,
+  "method": "C",
+  "responseDescription": "Transaksi Sukses",
+  "btnUserId": "BTN0010042",
+  "responseCode": "000",
+  "responseList": [
+    {
+      "companyName": "PUNYA J PERUSAHAAN AKU 4",
+      "companyId": "PJPA00001",
+      "formOfEntity": "KP",
+      "companyOwnership": "BN",
+      "flagListed": "Y",
+      "product": [
+        {
+          "productType": "80",
+          "productCurrency": "2Pro",
+          "responseCode": "duc",
+          "responseDescription": "t Type tidak boleh kosong"
+        },
+        {
+          "productType": "80",
+          "productCurrency": "2Pro",
+          "responseCode": "duc",
+          "responseDescription": "t Type tidak boleh kosong"
+        }
+      ],
+      "responseCode": "000",
+      "responseDescription": "Transaksi Sukses"
+    }
+  ]
+}

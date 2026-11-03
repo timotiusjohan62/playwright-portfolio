@@ -1,0 +1,41 @@
+{
+  "subResponses": [
+    {
+      "code": "E0",
+      "mnemonicCode": "COC",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "longName1": "NASABAH T803869",
+      "longName2": "PRASETYA PANDU WIHARTO",
+      "longName3": "PRASETYA PANDU WIHARTO",
+      "longName4": "NASABAH A166761",
+      "longName5": "",
+      "accountNumber1": 24101300015224,
+      "accountNumber2": 11901500032314,
+      "accountNumber3": 0,
+      "accountNumber4": 0,
+      "accountNumber5": 0
+    },
+    {
+      "code": "F4",
+      "mnemonicCode": "COC",
+      "shortName": "PRASETYA PANDU WIHAR",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 0,
+      "passbookSerial": 1961,
+      "currentBalance": 100032827852610,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 1518781,
+  "responseDescription": "Transaction Success",
+  "listResponses": "E0 F4",
+  "responseBiller": {
+    "paymentProofNumber": "BTNTHT20901202600241154800010"
+  }
+}

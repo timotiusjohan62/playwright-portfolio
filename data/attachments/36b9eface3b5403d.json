@@ -1,0 +1,27 @@
+{
+  "index": 2,
+  "method": "GET",
+  "url": "http://172.18.30.26:7083/cf/cif/",
+  "path": "/cf/cif/",
+  "query": {},
+  "requestHeaders": {
+    "x-timestamp": "2026-11-02T15:54:28.464+07:00",
+    "x-signature": "nl7J82NDxrHmM7uOxxwG63ctzFAZeT+vTFm2bO8rvac=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501517937",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Mon, 02 Nov 2026 08:54:28 GMT",
+    "content-length": "98"
+  },
+  "durationMs": 474,
+  "sizeBytes": 98,
+  "responseBody": "{\n  \"responseCode\": \"802\",\n  \"responseDescription\": \"Data Cannot be Empty/Wrong Format\",\n  \"listAccount\": []\n}"
+}

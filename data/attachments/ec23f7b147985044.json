@@ -1,0 +1,41 @@
+{
+  "totalData": 2,
+  "individual": [
+    {
+      "cif": "W307317",
+      "documentNumber": "000065",
+      "pbOutlet": 16,
+      "pbOfficer": "FD0",
+      "ntbStatus": "U",
+      "flaggingDate": 12042019,
+      "idemnityDate": 12042019,
+      "activeStatus": "A",
+      "segmentationId": "PRIORITAS",
+      "segmentationType": "PRIORITAS",
+      "flagException": "N",
+      "startDate": 12042020,
+      "endDate": 12042020,
+      "gas": 150000000,
+      "salesCode": "A99",
+      "method": "A"
+    },
+    {
+      "cif": "AE30668",
+      "documentNumber": "000065",
+      "pbOutlet": 16,
+      "pbOfficer": "FD0",
+      "ntbStatus": "U",
+      "flaggingDate": 12042019,
+      "idemnityDate": 12042019,
+      "activeStatus": "A",
+      "segmentationId": "PRIORITAS",
+      "segmentationType": "PRIORITAS",
+      "flagException": "N",
+      "startDate": 12042020,
+      "endDate": 12042020,
+      "gas": 150000000,
+      "salesCode": "A99",
+      "method": "A"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+#1 POST /cf/cif -> 200 (767 ms)
+#2 GET /cf/cif/B331928 -> 200 (1299 ms)

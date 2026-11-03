@@ -1,0 +1,13 @@
+apiRequestContext.fetch: connect EHOSTUNREACH 172.18.30.26:7082
+Call log:
+  - → GET http://172.18.30.26:7082/cd/account/1201400061920
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+    - x-timestamp: 2026-11-02T16:35:30.566+07:00
+    - x-signature: y+nqZdX24gLZm85S6SEut3+Vbl2g6DIk23MdwJxOY7Y=
+    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250
+    - Btn-Reference-Number: B02501518478
+    - Btn-User-Id: BTN0010042
+    - Btn-Terminal-Id: PCDIMAS
+    - Btn-Terminal-Ip: 10.99.17.134

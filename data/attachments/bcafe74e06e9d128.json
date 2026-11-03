@@ -1,0 +1,22 @@
+{
+  "totalData": 2,
+  "responseDescription": "Transaksi Sukses",
+  "limit": 1,
+  "btnUserId": "BTN0010042",
+  "page": 1,
+  "responseCode": "000",
+  "list": [
+    {
+      "segmentationId": "CO",
+      "minimumGas": 2000000000,
+      "maximumGas": 10000000000,
+      "businessScaleCode": "BE",
+      "toDivisionId": "01",
+      "toSegemenId": "CO",
+      "userCreate": "MLPTFRDAUS",
+      "dateCreate": 10119,
+      "dateCreateJul": 2019001,
+      "timeCreate": 181001
+    }
+  ]
+}

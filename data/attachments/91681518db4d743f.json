@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7083/cf/cif/B331914",
+  "path": "/cf/cif/B331914",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-11-02T15:23:00.844+07:00",
+    "x-signature": "g65Ptfj+5M0EVa0wEVrGEiNuBT93V23w6bWg636MMT4=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501517439",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

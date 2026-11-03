@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7084/dd/maintenance/existing/account/1401500597578/type/S",
+  "path": "/dd/maintenance/existing/account/1401500597578/type/S",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-11-02T15:33:28.763+07:00",
+    "x-signature": "rleBuD3AXeiMifw4pgPkfrJ9NnIe0T1C0cLB/661NXY=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501517555",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

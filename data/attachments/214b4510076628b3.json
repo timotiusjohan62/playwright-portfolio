@@ -1,0 +1,29 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.27:7083/tag/cf/company/parameter/one",
+  "path": "/tag/cf/company/parameter/one",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-03T10:39:40.223+07:00",
+    "x-signature": "zsIrt6Ot7wUkQK/Pc4nAPVVvtMzsB3G7feDlHK2kUPw=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501518815",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"totalData\": 1,\n  \"method\": \"C\",\n  \"company\": [\n    {\n      \"companyName\": \"PUNYA J PERUSAHAAN AKU 4\",\n      \"companyId\": \"PJPA00001\",\n      \"formOfEntity\": \"KP\",\n      \"companyOwnership\": \"BN\",\n      \"flagListed\": \"Y\",\n      \"totalData\": 2\n    }\n  ]\n}",
+  "status": 404,
+  "statusText": "Not Found",
+  "responseHeaders": {
+    "content-type": "text/html;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Tue, 03 Nov 2026 03:39:40 GMT",
+    "content-length": "153"
+  },
+  "durationMs": 79,
+  "sizeBytes": 153,
+  "responseBody": "<html>\r\n<head><title>Not found</title></head>\r\n<body><h1>Not found</h1><p>The document you requested can not be found on this server.</p></body>\r\n</html>"
+}

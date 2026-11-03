@@ -1,0 +1,24 @@
+{
+  "totalData": 2,
+  "responseDescription": "Transaksi Sukses",
+  "btnUserId": "BTN0010042",
+  "responseCode": "000",
+  "responseList": [
+    {
+      "companyId": "TEAD00001",
+      "companyCif": "P306306",
+      "companyFlag": "Y",
+      "method": "A",
+      "responseCode": "802",
+      "responseDescription": "CIF Company already exist"
+    },
+    {
+      "companyId": "ABDI00001",
+      "companyCif": "P303384",
+      "companyFlag": "N",
+      "method": "A",
+      "responseCode": "802",
+      "responseDescription": "CIF Company already exist"
+    }
+  ]
+}
