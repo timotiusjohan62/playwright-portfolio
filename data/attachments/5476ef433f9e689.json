@@ -1,0 +1,15 @@
+{
+  "printStatus": "N",
+  "paymentAmountDue": 6250000,
+  "principalDue": 600000000,
+  "maturityStatus": "Y",
+  "accountNumber": 17201400001049,
+  "type": "T",
+  "responseCode": "000",
+  "paymentType": "I",
+  "sequence": 1,
+  "responseDescription": "Transaksi Sukses",
+  "interestDue": 6250000,
+  "collectionStatus": "C",
+  "btnUserId": "ADI0021450"
+}

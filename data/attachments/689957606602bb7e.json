@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "url": "http://172.18.30.26:7088/rm/rtgs/confirm/maintenance",
+  "path": "/rm/rtgs/confirm/maintenance",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-04T11:24:42.603+07:00",
+    "x-signature": "3RiPyUSGle99UEd2INCtq2l8hIzDGX3lH/XYx90/sYY=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501518869",
+    "Btn-User-Id": "ADI0021450",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": true
+}
