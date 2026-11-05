@@ -1,1 +1,1 @@
-{"reportName":"Playwright API Report","testRuns":[],"statistic":{"failed":4,"broken":0,"skipped":0,"passed":123,"unknown":0,"total":127},"time":{"start":1792984525281,"stop":1793766284839,"duration":781759558,"minDuration":411,"maxDuration":12936,"sumDuration":286585}}
+{"reportName":"Playwright API Report","testRuns":[],"statistic":{"failed":4,"broken":0,"skipped":0,"passed":127,"unknown":0,"total":131},"time":{"start":1792984525281,"stop":1793852031588,"duration":867506307,"minDuration":411,"maxDuration":12936,"sumDuration":292745}}
