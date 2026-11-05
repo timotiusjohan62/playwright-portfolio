@@ -261,7 +261,7 @@ test.describe('Database-Driven API Workflows', () => {
                   ...headers,
                   'X-Btn-Key': process.env.API_KEY || '',
                   'Btn-Reference-Number': `B0250${sequenceNumber}`,
-                  'Btn-User-Id': 'MLPTFRDAUS',
+                  'Btn-User-Id': 'BTN0010042',
                   'Btn-Terminal-Id': 'PCDIMAS',
                   'Btn-Terminal-Ip': '10.99.17.134'
                 }
