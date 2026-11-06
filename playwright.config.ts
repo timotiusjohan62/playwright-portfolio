@@ -25,7 +25,7 @@ export default defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: isCI,
   // Retries are what let Allure flag flaky tests (failed then passed)
-  retries: isCI ? 2 : 1,
+  retries: 0,
   workers: isCI ? 4 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // playwright.config.ts

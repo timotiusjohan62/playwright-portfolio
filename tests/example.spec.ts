@@ -250,7 +250,7 @@ test.describe('Database-Driven API Workflows', () => {
           // Execute the HTTP call with retry logic for transient timeouts
           let response;
           let attempt = 1;
-          const maxRetries = 3;
+          const maxRetries = 1;
 
           while (attempt <= maxRetries) {
             try {
