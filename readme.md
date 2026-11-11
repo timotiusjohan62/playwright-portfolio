@@ -84,12 +84,16 @@ can leave anything it does not need empty.
 | :--- | :--- | :--- |
 | `SCENARIO_NAME` | Test title / Allure story | - |
 | `SEARCH_TEXT` | Global search box | `#searchInput` |
-| `START_TIME` | Start timestamp | `[name="dlog_timestamp_start_filter"]` |
-| `END_TIME` | End timestamp | `[name="dlog_timestamp_end_filter"]` |
+| `START_TIME` | Start timestamp (`dd/MM/yyyy HH:mm`) | `[name="dlog_timestamp_start_filter"]` |
+| `END_TIME` | End timestamp (`dd/MM/yyyy HH:mm`) | `[name="dlog_timestamp_end_filter"]` |
 | `FILTER_LABEL` | Filter dropdown (option **value**) | `[name="dlogMd_label_filter"]` |
 | `FILTER_VALUE` | Custom filter value | `[name="dlog_value_filter"]` |
 | `FILTER_CODE` | Custom filter code | `[name="dlog_code_filter"]` |
 | `EXPECT_RESULTS` | `1` (default) = results must be found; `0` = no results expected | - |
+
+The timestamp inputs are readonly date-picker fields, so the spec fills them
+by writing the value directly and dispatching `input`/`change` events
+(`fillField()` helper) — normal typing is blocked by the picker.
 
 A search "found results" when the first `see detail` image
 (`#tdId > a > img[alt="see detail"]`) is present in the results table; when
@@ -101,7 +105,7 @@ assert exactly that and skip the highlighter screenshots and the download.
 INSERT INTO LOG_SEARCH
   (SCENARIO_NAME, SEARCH_TEXT, START_TIME, END_TIME, FILTER_LABEL, FILTER_VALUE, FILTER_CODE, EXPECT_RESULTS, IS_EXECUTED)
 VALUES
-  ('Errors from today', 'ERROR', '2026-11-11 00:00:00', '2026-11-11 23:59:59', NULL, NULL, NULL, '1', '1');
+  ('Errors from today', 'ERROR', '11/11/2026 00:00', '11/11/2026 23:59', NULL, NULL, NULL, '1', '1');
 ```
 
 All routes and selectors live in the `APP` constant at the top of the spec, so

@@ -65,6 +65,9 @@ const APP = {
     // --- Log search form on the log page (values from the LOG_SEARCH table) ---
     search: {
       input: '#searchInput', // <input type="text" id="searchInput">
+      // Readonly date-picker inputs (id="start-dt" / "end-dt", values in
+      // "dd/MM/yyyy HH:mm" format) - filled via fillField() which writes the
+      // value directly because the picker blocks typing
       startTime: '[name="dlog_timestamp_start_filter"]',
       endTime: '[name="dlog_timestamp_end_filter"]',
       // Native <select>: the DB value is matched against the option value
@@ -107,9 +110,9 @@ interface LogSearchRow {
   SCENARIO_NAME: string;
   /** Value for #searchInput. */
   SEARCH_TEXT: string | null;
-  /** Value for [name="dlog_timestamp_start_filter"]. */
+  /** Value for [name="dlog_timestamp_start_filter"] - format "dd/MM/yyyy HH:mm". */
   START_TIME: string | null;
-  /** Value for [name="dlog_timestamp_end_filter"]. */
+  /** Value for [name="dlog_timestamp_end_filter"] - format "dd/MM/yyyy HH:mm". */
   END_TIME: string | null;
   /** Option value for the [name="dlogMd_label_filter"] dropdown. */
   FILTER_LABEL: string | null;
@@ -153,6 +156,30 @@ async function login(page: Page, username: string, password: string): Promise<vo
   await page.locator(APP.selectors.usernameInput).fill(username);
   await page.locator(APP.selectors.passwordInput).fill(password);
   await page.locator(APP.selectors.submitButton).click();
+}
+
+/**
+ * Fills a form input, working around readonly fields. Date-picker widgets
+ * typically render readonly text inputs (e.g. id="start-dt", placeholder
+ * "dd/MM/yyyy HH:mm") that reject normal typing - Playwright's fill() fails
+ * on them. For those the value is written directly and input/change events
+ * are dispatched so the page's own scripts and the form submission pick it
+ * up. The closing assertion verifies the field really holds the value.
+ */
+async function fillField(locator: Locator, value: string): Promise<void> {
+  const isReadonly = await locator.evaluate((el) => (el as HTMLInputElement).readOnly);
+
+  if (isReadonly) {
+    await locator.evaluate((el, val) => {
+      (el as HTMLInputElement).value = val;
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+      el.dispatchEvent(new Event('change', { bubbles: true }));
+    }, value);
+  } else {
+    await locator.fill(value);
+  }
+
+  await expect(locator).toHaveValue(value);
 }
 
 /**
@@ -269,15 +296,15 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
         // Only fields with a value in the DB row are filled, so a scenario can
         // leave anything it does not need empty
         if (scenario.SEARCH_TEXT) {
-          await page.locator(search.input).fill(scenario.SEARCH_TEXT);
+          await fillField(page.locator(search.input), scenario.SEARCH_TEXT);
           filled.push(`text="${scenario.SEARCH_TEXT}"`);
         }
         if (scenario.START_TIME) {
-          await page.locator(search.startTime).fill(scenario.START_TIME);
+          await fillField(page.locator(search.startTime), scenario.START_TIME);
           filled.push(`from=${scenario.START_TIME}`);
         }
         if (scenario.END_TIME) {
-          await page.locator(search.endTime).fill(scenario.END_TIME);
+          await fillField(page.locator(search.endTime), scenario.END_TIME);
           filled.push(`to=${scenario.END_TIME}`);
         }
         if (scenario.FILTER_LABEL) {
@@ -286,11 +313,11 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
           filled.push(`label=${scenario.FILTER_LABEL}`);
         }
         if (scenario.FILTER_VALUE) {
-          await page.locator(search.filterValue).fill(scenario.FILTER_VALUE);
+          await fillField(page.locator(search.filterValue), scenario.FILTER_VALUE);
           filled.push(`value="${scenario.FILTER_VALUE}"`);
         }
         if (scenario.FILTER_CODE) {
-          await page.locator(search.filterCode).fill(scenario.FILTER_CODE);
+          await fillField(page.locator(search.filterCode), scenario.FILTER_CODE);
           filled.push(`code="${scenario.FILTER_CODE}"`);
         }
 
