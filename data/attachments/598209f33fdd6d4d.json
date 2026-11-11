@@ -1,0 +1,4 @@
+{
+  "responseCode": "G98",
+  "responseDescription": "com.ibm.as400.access.ConnectionDroppedException: Connection was dropped unexpectedly."
+}

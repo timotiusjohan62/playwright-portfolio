@@ -1,0 +1,30 @@
+{
+  "index": 2,
+  "method": "POST",
+  "url": "http://172.18.30.26:7084/dd/sprint/kemenkeu",
+  "path": "/dd/sprint/kemenkeu",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-06T10:28:34.502+07:00",
+    "x-signature": "j42HHBiodXQuZQOSS+a71tpMyKyo0dSDZs9xvLgS9CA=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501519223",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"method\": \"A\",\n  \"registerNumber\": \"202611052385200001519224\",\n  \"registerCode\": \"11\",\n  \"accountNumber\": 901300004269,\n  \"customerName\": \"REKENING PENERIMAAN MAN 12\",\n  \"accountType\": \"10\",\n  \"accountGroupCode\": \"100\",\n  \"bankCode\": \"200\",\n  \"bankType\": \"1\",\n  \"accountCategory\": \"01\",\n  \"authorityCode\": \"1\",\n  \"institutionCode\": \"025\",\n  \"institutionName\": \"KEMENTRIAN AGAMA\",\n  \"workUnitName\": \"MADRASAH 12\",\n  \"accountStatusCode\": 4,\n  \"accountStatusName\": \"APROVAL KEPALA\",\n  \"permissionNumber\": \"123456\",\n  \"effectiveDateAccount\": \"2024-06-24-00.00.00.000000\",\n  \"bankName\": \"BANK BTN\",\n  \"branchCode\": 9,\n  \"branchName\": \"PADANG\",\n  \"kppnCode\": \"123\",\n  \"kppnName\": \"PADANG\",\n  \"accountGroupName\": \"PENERIMAAN\",\n  \"accountTypeName\": \"REKENING PENERIMAAN\",\n  \"virtualAccountCode\": \"2\",\n  \"virtualAccountName\": \"NON VIRTUAL\",\n  \"categoryName\": \"GI\",\n  \"authorityName\": \"BUKA\"\n}",
+  "status": 401,
+  "statusText": "Unauthorized",
+  "responseHeaders": {
+    "x-original-http-status-code": "401",
+    "content-type": "application/json",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 06 Nov 2026 03:30:02 GMT",
+    "content-length": "95"
+  },
+  "durationMs": 35939,
+  "sizeBytes": 95,
+  "responseBody": "{\n  \"message\": \"Unauthorized - Timestamp out of range (too late or too soon)\",\n  \"responseCode\": \"G01\"\n}"
+}

@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 5373,
+  "sizeBytes": 149,
+  "url": "http://172.18.30.27:7081/api/monetary",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Wed, 11 Nov 2026 03:08:38 GMT",
+    "content-length": "149"
+  }
+}

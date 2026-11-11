@@ -1,0 +1,30 @@
+{
+  "index": 2,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/mpn/paymentCode/DJPBC/customerId/577503464419575/payment",
+  "path": "/bp/mpn/paymentCode/DJPBC/customerId/577503464419575/payment",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-09T10:35:13.080+07:00",
+    "x-signature": "x+uHYa29yCc8sqJjh3MQ/gY+CPgxYas1Zk1ftJr+g3k=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02502519857",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"paymentCode\": \"DJPBC\",\n  \"customerId\": \"577503464419575\",\n  \"currency\": \"IDR\",\n  \"reprint\": \"N\",\n  \"billingInfo1\": \"000000000000000\",\n  \"billingInfo2\": \"73\",\n  \"billingInfo3\": \"A000091909230EDH20190930\",\n  \"billingInfo4\": \"2019-10-21\",\n  \"billingInfo5\": \"050100\",\n  \"billingInfo6\": \"\",\n  \"billingInfo7\": \"\",\n  \"billingInfo8\": \"\",\n  \"billingInfo9\": \"\",\n  \"billingInfo10\": \"{{billingInfo10}}\",\n  \"amount\": \"50000\",\n  \"customerName\": \"DUMMY DJPBC\",\n  \"ntb\": \"002134200002\",\n  \"ntpn\": \"8F1D967R100BFE2D\",\n  \"terminalId\": \"21688\",\n  \"terminalLocation\": \"F02\",\n  \"referenceNumber\": \"B05012519858\",\n  \"tellerOverride\": \"Y\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": \"2700016\",\n  \"transactionCode\": 9139,\n  \"tellerId\": 2700098,\n  \"journalSequence\": 2519858,\n  \"field1\": 1401500648434,\n  \"field2\": 5000000,\n  \"field3\": 0,\n  \"field4\": 0,\n  \"field5\": 10000000,\n  \"field6\": 10000000,\n  \"field7\": 10000000,\n  \"field8\": 10000000,\n  \"field9\": 0,\n  \"field10\": 0,\n  \"field11\": 0,\n  \"field12\": 0,\n  \"field13\": 0,\n  \"field14\": 0,\n  \"field15\": 1601300020711,\n  \"field16\": 5000000,\n  \"field17\": 0,\n  \"field18\": 0,\n  \"field19\": 0,\n  \"field20\": 0,\n  \"thirdPartyName\": \"283579257960408\",\n  \"partyName\": \"\",\n  \"remark1\": \"DUMMY DJPBC\",\n  \"remark2\": \"00027\",\n  \"customerCheck\": \"ConClient\",\n  \"userInformation\": \"\",\n  \"applicantId\": \"B050150000760270009800027\",\n  \"applicantName\": \"\",\n  \"applicantAddress1\": \"283579257960408     DJPBC  827882283955000\",\n  \"applicantAddress2\": \"1\",\n  \"applicantAddress3\": \"\",\n  \"applicantPostcode\": \"20190501\",\n  \"applicantContact\": \"1601300020711\",\n  \"payeeName\": \"HANA SHINTYA DEWI\",\n  \"payeeId\": \"1807024610960005\",\n  \"payeeAddress1\": \"827882283955000\",\n  \"payeeAddress2\": \"\",\n  \"payeeAddress3\": \"\",\n  \"payeePostcode\": \"\",\n  \"payeeContact\": \"\",\n  \"shareIssueHouse\": \"1807\",\n  \"shareCounter\": \"\",\n  \"alternateCurrency1\": \"IDR\",\n  \"alternateCurrency2\": \"IDR\",\n  \"alternateCurrency3\": \"\",\n  \"alphaFieldFiller\": \"02700098 B05015000076 00027BATAM      \",\n  \"release\": \"\",\n  \"transactionDateTime\": \"20261103155350\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "x-original-http-status-code": "200",
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Mon, 09 Nov 2026 03:35:13 GMT",
+    "content-length": "212"
+  },
+  "durationMs": 416,
+  "sizeBytes": 212,
+  "responseBody": "{\n  \"subResponses\": [],\n  \"responseCode\": \"G99\",\n  \"tellerId\": 2700098,\n  \"journalSequence\": 2519858,\n  \"responseDescription\": \"Error :javaValue (283579257960408     DJPBC  827882283955000): Length is not valid.\",\n  \"listResponses\": \"\"\n}"
+}

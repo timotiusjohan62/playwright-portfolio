@@ -1,0 +1,1 @@
+GET http://172.18.30.26:7095/bp/mpn/customerId/577503464419575/currency/IDR/reprint/N/inquiry

@@ -1,0 +1,39 @@
+{
+  "subResponses": [
+    {
+      "code": "42",
+      "transactionCode": 9004,
+      "mnemonicCode": "TLS",
+      "journalSequence": 2520021,
+      "tellerId": 99991,
+      "controlUnit": "C14",
+      "tlws": "ES",
+      "hovereq": "T",
+      "er": "01",
+      "cfmsg": "NASABAH BELUM MEMILIKI KARTU ATM/DEBIT,TAWARKAN.",
+      "errorCode1": 29,
+      "errorDescription1": "Account has host messages",
+      "errorCode2": 0,
+      "errorDescription2": "Error not mapping.",
+      "errorCode3": 0,
+      "errorDescription3": "Error not mapping.",
+      "errorCode4": 0,
+      "errorDescription4": "Error not mapping.",
+      "errorCode5": 0,
+      "errorDescription5": "Error not mapping.",
+      "errorCode6": 0,
+      "errorDescription6": "Error not mapping.",
+      "errorCode7": 0,
+      "errorDescription7": "Error not mapping.",
+      "errorCode8": 0,
+      "errorDescription8": "Error not mapping.",
+      "errorCode9": 0,
+      "errorDescription9": "Error not mapping."
+    }
+  ],
+  "responseCode": "029",
+  "tellerId": 99991,
+  "journalSequence": 2520021,
+  "responseDescription": "Account has host messages",
+  "listResponses": "42"
+}

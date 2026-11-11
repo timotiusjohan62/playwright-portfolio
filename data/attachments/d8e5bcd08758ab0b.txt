@@ -1,0 +1,1 @@
+#1 POST /bp/mpn/paymentCode/DJP/customerId/244135450604828/payment -> 200 (440 ms)

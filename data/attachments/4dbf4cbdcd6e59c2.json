@@ -1,0 +1,38 @@
+{
+  "subResponses": [
+    {
+      "code": "F4",
+      "mnemonicCode": "TLS",
+      "shortName": "MALIK ABDUL AZIS",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 279536091360,
+      "passbookSerial": 7563,
+      "currentBalance": 98513143451920,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 2520053,
+  "responseDescription": "Success",
+  "listResponses": "F4",
+  "responseBiller": {
+    "billCount": 1,
+    "areaCode": "0251",
+    "customerNumber": "007546050",
+    "divreCode": "01",
+    "datelCode": "0001",
+    "billData": [
+      {
+        "billNumber": "609A       ",
+        "billAmount": "00"
+      }
+    ],
+    "customerName": "ELIZABETH A MANURUNG",
+    "npwp": "",
+    "totalAmount": "0",
+    "adminFee": "0"
+  }
+}

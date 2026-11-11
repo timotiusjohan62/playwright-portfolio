@@ -1,0 +1,29 @@
+{
+  "index": 2,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/telkomPay/areaCode/%7B%7BareCode%7D%7D/customerNumber/007546050/serviceType/001001/payment",
+  "path": "/bp/telkomPay/areaCode/%7B%7BareCode%7D%7D/customerNumber/007546050/serviceType/001001/payment",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-10T11:42:17.798+07:00",
+    "x-signature": "gCKh+o/qo2T1c5ifSKPq8zW4l6FvdhAvvMCI9kw37YU=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02502520006",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"referenceNumber\": \"B22062520007\",\n  \"tellerOverride\": \"N\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": \"\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 2520007,\n  \"transactionCode\": 9005,\n  \"field1\": 1113100,\n  \"field2\": 12700000,\n  \"field3\": 0,\n  \"field4\": 0,\n  \"field5\": 10000000,\n  \"field6\": 10000000,\n  \"field7\": 10000000,\n  \"field8\": 10000000,\n  \"field9\": 0,\n  \"field10\": 0,\n  \"field11\": 0,\n  \"field12\": 0,\n  \"field13\": 0,\n  \"field14\": 0,\n  \"field15\": 279536091360,\n  \"field16\": 12700000,\n  \"field20\": 0,\n  \"alternateCurrency1\": \"IDR\",\n  \"alternateCurrency2\": \"IDR\",\n  \"alternateCurrency3\": \"IDR\",\n  \"thirdPartyName\": \"21 7306551\",\n  \"partyName\": \"00000127000\",\n  \"remark1\": \"21 7306551 1 B22061148967\",\n  \"remark2\": \"1 1 1001\",\n  \"billCount\": 1,\n  \"areaCode\": \"0251\",\n  \"customerNumber\": \"007546050\",\n  \"divreCode\": \"01\",\n  \"datelCode\": \"0001\",\n  \"billData\": [\n    {\n      \"billNumber\": \"609A       \",\n      \"billAmount\": \"00\"\n    }\n  ],\n  \"serviceType\": \"001001\",\n  \"customerName\": \"ELIZABETH A MANURUNG\",\n  \"npwp\": \"\",\n  \"totalAmount\": \"0\",\n  \"adminFee\": \"0\",\n  \"accountGl\": \"279536091360\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Tue, 10 Nov 2026 04:42:18 GMT",
+    "content-length": "293"
+  },
+  "durationMs": 882,
+  "sizeBytes": 293,
+  "responseBody": "{\n  \"subResponses\": [\n    {\n      \"code\": \"F2\",\n      \"mnemonicCode\": \"\",\n      \"rejectedReason\": \"Account number not found             00000000001113100\",\n      \"errorCode\": 1,\n      \"availableBalance\": 0\n    }\n  ],\n  \"responseCode\": \"001\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 2520007,\n  \"responseDescription\": \"Account number not found\",\n  \"listResponses\": \"F2\"\n}"
+}

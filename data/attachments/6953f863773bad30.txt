@@ -1,0 +1,3 @@
+#1 GET /bp/mpn/customerId/214772095803542/currency/IDR/reprint/N/inquiry -> 200 (262 ms)
+#2 GET /dd/account/1401500648434 -> 200 (706 ms)
+#3 POST /bp/mpn/paymentCode/DJP/customerId/214772095803542/payment -> 200 (342 ms)

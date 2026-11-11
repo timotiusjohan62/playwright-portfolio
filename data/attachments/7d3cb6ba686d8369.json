@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/mpn/paymentCode/DJA/customerId/881662071060076/payment",
+  "path": "/bp/mpn/paymentCode/DJA/customerId/881662071060076/payment",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-09T10:13:23.039+07:00",
+    "x-signature": "hIL7e4vb2Mfp94f0pcSuPeW8D3lWvVAb8kG3hUaKuzk=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02502519766",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": true
+}

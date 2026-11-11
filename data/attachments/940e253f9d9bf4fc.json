@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 655,
+  "sizeBytes": 1391,
+  "url": "http://172.18.30.26:7095/bp/mpn/paymentCode/DJPBC/customerId/468100413833034/payment",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Mon, 09 Nov 2026 03:37:56 GMT",
+    "content-length": "1391"
+  }
+}

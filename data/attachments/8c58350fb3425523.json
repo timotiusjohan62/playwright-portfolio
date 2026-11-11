@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/mpn/paymentCode/DJPBC/customerId/594677617671086/payment",
+  "path": "/bp/mpn/paymentCode/DJPBC/customerId/594677617671086/payment",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-09T10:37:55.768+07:00",
+    "x-signature": "Sr5qdTUdkw7nERrPIZlQfaiZvqMh8Hg9vWE2FAwovvA=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02502519880",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": true
+}

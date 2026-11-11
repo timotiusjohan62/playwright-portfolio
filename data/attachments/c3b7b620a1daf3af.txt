@@ -1,0 +1,1 @@
+POST http://172.18.30.26:7095/bp/telkomPay/areaCode/%7B%7BareCode%7D%7D/customerNumber/007546050/serviceType/001001/payment

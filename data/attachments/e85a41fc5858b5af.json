@@ -1,0 +1,16 @@
+{
+  "responseCode": "088",
+  "tellerId": 2700098,
+  "journalSequence": 1519210,
+  "responseDescription": "Tagihan Sudah Terbayar",
+  "listResponses": "F4",
+  "subResponses": [
+    {
+      "code": "F2",
+      "mnemonicCode": "",
+      "rejectedReason": "Tagihan Sudah Terbayar",
+      "errorCode": 0,
+      "availableBalance": 0
+    }
+  ]
+}

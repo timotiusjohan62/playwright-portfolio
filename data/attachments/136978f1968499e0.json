@@ -1,0 +1,16 @@
+{
+  "subResponses": [
+    {
+      "code": "F2",
+      "mnemonicCode": "",
+      "rejectedReason": "Account number not found             00000000000000000",
+      "errorCode": 1,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "001",
+  "tellerId": 99991,
+  "journalSequence": 1519111,
+  "responseDescription": "Acount number not found",
+  "listResponses": "F2"
+}

@@ -1,0 +1,29 @@
+{
+  "index": 2,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/mpn/paymentCode/DJP/customerId/039335468658159/payment",
+  "path": "/bp/mpn/paymentCode/DJP/customerId/039335468658159/payment",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-06T11:22:15.028+07:00",
+    "x-signature": "uexg8BTf21yXdhQOEEltxGTI1ztil7MIybPC/u2DDRA=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501519228",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"paymentCode\": \"DJP\",\n  \"customerId\": \"039335468658159\",\n  \"currency\": \"IDR\",\n  \"reprint\": \"N\",\n  \"billingInfo1\": \"827882283955000\",\n  \"billingInfo2\": \"1\",\n  \"billingInfo3\": \"\",\n  \"billingInfo4\": \"\",\n  \"billingInfo5\": \"\",\n  \"billingInfo6\": \"7371032206720005000000-JL. MERDEKA  - KABUPATEN MA\",\n  \"billingInfo7\": \"\",\n  \"billingInfo8\": \"\",\n  \"billingInfo9\": \"\",\n  \"billingInfo10\": \"{{billingInfo10}}\",\n  \"amount\": \"50000\",\n  \"customerName\": \"DUMMY DJP\",\n  \"ntb\": \"002134200002\",\n  \"ntpn\": \"8F1D967R100BFE2D\",\n  \"terminalId\": \"21688\",\n  \"terminalLocation\": \"F02\",\n  \"referenceNumber\": \"B05011519229\",\n  \"tellerOverride\": \"Y\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": \"2700016\",\n  \"transactionCode\": 9112,\n  \"tellerId\": 2700098,\n  \"journalSequence\": 1519229,\n  \"field1\": 101300011832,\n  \"field2\": 5000000,\n  \"field3\": 0,\n  \"field4\": 0,\n  \"field5\": 10000000,\n  \"field6\": 10000000,\n  \"field7\": 10000000,\n  \"field8\": 10000000,\n  \"field9\": 0,\n  \"field10\": 0,\n  \"field11\": 0,\n  \"field12\": 0,\n  \"field13\": 0,\n  \"field14\": 0,\n  \"field15\": 101300000328,\n  \"field16\": 5000000,\n  \"field17\": 0,\n  \"field18\": 0,\n  \"field19\": 0,\n  \"field20\": 0,\n  \"thirdPartyName\": \"283579257960408\",\n  \"partyName\": \"\",\n  \"remark1\": \"DUMMY DJP\",\n  \"remark2\": \"00027\",\n  \"customerCheck\": \"ConClient\",\n  \"userInformation\": \"\",\n  \"applicantId\": \"B050150000760270009800027\",\n  \"applicantName\": \"\",\n  \"applicantAddress1\": \"283579257960408     DJP  827882283955000\",\n  \"applicantAddress2\": \"1\",\n  \"applicantAddress3\": \"\",\n  \"applicantPostcode\": \"20190501\",\n  \"applicantContact\": \"1601300020711\",\n  \"payeeName\": \"HANA SHINTYA DEWI\",\n  \"payeeId\": \"1807024610960005\",\n  \"payeeAddress1\": \"827882283955000\",\n  \"payeeAddress2\": \"\",\n  \"payeeAddress3\": \"\",\n  \"payeePostcode\": \"\",\n  \"payeeContact\": \"\",\n  \"shareIssueHouse\": \"1807\",\n  \"shareCounter\": \"\",\n  \"alternateCurrency1\": \"IDR\",\n  \"alternateCurrency2\": \"IDR\",\n  \"alternateCurrency3\": \"\",\n  \"alphaFieldFiller\": \"02700098 B05015000076 00027BATAM      \",\n  \"release\": \"\",\n  \"transactionDateTime\": \"20261103155350\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 06 Nov 2026 04:22:16 GMT",
+    "content-length": "264"
+  },
+  "durationMs": 1154,
+  "sizeBytes": 264,
+  "responseBody": "{\n  \"responseCode\": \"088\",\n  \"tellerId\": 2700098,\n  \"journalSequence\": 1519229,\n  \"responseDescription\": \"Tagihan Sudah Terbayar\",\n  \"listResponses\": \"E0 F4\",\n  \"subResponses\": [\n    {\n      \"code\": \"F2\",\n      \"mnemonicCode\": \"\",\n      \"rejectedReason\": \"Tagihan Sudah Terbayar\",\n      \"errorCode\": 0,\n      \"availableBalance\": 0\n    }\n  ]\n}"
+}

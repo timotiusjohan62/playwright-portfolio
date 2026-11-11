@@ -1,0 +1,1 @@
+GET http://172.18.30.26:7095/bp/telkomPay/areaCode/0021/customerNumber/555555555/serviceType/001001/inquiry

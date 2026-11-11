@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 5804,
+  "sizeBytes": 604,
+  "url": "http://172.18.30.26:7095/bp/telkomPay/areaCode/%7B%7BareCode%7D%7D/customerNumber/007546050/serviceType/001001/payment",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Tue, 10 Nov 2026 04:46:59 GMT",
+    "content-length": "604"
+  }
+}

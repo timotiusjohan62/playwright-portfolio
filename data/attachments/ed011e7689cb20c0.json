@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7095/bp/telkomPay/areaCode/0021/customerNumber/555555555/serviceType/001001/inquiry",
+  "path": "/bp/telkomPay/areaCode/0021/customerNumber/555555555/serviceType/001001/inquiry",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-11-10T11:43:02.986+07:00",
+    "x-signature": "XTUQO44aBt4jZrEjFth4oD156FZDBw/e2/9H6s7MHkg=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02502520031",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

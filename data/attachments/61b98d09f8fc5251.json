@@ -1,0 +1,16 @@
+{
+  "subResponses": [
+    {
+      "code": "F2",
+      "mnemonicCode": "",
+      "rejectedReason": "Duplicate journal seq#",
+      "errorCode": 178,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "178",
+  "tellerId": 2700098,
+  "journalSequence": 1519360,
+  "responseDescription": "Duplicate journal seq#",
+  "listResponses": "F2"
+}

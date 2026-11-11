@@ -1,0 +1,21 @@
+{
+  "subResponses": [
+    {
+      "code": "F4",
+      "mnemonicCode": "KAS",
+      "shortName": "NASABAH S000081",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 111310000000,
+      "passbookSerial": 0,
+      "currentBalance": 328537625114,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 9990911,
+  "journalSequence": 2520067,
+  "responseDescription": "Transaction Success",
+  "listResponses": "F4"
+}

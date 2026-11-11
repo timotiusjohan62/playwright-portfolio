@@ -1,0 +1,67 @@
+{
+  "subResponses": [
+    {
+      "code": "F9",
+      "messageHeader": "9",
+      "lineCount": 2,
+      "lines": [
+        {
+          "withdrawalAmount": 12700000,
+          "depositAmount": 0,
+          "interestAmount": 0,
+          "balanceAmount": 98513143451920,
+          "tellerId": 99991,
+          "transactionDate": 50519,
+          "tellerMnemonic": "TLS",
+          "lineNumber": 1,
+          "sourceBrCode": "0014"
+        },
+        {
+          "withdrawalAmount": 12700000,
+          "depositAmount": 0,
+          "interestAmount": 0,
+          "balanceAmount": 98513130751920,
+          "tellerId": 99991,
+          "transactionDate": 50519,
+          "tellerMnemonic": "TLS",
+          "lineNumber": 2,
+          "sourceBrCode": "0014"
+        }
+      ]
+    },
+    {
+      "code": "F4",
+      "mnemonicCode": "TLS",
+      "shortName": "MALIK ABDUL AZIS",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 279536091360,
+      "passbookSerial": 7563,
+      "currentBalance": 98513130751920,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 99991,
+  "journalSequence": 2520056,
+  "responseDescription": "Success",
+  "listResponses": "F9 F4",
+  "responseBiller": {
+    "billCount": 1,
+    "areaCode": "0251",
+    "customerNumber": "007546050",
+    "divreCode": "01",
+    "datelCode": "0001",
+    "billData": [
+      {
+        "billNumber": "609A       ",
+        "billAmount": "00"
+      }
+    ],
+    "customerName": "ELIZABETH A MANURUNG",
+    "npwp": "",
+    "totalAmount": "0",
+    "adminFee": "0"
+  }
+}

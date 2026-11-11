@@ -1,0 +1,24 @@
+{
+  "index": 1,
+  "method": "POST",
+  "url": "http://172.18.30.26:7084/dd/sprint/kemenkeu",
+  "path": "/dd/sprint/kemenkeu",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-06T10:26:25.789+07:00",
+    "x-signature": "+KQ4hJR3dmZnOfhk4tVGuSz/r2TA1SFW7P76iM7DmD0=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501519217",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"method\": \"A\",\n  \"registerNumber\": \"202611052385200001519218\",\n  \"registerCode\": \"11\",\n  \"accountNumber\": 901300004269,\n  \"customerName\": \"REKENING PENERIMAAN MAN 12\",\n  \"accountType\": \"10\",\n  \"accountGroupCode\": \"100\",\n  \"bankCode\": \"200\",\n  \"bankType\": \"1\",\n  \"accountCategory\": \"01\",\n  \"authorityCode\": \"1\",\n  \"institutionCode\": \"025\",\n  \"institutionName\": \"KEMENTRIAN AGAMA\",\n  \"workUnitName\": \"MADRASAH 12\",\n  \"accountStatusCode\": 4,\n  \"accountStatusName\": \"APROVAL KEPALA\",\n  \"permissionNumber\": \"123456\",\n  \"effectiveDateAccount\": \"2024-06-24-00.00.00.000000\",\n  \"bankName\": \"BANK BTN\",\n  \"branchCode\": 9,\n  \"branchName\": \"PADANG\",\n  \"kppnCode\": \"123\",\n  \"kppnName\": \"PADANG\",\n  \"accountGroupName\": \"PENERIMAAN\",\n  \"accountTypeName\": \"REKENING PENERIMAAN\",\n  \"virtualAccountCode\": \"2\",\n  \"virtualAccountName\": \"NON VIRTUAL\",\n  \"categoryName\": \"GI\",\n  \"authorityName\": \"BUKA\"\n}",
+  "status": 0,
+  "statusText": "",
+  "responseHeaders": {},
+  "durationMs": 50015,
+  "sizeBytes": 0,
+  "error": "apiRequestContext.fetch: Timeout 50000ms exceeded.\nCall log:\n  - → POST http://172.18.30.26:7084/dd/sprint/kemenkeu\n    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n    - x-timestamp: 2026-11-06T10:26:25.789+07:00\n    - x-signature: +KQ4hJR3dmZnOfhk4tVGuSz/r2TA1SFW7P76iM7DmD0=\n    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250\n    - Btn-Reference-Number: B02501519217\n    - Btn-User-Id: BTN0010042\n    - Btn-Terminal-Id: PCDIMAS\n    - Btn-Terminal-Ip: 10.99.17.134\n    - content-type: application/json\n    - content-length: 770\n"
+}

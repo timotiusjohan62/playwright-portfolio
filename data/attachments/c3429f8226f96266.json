@@ -1,0 +1,16 @@
+{
+  "subResponses": [
+    {
+      "code": "F2",
+      "mnemonicCode": "",
+      "rejectedReason": "Trx Product Not Allowed              00000000000000000",
+      "errorCode": 429,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "429",
+  "tellerId": 2700098,
+  "journalSequence": 2519913,
+  "responseDescription": "Trx Product Not Allowed",
+  "listResponses": "F2"
+}

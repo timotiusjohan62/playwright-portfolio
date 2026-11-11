@@ -1,0 +1,16 @@
+{
+  "method": "GET",
+  "url": "http://172.18.30.26:7095/bp/mpn/customerId/395522209302772/currency/IDR/reprint/N/inquiry",
+  "path": "/bp/mpn/customerId/395522209302772/currency/IDR/reprint/N/inquiry",
+  "query": {},
+  "headers": {
+    "x-timestamp": "2026-11-06T16:55:40.940+07:00",
+    "x-signature": "oXSb6LaLSGJyuo0NIO1C2Rk5OYvKr1Sd3/4eeMK+Xjs=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02502519635",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": false
+}

@@ -1,0 +1,13 @@
+apiRequestContext.fetch: Timeout 50000ms exceeded.
+Call log:
+  - → GET http://172.18.30.26:7095/bp/mpn/customerId/244135450604828/currency/IDR/reprint/N/inquiry
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+    - x-timestamp: 2026-11-06T10:26:25.828+07:00
+    - x-signature: XKGprfv9yV0OHbl8O4JhXhnRGlfnv+7wSoFVJ73mSLU=
+    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250
+    - Btn-Reference-Number: B02501519219
+    - Btn-User-Id: BTN0010042
+    - Btn-Terminal-Id: PCDIMAS
+    - Btn-Terminal-Ip: 10.99.17.134

@@ -1,0 +1,21 @@
+{
+  "responseCode": "000",
+  "responseDescription": "Success",
+  "billCount": 1,
+  "areaCode": "0251",
+  "customerNumber": "007546050",
+  "divreCode": "01",
+  "datelCode": "0001",
+  "billData": [
+    {
+      "billNumber": "609A       ",
+      "billAmount": "00"
+    }
+  ],
+  "serviceType": "001001",
+  "customerName": "ELIZABETH A MANURUNG",
+  "npwp": "",
+  "totalAmount": "0",
+  "adminFee": "0",
+  "accountGl": "279536091360"
+}

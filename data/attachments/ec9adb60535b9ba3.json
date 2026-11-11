@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": 405,
+    "status": "Method Not Allowed",
+    "detail": "BIP6311E: REST API 'BDS_ASABRIAPSAN_RA' does not support method 'POST' for URL 'http://172.18.30.26:7095/bp/asabriApsan/paymentCode/BE141852THT50/inquiry'. "
+  }
+}

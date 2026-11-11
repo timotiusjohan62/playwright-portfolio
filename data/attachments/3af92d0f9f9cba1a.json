@@ -1,0 +1,88 @@
+{
+  "subResponses": [
+    {
+      "code": "F9",
+      "messageHeader": "9",
+      "lineCount": 1,
+      "lines": [
+        {
+          "withdrawalAmount": 5000000,
+          "depositAmount": 0,
+          "interestAmount": 0,
+          "balanceAmount": 200512558998,
+          "tellerId": 2700098,
+          "transactionDate": 30519,
+          "tellerMnemonic": "PBK",
+          "lineNumber": 19,
+          "sourceBrCode": "0027"
+        }
+      ]
+    },
+    {
+      "code": "E0",
+      "mnemonicCode": "PBK",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "longName1": "DEVI ARIYANTI LESTARI",
+      "longName2": "NASABAH T454189",
+      "longName3": "NASABAH AA49484",
+      "longName4": "NASABAH K002429",
+      "longName5": "NASABAH Y008031",
+      "accountNumber1": 1401500648434,
+      "accountNumber2": 1601300020711,
+      "accountNumber3": 0,
+      "accountNumber4": 0,
+      "accountNumber5": 0
+    },
+    {
+      "code": "F4",
+      "mnemonicCode": "PBK",
+      "shortName": "NASABAH T454189",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 1601300020711,
+      "passbookSerial": 8592,
+      "currentBalance": 64082585511504,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 2700098,
+  "journalSequence": 2519480,
+  "responseDescription": "Tagihan Sukses",
+  "listResponses": "F9 E0 F4",
+  "responseBiller": {
+    "PaymentCode": "214772095803542",
+    "BankId": "520200000990",
+    "BillingInfo1": "827882283955000",
+    "BillingInfo2": "1",
+    "BillingInfo3": "",
+    "BillingInfo4": "",
+    "BillingInfo5": "",
+    "BillingInfo6": "7371032206720005000000-JL. MERDEKA  - KABUPATEN MA",
+    "BillingInfo7": "",
+    "BillingInfo8": "",
+    "BillingInfo9": "",
+    "BillingInfo10": "",
+    "BranchCode": "502",
+    "ChannelType": "7012",
+    "Currency": "IDR",
+    "Gmt": "2026-06-23 15:54:37",
+    "LocalDateTime": "2026-06-23 15:54:37",
+    "SettlementDate": "0624",
+    "SwitcherCode": "171",
+    "TerminalId": "21688",
+    "TerminalLocation": "F02",
+    "TransactionId": "773956",
+    "Amount": "50000",
+    "ResponseCode": "00",
+    "CustomerName": "DUMMY DJP",
+    "Ntb": "002134200002",
+    "Ntpn": "8F1D967R100BFE2D",
+    "isError": "false",
+    "errorCode": "00",
+    "statusDescription": "Tagihan Sukses"
+  }
+}

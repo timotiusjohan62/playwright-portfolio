@@ -1,0 +1,2 @@
+#1 GET /bp/telkomPay/areaCode/0021/customerNumber/555555555/serviceType/001001/inquiry -> 200 (8081 ms)
+#2 POST /bp/telkomPay/areaCode/%7B%7BareCode%7D%7D/customerNumber/007546050/serviceType/001001/payment -> 200 (4620 ms)

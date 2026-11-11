@@ -1,0 +1,27 @@
+{
+  "index": 2,
+  "method": "GET",
+  "url": "http://172.18.30.26:7084/dd/account/1401500648434",
+  "path": "/dd/account/1401500648434",
+  "query": {},
+  "requestHeaders": {
+    "x-timestamp": "2026-11-06T11:46:39.177+07:00",
+    "x-signature": "sX+p5yXWYKYtp2NwuTr8YnS2Sv+iXwVmMxvAG/gxST0=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501519380",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 06 Nov 2026 04:46:39 GMT",
+    "content-length": "1936"
+  },
+  "durationMs": 322,
+  "sizeBytes": 1936,
+  "responseBody": "{\n  \"totalOCAmount\": 0,\n  \"cardAdminFee\": 0,\n  \"channel\": \"NEWBDS\",\n  \"rateFloor\": 0,\n  \"aftAccountFlag\": \"N\",\n  \"holdBalance\": 0,\n  \"terlinkingSDB\": \"N\",\n  \"terlinkingBTNSiapLama\": \"N\",\n  \"responseCode\": \"000\",\n  \"passbookSerialNumber\": 8592,\n  \"emailAddress\": \"melfinf@intikom.co.id\",\n  \"cardedProductFlag\": \"Y\",\n  \"agfAccountFlag\": \"N\",\n  \"officerCode\": \"\",\n  \"passbookCode\": \"B\",\n  \"rateVariance\": 0,\n  \"addressLine1\": \"JALAN KELINCI 3 NO 10\",\n  \"terlinkingOwing\": \"N\",\n  \"addressLine2\": \"RT 006/015 KALI ABANG TENGAH\",\n  \"addressLine3\": \"BEKASI UTARA\",\n  \"addressLine4\": \"BEKASI\",\n  \"sweepFlag\": \"N\",\n  \"productDescription\": \"Tab. BTN Batara IDR\",\n  \"allOwings\": 0,\n  \"rateCeiling\": 62500,\n  \"accountType\": \"S\",\n  \"currentBalance\": 200517558998,\n  \"cifDateLastMaintain\": 2042019,\n  \"motherName\": \"LESTARI\",\n  \"terlinkingLoan\": \"N\",\n  \"prosperaFlag\": \"N\",\n  \"accruedInterest\": 46697000,\n  \"lastActiveUsageDate\": 10519,\n  \"tax\": 9339400,\n  \"maxDormantDays\": 365,\n  \"eddFlag\": \"N\",\n  \"branchCode\": 14,\n  \"phoneNumber\": \"082173900676\",\n  \"controllingBranchName\": \"JAKARTA HARMONI\",\n  \"loanHoldBalance\": 0,\n  \"passbookLineNumber\": 19,\n  \"closureFee\": 5000000,\n  \"terlinkingInvesta\": \"N\",\n  \"shortName\": \"DEVI ARIYANTI LESTAR\",\n  \"terlinkingInvestaPlus\": \"N\",\n  \"terminalIp\": \"10.99.17.134\",\n  \"terlinkingPPO\": \"N\",\n  \"terminalId\": \"PCDIMAS\",\n  \"totalLLCAmount\": 0,\n  \"accountStatusDescription\": \"Active\",\n  \"availableBalance\": 200512558998,\n  \"accountStatus\": 1,\n  \"terlinkingATAR\": \"N\",\n  \"controllingBranchCode\": 14,\n  \"accruedOdInterest\": 0,\n  \"priorityCustomerFlag\": \"N\",\n  \"minimumBalance\": 5000000,\n  \"identityType\": \"KT\",\n  \"identityNumber\": \"3201324209960008\",\n  \"maxClosureDays\": 180,\n  \"terlinkingSimuda\": \"N\",\n  \"openingDate\": 170718,\n  \"interestRate\": 42500,\n  \"dhnFlag\": \"N\",\n  \"classCode\": \"A\",\n  \"cifNumber\": \"D699455\",\n  \"passbookBalance\": 200517558998,\n  \"placeOfBirth\": \"MAGELANG\",\n  \"cardType\": \"\",\n  \"branchName\": \"JAKARTA HARMONI\",\n  \"fullName\": \"DEVI ARIYANTI LESTARI\",\n  \"accountNumber\": 1401500648434,\n  \"newAccountFlag\": \"N\",\n  \"repaymentValue\": 200554916598,\n  \"productCode\": \"TB\",\n  \"responseDescription\": \"Transaksi Sukses\",\n  \"terlinkingBTNSiapBaru\": \"N\",\n  \"dateOfBirth8\": 20071003,\n  \"pepFlag\": \"N\",\n  \"currencyCode\": \"IDR\"\n}"
+}

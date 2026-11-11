@@ -1,0 +1,15 @@
+{
+  "status": 401,
+  "statusText": "Unauthorized",
+  "ok": false,
+  "durationMs": 35939,
+  "sizeBytes": 95,
+  "url": "http://172.18.30.26:7084/dd/sprint/kemenkeu",
+  "headers": {
+    "x-original-http-status-code": "401",
+    "content-type": "application/json",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 06 Nov 2026 03:30:02 GMT",
+    "content-length": "95"
+  }
+}

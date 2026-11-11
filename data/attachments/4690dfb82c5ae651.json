@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/mpn/paymentCode/%7B%7BproCode%7D%7D/customerId/%7B%7BPaymentCode%7D%7D/payment",
+  "path": "/bp/mpn/paymentCode/%7B%7BproCode%7D%7D/customerId/%7B%7BPaymentCode%7D%7D/payment",
+  "query": {},
+  "headers": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-06T14:11:58.452+07:00",
+    "x-signature": "hlo6smPN8tBY14lmT4AOZzERbsISF82At1Kl6OZXh9Q=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02502519519",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "hasBody": true
+}

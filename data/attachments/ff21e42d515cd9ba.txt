@@ -1,0 +1,1 @@
+POST http://172.18.30.26:7095/bp/mpn/paymentCode/%7B%7BproCode%7D%7D/customerId/%7B%7BPaymentCode%7D%7D/payment

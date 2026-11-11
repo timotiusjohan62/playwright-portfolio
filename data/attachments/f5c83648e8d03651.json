@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 288,
+  "sizeBytes": 818,
+  "url": "http://172.18.30.26:7095/bp/mpn/customerId/283579257960408/currency/IDR/reprint/N/inquiry",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 06 Nov 2026 09:54:02 GMT",
+    "content-length": "818"
+  }
+}

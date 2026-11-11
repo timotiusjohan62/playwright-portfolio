@@ -1,0 +1,27 @@
+{
+  "index": 1,
+  "method": "GET",
+  "url": "http://172.18.30.26:7095/bp/mpn/customerId/039335468658159/currency/IDR/reprint/N/inquiry",
+  "path": "/bp/mpn/customerId/039335468658159/currency/IDR/reprint/N/inquiry",
+  "query": {},
+  "requestHeaders": {
+    "x-timestamp": "2026-11-06T11:46:38.730+07:00",
+    "x-signature": "zIknp1/MJmRo+1OhVh9iWHUlcfYzqZ59GUns49GYsjQ=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02501519377",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Fri, 06 Nov 2026 04:46:38 GMT",
+    "content-length": "818"
+  },
+  "durationMs": 249,
+  "sizeBytes": 818,
+  "responseBody": "{\n  \"responseCode\": \"000\",\n  \"responseDescription\": \"Tagihan Sukses\",\n  \"PaymentCode\": \"039335468658159\",\n  \"BankId\": \"520200000990\",\n  \"BillingInfo1\": \"827882283955000\",\n  \"BillingInfo2\": \"1\",\n  \"BillingInfo3\": \"\",\n  \"BillingInfo4\": \"\",\n  \"BillingInfo5\": \"\",\n  \"BillingInfo6\": \"7371032206720005000000-JL. MERDEKA  - KABUPATEN MA\",\n  \"BillingInfo7\": \"\",\n  \"BillingInfo8\": \"\",\n  \"BillingInfo9\": \"\",\n  \"BillingInfo10\": \"\",\n  \"BranchCode\": \"502\",\n  \"ChannelType\": \"7012\",\n  \"Currency\": \"IDR\",\n  \"Gmt\": \"2026-06-23 15:54:37\",\n  \"LocalDateTime\": \"2026-06-23 15:54:37\",\n  \"SettlementDate\": \"0624\",\n  \"SwitcherCode\": \"171\",\n  \"TerminalId\": \"21688\",\n  \"TerminalLocation\": \"F02\",\n  \"TransactionId\": \"773956\",\n  \"Amount\": \"50000\",\n  \"CustomerName\": \"DUMMY DJP\",\n  \"Ntb\": \"002134200002\",\n  \"Ntpn\": \"8F1D967R100BFE2D\",\n  \"proCode\": \"DJP\",\n  \"billerAccountNumber\": 1601300020711,\n  \"isError\": \"false\",\n  \"errorCode\": \"00\",\n  \"statusDescription\": \"Tagihan Sukses\"\n}"
+}

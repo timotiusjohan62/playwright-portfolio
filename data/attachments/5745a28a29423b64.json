@@ -1,0 +1,15 @@
+{
+  "subResponses": [
+    {
+      "code": "F2",
+      "mnemonicCode": "",
+      "rejectedReason": "TRANSAKSI GAGAL",
+      "errorCode": "099",
+      "availableBalance": ""
+    }
+  ],
+  "responseCode": "099",
+  "responseDescription": "TRANSAKSI GAGAL",
+  "tellerId": "99991",
+  "journalSequence": "1519044"
+}

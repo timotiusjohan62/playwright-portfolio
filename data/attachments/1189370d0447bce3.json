@@ -1,0 +1,24 @@
+{
+  "index": 2,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/mpn/paymentCode/DJA/customerId/837088936277081/payment",
+  "path": "/bp/mpn/paymentCode/DJA/customerId/837088936277081/payment",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-09T10:14:56.928+07:00",
+    "x-signature": "GQlLvbsaXG09XRlb+VYmvbE0/E95pwC2fehgzOozSlI=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02502519811",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"paymentCode\": \"DJA\",\n  \"customerId\": \"837088936277081\",\n  \"currency\": \"IDR\",\n  \"reprint\": \"N\",\n  \"billingInfo1\": \"056\",\n  \"billingInfo2\": \"01\",\n  \"billingInfo3\": \"432458\",\n  \"billingInfo4\": \"\",\n  \"billingInfo5\": \"\",\n  \"billingInfo6\": \"\",\n  \"billingInfo7\": \"\",\n  \"billingInfo8\": \"\",\n  \"billingInfo9\": \"\",\n  \"billingInfo10\": \"{{billingInfo10}}\",\n  \"amount\": \"50000\",\n  \"customerName\": \"DUMMY DJA\",\n  \"ntb\": \"002251100047\",\n  \"ntpn\": \"09D652G50CF7J28G\",\n  \"terminalId\": \"21688\",\n  \"terminalLocation\": \"F02\",\n  \"referenceNumber\": \"B05012519812\",\n  \"tellerOverride\": \"Y\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": \"2700016\",\n  \"transactionCode\": 9114,\n  \"tellerId\": 2700098,\n  \"journalSequence\": 2519812,\n  \"field1\": 189955000000,\n  \"field2\": 5000000,\n  \"field3\": 0,\n  \"field4\": 0,\n  \"field5\": 10000000,\n  \"field6\": 10000000,\n  \"field7\": 10000000,\n  \"field8\": 10000000,\n  \"field9\": 0,\n  \"field10\": 0,\n  \"field11\": 0,\n  \"field12\": 0,\n  \"field13\": 0,\n  \"field14\": 0,\n  \"field15\": 1601300020711,\n  \"field16\": 5000000,\n  \"field17\": 0,\n  \"field18\": 0,\n  \"field19\": 0,\n  \"field20\": 0,\n  \"thirdPartyName\": \"283579257960408\",\n  \"partyName\": \"\",\n  \"remark1\": \"DUMMY DJA\",\n  \"remark2\": \"00027\",\n  \"customerCheck\": \"ConClient\",\n  \"userInformation\": \"\",\n  \"applicantId\": \"B050150000760270009800027\",\n  \"applicantName\": \"\",\n  \"applicantAddress1\": \"283579257960408     DJA  827882283955000\",\n  \"applicantAddress2\": \"1\",\n  \"applicantAddress3\": \"\",\n  \"applicantPostcode\": \"20190501\",\n  \"applicantContact\": \"1601300020711\",\n  \"payeeName\": \"HANA SHINTYA DEWI\",\n  \"payeeId\": \"1807024610960005\",\n  \"payeeAddress1\": \"827882283955000\",\n  \"payeeAddress2\": \"\",\n  \"payeeAddress3\": \"\",\n  \"payeePostcode\": \"\",\n  \"payeeContact\": \"\",\n  \"shareIssueHouse\": \"1807\",\n  \"shareCounter\": \"\",\n  \"alternateCurrency1\": \"IDR\",\n  \"alternateCurrency2\": \"IDR\",\n  \"alternateCurrency3\": \"\",\n  \"alphaFieldFiller\": \"02700098 B05015000076 00027BATAM      \",\n  \"release\": \"\",\n  \"transactionDateTime\": \"20261103155350\"\n}",
+  "status": 0,
+  "statusText": "",
+  "responseHeaders": {},
+  "durationMs": 11289,
+  "sizeBytes": 0,
+  "error": "apiRequestContext.fetch: read ETIMEDOUT\nCall log:\n  - → POST http://172.18.30.26:7095/bp/mpn/paymentCode/DJA/customerId/837088936277081/payment\n    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n    - x-timestamp: 2026-11-09T10:14:56.928+07:00\n    - x-signature: GQlLvbsaXG09XRlb+VYmvbE0/E95pwC2fehgzOozSlI=\n    - X-Btn-Key: c1500286-de11-4286-ba7e-090250090250\n    - Btn-Reference-Number: B02502519811\n    - Btn-User-Id: BTN0010042\n    - Btn-Terminal-Id: PCDIMAS\n    - Btn-Terminal-Ip: 10.99.17.134\n    - content-type: application/json\n    - content-length: 1682\n"
+}

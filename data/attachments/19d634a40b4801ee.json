@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "ok": true,
+  "durationMs": 2016,
+  "sizeBytes": 293,
+  "url": "http://172.18.30.26:7095/bp/pln/prepaid/meterNumber/03106343300/buyingOption/0/payment",
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Thu, 05 Nov 2026 10:22:41 GMT",
+    "content-length": "293"
+  }
+}

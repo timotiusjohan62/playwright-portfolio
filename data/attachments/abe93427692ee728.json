@@ -1,0 +1,53 @@
+{
+  "subResponses": [
+    {
+      "code": "F4",
+      "mnemonicCode": "KAS",
+      "shortName": "NASABAH T454189",
+      "message1": "",
+      "message2": "",
+      "message3": "",
+      "accountNumber": 1601300020711,
+      "passbookSerial": 0,
+      "currentBalance": 64082950511504,
+      "availableBalance": 0
+    }
+  ],
+  "responseCode": "000",
+  "tellerId": 2700098,
+  "journalSequence": 2519751,
+  "responseDescription": "Tagihan Sukses",
+  "listResponses": "F4",
+  "responseBiller": {
+    "PaymentCode": "768657623210040",
+    "BankId": "520200000990",
+    "BillingInfo1": "056",
+    "BillingInfo2": "01",
+    "BillingInfo3": "432458",
+    "BillingInfo4": "",
+    "BillingInfo5": "",
+    "BillingInfo6": "",
+    "BillingInfo7": "",
+    "BillingInfo8": "",
+    "BillingInfo9": "",
+    "BillingInfo10": "",
+    "BranchCode": "502",
+    "ChannelType": "7012",
+    "Currency": "IDR",
+    "Gmt": "2026-06-23 15:54:37",
+    "LocalDateTime": "2026-06-23 15:54:37",
+    "SettlementDate": "0624",
+    "SwitcherCode": "171",
+    "TerminalId": "21688",
+    "TerminalLocation": "F02",
+    "TransactionId": "773956",
+    "Amount": "50000",
+    "ResponseCode": "00",
+    "CustomerName": "DUMMY DJA",
+    "Ntb": "002251100047",
+    "Ntpn": "09D652G50CF7J28G",
+    "isError": "false",
+    "errorCode": "00",
+    "statusDescription": "Tagihan Sukses"
+  }
+}

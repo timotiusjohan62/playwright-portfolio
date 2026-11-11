@@ -1,0 +1,1 @@
+POST http://172.18.30.26:7095/bp/mpn/paymentCode/DJP/customerId/283579257960408/payment

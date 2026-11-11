@@ -1,0 +1,29 @@
+{
+  "index": 3,
+  "method": "POST",
+  "url": "http://172.18.30.26:7095/bp/telkomPay/areaCode/%7B%7BareCode%7D%7D/customerNumber/007546050/serviceType/001001/payment",
+  "path": "/bp/telkomPay/areaCode/%7B%7BareCode%7D%7D/customerNumber/007546050/serviceType/001001/payment",
+  "query": {},
+  "requestHeaders": {
+    "content-type": "application/json",
+    "x-timestamp": "2026-11-10T11:43:01.829+07:00",
+    "x-signature": "zdbvND/6zuOuzuyDWh8M2HFFj/OYp0s6xNdvs1KOdAo=",
+    "X-Btn-Key": "c1500286-de11-4286-ba7e-090250090250",
+    "Btn-Reference-Number": "B02502520028",
+    "Btn-User-Id": "BTN0010042",
+    "Btn-Terminal-Id": "PCDIMAS",
+    "Btn-Terminal-Ip": "10.99.17.134"
+  },
+  "requestBody": "{\n  \"referenceNumber\": \"B22062520029\",\n  \"tellerOverride\": \"N\",\n  \"supervisorOverride\": \"N\",\n  \"supervisorOverrideId\": \"\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 2520029,\n  \"transactionCode\": 9002,\n  \"field1\": 1601506174627,\n  \"field2\": 12700000,\n  \"field3\": 0,\n  \"field4\": 0,\n  \"field5\": 10000000,\n  \"field6\": 10000000,\n  \"field7\": 10000000,\n  \"field8\": 10000000,\n  \"field9\": 0,\n  \"field10\": 0,\n  \"field11\": 0,\n  \"field12\": 7563,\n  \"field13\": 98513181551920,\n  \"field14\": 27,\n  \"field15\": 279536091360,\n  \"field16\": 12700000,\n  \"field20\": 0,\n  \"alternateCurrency1\": \"IDR\",\n  \"alternateCurrency2\": \"IDR\",\n  \"alternateCurrency3\": \"IDR\",\n  \"thirdPartyName\": \"21 7306551\",\n  \"partyName\": \"00000127000\",\n  \"remark1\": \"21 7306551 1 B22061148967\",\n  \"remark2\": \"1 1 1001\",\n  \"billCount\": 1,\n  \"areaCode\": \"0251\",\n  \"customerNumber\": \"007546050\",\n  \"divreCode\": \"01\",\n  \"datelCode\": \"0001\",\n  \"billData\": [\n    {\n      \"billNumber\": \"609A       \",\n      \"billAmount\": \"00\"\n    }\n  ],\n  \"serviceType\": \"001001\",\n  \"customerName\": \"ELIZABETH A MANURUNG\",\n  \"npwp\": \"\",\n  \"totalAmount\": \"0\",\n  \"adminFee\": \"0\",\n  \"accountGl\": \"279536091360\"\n}",
+  "status": 200,
+  "statusText": "OK",
+  "responseHeaders": {
+    "content-type": "application/json;charset=utf-8",
+    "server": "IBM App Connect Enterprise",
+    "date": "Tue, 10 Nov 2026 04:43:05 GMT",
+    "content-length": "1065"
+  },
+  "durationMs": 3954,
+  "sizeBytes": 1065,
+  "responseBody": "{\n  \"subResponses\": [\n    {\n      \"code\": \"F9\",\n      \"messageHeader\": \"9\",\n      \"lineCount\": 2,\n      \"lines\": [\n        {\n          \"withdrawalAmount\": 12700000,\n          \"depositAmount\": 0,\n          \"interestAmount\": 0,\n          \"balanceAmount\": 98513168851920,\n          \"tellerId\": 99991,\n          \"transactionDate\": 50519,\n          \"tellerMnemonic\": \"TLS\",\n          \"lineNumber\": 27,\n          \"sourceBrCode\": \"0014\"\n        },\n        {\n          \"withdrawalAmount\": 12700000,\n          \"depositAmount\": 0,\n          \"interestAmount\": 0,\n          \"balanceAmount\": 98513156151920,\n          \"tellerId\": 99991,\n          \"transactionDate\": 50519,\n          \"tellerMnemonic\": \"TLS\",\n          \"lineNumber\": 28,\n          \"sourceBrCode\": \"0014\"\n        }\n      ]\n    },\n    {\n      \"code\": \"F4\",\n      \"mnemonicCode\": \"TLS\",\n      \"shortName\": \"MALIK ABDUL AZIS\",\n      \"message1\": \"\",\n      \"message2\": \"\",\n      \"message3\": \"\",\n      \"accountNumber\": 279536091360,\n      \"passbookSerial\": 7563,\n      \"currentBalance\": 98513156151920,\n      \"availableBalance\": 0\n    }\n  ],\n  \"responseCode\": \"000\",\n  \"tellerId\": 99991,\n  \"journalSequence\": 2520029,\n  \"responseDescription\": \"Success\",\n  \"listResponses\": \"F9 F4\",\n  \"responseBiller\": {\n    \"billCount\": 1,\n    \"areaCode\": \"0251\",\n    \"customerNumber\": \"007546050\",\n    \"divreCode\": \"01\",\n    \"datelCode\": \"0001\",\n    \"billData\": [\n      {\n        \"billNumber\": \"609A       \",\n        \"billAmount\": \"00\"\n      }\n    ],\n    \"customerName\": \"ELIZABETH A MANURUNG\",\n    \"npwp\": \"\",\n    \"totalAmount\": \"0\",\n    \"adminFee\": \"0\"\n  }\n}"
+}

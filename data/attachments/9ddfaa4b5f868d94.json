@@ -1,0 +1,4 @@
+{
+  "message": "Unauthorized - Timestamp out of range (too late or too soon)",
+  "responseCode": "G01"
+}

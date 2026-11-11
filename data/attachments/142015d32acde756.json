@@ -1,0 +1,8 @@
+{
+  "subResponses": [],
+  "responseCode": "G98",
+  "tellerId": 2700098,
+  "journalSequence": 2519899,
+  "responseDescription": "com.ibm.as400.access.ConnectionDroppedException: Connection was dropped unexpectedly.",
+  "listResponses": ""
+}
