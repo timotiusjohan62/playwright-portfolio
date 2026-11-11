@@ -70,7 +70,8 @@ const APP = {
       // value directly because the picker blocks typing
       startTime: '[name="dlog_timestamp_start_filter"]',
       endTime: '[name="dlog_timestamp_end_filter"]',
-      // Native <select>: the DB value is matched against the option value
+      // Native <select> whose options only appear after #searchInput has been
+      // filled (type-ahead) - the DB value is matched against the option value
       filterLabel: '[name="dlogMd_label_filter"]',
       filterValue: '[name="dlog_value_filter"]',
       filterCode: '[name="dlog_code_filter"]',
@@ -293,10 +294,25 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
         const search = APP.selectors.search;
         const filled: string[] = [];
 
-        // Only fields with a value in the DB row are filled, so a scenario can
-        // leave anything it does not need empty
+        // The app only lists the filter dropdown's options after the search
+        // input has been filled, so a label filter without search text can
+        // never work
+        if (scenario.FILTER_LABEL && !scenario.SEARCH_TEXT) {
+          throw new Error(
+            `Scenario "${scenario.SCENARIO_NAME}" sets FILTER_LABEL but leaves SEARCH_TEXT empty - ` +
+            'the filter dropdown only lists its options after the search input is filled'
+          );
+        }
+
+        // Search input first: the app reacts to it (type-ahead) and it makes
+        // the filter dropdown show its option list
         if (scenario.SEARCH_TEXT) {
-          await fillField(page.locator(search.input), scenario.SEARCH_TEXT);
+          const searchInput = page.locator(search.input);
+          await searchInput.click();
+          // Typed character by character so the type-ahead JS reacts to each
+          // keystroke (a one-shot fill() can be missed by the widget)
+          await searchInput.pressSequentially(scenario.SEARCH_TEXT, { delay: 50 });
+          await expect(searchInput).toHaveValue(scenario.SEARCH_TEXT);
           filled.push(`text="${scenario.SEARCH_TEXT}"`);
         }
         if (scenario.START_TIME) {
@@ -308,7 +324,17 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
           filled.push(`to=${scenario.END_TIME}`);
         }
         if (scenario.FILTER_LABEL) {
-          // Native <select>: picks the option whose value matches the DB value
+          // Native <select>, but its options only appear once the search
+          // input is filled - wait for the DB value to be in the list, then
+          // pick it
+          await page.waitForFunction(
+            ({ sel, value }) => {
+              const select = document.querySelector(sel) as HTMLSelectElement | null;
+              return !!select && Array.from(select.options).some((o) => o.value === value);
+            },
+            { sel: search.filterLabel, value: scenario.FILTER_LABEL },
+            { timeout: 10_000 },
+          );
           await page.locator(search.filterLabel).selectOption(scenario.FILTER_LABEL);
           filled.push(`label=${scenario.FILTER_LABEL}`);
         }
