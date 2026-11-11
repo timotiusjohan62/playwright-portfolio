@@ -313,6 +313,10 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
           // keystroke (a one-shot fill() can be missed by the widget)
           await searchInput.pressSequentially(scenario.SEARCH_TEXT, { delay: 50 });
           await expect(searchInput).toHaveValue(scenario.SEARCH_TEXT);
+          // Click again after typing: the app only shows/populates the filter
+          // dropdown (dlogMd_label_filter) once the search input is filled AND
+          // clicked - typing alone is not enough
+          await searchInput.click();
           filled.push(`text="${scenario.SEARCH_TEXT}"`);
         }
         if (scenario.START_TIME) {
@@ -381,20 +385,24 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
           }
 
           // Pick the matching option (by value or visible text) and fire the
-          // change events the app listens for
-          const matchedValue = await page.evaluate<string | null>(({ sel, value }) => {
-            const el = document.querySelector(sel) as HTMLSelectElement | null;
-            if (!el) return null;
-            const wanted = value.trim().toLowerCase();
-            const match = Array.from(el.options).find(
-              (o) => o.value === value || o.text.trim().toLowerCase() === wanted,
-            );
-            if (!match) return null;
-            el.value = match.value;
-            el.dispatchEvent(new Event('input', { bubbles: true }));
-            el.dispatchEvent(new Event('change', { bubbles: true }));
-            return match.value;
-          }, { sel: search.filterLabel, value: scenario.FILTER_LABEL });
+          // change events the app listens for. Both type arguments are given
+          // explicitly so TS does not fall back to the void-argument overload.
+          const matchedValue = await page.evaluate<string | null, { sel: string; value: string }>(
+            ({ sel, value }) => {
+              const el = document.querySelector(sel) as HTMLSelectElement | null;
+              if (!el) return null;
+              const wanted = value.trim().toLowerCase();
+              const match = Array.from(el.options).find(
+                (o) => o.value === value || o.text.trim().toLowerCase() === wanted,
+              );
+              if (!match) return null;
+              el.value = match.value;
+              el.dispatchEvent(new Event('input', { bubbles: true }));
+              el.dispatchEvent(new Event('change', { bubbles: true }));
+              return match.value;
+            },
+            { sel: search.filterLabel, value: scenario.FILTER_LABEL },
+          );
 
           // The wait above guarantees a match exists; this is a safety net
           if (matchedValue === null) {

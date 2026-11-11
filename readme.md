@@ -95,12 +95,12 @@ The timestamp inputs are readonly date-picker fields, so the spec fills them
 by writing the value directly and dispatching `input`/`change` events
 (`fillField()` helper) — normal typing is blocked by the picker.
 
-The `#searchInput` field acts as a type-ahead: it must be filled **before** the
-filter dropdown (`dlogMd_label_filter`) lists its options. The spec types into
-it character by character, then waits for the dropdown to contain the
-`FILTER_LABEL` option before selecting it. Scenarios that set `FILTER_LABEL`
-must therefore also set `SEARCH_TEXT` — the spec fails such rows with a clear
-message instead of searching with a half-filled form.
+The `#searchInput` field acts as a type-ahead: it must be filled **and clicked**
+before the filter dropdown (`dlogMd_label_filter`) lists its options. The spec
+types into it character by character, clicks it again, then waits for the
+dropdown to contain the `FILTER_LABEL` option before selecting it. Scenarios
+that set `FILTER_LABEL` must therefore also set `SEARCH_TEXT` — the spec fails
+such rows with a clear message instead of searching with a half-filled form.
 
 A search "found results" when the first `see detail` image
 (`#tdId > a > img[alt="see detail"]`) is present in the results table; when
