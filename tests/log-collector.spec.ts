@@ -70,8 +70,8 @@ const APP = {
       // value directly because the picker blocks typing
       startTime: '[name="dlog_timestamp_start_filter"]',
       endTime: '[name="dlog_timestamp_end_filter"]',
-      // Native <select> whose options only appear after #searchInput has been
-      // filled (type-ahead) - the DB value is matched against the option value
+      // Dropdown whose options may load lazily (after #searchInput is filled
+      // and/or once it is clicked) - matched by option value OR visible text
       filterLabel: '[name="dlogMd_label_filter"]',
       filterValue: '[name="dlog_value_filter"]',
       filterCode: '[name="dlog_code_filter"]',
@@ -324,18 +324,84 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
           filled.push(`to=${scenario.END_TIME}`);
         }
         if (scenario.FILTER_LABEL) {
-          // Native <select>, but its options only appear once the search
-          // input is filled - wait for the DB value to be in the list, then
-          // pick it
-          await page.waitForFunction(
-            ({ sel, value }) => {
-              const select = document.querySelector(sel) as HTMLSelectElement | null;
-              return !!select && Array.from(select.options).some((o) => o.value === value);
-            },
-            { sel: search.filterLabel, value: scenario.FILTER_LABEL },
-            { timeout: 10_000 },
-          );
-          await page.locator(search.filterLabel).selectOption(scenario.FILTER_LABEL);
+          const select = page.locator(search.filterLabel);
+
+          // Some apps populate the dropdown lazily when it is opened, so
+          // click it first (tolerant: not every app needs this)
+          await select.click({ timeout: 5_000 }).catch(() => { /* already populated */ });
+
+          // Wait until an option matches the DB value by its value attribute
+          // OR its visible text (legacy apps often differ between the two)
+          try {
+            await page.waitForFunction(
+              ({ sel, value }) => {
+                const el = document.querySelector(sel) as HTMLSelectElement | null;
+                if (!el || el.tagName !== 'SELECT') return false;
+                const wanted = value.trim().toLowerCase();
+                return Array.from(el.options).some(
+                  (o) => o.value === value || o.text.trim().toLowerCase() === wanted,
+                );
+              },
+              { sel: search.filterLabel, value: scenario.FILTER_LABEL },
+              { timeout: 10_000 },
+            );
+          } catch {
+            // Diagnose: capture what the dropdown actually holds so the
+            // report shows why the expected option never appeared
+            const state = await page.evaluate((sel) => {
+              const el = document.querySelector(sel) as HTMLSelectElement | null;
+              if (!el) return { found: false, tagName: null, options: null, formHtml: null };
+              const form = el.closest('form');
+              return {
+                found: true,
+                tagName: el.tagName,
+                options: el.tagName === 'SELECT'
+                  ? Array.from(el.options).map((o) => ({ value: o.value, text: o.text.trim() }))
+                  : null,
+                formHtml: form ? form.innerHTML.replace(/\s+/g, ' ').slice(0, 20_000) : null,
+              };
+            }, search.filterLabel);
+
+            await testInfo.attach('Filter dropdown state at timeout', {
+              body: JSON.stringify(state, null, 2),
+              contentType: 'application/json',
+            });
+
+            const options = state.options ?? [];
+            throw new Error(
+              `The filter dropdown never listed "${scenario.FILTER_LABEL}" (waited 10s after filling the search input). ` +
+              (state.found
+                ? state.tagName === 'SELECT'
+                  ? `It currently holds ${options.length} option(s): ${JSON.stringify(options.slice(0, 20))}. ` +
+                    'If the expected entry is there under a different value/text, set FILTER_LABEL to that exact value. '
+                  : `The element is a <${String(state.tagName)}>, not a <select> - it is a custom dropdown that needs its own handling. `
+                : 'The dropdown element was not found on the page at all. ') +
+              'Full form HTML is attached as "Filter dropdown state at timeout".'
+            );
+          }
+
+          // Pick the matching option (by value or visible text) and fire the
+          // change events the app listens for
+          const matchedValue = await page.evaluate<string | null>(({ sel, value }) => {
+            const el = document.querySelector(sel) as HTMLSelectElement | null;
+            if (!el) return null;
+            const wanted = value.trim().toLowerCase();
+            const match = Array.from(el.options).find(
+              (o) => o.value === value || o.text.trim().toLowerCase() === wanted,
+            );
+            if (!match) return null;
+            el.value = match.value;
+            el.dispatchEvent(new Event('input', { bubbles: true }));
+            el.dispatchEvent(new Event('change', { bubbles: true }));
+            return match.value;
+          }, { sel: search.filterLabel, value: scenario.FILTER_LABEL });
+
+          // The wait above guarantees a match exists; this is a safety net
+          if (matchedValue === null) {
+            await page.locator(search.filterLabel).selectOption({ value: scenario.FILTER_LABEL });
+          } else {
+            await expect(page.locator(search.filterLabel)).toHaveValue(matchedValue);
+          }
           filled.push(`label=${scenario.FILTER_LABEL}`);
         }
         if (scenario.FILTER_VALUE) {
