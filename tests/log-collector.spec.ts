@@ -38,19 +38,28 @@ const APP = {
   password: process.env.LOG_COLLECTOR_PASSWORD ?? '',
 
   routes: {
-    login: '/login', // TODO: adjust - login page route
-    logs: '/logs',   // TODO: adjust - log download page route
+    login: '/',       // login form lives on the root page
+    logs: '/dlog.do', // log download page
   },
 
   selectors: {
-    // --- Login page ---
-    usernameInput: '[name="username"]',             // TODO: adjust
-    passwordInput: '[name="password"]',             // TODO: adjust
-    submitButton: 'button[type="submit"]',          // TODO: adjust
-    // Element that only appears once logged in (avatar, menu, logout link...)
-    loggedInIndicator: '[data-testid="user-menu"]', // TODO: adjust
-    // Element shown when credentials are wrong (used by the negative test)
-    loginError: '[role="alert"]',                   // TODO: adjust
+    // --- Login page (login form on the root page) ---
+    usernameInput: '[name="j_username"]',
+    passwordInput: '[name="j_password"]',
+    // <button type="button" name="Submit"> (selector also matches
+    // <input type="button" name="Submit"> just in case)
+    submitButton: '[name="Submit"]',
+    // Element that only appears once logged in: the "Welcome, <user>" banner
+    // in the header form. Original inspected path:
+    //   body > table > tbody > tr:nth-child(1) > td > table > tbody >
+    //   tr:nth-child(1) > td > div > form > span   e.g. "Welcome, wpsadmin"
+    loggedInIndicator: 'form > span:has-text("Welcome,")',
+    // Element shown when credentials are wrong (used by the negative test).
+    // Original inspected path:
+    //   body > table > tbody > tr:nth-child(2) > td > form > table > tbody >
+    //   tr:nth-child(5) > td:nth-child(3) > b > font
+    //   e.g. "Invalid user name or password."
+    loginError: 'form b:has-text("Invalid user name or password")',
 
     // --- Log page ---
     // Any element whose id is "highlighter_{id}" - the first and last ones
@@ -143,16 +152,16 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
     // Log files can take a while to generate and download
     test.setTimeout(120_000);
 
-    const loginPath = new URL(APP.routes.login, APP.baseUrl).pathname;
-
     await allure.step('Step 1: Login to the log collector web', async () => {
       await login(page, APP.username, APP.password);
 
-      // The app should navigate away from the login page after a successful login
-      await page.waitForURL((u) => u.pathname !== loginPath, { timeout: 20_000 });
+      // The header swaps the login form for the "Welcome, <user>" banner once
+      // logged in. The URL may stay on "/" so rely on the banner, not the URL.
+      const welcome = page.locator(APP.selectors.loggedInIndicator);
+      await expect(welcome).toContainText('Welcome', { timeout: 20_000 });
 
-      // Stronger check: an element that only appears once logged in
-      await expect(page.locator(APP.selectors.loggedInIndicator)).toBeVisible();
+      // The banner also shows which account is logged in
+      await expect(welcome).toContainText(APP.username);
 
       await testInfo.attach('Screenshot: logged in', {
         body: await page.screenshot({ fullPage: true }),
@@ -223,16 +232,15 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
     await allure.owner('QA Team');
     await allure.description('Verifies the login form rejects a wrong password and surfaces an error message.');
 
-    const loginPath = new URL(APP.routes.login, APP.baseUrl).pathname;
-
     await allure.step('Submit the login form with a wrong password', async () => {
       await login(page, APP.username, `${APP.password}-WRONG`);
     });
 
     await allure.step('Login fails with an error message', async () => {
-      await expect(page.locator(APP.selectors.loginError)).toBeVisible();
-      // ...and we are still on the login page
-      expect(new URL(page.url()).pathname).toBe(loginPath);
+      // The login form shows an inline error (the URL may or may not change,
+      // so rely on the error message itself)
+      await expect(page.locator(APP.selectors.loginError))
+        .toContainText('Invalid user name or password', { timeout: 20_000 });
     });
   });
 });
