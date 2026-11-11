@@ -105,10 +105,14 @@ then waits for the `FILTER_LABEL` option before selecting it. Scenarios that set
 with a clear message instead of searching with a half-filled form.
 
 Both `dlog_type_filter` and `dlogMd_label_filter` are handled by the same
-`selectOptionByValueOrText()` helper: it clicks the dropdown (populating it
-lazily if needed), waits for an option matching the DB value **or** its visible
-text, selects the option's real value, and — on timeout — attaches the
-dropdown's actual options and form HTML to the report.
+`selectOptionByValueOrText()` helper: it waits for an option matching the DB
+value **or** its visible text, selects the option's real value (firing
+`input`/`change`), and — on timeout — attaches the dropdown's actual options
+and form HTML to the report. The `dlog_type_filter` select is rendered
+`display:none` (id `hiddenSelect`, a data store for a custom dropdown widget),
+so it is never clicked — `selectOption(..., { force: true })` is used, which
+works on hidden selects and triggers the same events as a real user selection.
+Visible selects are clicked first in case the app populates them lazily.
 
 A search "found results" when the first `see detail` image
 (`#tdId > a > img[alt="see detail"]`) is present in the results table; when

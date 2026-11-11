@@ -66,11 +66,13 @@ const APP = {
     search: {
       // Free-text search box: <input type="text" id="searchInput">
       input: '#searchInput',
-      // <select name="dlog_type_filter"> - filled/clicked right after the
-      // search input. Its options' values match the search text (e.g.
-      // <option value="http://NonMonetary/*">), so the scenario's SEARCH_TEXT
-      // is selected here. This interaction is what makes the
-      // dlogMd_label_filter dropdown list its options.
+      // <select name="dlog_type_filter" id="hiddenSelect" style="display:none">
+      // A hidden data store for the visible "Select Type" widget. It can never
+      // be clicked, so it is driven via selectOption(..., { force: true }).
+      // Its option values match the search text (e.g.
+      // <option value="http://NonMonetary/*">), so SEARCH_TEXT is what gets
+      // selected here. This selection is what makes the dlogMd_label_filter
+      // dropdown list its options.
       typeFilter: '[name="dlog_type_filter"]',
       // Readonly date-picker inputs (id="start-dt" / "end-dt", values in
       // "dd/MM/yyyy HH:mm" format) - filled via fillField() which writes the
@@ -199,10 +201,11 @@ async function fillField(locator: Locator, value: string): Promise<void> {
  * <option value="v_12">referenceNumber</option>) where the DB stores the label.
  *
  * Some dropdowns only populate their option list after another field was
- * filled/clicked, so the select is clicked first and then polled until the
- * wanted option exists. On timeout the dropdown's real state (tag name, every
- * option's value/text, the surrounding form HTML) is attached to the report so
- * the report itself explains why the option never appeared.
+ * filled/clicked or after the dropdown itself was opened (visible selects are
+ * clicked first; hidden ones cannot be clicked at all), so the list is polled
+ * until the wanted option exists. On timeout the dropdown's real state (tag
+ * name, every option's value/text, the surrounding form HTML) is attached to
+ * the report so the report itself explains why the option never appeared.
  *
  * Returns the option's real value.
  */
@@ -214,9 +217,15 @@ async function selectOptionByValueOrText(
   description: string,
 ): Promise<string> {
   const select = page.locator(selector);
+  const isVisible = await select.isVisible().catch(() => false);
 
-  // Populate the list lazily, if the app needs that (tolerant)
-  await select.click({ timeout: 5_000 }).catch(() => { /* already populated */ });
+  // A display:none <select> (e.g. <select name="dlog_type_filter"
+  // id="hiddenSelect" style="display:none">) is only a data store for a custom
+  // dropdown widget - it can never be clicked, so the click is skipped for it.
+  // Some visible selects only populate their list when opened, hence the click.
+  if (isVisible) {
+    await select.click({ timeout: 5_000 }).catch(() => { /* already populated */ });
+  }
 
   try {
     await page.waitForFunction(
@@ -275,23 +284,31 @@ async function selectOptionByValueOrText(
       const match = Array.from(el.options).find(
         (o) => o.value === value || o.text.trim().toLowerCase() === wanted,
       );
-      if (!match) return null;
-      el.value = match.value;
-      el.dispatchEvent(new Event('input', { bubbles: true }));
-      el.dispatchEvent(new Event('change', { bubbles: true }));
-      return match.value;
+      return match ? match.value : null;
     },
     { sel: selector, value: wanted },
   );
 
-  // The wait above guarantees a match exists; this is a safety net
-  if (matchedValue === null) {
-    await select.selectOption({ value: wanted });
-    return wanted;
+  const selectedValue = matchedValue ?? wanted;
+
+  // selectOption() fires the same input/change events as a real selection.
+  // force: true bypasses actionability checks for display:none selects, which
+  // can never become visible - the option itself is still selected normally.
+  try {
+    await select.selectOption(selectedValue, { force: !isVisible });
+  } catch {
+    // Fallback: write the value directly and dispatch the events by hand
+    await page.evaluate(({ sel, value }) => {
+      const el = document.querySelector(sel) as HTMLSelectElement | null;
+      if (!el) return;
+      el.value = value;
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+      el.dispatchEvent(new Event('change', { bubbles: true }));
+    }, { sel: selector, value: selectedValue });
   }
 
-  await expect(select).toHaveValue(matchedValue);
-  return matchedValue;
+  await expect(select).toHaveValue(selectedValue);
+  return selectedValue;
 }
 
 /**
@@ -467,6 +484,13 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
         }
 
         await ctx.parameter('criteria', filled.join(', ') || '(no filters)');
+
+        // Evidence of the filled form (helpful when a dependent dropdown such
+        // as dlogMd_label_filter still looks empty)
+        await testInfo.attach('Screenshot: search form filled', {
+          body: await page.screenshot({ fullPage: true }),
+          contentType: 'image/png',
+        });
       });
 
       let resultsFound = false;
