@@ -56,9 +56,12 @@ $env:TEST_ENV="staging"; npx playwright test
 ### UI Tests: Log Collector (`tests/log-collector.spec.ts`)
 
 A browser-driven flow that opens the log collector web app, logs in, opens the
-log page and downloads the log file, verifying the download is saved and
-non-empty. Along the way it screenshots the content of the first and last
-`highlighter_{id}` elements and attaches them to the report. A second test
+log page (`/dlog.do`), fills the log search form, runs the search, and verifies
+the outcome via the first `see detail` link in the results table. When results
+are expected, it clicks that link to open the first result's detail page
+(same tab or a new tab, handled automatically), screenshots the content of the
+first and last `highlighter_{id}` elements there, and downloads the log file
+from the detail page, verifying it is saved and non-empty. A second test
 checks that invalid credentials are rejected.
 
 Configure these variables in `.env.<env>` (the suite skips itself with a clear
@@ -68,6 +71,37 @@ message while they are empty):
 LOG_COLLECTOR_BASE_URL=https://log-collector.example.com
 LOG_COLLECTOR_USERNAME=your-user
 LOG_COLLECTOR_PASSWORD=your-password
+```
+
+#### Database-Driven Search Scenarios (`LOG_SEARCH` table)
+
+Search scenarios mirror the API suite's no-code philosophy: every row in the
+`LOG_SEARCH` table (`db/TESTDATA.db`) with `IS_EXECUTED = '1'` becomes its own
+Playwright test. Only fields with a value in the row are filled, so a scenario
+can leave anything it does not need empty.
+
+| Column | Form field | Selector |
+| :--- | :--- | :--- |
+| `SCENARIO_NAME` | Test title / Allure story | - |
+| `SEARCH_TEXT` | Global search box | `#searchInput` |
+| `START_TIME` | Start timestamp | `[name="dlog_timestamp_start_filter"]` |
+| `END_TIME` | End timestamp | `[name="dlog_timestamp_end_filter"]` |
+| `FILTER_LABEL` | Filter dropdown (option **value**) | `[name="dlogMd_label_filter"]` |
+| `FILTER_VALUE` | Custom filter value | `[name="dlog_value_filter"]` |
+| `FILTER_CODE` | Custom filter code | `[name="dlog_code_filter"]` |
+| `EXPECT_RESULTS` | `1` (default) = results must be found; `0` = no results expected | - |
+
+A search "found results" when the first `see detail` image
+(`#tdId > a > img[alt="see detail"]`) is present in the results table; when
+nothing is found that image is absent. Scenarios with `EXPECT_RESULTS = '0'`
+assert exactly that and skip the highlighter screenshots and the download.
+
+```sql
+-- Example: add an enabled scenario
+INSERT INTO LOG_SEARCH
+  (SCENARIO_NAME, SEARCH_TEXT, START_TIME, END_TIME, FILTER_LABEL, FILTER_VALUE, FILTER_CODE, EXPECT_RESULTS, IS_EXECUTED)
+VALUES
+  ('Errors from today', 'ERROR', '2026-11-11 00:00:00', '2026-11-11 23:59:59', NULL, NULL, NULL, '1', '1');
 ```
 
 All routes and selectors live in the `APP` constant at the top of the spec, so
