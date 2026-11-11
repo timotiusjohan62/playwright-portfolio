@@ -53,6 +53,30 @@ TEST_ENV=prod npx playwright test
 $env:TEST_ENV="staging"; npx playwright test
 ```
 
+### UI Tests: Log Collector (`tests/log-collector.spec.ts`)
+
+A browser-driven flow that opens the log collector web app, logs in, opens the
+log page and downloads the log file, verifying the download is saved and
+non-empty. Along the way it screenshots the content of the first and last
+`highlighter_{id}` elements and attaches them to the report. A second test
+checks that invalid credentials are rejected.
+
+Configure these variables in `.env.<env>` (the suite skips itself with a clear
+message while they are empty):
+
+```dotenv
+LOG_COLLECTOR_BASE_URL=https://log-collector.example.com
+LOG_COLLECTOR_USERNAME=your-user
+LOG_COLLECTOR_PASSWORD=your-password
+```
+
+All routes and selectors live in the `APP` constant at the top of the spec, so
+adjusting them to the real app takes one place. Run it in isolation with:
+
+```bash
+npx playwright test log-collector
+```
+
 ## 🗄️ Database Structure
 
 The framework maps your database columns to standard testing concepts. By default, it expects tables like `DEV_WORKFLOWS`, `STAGING_WORKFLOWS`, etc.
@@ -87,7 +111,8 @@ The framework maps your database columns to standard testing concepts. By defaul
 
 ```
 ├── tests/
-│   └── api-test.spec.ts      # The main database-driven test runner
+│   ├── example.spec.ts       # The main database-driven test runner
+│   └── log-collector.spec.ts # Web UI flow: login + log download
 ├── utils/
 │   └── schemaInferrer.ts     # Utility to convert JSON to runtime schema validators
 ├── db/
