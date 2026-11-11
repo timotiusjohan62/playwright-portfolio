@@ -64,14 +64,21 @@ const APP = {
 
     // --- Log search form on the log page (values from the LOG_SEARCH table) ---
     search: {
-      input: '#searchInput', // <input type="text" id="searchInput">
+      // Free-text search box: <input type="text" id="searchInput">
+      input: '#searchInput',
+      // <select name="dlog_type_filter"> - filled/clicked right after the
+      // search input. Its options' values match the search text (e.g.
+      // <option value="http://NonMonetary/*">), so the scenario's SEARCH_TEXT
+      // is selected here. This interaction is what makes the
+      // dlogMd_label_filter dropdown list its options.
+      typeFilter: '[name="dlog_type_filter"]',
       // Readonly date-picker inputs (id="start-dt" / "end-dt", values in
       // "dd/MM/yyyy HH:mm" format) - filled via fillField() which writes the
       // value directly because the picker blocks typing
       startTime: '[name="dlog_timestamp_start_filter"]',
       endTime: '[name="dlog_timestamp_end_filter"]',
-      // Dropdown whose options may load lazily (after #searchInput is filled
-      // and/or once it is clicked) - matched by option value OR visible text
+      // Dropdown that only lists its options after the search input + type
+      // filter were used - matched by option value OR visible text
       filterLabel: '[name="dlogMd_label_filter"]',
       filterValue: '[name="dlog_value_filter"]',
       filterCode: '[name="dlog_code_filter"]',
@@ -109,7 +116,10 @@ interface LogSearchRow {
   ID: number;
   /** Test title suffix and Allure story. */
   SCENARIO_NAME: string;
-  /** Value for #searchInput. */
+  /**
+   * Value for #searchInput, and the matching option value in the
+   * [name="dlog_type_filter"] dropdown (e.g. "http://NonMonetary/*").
+   */
   SEARCH_TEXT: string | null;
   /** Value for [name="dlog_timestamp_start_filter"] - format "dd/MM/yyyy HH:mm". */
   START_TIME: string | null;
@@ -181,6 +191,107 @@ async function fillField(locator: Locator, value: string): Promise<void> {
   }
 
   await expect(locator).toHaveValue(value);
+}
+
+/**
+ * Selects an option of a native <select> by its value attribute OR its visible
+ * text (case-insensitive) - legacy apps often use technical values (e.g.
+ * <option value="v_12">referenceNumber</option>) where the DB stores the label.
+ *
+ * Some dropdowns only populate their option list after another field was
+ * filled/clicked, so the select is clicked first and then polled until the
+ * wanted option exists. On timeout the dropdown's real state (tag name, every
+ * option's value/text, the surrounding form HTML) is attached to the report so
+ * the report itself explains why the option never appeared.
+ *
+ * Returns the option's real value.
+ */
+async function selectOptionByValueOrText(
+  page: Page,
+  testInfo: TestInfo,
+  selector: string,
+  wanted: string,
+  description: string,
+): Promise<string> {
+  const select = page.locator(selector);
+
+  // Populate the list lazily, if the app needs that (tolerant)
+  await select.click({ timeout: 5_000 }).catch(() => { /* already populated */ });
+
+  try {
+    await page.waitForFunction(
+      ({ sel, value }) => {
+        const el = document.querySelector(sel) as HTMLSelectElement | null;
+        if (!el || el.tagName !== 'SELECT') return false;
+        const wanted = value.trim().toLowerCase();
+        return Array.from(el.options).some(
+          (o) => o.value === value || o.text.trim().toLowerCase() === wanted,
+        );
+      },
+      { sel: selector, value: wanted },
+      { timeout: 10_000 },
+    );
+  } catch {
+    const state = await page.evaluate((sel) => {
+      const el = document.querySelector(sel) as HTMLSelectElement | null;
+      if (!el) return { found: false, tagName: null, options: null, formHtml: null };
+      const form = el.closest('form');
+      return {
+        found: true,
+        tagName: el.tagName,
+        options: el.tagName === 'SELECT'
+          ? Array.from(el.options).map((o) => ({ value: o.value, text: o.text.trim() }))
+          : null,
+        formHtml: form ? form.innerHTML.replace(/\s+/g, ' ').slice(0, 20_000) : null,
+      };
+    }, selector);
+
+    await testInfo.attach(`${description} state at timeout`, {
+      body: JSON.stringify(state, null, 2),
+      contentType: 'application/json',
+    });
+
+    const options = state.options ?? [];
+    throw new Error(
+      `The ${description} dropdown (${selector}) never listed "${wanted}" (waited 10s). ` +
+      (state.found
+        ? state.tagName === 'SELECT'
+          ? `It currently holds ${options.length} option(s): ${JSON.stringify(options.slice(0, 20))}. ` +
+            'If the expected entry is there under a different value/text, adjust the LOG_SEARCH row to that exact value. '
+          : `The element is a <${String(state.tagName)}>, not a <select> - it is a custom dropdown that needs its own handling. `
+        : 'The dropdown element was not found on the page at all. ') +
+      `Full form HTML is attached as "${description} state at timeout".`
+    );
+  }
+
+  // Pick the matching option and fire the change events the app listens for.
+  // Both type arguments are given explicitly so TS does not fall back to the
+  // void-argument overload.
+  const matchedValue = await page.evaluate<string | null, { sel: string; value: string }>(
+    ({ sel, value }) => {
+      const el = document.querySelector(sel) as HTMLSelectElement | null;
+      if (!el) return null;
+      const wanted = value.trim().toLowerCase();
+      const match = Array.from(el.options).find(
+        (o) => o.value === value || o.text.trim().toLowerCase() === wanted,
+      );
+      if (!match) return null;
+      el.value = match.value;
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+      el.dispatchEvent(new Event('change', { bubbles: true }));
+      return match.value;
+    },
+    { sel: selector, value: wanted },
+  );
+
+  // The wait above guarantees a match exists; this is a safety net
+  if (matchedValue === null) {
+    await select.selectOption({ value: wanted });
+    return wanted;
+  }
+
+  await expect(select).toHaveValue(matchedValue);
+  return matchedValue;
 }
 
 /**
@@ -295,17 +406,17 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
         const filled: string[] = [];
 
         // The app only lists the filter dropdown's options after the search
-        // input has been filled, so a label filter without search text can
-        // never work
+        // input has been filled and the type dropdown used, so a label filter
+        // without search text can never work
         if (scenario.FILTER_LABEL && !scenario.SEARCH_TEXT) {
           throw new Error(
             `Scenario "${scenario.SCENARIO_NAME}" sets FILTER_LABEL but leaves SEARCH_TEXT empty - ` +
-            'the filter dropdown only lists its options after the search input is filled'
+            'the filter dropdown only lists its options after the search input is filled and the type dropdown used'
           );
         }
 
-        // Search input first: the app reacts to it (type-ahead) and it makes
-        // the filter dropdown show its option list
+        // Search input first: type into it, then use the type dropdown - the
+        // app only lists the dlogMd_label_filter options after both happened
         if (scenario.SEARCH_TEXT) {
           const searchInput = page.locator(search.input);
           await searchInput.click();
@@ -313,10 +424,6 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
           // keystroke (a one-shot fill() can be missed by the widget)
           await searchInput.pressSequentially(scenario.SEARCH_TEXT, { delay: 50 });
           await expect(searchInput).toHaveValue(scenario.SEARCH_TEXT);
-          // Click again after typing: the app only shows/populates the filter
-          // dropdown (dlogMd_label_filter) once the search input is filled AND
-          // clicked - typing alone is not enough
-          await searchInput.click();
           filled.push(`text="${scenario.SEARCH_TEXT}"`);
         }
         if (scenario.START_TIME) {
@@ -327,89 +434,27 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
           await fillField(page.locator(search.endTime), scenario.END_TIME);
           filled.push(`to=${scenario.END_TIME}`);
         }
-        if (scenario.FILTER_LABEL) {
-          const select = page.locator(search.filterLabel);
-
-          // Some apps populate the dropdown lazily when it is opened, so
-          // click it first (tolerant: not every app needs this)
-          await select.click({ timeout: 5_000 }).catch(() => { /* already populated */ });
-
-          // Wait until an option matches the DB value by its value attribute
-          // OR its visible text (legacy apps often differ between the two)
-          try {
-            await page.waitForFunction(
-              ({ sel, value }) => {
-                const el = document.querySelector(sel) as HTMLSelectElement | null;
-                if (!el || el.tagName !== 'SELECT') return false;
-                const wanted = value.trim().toLowerCase();
-                return Array.from(el.options).some(
-                  (o) => o.value === value || o.text.trim().toLowerCase() === wanted,
-                );
-              },
-              { sel: search.filterLabel, value: scenario.FILTER_LABEL },
-              { timeout: 10_000 },
-            );
-          } catch {
-            // Diagnose: capture what the dropdown actually holds so the
-            // report shows why the expected option never appeared
-            const state = await page.evaluate((sel) => {
-              const el = document.querySelector(sel) as HTMLSelectElement | null;
-              if (!el) return { found: false, tagName: null, options: null, formHtml: null };
-              const form = el.closest('form');
-              return {
-                found: true,
-                tagName: el.tagName,
-                options: el.tagName === 'SELECT'
-                  ? Array.from(el.options).map((o) => ({ value: o.value, text: o.text.trim() }))
-                  : null,
-                formHtml: form ? form.innerHTML.replace(/\s+/g, ' ').slice(0, 20_000) : null,
-              };
-            }, search.filterLabel);
-
-            await testInfo.attach('Filter dropdown state at timeout', {
-              body: JSON.stringify(state, null, 2),
-              contentType: 'application/json',
-            });
-
-            const options = state.options ?? [];
-            throw new Error(
-              `The filter dropdown never listed "${scenario.FILTER_LABEL}" (waited 10s after filling the search input). ` +
-              (state.found
-                ? state.tagName === 'SELECT'
-                  ? `It currently holds ${options.length} option(s): ${JSON.stringify(options.slice(0, 20))}. ` +
-                    'If the expected entry is there under a different value/text, set FILTER_LABEL to that exact value. '
-                  : `The element is a <${String(state.tagName)}>, not a <select> - it is a custom dropdown that needs its own handling. `
-                : 'The dropdown element was not found on the page at all. ') +
-              'Full form HTML is attached as "Filter dropdown state at timeout".'
-            );
-          }
-
-          // Pick the matching option (by value or visible text) and fire the
-          // change events the app listens for. Both type arguments are given
-          // explicitly so TS does not fall back to the void-argument overload.
-          const matchedValue = await page.evaluate<string | null, { sel: string; value: string }>(
-            ({ sel, value }) => {
-              const el = document.querySelector(sel) as HTMLSelectElement | null;
-              if (!el) return null;
-              const wanted = value.trim().toLowerCase();
-              const match = Array.from(el.options).find(
-                (o) => o.value === value || o.text.trim().toLowerCase() === wanted,
-              );
-              if (!match) return null;
-              el.value = match.value;
-              el.dispatchEvent(new Event('input', { bubbles: true }));
-              el.dispatchEvent(new Event('change', { bubbles: true }));
-              return match.value;
-            },
-            { sel: search.filterLabel, value: scenario.FILTER_LABEL },
+        // The type dropdown: its option values match the search text
+        // (e.g. <option value="http://NonMonetary/*">), so SEARCH_TEXT is the
+        // value picked here. Selecting it is what populates the label dropdown.
+        if (scenario.SEARCH_TEXT) {
+          const typeValue = await selectOptionByValueOrText(
+            page,
+            testInfo,
+            search.typeFilter,
+            scenario.SEARCH_TEXT,
+            'log type filter',
           );
-
-          // The wait above guarantees a match exists; this is a safety net
-          if (matchedValue === null) {
-            await page.locator(search.filterLabel).selectOption({ value: scenario.FILTER_LABEL });
-          } else {
-            await expect(page.locator(search.filterLabel)).toHaveValue(matchedValue);
-          }
+          filled.push(`type=${typeValue}`);
+        }
+        if (scenario.FILTER_LABEL) {
+          await selectOptionByValueOrText(
+            page,
+            testInfo,
+            search.filterLabel,
+            scenario.FILTER_LABEL,
+            'label filter',
+          );
           filled.push(`label=${scenario.FILTER_LABEL}`);
         }
         if (scenario.FILTER_VALUE) {

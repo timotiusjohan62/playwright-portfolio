@@ -83,7 +83,7 @@ can leave anything it does not need empty.
 | Column | Form field | Selector |
 | :--- | :--- | :--- |
 | `SCENARIO_NAME` | Test title / Allure story | - |
-| `SEARCH_TEXT` | Global search box | `#searchInput` |
+| `SEARCH_TEXT` | Search box **and** the matching `dlog_type_filter` option | `#searchInput`, `[name="dlog_type_filter"]` |
 | `START_TIME` | Start timestamp (`dd/MM/yyyy HH:mm`) | `[name="dlog_timestamp_start_filter"]` |
 | `END_TIME` | End timestamp (`dd/MM/yyyy HH:mm`) | `[name="dlog_timestamp_end_filter"]` |
 | `FILTER_LABEL` | Filter dropdown (option value **or** visible text, e.g. `v_12` / `referenceNumber`) | `[name="dlogMd_label_filter"]` |
@@ -95,12 +95,20 @@ The timestamp inputs are readonly date-picker fields, so the spec fills them
 by writing the value directly and dispatching `input`/`change` events
 (`fillField()` helper) — normal typing is blocked by the picker.
 
-The `#searchInput` field acts as a type-ahead: it must be filled **and clicked**
-before the filter dropdown (`dlogMd_label_filter`) lists its options. The spec
-types into it character by character, clicks it again, then waits for the
-dropdown to contain the `FILTER_LABEL` option before selecting it. Scenarios
-that set `FILTER_LABEL` must therefore also set `SEARCH_TEXT` — the spec fails
-such rows with a clear message instead of searching with a half-filled form.
+The `#searchInput` field is a type-ahead and the `dlog_type_filter` `<select>`
+depends on it: the spec types `SEARCH_TEXT` into the search box character by
+character, then selects the option in `dlog_type_filter` whose value matches
+`SEARCH_TEXT` (e.g. `<option value="http://NonMonetary/*">`). That interaction
+is what makes the `dlogMd_label_filter` dropdown list its options — the spec
+then waits for the `FILTER_LABEL` option before selecting it. Scenarios that set
+`FILTER_LABEL` must therefore also set `SEARCH_TEXT`; the spec fails such rows
+with a clear message instead of searching with a half-filled form.
+
+Both `dlog_type_filter` and `dlogMd_label_filter` are handled by the same
+`selectOptionByValueOrText()` helper: it clicks the dropdown (populating it
+lazily if needed), waits for an option matching the DB value **or** its visible
+text, selects the option's real value, and — on timeout — attaches the
+dropdown's actual options and form HTML to the report.
 
 A search "found results" when the first `see detail` image
 (`#tdId > a > img[alt="see detail"]`) is present in the results table; when
