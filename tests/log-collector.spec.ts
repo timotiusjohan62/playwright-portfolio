@@ -39,8 +39,8 @@ const APP = {
   password: process.env.LOG_COLLECTOR_PASSWORD ?? '',
 
   routes: {
-    login: '/',       // login form lives on the root page
-    logs: '/dlog.do', // log download page
+    login: '/mwui2',       // login form lives on the root page
+    logs: '/mwui2/dlog.do', // log download page
   },
 
   selectors: {
