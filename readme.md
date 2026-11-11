@@ -86,7 +86,7 @@ can leave anything it does not need empty.
 | `SEARCH_TEXT` | Global search box | `#searchInput` |
 | `START_TIME` | Start timestamp (`dd/MM/yyyy HH:mm`) | `[name="dlog_timestamp_start_filter"]` |
 | `END_TIME` | End timestamp (`dd/MM/yyyy HH:mm`) | `[name="dlog_timestamp_end_filter"]` |
-| `FILTER_LABEL` | Filter dropdown (option **value**) | `[name="dlogMd_label_filter"]` |
+| `FILTER_LABEL` | Filter dropdown (option value **or** visible text, e.g. `v_12` / `referenceNumber`) | `[name="dlogMd_label_filter"]` |
 | `FILTER_VALUE` | Custom filter value | `[name="dlog_value_filter"]` |
 | `FILTER_CODE` | Custom filter code | `[name="dlog_code_filter"]` |
 | `EXPECT_RESULTS` | `1` (default) = results must be found; `0` = no results expected | - |
