@@ -59,8 +59,9 @@ A browser-driven flow that opens the log collector web app, logs in, opens the
 log page (`/dlog.do`), fills the log search form, runs the search, and verifies
 the outcome via the first `see detail` link in the results table. When results
 are expected, it clicks that link to open the first result's detail page
-(same tab or a new tab, handled automatically), screenshots the content of the
-first and last `highlighter_{id}` elements there, and downloads the log file
+(same tab or a new tab, handled automatically), screenshots the first
+`highlighter_{id}` element as the **request** and the last one as the
+**response** into `screenshot/<SCENARIO_NAME>/`, and downloads the log file
 from the detail page, verifying it is saved and non-empty. A second test
 checks that invalid credentials are rejected.
 
@@ -83,41 +84,55 @@ can leave anything it does not need empty.
 | Column | Form field | Selector |
 | :--- | :--- | :--- |
 | `SCENARIO_NAME` | Test title / Allure story | - |
-| `SEARCH_TEXT` | Search box **and** the matching `dlog_type_filter` option | `#searchInput`, `[name="dlog_type_filter"]` |
+| `SEARCH_TEXT` | Search box **and** the matching option in the visible Type widget (`dlog_type_filter` data store) | `#searchInput`, `#optionsList`, `[name="dlog_type_filter"]` |
 | `START_TIME` | Start timestamp (`dd/MM/yyyy HH:mm`) | `[name="dlog_timestamp_start_filter"]` |
 | `END_TIME` | End timestamp (`dd/MM/yyyy HH:mm`) | `[name="dlog_timestamp_end_filter"]` |
 | `FILTER_LABEL` | Filter dropdown (option value **or** visible text, e.g. `v_12` / `referenceNumber`) | `[name="dlogMd_label_filter"]` |
 | `FILTER_VALUE` | Custom filter value | `[name="dlog_value_filter"]` |
-| `FILTER_CODE` | Custom filter code | `[name="dlog_code_filter"]` |
+| `FILTER_CODE` | Custom filter code (max 90 chars; `transactionCode` for `api/monetary` paths) | `[name="dlog_code_filter"]` |
 | `EXPECT_RESULTS` | `1` (default) = results must be found; `0` = no results expected | - |
 
 The timestamp inputs are readonly date-picker fields, so the spec fills them
 by writing the value directly and dispatching `input`/`change` events
 (`fillField()` helper) — normal typing is blocked by the picker.
 
-The `#searchInput` field is a type-ahead and the `dlog_type_filter` `<select>`
-depends on it: the spec types `SEARCH_TEXT` into the search box character by
-character, then selects the option in `dlog_type_filter` whose value matches
-`SEARCH_TEXT` (e.g. `<option value="http://NonMonetary/*">`). That interaction
-is what makes the `dlogMd_label_filter` dropdown list its options — the spec
-then waits for the `FILTER_LABEL` option before selecting it. Scenarios that set
-`FILTER_LABEL` must therefore also set `SEARCH_TEXT`; the spec fails such rows
-with a clear message instead of searching with a half-filled form.
+The `#searchInput` field is the visible "Select Type" widget and the
+`dlog_type_filter` `<select>` only stores its value: the spec types
+`SEARCH_TEXT` into the search box character by character, then clicks the
+matching option in the widget's popup list (`#optionsList`, e.g.
+`http://NonMonetary/*`). Clicking that option sets the hidden select **and**
+runs the page's `doLoadC1()`, which is what makes the `dlogMd_label_filter`
+dropdown list its options — the spec then waits for the `FILTER_LABEL` option
+before selecting it. Scenarios that set `FILTER_LABEL` must therefore also set
+`SEARCH_TEXT`; the spec fails such rows with a clear message instead of
+searching with a half-filled form.
 
-Both `dlog_type_filter` and `dlogMd_label_filter` are handled by the same
-`selectOptionByValueOrText()` helper: it waits for an option matching the DB
-value **or** its visible text, selects the option's real value (firing
+`selectOptionByValueOrText()` handles the visible `dlogMd_label_filter`
+dropdown (and any other visible `<select>`): it waits for an option matching
+the DB value **or** its visible text, selects the option's real value (firing
 `input`/`change`), and — on timeout — attaches the dropdown's actual options
 and form HTML to the report. The `dlog_type_filter` select is rendered
-`display:none` (id `hiddenSelect`, a data store for a custom dropdown widget),
-so it is never clicked — `selectOption(..., { force: true })` is used, which
-works on hidden selects and triggers the same events as a real user selection.
-Visible selects are clicked first in case the app populates them lazily.
+`display:none` (id `hiddenSelect`), so the spec does not select it directly;
+`selectTypeFilter()` instead clicks the matching option in the visible
+`#searchInput` / `#optionsList` widget, because only that click triggers the
+JavaScript that populates the label dropdown.
 
 A search "found results" when the first `see detail` image
 (`#tdId > a > img[alt="see detail"]`) is present in the results table; when
 nothing is found that image is absent. Scenarios with `EXPECT_RESULTS = '0'`
 assert exactly that and skip the highlighter screenshots and the download.
+
+Every scenario creates its own output folder named after `SCENARIO_NAME` and
+saves the highlighter screenshots and the downloaded log file there (the
+screenshots are also attached to the Allure report):
+
+```text
+screenshot/
+└── Sample Scenario/
+    ├── request.png
+    ├── response.png
+    └── <downloaded log file>
+```
 
 ```sql
 -- Example: add an enabled scenario
@@ -126,6 +141,18 @@ INSERT INTO LOG_SEARCH
 VALUES
   ('Errors from today', 'ERROR', '11/11/2026 00:00', '11/11/2026 23:59', NULL, NULL, NULL, '1', '1');
 ```
+
+`scripts/sync-log-search.js` rebuilds `LOG_SEARCH` from the latest API results in
+`allure-results/`. It derives one row per `TEST_CASE_NAME-TITLE`, takes the date
+from `x-timestamp`, uses the request path as `FILTER_CODE` (capped at 90
+characters, or the request `transactionCode` for `api/monetary` paths), and
+reads the reference from the request body for monetary calls or the
+`Btn-Reference-Number` header for non-monetary calls. The API suite writes the
+same row directly when `example.spec.ts` runs, so the sync preview can be
+skipped. Preview with
+`npm run logsearch:sync -- --dry-run`; replace the table with
+`npm run logsearch:sync -- --replace`. The script needs Node 22 because of
+`better-sqlite3`.
 
 All routes and selectors live in the `APP` constant at the top of the spec, so
 adjusting them to the real app takes one place. Run it in isolation with:

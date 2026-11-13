@@ -9,6 +9,7 @@
 import Database from 'better-sqlite3';
 import { assertSchema, generateDynamicSchema } from '../utils/schemaInferrer';
 import { getSignedHeaders } from '../utils/signatureGenerator';
+import { buildLogSearchRecord, findNestedValue } from '../utils/logSearch';
 import { test, expect, allure, expectStatus } from '../fixtures/base';
 
 /**
@@ -141,6 +142,39 @@ interface StepRow {
 
 // Open a read-only connection to the test data database
 const db = new Database('db/TESTDATA.db', { readonly: false });
+db.pragma('busy_timeout = 5000');
+
+/**
+ * Inserts or updates the LOG_SEARCH row for an executed step so the log
+ * collector suite can search for the reference number that was just used.
+ */
+const saveLogSearchRecord = (record: ReturnType<typeof buildLogSearchRecord>) => {
+  if (!record) return;
+
+  try {
+    const existing = db.prepare('SELECT ID FROM LOG_SEARCH WHERE SCENARIO_NAME = ?')
+      .get(record.SCENARIO_NAME) as { ID?: number } | undefined;
+
+    if (existing?.ID) {
+      db.prepare(`
+        UPDATE LOG_SEARCH
+           SET SEARCH_TEXT = @SEARCH_TEXT, START_TIME = @START_TIME, END_TIME = @END_TIME,
+               FILTER_LABEL = @FILTER_LABEL, FILTER_VALUE = @FILTER_VALUE, FILTER_CODE = @FILTER_CODE,
+               IS_EXECUTED = @IS_EXECUTED, EXPECT_RESULTS = @EXPECT_RESULTS
+         WHERE ID = @ID
+      `).run({ ...record, ID: existing.ID });
+    } else {
+      db.prepare(`
+        INSERT INTO LOG_SEARCH
+          (SCENARIO_NAME, SEARCH_TEXT, START_TIME, END_TIME, FILTER_LABEL, FILTER_VALUE, FILTER_CODE, IS_EXECUTED, EXPECT_RESULTS)
+        VALUES
+          (@SCENARIO_NAME, @SEARCH_TEXT, @START_TIME, @END_TIME, @FILTER_LABEL, @FILTER_VALUE, @FILTER_CODE, @IS_EXECUTED, @EXPECT_RESULTS)
+      `).run(record);
+    }
+  } catch (err: any) {
+    console.warn(`Could not write LOG_SEARCH row for "${record.SCENARIO_NAME}": ${err.message}`);
+  }
+};
 
 // Fetch all distinct test cases. Each row represents a full end-to-end scenario.
 // Cast to IterableIterator to allow looping directly in Playwright's describe block.
@@ -288,6 +322,18 @@ test.describe('Database-Driven API Workflows', () => {
             body: responseBody
           }, null, 2);
 
+          // Keep LOG_SEARCH in sync with the reference number used by this run,
+          // so the log collector suite can search for it right away.
+          saveLogSearchRecord(buildLogSearchRecord({
+            testCaseName: workflow.TEST_CASE_NAME,
+            title: step.TITLE,
+            urlPath: cleanPathForSignature(dynamicEndpoint),
+            headerReference: `B0250${sequenceNumber}`,
+            bodyReference: findNestedValue(requestData, 'referenceNumber'),
+            requestBody: requestData,
+            timestamp: headers['x-timestamp'] || headers['X-Timestamp'],
+            startEpochMs: Date.now(),
+          }));
 
           db.prepare('UPDATE UTILS SET SEQUENCE = SEQUENCE + 1').run(); // Increment sequence for next use
 
