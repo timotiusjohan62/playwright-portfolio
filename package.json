@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
+    "test": "playwright test example",
     "test:clean": "rimraf allure-results",
     "report": "node scripts/generate-report.js",
     "report:open": "npx serve allure-report",
-    "test:report": "playwright test; npm run report"
+    "test:report": "playwright test example; npm run report",
+    "logsearch:sync": "node scripts/sync-log-search.js"
   },
   "keywords": [],
   "author": "",

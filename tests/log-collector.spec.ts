@@ -7,8 +7,9 @@
  *   3. Navigate to the log page (/dlog.do)
  *   4. Fill the log search form with values from the LOG_SEARCH table
  *   5. Run the search (the first "see detail" image marks a found result)
- *   6. Open the first result's detail page and screenshot the first / last
- *      highlighter_{id} items
+ *   6. Open the first result's detail page and screenshot the first
+ *      highlighter_{id} item as the request and the last as the response,
+ *      under screenshot/<SCENARIO_NAME>/
  *   7. Download the log file and verify it is saved and not empty
  *
  * Search scenarios are database-driven: every row in LOG_SEARCH (db/TESTDATA.db)
@@ -26,6 +27,7 @@
  */
 import Database from 'better-sqlite3';
 import fs from 'fs';
+import path from 'path';
 import type { Locator, Page, TestInfo } from '@playwright/test';
 import { test, expect, allure } from '../fixtures/base';
 
@@ -67,13 +69,17 @@ const APP = {
       // Free-text search box: <input type="text" id="searchInput">
       input: '#searchInput',
       // <select name="dlog_type_filter" id="hiddenSelect" style="display:none">
-      // A hidden data store for the visible "Select Type" widget. It can never
-      // be clicked, so it is driven via selectOption(..., { force: true }).
-      // Its option values match the search text (e.g.
+      // A hidden data store for the visible "Select Type" widget (#searchInput
+      // + #optionsList). Its option values match the search text (e.g.
       // <option value="http://NonMonetary/*">), so SEARCH_TEXT is what gets
-      // selected here. This selection is what makes the dlogMd_label_filter
-      // dropdown list its options.
+      // selected. The hidden select must NOT be selected directly: only the
+      // visible widget's option click runs doLoadC1(), which populates the
+      // dlogMd_label_filter dropdown.
       typeFilter: '[name="dlog_type_filter"]',
+      // The visible custom "Select Type" widget: a text input that opens the
+      // option list on focus/input, plus the list itself
+      typeFilterInput: '#searchInput',
+      typeFilterOptions: '#optionsList',
       // Readonly date-picker inputs (id="start-dt" / "end-dt", values in
       // "dd/MM/yyyy HH:mm" format) - filled via fillField() which writes the
       // value directly because the picker blocks typing
@@ -98,9 +104,9 @@ const APP = {
     resultDetailLink: '#tdId > a:has(img[alt="see detail"])',
 
     // --- Log page ---
-    // Any element whose id is "highlighter_{id}" - the first and last ones
-    // get their content screenshotted
-    highlighterItem: '[id^="highlighter_"]',
+    // The highlighted log lines. Each one is followed by a hidden clipboard
+    // <embed> whose id is "highlighter_{id}_clipboard", so those are excluded.
+    highlighterItem: '[id^="highlighter_"]:not([id$="_clipboard"])',
     // Confirmed: <input type="button" value="Download File Log">
     downloadTrigger: 'input[value="Download File Log"]',
   },
@@ -108,6 +114,15 @@ const APP = {
 
 /** Cap for the log preview attached to the Allure / HTML report. */
 const MAX_LOG_PREVIEW_BYTES = 200_000;
+
+/** Root folder for the per-scenario highlighter screenshots. */
+const SCREENSHOT_ROOT = path.resolve('screenshot');
+
+/** Builds the screenshot folder for a scenario: screenshot/<SCENARIO_NAME>. */
+function scenarioScreenshotDir(scenarioName: string): string {
+  const folderName = scenarioName.trim().replace(/[<>:"/\\|?*\x00-\x1F]/g, '_') || 'scenario';
+  return path.join(SCREENSHOT_ROOT, folderName);
+}
 
 // ==========================================
 // 2. Search Scenarios (database-driven)
@@ -312,6 +327,77 @@ async function selectOptionByValueOrText(
 }
 
 /**
+ * Selects the log type through the UI the app actually exposes.
+ *
+ * When [name="dlog_type_filter"] is a normal visible <select> it is handled by
+ * selectOptionByValueOrText(). In this app it is instead display:none
+ * (id="hiddenSelect"), a data store behind a custom "Select Type" widget: a
+ * text input (#searchInput) that opens a popup list (#optionsList). Selecting
+ * the hidden select directly changes the stored value but runs no JavaScript,
+ * so the dlogMd_label_filter dropdown stays empty (it only loads via
+ * doLoadC1(), which is called by the visible widget's option click). Clicking
+ * the matching widget option therefore is what "uses" this filter.
+ *
+ * Returns the hidden select's real option value.
+ */
+async function selectTypeFilter(
+  page: Page,
+  testInfo: TestInfo,
+  wanted: string,
+): Promise<string> {
+  const selector = APP.selectors.search.typeFilter;
+  const select = page.locator(selector);
+
+  // A normal visible select needs no custom widget handling
+  if (await select.isVisible().catch(() => false)) {
+    return selectOptionByValueOrText(page, testInfo, selector, wanted, 'log type filter');
+  }
+
+  // Resolve the option from the hidden select so we click the exact visible text
+  const match = await page.evaluate(({ sel, value }) => {
+    const el = document.querySelector(sel) as HTMLSelectElement | null;
+    if (!el) return null;
+    const wanted = value.trim().toLowerCase();
+    const option = Array.from(el.options).find(
+      (o) => o.value === value || o.text.trim().toLowerCase() === wanted,
+    );
+    return option ? { value: option.value, text: option.text.trim() } : null;
+  }, { sel: selector, value: wanted });
+
+  if (!match) {
+    const state = await page.evaluate((sel) => {
+      const el = document.querySelector(sel) as HTMLSelectElement | null;
+      return el
+        ? Array.from(el.options).map((o) => ({ value: o.value, text: o.text.trim() }))
+        : null;
+    }, selector);
+    await testInfo.attach('log type filter options at timeout', {
+      body: JSON.stringify(state, null, 2),
+      contentType: 'application/json',
+    });
+    throw new Error(
+      `The log type filter (${selector}) has no option matching "${wanted}". ` +
+      `It currently holds: ${JSON.stringify((state ?? []).slice(0, 20))}`,
+    );
+  }
+
+  // Click the real widget option: this sets the hidden select value AND calls
+  // doLoadC1(), which loads the dlogMd_label_filter options
+  const typeInput = page.locator(APP.selectors.search.typeFilterInput);
+  const typeOptions = page.locator(APP.selectors.search.typeFilterOptions);
+
+  await typeInput.click();
+  // Filling fires the widget's "input" handler, which renders the matching list
+  await typeInput.fill(match.text);
+  const option = typeOptions.getByText(match.text, { exact: true });
+  await expect(option).toBeVisible();
+  await option.click();
+
+  await expect(select).toHaveValue(match.value);
+  return match.value;
+}
+
+/**
  * Reads the first MAX_LOG_PREVIEW_BYTES of a file without loading the whole
  * file into memory (log files can be large).
  */
@@ -329,19 +415,21 @@ async function readPreview(filePath: string): Promise<string> {
 }
 
 /**
- * Screenshots the content of a single "highlighter_{id}" element and attaches
- * it to the test report. Returns the element's actual id (e.g. highlighter_17).
+ * Screenshots the content of a single "highlighter_{id}" element into the
+ * scenario folder and attaches it to the test report. Returns the element's
+ * actual id (e.g. highlighter_17).
  */
 async function screenshotHighlighter(
   item: Locator,
   position: string,
+  outputDir: string,
   testInfo: TestInfo,
 ): Promise<string | null> {
   await expect(item).toBeVisible();
 
   const id = await item.getAttribute('id');
-  const fileName = id ? `${id}_${position}.png` : `highlighter_${position}.png`;
-  const savedPath = testInfo.outputPath(fileName);
+  const fileName = `${position}.png`;
+  const savedPath = path.join(outputDir, fileName);
   await item.screenshot({ path: savedPath });
 
   await testInfo.attach(`Highlighter ${position} (id: ${id ?? 'unknown'})`, {
@@ -384,11 +472,15 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
       await allure.owner('QA Team');
       await allure.description(`Opens ${APP.baseUrl}, signs in with the configured user, opens the log page,
       fills the search form with the criteria from the LOG_SEARCH table (scenario "${scenario.SCENARIO_NAME}"),
-      screenshots the first and last highlighter items, then downloads the log file.`);
+      screenshots the request and response highlighter items, then downloads the log file.`);
       await allure.link(APP.baseUrl, 'App under test');
 
       // Searching for logs and generating the download can be slow
       test.setTimeout(180_000);
+
+      // One output folder per LOG_SEARCH row: screenshot/<SCENARIO_NAME>/
+      const screenshotDir = scenarioScreenshotDir(scenario.SCENARIO_NAME);
+      fs.mkdirSync(screenshotDir, { recursive: true });
 
       await allure.step('Step 1: Login to the log collector web', async () => {
         await login(page, APP.username, APP.password);
@@ -453,14 +545,13 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
         }
         // The type dropdown: its option values match the search text
         // (e.g. <option value="http://NonMonetary/*">), so SEARCH_TEXT is the
-        // value picked here. Selecting it is what populates the label dropdown.
+        // value picked here. Clicking the visible widget option is what
+        // populates the label dropdown.
         if (scenario.SEARCH_TEXT) {
-          const typeValue = await selectOptionByValueOrText(
+          const typeValue = await selectTypeFilter(
             page,
             testInfo,
-            search.typeFilter,
             scenario.SEARCH_TEXT,
-            'log type filter',
           );
           filled.push(`type=${typeValue}`);
         }
@@ -554,7 +645,7 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
         await ctx.parameter('detail url', detailPage.url());
       });
 
-      await allure.step('Step 6: Screenshot first and last highlighter items', async (ctx) => {
+      await allure.step('Step 6: Screenshot request and response highlighter items', async (ctx) => {
         // All elements whose id matches "highlighter_{id}" on the detail page
         const highlighterItems = detailPage.locator(APP.selectors.highlighterItem);
 
@@ -563,14 +654,26 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
 
         const count = await highlighterItems.count();
         await ctx.parameter('highlighter items found', String(count));
+        await ctx.parameter('screenshot folder', screenshotDir);
 
-        // Screenshot what is inside the first highlighter element...
-        const firstId = await screenshotHighlighter(highlighterItems.first(), 'first', testInfo);
-        // ...and the last one (same element as the first when only one exists)
-        const lastId = await screenshotHighlighter(highlighterItems.last(), 'last', testInfo);
+        // The first highlighter is the request payload...
+        const requestId = await screenshotHighlighter(
+          highlighterItems.first(),
+          'request',
+          screenshotDir,
+          testInfo,
+        );
+        // ...and the last one is the response payload (the same element when
+        // only one exists)
+        const responseId = await screenshotHighlighter(
+          highlighterItems.last(),
+          'response',
+          screenshotDir,
+          testInfo,
+        );
 
-        await ctx.parameter('first id', firstId ?? 'unknown');
-        await ctx.parameter('last id', lastId ?? 'unknown');
+        await ctx.parameter('request id', requestId ?? 'unknown');
+        await ctx.parameter('response id', responseId ?? 'unknown');
       });
 
       await allure.step('Step 7: Download the log file', async (ctx) => {
@@ -579,9 +682,9 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
         await detailPage.locator(APP.selectors.downloadTrigger).click();
         const download = await downloadPromise;
 
-        // Save the file into the Playwright test output folder
-        const fileName = download.suggestedFilename() || `downloaded-log-${Date.now()}.log`;
-        const savedPath = testInfo.outputPath(fileName);
+        // Save the file into the same per-scenario folder as the screenshots
+        const fileName = path.basename(download.suggestedFilename() || `downloaded-log-${Date.now()}.log`);
+        const savedPath = path.join(screenshotDir, fileName);
         await download.saveAs(savedPath);
 
         const { size } = await fs.promises.stat(savedPath);
