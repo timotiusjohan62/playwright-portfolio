@@ -324,10 +324,12 @@ test.describe('Database-Driven API Workflows', () => {
 
           // Keep LOG_SEARCH in sync with the reference number used by this run,
           // so the log collector suite can search for it right away.
+          const logSearchPath = cleanPathForSignature(dynamicEndpoint).split('?')[0];
+
           saveLogSearchRecord(buildLogSearchRecord({
             testCaseName: workflow.TEST_CASE_NAME,
             title: step.TITLE,
-            urlPath: cleanPathForSignature(dynamicEndpoint),
+            urlPath: logSearchPath,
             headerReference: `B0250${sequenceNumber}`,
             bodyReference: findNestedValue(requestData, 'referenceNumber'),
             requestBody: requestData,
@@ -379,6 +381,8 @@ test.describe('Database-Driven API Workflows', () => {
           }
         });
       }
+
+      db.prepare("UPDATE DATA SET IS_EXECUTED = '0' WHERE TEST_CASE_NAME = ? AND IS_EXECUTED = '1'").run(workflow.TEST_CASE_NAME);
     });
   }
 });

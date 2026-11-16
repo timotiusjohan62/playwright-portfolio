@@ -124,6 +124,22 @@ function scenarioScreenshotDir(scenarioName: string): string {
   return path.join(SCREENSHOT_ROOT, folderName);
 }
 
+function hasSavedScenarioOutput(outputDir: string): boolean {
+  if (!fs.existsSync(outputDir)) return false;
+
+  const screenshotsPresent = ['request.png', 'response.png'].every((fileName) => {
+    const filePath = path.join(outputDir, fileName);
+    return fs.existsSync(filePath) && fs.statSync(filePath).size > 0;
+  });
+  if (!screenshotsPresent) return false;
+
+  return fs.readdirSync(outputDir).some((fileName) => {
+    if (!/\.(txt|log)$/i.test(fileName)) return false;
+    const filePath = path.join(outputDir, fileName);
+    return fs.statSync(filePath).isFile() && fs.statSync(filePath).size > 0;
+  });
+}
+
 // ==========================================
 // 2. Search Scenarios (database-driven)
 // ==========================================
@@ -480,6 +496,10 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
 
       // One output folder per LOG_SEARCH row: screenshot/<SCENARIO_NAME>/
       const screenshotDir = scenarioScreenshotDir(scenario.SCENARIO_NAME);
+      test.skip(
+        hasSavedScenarioOutput(screenshotDir),
+        `Screenshots and downloaded log already exist in ${screenshotDir} - skipping`,
+      );
       fs.mkdirSync(screenshotDir, { recursive: true });
 
       await allure.step('Step 1: Login to the log collector web', async () => {
@@ -570,8 +590,9 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
           filled.push(`value="${scenario.FILTER_VALUE}"`);
         }
         if (scenario.FILTER_CODE) {
-          await fillField(page.locator(search.filterCode), scenario.FILTER_CODE);
-          filled.push(`code="${scenario.FILTER_CODE}"`);
+          const filterCode = scenario.FILTER_CODE.split('?')[0];
+          await fillField(page.locator(search.filterCode), filterCode);
+          filled.push(`code="${filterCode}"`);
         }
 
         await ctx.parameter('criteria', filled.join(', ') || '(no filters)');
