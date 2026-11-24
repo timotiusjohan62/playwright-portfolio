@@ -105,7 +105,7 @@ const buildLogSearchRecord = ({
   const date = dateFromTimestamp(timestamp, startEpochMs ?? Date.now());
 
   return {
-    SCENARIO_NAME: `${testCaseName}-${title}`,
+    SCENARIO_NAME: `${testCaseName}`,
     SEARCH_TEXT: searchText,
     START_TIME: `${date} 00:00`,
     END_TIME: `${date} 23:59`,

@@ -7,9 +7,10 @@
  *   3. Navigate to the log page (/dlog.do)
  *   4. Fill the log search form with values from the LOG_SEARCH table
  *   5. Run the search (the first "see detail" image marks a found result)
- *   6. Open the first result's detail page and screenshot the first
- *      highlighter_{id} item as the request and the last as the response,
- *      under screenshot/<SCENARIO_NAME>/
+ *   6. Open the first result's detail page, find the inbound log entry
+ *      (Dir = I) and the outbound log entry (Dir = O) whose Code matches
+ *      the scenario's FILTER_CODE, and screenshot their Raw payload as the
+ *      request and response under screenshot/<SCENARIO_NAME>/
  *   7. Download the log file and verify it is saved and not empty
  *
  * Search scenarios are database-driven: every row in LOG_SEARCH (db/TESTDATA.db)
@@ -103,9 +104,14 @@ const APP = {
     // to open the result's detail page
     resultDetailLink: '#tdId > a:has(img[alt="see detail"])',
 
-    // --- Log page ---
-    // The highlighted log lines. Each one is followed by a hidden clipboard
-    // <embed> whose id is "highlighter_{id}_clipboard", so those are excluded.
+    // --- Log detail page ---
+    // Every log entry of a transaction is rendered as <div class="log-entry">
+    // with a <dl class="key-value-list"> holding Id/Type/Dir/Source/Code/... and
+    // the Raw payload.
+    logEntry: '.log-entry',
+    // The Raw payload highlighted by SyntaxHighlighter. Each one is followed by a
+    // hidden clipboard <embed> whose id is "highlighter_{id}_clipboard", so those
+    // are excluded.
     highlighterItem: '[id^="highlighter_"]:not([id$="_clipboard"])',
     // Confirmed: <input type="button" value="Download File Log">
     downloadTrigger: 'input[value="Download File Log"]',
@@ -430,6 +436,81 @@ async function readPreview(filePath: string): Promise<string> {
   }
 }
 
+/** Metadata shown above each log entry's Raw payload on the detail page. */
+interface LogEntryMeta {
+  id: string | null;
+  dir: string | null;
+  source: string | null;
+  code: string | null;
+}
+
+/** Reads the Id/Dir/Source/Code fields of one <div class="log-entry"> block. */
+async function readLogEntryMeta(entry: Locator): Promise<LogEntryMeta> {
+  return entry.evaluate((el) => {
+    const read = (label: string): string | null => {
+      const dt = Array.from(el.querySelectorAll('dt'))
+        .find((node) => node.textContent?.trim() === label);
+      const dd = dt?.nextElementSibling;
+      return dd ? (dd.textContent ?? '').replace(/\s+/g, ' ').trim() : null;
+    };
+
+    return {
+      id: read('Id'),
+      dir: read('Dir'),
+      source: read('Source'),
+      code: read('Code'),
+    };
+  });
+}
+
+/**
+ * Finds the log entry on the detail page whose Dir and Code match the criteria.
+ * The page's Code carries a prefix (e.g. "http://:NonMonetary/cf/cif/T465300")
+ * while FILTER_CODE may store only the path suffix ("cf/cif/T465300"), so
+ * equality, suffix and substring matches are all accepted. On failure every
+ * entry's metadata is attached to the report to explain what was on the page.
+ */
+async function findLogEntry(
+  page: Page,
+  testInfo: TestInfo,
+  criteria: { dir: string; code: string },
+  description: string,
+): Promise<Locator> {
+  const entries = page.locator(APP.selectors.logEntry);
+  const count = await entries.count();
+  const wantedDir = criteria.dir.trim().toUpperCase();
+  const seen: LogEntryMeta[] = [];
+
+  const codeMatches = (code: string | null): boolean =>
+    !!code && (
+      code === criteria.code ||
+      code.endsWith(criteria.code) ||
+      code.includes(criteria.code)
+    );
+
+  for (let i = 0; i < count; i += 1) {
+    const entry = entries.nth(i);
+    const meta = await readLogEntryMeta(entry);
+    seen.push(meta);
+
+    if (meta.dir?.trim().toUpperCase() === wantedDir && codeMatches(meta.code)) {
+      return entry;
+    }
+  }
+
+  await testInfo.attach(`${description} entries at timeout`, {
+    body: JSON.stringify({ criteria, entries: seen }, null, 2),
+    contentType: 'application/json',
+  });
+
+  throw new Error(
+    `No ${description} log entry found on the detail page ` +
+    `(Dir "${criteria.dir}", Code "${criteria.code}"). ` +
+    `The page holds ${count} entr${count === 1 ? 'y' : 'ies'}: ${JSON.stringify(seen)}. ` +
+    `Full metadata is attached as "${description} entries at timeout".`,
+  );
+}
+
 /**
  * Screenshots the content of a single "highlighter_{id}" element into the
  * scenario folder and attaches it to the test report. Returns the element's
@@ -666,35 +747,62 @@ test.describe('Log Collector Web UI', { tag: '@log-collector' }, () => {
         await ctx.parameter('detail url', detailPage.url());
       });
 
-      await allure.step('Step 6: Screenshot request and response highlighter items', async (ctx) => {
-        // All elements whose id matches "highlighter_{id}" on the detail page
-        const highlighterItems = detailPage.locator(APP.selectors.highlighterItem);
+      await allure.step('Step 6: Screenshot request and response log entries', async (ctx) => {
+        // Same normalization as the search form: the query string is not part
+        // of the Code shown on the detail page
+        const filterCode = scenario.FILTER_CODE?.split('?')[0].trim() ?? '';
+        if (!filterCode) {
+          throw new Error(
+            `Scenario "${scenario.SCENARIO_NAME}" has no FILTER_CODE - the request ` +
+            'and response log entries are identified by it',
+          );
+        }
 
-        // Give the detail page time to render its content
-        await expect(highlighterItems.first()).toBeVisible({ timeout: 30_000 });
+        // Give the detail page time to render its entries
+        await expect(detailPage.locator(APP.selectors.logEntry).first()).toBeVisible({ timeout: 30_000 });
 
-        const count = await highlighterItems.count();
-        await ctx.parameter('highlighter items found', String(count));
+        const entryCount = await detailPage.locator(APP.selectors.logEntry).count();
+        await ctx.parameter('log entries found', String(entryCount));
         await ctx.parameter('screenshot folder', screenshotDir);
 
-        // The first highlighter is the request payload...
+        // Request = inbound entry (Dir I) with the searched code, response =
+        // outbound entry (Dir O) with the same code
+        const requestEntry = await findLogEntry(
+          detailPage,
+          testInfo,
+          { dir: 'I', code: filterCode },
+          'request (Dir I)',
+        );
+        const responseEntry = await findLogEntry(
+          detailPage,
+          testInfo,
+          { dir: 'O', code: filterCode },
+          'response (Dir O)',
+        );
+
+        const requestHighlighter = requestEntry.locator(APP.selectors.highlighterItem).first();
+        const responseHighlighter = responseEntry.locator(APP.selectors.highlighterItem).first();
+
         const requestId = await screenshotHighlighter(
-          highlighterItems.first(),
+          requestHighlighter,
           'request',
           screenshotDir,
           testInfo,
         );
-        // ...and the last one is the response payload (the same element when
-        // only one exists)
         const responseId = await screenshotHighlighter(
-          highlighterItems.last(),
+          responseHighlighter,
           'response',
           screenshotDir,
           testInfo,
         );
 
+        const requestMeta = await readLogEntryMeta(requestEntry);
+        const responseMeta = await readLogEntryMeta(responseEntry);
+
         await ctx.parameter('request id', requestId ?? 'unknown');
         await ctx.parameter('response id', responseId ?? 'unknown');
+        await ctx.parameter('request entry', `${requestMeta.dir} ${requestMeta.source} ${requestMeta.code}`);
+        await ctx.parameter('response entry', `${responseMeta.dir} ${responseMeta.source} ${responseMeta.code}`);
       });
 
       await allure.step('Step 7: Download the log file', async (ctx) => {

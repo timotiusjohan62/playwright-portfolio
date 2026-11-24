@@ -327,7 +327,7 @@ test.describe('Database-Driven API Workflows', () => {
           const logSearchPath = cleanPathForSignature(dynamicEndpoint).split('?')[0];
 
           saveLogSearchRecord(buildLogSearchRecord({
-            testCaseName: workflow.TEST_CASE_NAME,
+            testCaseName: `${workflow.TEST_CASE_NAME} - ${step.STEP_ORDER}. ${step.TITLE}`,
             title: step.TITLE,
             urlPath: logSearchPath,
             headerReference: `B0250${sequenceNumber}`,
