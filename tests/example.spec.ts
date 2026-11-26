@@ -26,8 +26,13 @@ const getNestedValue = (obj: any, path: any) => {
   // 2. Coerce path to a string just in case SQLite returned a number or object
   const stringPath = typeof path === 'string' ? path : String(path);
 
-  // 3. Now .split() is guaranteed to work safely
-  return stringPath.split('.').reduce((acc, part) => acc && acc[part], obj);
+  // 3. Normalize bracket indices (e.g. "benefOwner[0].sequence" -> "benefOwner.0.sequence")
+  //    then resolve each segment so both dot keys and array indexes work.
+  return stringPath
+    .replace(/\[(\d+)\]/g, '.$1')
+    .split('.')
+    .filter(Boolean)
+    .reduce((acc, part) => acc && acc[part], obj);
 };
 
 // Integer-only: drops decimals, non-digits and leading zeros
